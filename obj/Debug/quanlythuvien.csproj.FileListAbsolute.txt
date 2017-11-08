@@ -86,3 +86,4 @@ D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.D
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Interaction.xml
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanlythuvien.csprojResolveAssemblyReference.cache

@@ -1,124 +1,72 @@
 ﻿using System;
 using System.Text;
 using quanly.lopdulieu;
+using quanlythuvien.Data;
+using System.Windows.Forms;
 
 namespace quanly.doituong
 {
     public class Lnhanvien
     {
-        string manhanvien, hoten, diachi, quyenhan, tendangnhap, matkhau;
+        public string manhanvien { get; set; }
+        public string hoten { get; set; }
+        public string diachi { get; set; }
+        public string quyenhan { get; set; }
+        public string tendangnhap { get; set; }
+        public string matkhau { get; set; }
         // Thủ tục khởi tạo
         public Lnhanvien() { }
-        public Lnhanvien(string manhanvien, string hoten, string diachi, string quyenhan, string tendangnhap, string matkhau)
+        public Lnhanvien(string maNhanVien, string hoTen, string diaChi, string quyenHan, string tenDangNhap, string matKhau)
         {
-            this.manhanvien = manhanvien;
-            this.hoten = hoten;
-            this.diachi = diachi;
-            this.quyenhan = quyenhan;
-            this.tendangnhap = tendangnhap;
-            this.matkhau = matkhau;
+            this.manhanvien = maNhanVien;
+            this.hoten = hoTen;
+            this.diachi = diaChi;
+            this.quyenhan = quyenHan;
+            this.tendangnhap = tenDangNhap;
+            this.matkhau = matKhau;
         }
-        #region cac thu tuc Set
-        public void set_manhanvien(string manhanvien)
-        {
-            this.manhanvien = manhanvien;
-        }
-        public void set_hoten(string hoten)
-        {
-            this.hoten = hoten;
-        }
-        public void set_diachi(string diachi)
-        {
-            this.diachi = diachi;
-        }
-        public void set_quyenhan(string quyenhan)
-        {
-            this.quyenhan = quyenhan;
-        }
-        public void set_tendangnhap(string tendangnhap)
-        {
-            this.tendangnhap = tendangnhap;
-        }
-        public void set_matkhau(string matkhau)
-        {
-            this.matkhau = matkhau;
-        }
-        #endregion
-        #region cac thu tuc get
-        public string get_manhanvien()
-        {
-            return manhanvien;
-        }
-        public string get_hoten()
-        {
-            return hoten;
-        }
-        public string get_diachi()
-        {
-            return diachi;
-        }
-        public string get_quyenhan()
-        {
-            return quyenhan;
-        }
-        public string get_tendangnhap()
-        {
-            return tendangnhap;
-        }
-        public string get_matkhau()
-        {
-            return matkhau;
-        }
-        #endregion
+
         #region cac phuong thuc hoat dong
-        public bool taomoi()
+        public bool TaoMoi()
         {
-            laydulieu ld = new laydulieu();
-            if (ld.thucthitruyvan(" insert into nhanvien values ('" + manhanvien + "',N'" + hoten + "',N'" + diachi + "',N'" + tendangnhap + "','" + matkhau + "','" + quyenhan + "')") == 1)
+            try
             {
-                L_Ketnoi.HuyKetNoi();
-                return true;
+                if (DataProvider.ExecuteQuery("Select * from nhanvien where manhanvien = N''").Rows.Count > 0)
+                {
+                    throw new Exception("Mã nhân viên đã tồn tại!!!");
+                }
+                string query = " insert into nhanvien values ('" + manhanvien + "',N'" + hoten + "',N'" + diachi + "',N'" + tendangnhap + "','" + matkhau + "','" + quyenhan + "')";
+                if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
             }
-            else return false;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
         }
-        public bool nangquyen(string quyenmoi)
+        public bool NangQuyen(string quyenmoi)
         {
             this.quyenhan = quyenmoi;
-            laydulieu ld = new laydulieu();
-            if (ld.thucthitruyvan(" update nhanvien set quyenhan ='" + quyenmoi + "' where manhanvien = '" + manhanvien + "'") == 1)
-            {
-                L_Ketnoi.HuyKetNoi();
-                return true;
-            }
-            else return false;
+            string query = " update nhanvien set quyenhan ='" + quyenmoi + "' where manhanvien = '" + this.manhanvien + "'";
+            if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
         }
-        public bool capnhat()
+        public bool CapNhat()
+        {           
+            string query = "update nhanvien set hoten=N'" + hoten + "',diachi=N'" + diachi + "',tendangnhap=N'" + tendangnhap + "',matkhau=N'" + matkhau + "' where manhanvien='" + manhanvien + "'";
+            int updateResult = DataProvider.ExecuteNonQuery(query);
+            if (updateResult == 1) return true; else return false;
+        }
+        public bool Doimatkhau(string matKhauMoi)
         {
             laydulieu ld = new laydulieu();
-            if (ld.thucthitruyvan(" update nhanvien set hoten=N'" + hoten + "',diachi=N'" + diachi + "',tendangnhap=N'" + tendangnhap + "',matkhau=N'" + matkhau + "' where manhanvien='" + manhanvien + "'") == 1)
-            {
-                L_Ketnoi.HuyKetNoi();
-                return true;
-            }
-            else return false;
+            string query = " update nhanvien set matkhau=N'" + matKhauMoi + "' where manhanvien='" + manhanvien + "'";
+            if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
         }
-        public bool doimatkhau(string moi)
+        public bool XoaBo()
         {
-            laydulieu ld = new laydulieu();
-            matkhau = moi;
-            if (ld.thucthitruyvan(" update nhanvien set matkhau=N'" + moi + "' where manhanvien='" + manhanvien + "'") == 1)
+            if (DataProvider.ExecuteNonQuery(" delete from nhanvien where manhanvien= '"+ manhanvien+"'") == 1)
             {
-                L_Ketnoi.HuyKetNoi();
-                return true;
-            }
-            else return false;
-        }
-        public bool xoabo()
-        {
-            laydulieu ld = new laydulieu();
-            if (ld.thucthitruyvan(" delete from nhanvien where manhanvien= '"+ manhanvien+"'") == 1)
-            {
-                L_Ketnoi.HuyKetNoi();
                 return true;
             }
             else return false;

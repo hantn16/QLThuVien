@@ -254,8 +254,8 @@ namespace quanly.frm
                      }
                  case "Thông tin tài khoản":
                      {
-                         hf.set_text("       Tài khoản của người dùng chương trình có gi đâu mà xem!!");
-                         hf.set_anh(3);                         
+                         //hf.set_text("       Tài khoản của người dùng chương trình có gi đâu mà xem!!");
+                         //hf.set_anh(3);                         
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
                          bd = new Frmquanlybandoc();
@@ -275,13 +275,12 @@ namespace quanly.frm
                          if (dn1.DialogResult == DialogResult.OK)
                          {
                              KTdangnhap dn = new KTdangnhap();
-                            if (dn.kt_dangnhap(Frdangnhap.strtendn, Frdangnhap.strmatkhaudn, Frdangnhap.strtensv, Frdangnhap.strmatkhausv))
+                            if (dn.kt_dangnhap(Frdangnhap.strtendn, Frdangnhap.strmatkhaudn))
                              {
                                s = "Người đang sử dụng chương trình có tài khoản là: " + KTdangnhap.strnguoidung.Trim() + " và quyền hạn là: " + KTdangnhap.strquyenhan + "        ";
                                  Lnhanvien nv = new Lnhanvien(KTdangnhap.strmanhanvien, KTdangnhap.strhoten, KTdangnhap.strdiachi, KTdangnhap.strquyenhan, KTdangnhap.strnguoidung, KTdangnhap.strmatkhau);
                                  Frmmain_Load(sender, e);
                                  MessageBox.Show("Bạn đã đăng nhập thành công vào hệ thống với quyền hạn là: " + KTdangnhap.strquyenhan, "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                                 L_Ketnoi.HuyKetNoi();
                                 
                            }
                              else { MessageBox.Show("BAN DA NHAP KHONG ĐUNG DU LIEU"); }
@@ -290,8 +289,8 @@ namespace quanly.frm
                      }
                  case "Thay đổi thông tin cá nhân":
                      {
-                         hf.set_text("        Thông tin cá nhân bị sai chỗ nào à");
-                         hf.set_anh(3);
+                         //hf.set_text("        Thông tin cá nhân bị sai chỗ nào à");
+                         //hf.set_anh(3);
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
                          Frmthongtincanhan cn = new Frmthongtincanhan();

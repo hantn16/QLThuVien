@@ -5,37 +5,37 @@ using System.Data;
 using System.Data.OleDb;
 using quanly.lopdulieu;
 using quanly.doituong;
+using quanlythuvien.Data;
 
 namespace quanly.lopdulieu
 {
     public class KTdangnhap
     {
         
-        private DataSet ds;
         public static string strquyenhan = "", strnguoidung="",strhoten="",strdiachi="",strmanhanvien="",strmatkhau="";
-        public bool kt_dangnhap(string ten, string matkhau, string tenserver, string matkhauserver)
+        public bool kt_dangnhap(string ten, string matkhau)
         {
             Lnhanvien nv = new Lnhanvien();
             try
            {
-                if (tenserver != "")
-                {
-                    L_Ketnoi.strChuoiKN = L_Ketnoi.strChuoiKN + "; server= " + tenserver;
-                    if (matkhauserver != "") L_Ketnoi.strChuoiKN = L_Ketnoi.strChuoiKN + " ; Password = " + matkhauserver;
-                }
-                L_Ketnoi.ThietlapketNoi();
-                laydulieu dl = new laydulieu();
-                ds = dl.getdata("select * from nhanvien where matkhau = '" + matkhau + "' and tendangnhap = '" + ten + "'");
-                if (ds.Tables[0].Rows.Count == 0) { L_Ketnoi.HuyKetNoi(); return false; }
+                //if (tenserver != "")
+                //{
+                //    L_Ketnoi.strChuoiKN = L_Ketnoi.strChuoiKN + "; server= " + tenserver;
+                //    if (matkhauserver != "") L_Ketnoi.strChuoiKN = L_Ketnoi.strChuoiKN + " ; Password = " + matkhauserver;
+                //}
+                //L_Ketnoi.ThietlapketNoi();
+                //laydulieu dl = new laydulieu();
+                string query = "select * from nhanvien where matkhau = '" + matkhau + "' and tendangnhap = '" + ten + "'";
+                DataTable dt = DataProvider.ExecuteQuery(query);
+                if (dt.Rows.Count == 0) { return false; }
                 else
                 {
-                    strmanhanvien= ds.Tables[0].Rows[0]["manhanvien"].ToString();
-                    strhoten= ds.Tables[0].Rows[0]["hoten"].ToString();
-                    strdiachi =  ds.Tables[0].Rows[0]["diachi"].ToString();
-                    strquyenhan =  ds.Tables[0].Rows[0]["quyenhan"].ToString();
-                    strnguoidung = ds.Tables[0].Rows[0]["tendangnhap"].ToString();
-                    strmatkhau = ds.Tables[0].Rows[0]["matkhau"].ToString();
-                    L_Ketnoi.HuyKetNoi();
+                    strmanhanvien= dt.Rows[0]["manhanvien"].ToString();
+                    strhoten= dt.Rows[0]["hoten"].ToString();
+                    strdiachi =  dt.Rows[0]["diachi"].ToString();
+                    strquyenhan =  dt.Rows[0]["quyenhan"].ToString();
+                    strnguoidung = dt.Rows[0]["tendangnhap"].ToString();
+                    strmatkhau = dt.Rows[0]["matkhau"].ToString();
                     return true;
                 }
             }

@@ -99,8 +99,8 @@ namespace quanly.frm
             if (MessageBox.Show("Bạn có thật sự muốn xoá nhân viên này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Lnhanvien nv = new Lnhanvien();
-                nv.set_manhanvien(txtmanv.Text);
-                if (nv.xoabo() == true)
+                nv.manhanvien = (txtmanv.Text);
+                if (nv.XoaBo() == true)
                 {
                     MessageBox.Show("Bạn đã xoá bỏ thành công");
                     listView1.Items[i].Remove();
@@ -145,14 +145,14 @@ namespace quanly.frm
                 txttendangnhap.Enabled = false;
                 comboBox1.Enabled = false;
                 Lnhanvien nv = new Lnhanvien();
-                nv.set_manhanvien(txtmanv.Text);
-                nv.set_matkhau("");
-                nv.set_diachi(txtdiachi.Text);
-                nv.set_hoten(txthoten.Text);
-                nv.set_quyenhan(comboBox1.Text);
-                nv.set_tendangnhap(txttendangnhap.Text);
+                nv.manhanvien = (txtmanv.Text);
+                nv.matkhau = ("");
+                nv.diachi = (txtdiachi.Text);
+                nv.hoten = (txthoten.Text);
+                nv.quyenhan = (comboBox1.Text);
+                nv.tendangnhap = (txttendangnhap.Text);
                 i = ds.Tables[0].Rows.Count;
-                if (nv.taomoi())
+                if (nv.TaoMoi())
                 {
                     s[i] = txtmanv.Text;
                     //======cập nhật thông tin cho Dataset===========

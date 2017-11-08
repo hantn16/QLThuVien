@@ -1,4 +1,2 @@
 ADMIN
-1
-Data Source=MAYTINH-O297MUJ\DATA1;
-sa
+2

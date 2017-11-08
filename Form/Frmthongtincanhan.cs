@@ -41,7 +41,7 @@ namespace quanly.frm
                 KTdangnhap.strhoten=txthoten.Text;
                 KTdangnhap.strnguoidung=txttendangnhap.Text;
                 Lnhanvien nv = new Lnhanvien(KTdangnhap.strmanhanvien, KTdangnhap.strhoten, KTdangnhap.strdiachi, KTdangnhap.strquyenhan, KTdangnhap.strnguoidung, KTdangnhap.strmatkhau);
-                if (nv.capnhat() == true)
+                if (nv.CapNhat() == true)
                 {
                     txtdiachi.Enabled = txthoten.Enabled = txttendangnhap.Enabled = false;
                     tam = false;

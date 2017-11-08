@@ -96,11 +96,11 @@ namespace quanly.frm
                         if (st != "")
                         {
                             Lnhanvien nv = new Lnhanvien();
-                            nv.set_manhanvien(str.Substring(1, str.Length - 1));
+                            nv.manhanvien= (str.Substring(1, str.Length - 1));
                             if(st.IndexOf("ADMIN") >=0)
-                                  nv.nangquyen("ADMIN");
+                                  nv.NangQuyen("ADMIN");
                             else
-                                 nv.nangquyen(st);
+                                 nv.NangQuyen(st);
                             button1.Text = "Phân quyền";
                             tam = true;
                             listView1.Enabled = false;

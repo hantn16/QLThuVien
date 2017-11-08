@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace quanlythuvien.lop_du_lieu
+namespace quanlythuvien.Data
 {
     public class DataProvider
     {
         public static string connectionString = "Data Source=.\\DATA1;Initial Catalog=QUANLYTHUVIEN_DATA;Integrated Security=True";
-        public DataTable ExecuteQuery(string query,object[] parameter = null)
+        public static DataTable ExecuteQuery(string query,object[] parameter = null)
         {
             DataTable data = new DataTable();
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -37,7 +37,7 @@ namespace quanlythuvien.lop_du_lieu
             }
             return data;
         }
-        public int ExecuteNonQuery(string query, object[] parameter = null)
+        public static int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -62,7 +62,7 @@ namespace quanlythuvien.lop_du_lieu
             }
             return data;
         }
-        public Object ExecuteScalar(string query, object[] parameter = null)
+        public static Object ExecuteScalar(string query, object[] parameter = null)
         {
             Object data = 0;
             using (SqlConnection connection = new SqlConnection(connectionString))

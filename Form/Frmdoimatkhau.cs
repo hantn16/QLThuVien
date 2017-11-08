@@ -53,7 +53,7 @@ namespace quanly.frm
             if (tam&&tam1) 
             {
                 Lnhanvien nv = new Lnhanvien(KTdangnhap.strmanhanvien, KTdangnhap.strhoten, KTdangnhap.strdiachi, KTdangnhap.strquyenhan, KTdangnhap.strnguoidung, KTdangnhap.strmatkhau);
-                if (nv.doimatkhau(txtmatkhaumoi.Text) == true)
+                if (nv.Doimatkhau(txtmatkhaumoi.Text) == true)
                     MessageBox.Show("Đã hoàn thành việc thay đôi mật khẩu", "Thông báo");
                 else
                     MessageBox.Show("Việc thay đổi đã bị lỗi hãy thử lại sau", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Question);
