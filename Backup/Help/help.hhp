@@ -1,0 +1,42 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=help.chm
+Contents file=Table of Contents.hhc
+Default topic=capnhatsach.htm
+Display compile progress=No
+Index file=Index.hhk
+Language=0x409 English (United States)
+
+
+[FILES]
+capnhatsach.htm
+dangnhap.htm
+dangxuat.htm
+giahansach.htm
+khoa.htm
+loaisach.htm
+muonsach.htm
+ngonngu.htm
+nhxb.htm
+phanloaisach.htm
+phanquyen.htm
+qltaikhoan.htm
+sua.htm
+tacgia.htm
+taomoi.htm
+Thongke.htm
+Timkiemsach.htm
+tkdocgia.htm
+tksachcoban.htm
+tksachnangcao.htm
+tracuusach.htm
+trasach.htm
+ttcanhan.htm
+ttdocgia.htm
+ttmuontheongay.htm
+ttmuontrongngay.htm
+ttsachhong.htm
+xoa.htm
+
+[INFOTYPES]
+
