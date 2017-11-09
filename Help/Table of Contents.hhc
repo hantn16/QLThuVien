@@ -45,7 +45,7 @@
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Tac gia">
-			<param name="Local" value="tacgia.htm">
+			<param name="Local" value="TacGia.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Nha xuat ban">
@@ -61,7 +61,7 @@
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Ngon ngu">
-			<param name="Local" value="ngonngu.htm">
+			<param name="Local" value="NgonNgu.htm">
 			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
@@ -71,16 +71,16 @@
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Phan loai sach">
-			<param name="Local" value="phanloaisach.htm">
+			<param name="Local" value="TheLoaisach.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Cap nhat sach">
-			<param name="Local" value="capnhatsach.htm">
+			<param name="Local" value="CapNhatsach.htm">
 			</OBJECT>
 		<UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Tao moi">
-				<param name="Local" value="taomoi.htm">
+				<param name="Local" value="TaoMoi.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Thay doi thong tin">
@@ -112,16 +112,16 @@
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Quan ly doc gia">
-		<param name="Local" value="quanlydocgia.htm">
+		<param name="Local" value="quanlyDocGia.htm">
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Tim kiem doc gia">
-			<param name="Local" value="tkdocgia.htm">
+			<param name="Local" value="tkDocGia.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Thong tin tai khoan">
-			<param name="Local" value="ttdocgia.htm">
+			<param name="Local" value="ttDocGia.htm">
 			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
@@ -135,7 +135,7 @@
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Tra sach">
-			<param name="Local" value="trasach.htm">
+			<param name="Local" value="TraSach.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Gia han sach">

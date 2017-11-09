@@ -413,9 +413,9 @@ namespace quanlythuvien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap trasach {
+        internal static System.Drawing.Bitmap TraSach {
             get {
-                object obj = ResourceManager.GetObject("trasach", resourceCulture);
+                object obj = ResourceManager.GetObject("TraSach", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

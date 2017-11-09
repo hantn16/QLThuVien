@@ -35,8 +35,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbngonngu = new System.Windows.Forms.ComboBox();
-            this.cbtacgiac = new System.Windows.Forms.ComboBox();
+            this.cbNgonNgu = new System.Windows.Forms.ComboBox();
+            this.cbTacGiac = new System.Windows.Forms.ComboBox();
             this.cbloaisach = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -99,8 +99,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox2.Controls.Add(this.cbngonngu);
-            this.groupBox2.Controls.Add(this.cbtacgiac);
+            this.groupBox2.Controls.Add(this.cbNgonNgu);
+            this.groupBox2.Controls.Add(this.cbTacGiac);
             this.groupBox2.Controls.Add(this.cbloaisach);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -113,21 +113,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lựa chọn nâng cao";
             // 
-            // cbngonngu
+            // cbNgonNgu
             // 
-            this.cbngonngu.FormattingEnabled = true;
-            this.cbngonngu.Location = new System.Drawing.Point(486, 29);
-            this.cbngonngu.Name = "cbngonngu";
-            this.cbngonngu.Size = new System.Drawing.Size(121, 21);
-            this.cbngonngu.TabIndex = 1;
+            this.cbNgonNgu.FormattingEnabled = true;
+            this.cbNgonNgu.Location = new System.Drawing.Point(486, 29);
+            this.cbNgonNgu.Name = "cbNgonNgu";
+            this.cbNgonNgu.Size = new System.Drawing.Size(121, 21);
+            this.cbNgonNgu.TabIndex = 1;
             // 
-            // cbtacgiac
+            // cbTacGiac
             // 
-            this.cbtacgiac.FormattingEnabled = true;
-            this.cbtacgiac.Location = new System.Drawing.Point(264, 29);
-            this.cbtacgiac.Name = "cbtacgiac";
-            this.cbtacgiac.Size = new System.Drawing.Size(156, 21);
-            this.cbtacgiac.TabIndex = 1;
+            this.cbTacGiac.FormattingEnabled = true;
+            this.cbTacGiac.Location = new System.Drawing.Point(264, 29);
+            this.cbTacGiac.Name = "cbTacGiac";
+            this.cbTacGiac.Size = new System.Drawing.Size(156, 21);
+            this.cbTacGiac.TabIndex = 1;
             // 
             // cbloaisach
             // 
@@ -282,8 +282,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cbngonngu;
-        private System.Windows.Forms.ComboBox cbtacgiac;
+        private System.Windows.Forms.ComboBox cbNgonNgu;
+        private System.Windows.Forms.ComboBox cbTacGiac;
         private System.Windows.Forms.ComboBox cbloaisach;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

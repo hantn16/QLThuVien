@@ -19,14 +19,14 @@ namespace quanly.frm
         {
 
         }
-        public void set_giatri(string ten, string diachi, string vitri, string ngaysinh, string ngaylamthe, string tenkhoa)
+        public void set_giatri(string ten, string DiaChi, string ViTri, string NgaySinh, string ngaylamthe, string tenkhoa)
         {
-            lbdiachi.Text = diachi;
-            lbhoten.Text = ten;
-            lbvitri.Text = vitri;
+            lbDiaChi.Text = DiaChi;
+            lbHoTen.Text = ten;
+            lbViTri.Text = ViTri;
             lbngaylamthe.Text = ngaylamthe;
             lbkhoa.Text = tenkhoa;
-            lbngaysinh.Text = ngaysinh;
+            lbNgaySinh.Text = NgaySinh;
         }
         public void set_point(int x, int y)
         {

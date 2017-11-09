@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quanlythuvien", "quanlythuvien.csproj", "{5A1FF228-C56C-44C3-A908-496D90A02FBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLTV.GUI", "QLTV.GUI.csproj", "{5A1FF228-C56C-44C3-A908-496D90A02FBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

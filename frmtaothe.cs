@@ -282,7 +282,7 @@ namespace quanly.frm
             if (dr == null)
             {
                 laydulieu dl = new laydulieu();
-                dr = dl.lay_reader("select * from docgia order by madocgia desc");
+                dr = dl.lay_reader("select * from DocGia order by MaDocGia desc");
             }
             int tam = 0;
             while (dr.Read())

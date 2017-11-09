@@ -20,30 +20,30 @@ namespace quanly.frm
         private void Frmthongtincanhan_Load(object sender, EventArgs e)
         {
             Frmmain.tt = true;
-            txtmanhanvien.Text = KTdangnhap.strmanhanvien;
-            txtquyenhan.Text = KTdangnhap.strquyenhan;
-            txttendangnhap.Text = KTdangnhap.strnguoidung;
-            txthoten.Text = KTdangnhap.strhoten;
-            txtdiachi.Text = KTdangnhap.strdiachi;
+            txtMaNhanVien.Text = KTdangnhap.strMaNhanVien;
+            txtQuyenHan.Text = KTdangnhap.strQuyenHan;
+            txtTenDangNhap.Text = KTdangnhap.strnguoidung;
+            txtHoTen.Text = KTdangnhap.strHoTen;
+            txtDiaChi.Text = KTdangnhap.strDiaChi;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (tam == false)
             {
-                txtdiachi.Enabled = txthoten.Enabled = txttendangnhap.Enabled = true;
+                txtDiaChi.Enabled = txtHoTen.Enabled = txtTenDangNhap.Enabled = true;
                 tam = true;
                 btthongtin.Text = "OK";
             }
             else
             {
-                KTdangnhap.strdiachi=txtdiachi.Text;
-                KTdangnhap.strhoten=txthoten.Text;
-                KTdangnhap.strnguoidung=txttendangnhap.Text;
-                Lnhanvien nv = new Lnhanvien(KTdangnhap.strmanhanvien, KTdangnhap.strhoten, KTdangnhap.strdiachi, KTdangnhap.strquyenhan, KTdangnhap.strnguoidung, KTdangnhap.strmatkhau);
+                KTdangnhap.strDiaChi=txtDiaChi.Text;
+                KTdangnhap.strHoTen=txtHoTen.Text;
+                KTdangnhap.strnguoidung=txtTenDangNhap.Text;
+                NhanVien nv = new NhanVien(KTdangnhap.strMaNhanVien, KTdangnhap.strHoTen, KTdangnhap.strDiaChi, KTdangnhap.strQuyenHan, KTdangnhap.strnguoidung, KTdangnhap.strMatKhau);
                 if (nv.CapNhat() == true)
                 {
-                    txtdiachi.Enabled = txthoten.Enabled = txttendangnhap.Enabled = false;
+                    txtDiaChi.Enabled = txtHoTen.Enabled = txtTenDangNhap.Enabled = false;
                     tam = false;
                     btthongtin.Text = "Thay đổi thông tin";
                     MessageBox.Show("Đã cập nhật thành công", "Thông báo");
@@ -56,9 +56,9 @@ namespace quanly.frm
             }
         }
 
-        private void btmatkhau_Click(object sender, EventArgs e)
+        private void btMatKhau_Click(object sender, EventArgs e)
         {
-            Frmdoimatkhau mk = new Frmdoimatkhau();
+            FrmdoiMatKhau mk = new FrmdoiMatKhau();
             mk.Show();
         }
 

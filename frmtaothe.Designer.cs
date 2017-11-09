@@ -37,12 +37,12 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader("Copy of docgia.ICO");
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt1 = new System.Windows.Forms.TextBox();
@@ -86,7 +86,7 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Copy of docgia.ICO");
+            this.imageList1.Images.SetKeyName(0, "Copy of DocGia.ICO");
             // 
             // toolStrip1
             // 
@@ -106,7 +106,7 @@
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(84, 36);
+            this.toolStripButton1.Size = new System.Drawing.Size(90, 36);
             this.toolStripButton1.Text = "Lưu mẫu";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -116,7 +116,7 @@
             this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(83, 36);
+            this.toolStripButton2.Size = new System.Drawing.Size(88, 36);
             this.toolStripButton2.Text = "Lấy mẫu";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -126,7 +126,7 @@
             this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(193, 36);
+            this.toolStripButton3.Size = new System.Drawing.Size(207, 36);
             this.toolStripButton3.Text = "In thẻ  độc giả trong danh sách";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -232,11 +232,11 @@
             this.txt1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt1.ContextMenuStrip = this.contextMenuStrip1;
             this.txt1.ForeColor = System.Drawing.Color.Navy;
-            this.txt1.Location = new System.Drawing.Point(49, 19);
+            this.txt1.Location = new System.Drawing.Point(31, 19);
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(121, 13);
             this.txt1.TabIndex = 11;
-            this.txt1.Text = " ĐẠI HỌC HUẾ";
+            this.txt1.Text = "HỌC VIỆN NGÂN HÀNG";
             this.txt1.Click += new System.EventHandler(this.txt1_Click);
             // 
             // contextMenuStrip1
@@ -245,19 +245,19 @@
             this.chọnFontMớiToolStripMenuItem,
             this.chọnChếĐộMặcĐịnhToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(191, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(196, 48);
             // 
             // chọnFontMớiToolStripMenuItem
             // 
             this.chọnFontMớiToolStripMenuItem.Name = "chọnFontMớiToolStripMenuItem";
-            this.chọnFontMớiToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.chọnFontMớiToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.chọnFontMớiToolStripMenuItem.Text = "Chọn font mới";
             this.chọnFontMớiToolStripMenuItem.Click += new System.EventHandler(this.chọnFontMớiToolStripMenuItem_Click);
             // 
             // chọnChếĐộMặcĐịnhToolStripMenuItem
             // 
             this.chọnChếĐộMặcĐịnhToolStripMenuItem.Name = "chọnChếĐộMặcĐịnhToolStripMenuItem";
-            this.chọnChếĐộMặcĐịnhToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.chọnChếĐộMặcĐịnhToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.chọnChếĐộMặcĐịnhToolStripMenuItem.Text = "Chọn chế độ mặc định";
             this.chọnChếĐộMặcĐịnhToolStripMenuItem.Click += new System.EventHandler(this.chọnChếĐộMặcĐịnhToolStripMenuItem_Click);
             // 
@@ -281,11 +281,10 @@
             this.txt2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt2.ContextMenuStrip = this.contextMenuStrip1;
             this.txt2.ForeColor = System.Drawing.Color.Navy;
-            this.txt2.Location = new System.Drawing.Point(49, 38);
+            this.txt2.Location = new System.Drawing.Point(31, 38);
             this.txt2.Name = "txt2";
             this.txt2.Size = new System.Drawing.Size(129, 13);
             this.txt2.TabIndex = 9;
-            this.txt2.Text = " TRƯỜNG ĐHKH";
             this.txt2.Click += new System.EventHandler(this.txt1_Click);
             // 
             // txt3
@@ -461,8 +460,8 @@
             // 
             // printDocument1
             // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             this.printDocument1.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument1_BeginPrint);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // printPreviewDialog1
             // 
@@ -481,19 +480,19 @@
             this.cToolStripMenuItem,
             this.thoátToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 48);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(218, 48);
             // 
             // cToolStripMenuItem
             // 
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
-            this.cToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.cToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.cToolStripMenuItem.Text = "Cập nhật lại mẫu mặc định";
             this.cToolStripMenuItem.Click += new System.EventHandler(this.chọnChếĐộMặcĐịnhToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 

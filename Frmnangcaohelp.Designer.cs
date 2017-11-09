@@ -32,8 +32,8 @@
             this.lbngan = new System.Windows.Forms.Label();
             this.lbke = new System.Windows.Forms.Label();
             this.lbkho = new System.Windows.Forms.Label();
-            this.lbsoluong = new System.Windows.Forms.Label();
-            this.lbtacgia = new System.Windows.Forms.Label();
+            this.lbSoLuong = new System.Windows.Forms.Label();
+            this.lbTacGia = new System.Windows.Forms.Label();
             this.lbtensach = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
@@ -80,29 +80,29 @@
             this.lbkho.TabIndex = 7;
             this.lbkho.Text = "Họ tên";
             // 
-            // lbsoluong
+            // lbSoLuong
             // 
-            this.lbsoluong.AutoSize = true;
-            this.lbsoluong.BackColor = System.Drawing.Color.Transparent;
-            this.lbsoluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbsoluong.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.lbsoluong.Location = new System.Drawing.Point(124, 44);
-            this.lbsoluong.Name = "lbsoluong";
-            this.lbsoluong.Size = new System.Drawing.Size(53, 16);
-            this.lbsoluong.TabIndex = 12;
-            this.lbsoluong.Text = "Họ tên";
+            this.lbSoLuong.AutoSize = true;
+            this.lbSoLuong.BackColor = System.Drawing.Color.Transparent;
+            this.lbSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoLuong.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.lbSoLuong.Location = new System.Drawing.Point(124, 44);
+            this.lbSoLuong.Name = "lbSoLuong";
+            this.lbSoLuong.Size = new System.Drawing.Size(53, 16);
+            this.lbSoLuong.TabIndex = 12;
+            this.lbSoLuong.Text = "Họ tên";
             // 
-            // lbtacgia
+            // lbTacGia
             // 
-            this.lbtacgia.AutoSize = true;
-            this.lbtacgia.BackColor = System.Drawing.Color.Transparent;
-            this.lbtacgia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtacgia.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.lbtacgia.Location = new System.Drawing.Point(124, 28);
-            this.lbtacgia.Name = "lbtacgia";
-            this.lbtacgia.Size = new System.Drawing.Size(53, 16);
-            this.lbtacgia.TabIndex = 11;
-            this.lbtacgia.Text = "Họ tên";
+            this.lbTacGia.AutoSize = true;
+            this.lbTacGia.BackColor = System.Drawing.Color.Transparent;
+            this.lbTacGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTacGia.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.lbTacGia.Location = new System.Drawing.Point(124, 28);
+            this.lbTacGia.Name = "lbTacGia";
+            this.lbTacGia.Size = new System.Drawing.Size(53, 16);
+            this.lbTacGia.TabIndex = 11;
+            this.lbTacGia.Text = "Họ tên";
             // 
             // lbtensach
             // 
@@ -204,8 +204,8 @@
             this.Controls.Add(this.lbngan);
             this.Controls.Add(this.lbke);
             this.Controls.Add(this.lbkho);
-            this.Controls.Add(this.lbsoluong);
-            this.Controls.Add(this.lbtacgia);
+            this.Controls.Add(this.lbSoLuong);
+            this.Controls.Add(this.lbTacGia);
             this.Controls.Add(this.lbtensach);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -228,8 +228,8 @@
         private System.Windows.Forms.Label lbngan;
         private System.Windows.Forms.Label lbke;
         private System.Windows.Forms.Label lbkho;
-        private System.Windows.Forms.Label lbsoluong;
-        private System.Windows.Forms.Label lbtacgia;
+        private System.Windows.Forms.Label lbSoLuong;
+        private System.Windows.Forms.Label lbTacGia;
         private System.Windows.Forms.Label lbtensach;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label6;

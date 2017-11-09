@@ -28,7 +28,7 @@ namespace quanly.frm
             n.Text = "Danh sach nhân viên";
             n.ImageIndex = 0;
             treeView1.Nodes.Add(n);
-            dr = dl.lay_reader("select tendangnhap,manhanvien from nhanvien");
+            dr = dl.lay_reader("select TenDangNhap,MaNhanVien from NhanVien");
            
             while(dr.Read())
             {
@@ -56,12 +56,12 @@ namespace quanly.frm
             if (str != "Ro")
             {
                 laydulieu dl = new laydulieu();
-                SqlDataReader dr = dl.lay_reader("select tendangnhap,manhanvien,hoten,quyenhan from nhanvien where manhanvien='" + str.Substring(1, str.Length - 1) + "'");
+                SqlDataReader dr = dl.lay_reader("select TenDangNhap,MaNhanVien,HoTen,QuyenHan from NhanVien where MaNhanVien='" + str.Substring(1, str.Length - 1) + "'");
                 while (dr.Read())
                 {
-                    txthoten.Text = dr[2].ToString();
-                    txtmanhanvien.Text = dr[1].ToString();
-                    txttendangnhap.Text = dr[0].ToString();
+                    txtHoTen.Text = dr[2].ToString();
+                    txtMaNhanVien.Text = dr[1].ToString();
+                    txtTenDangNhap.Text = dr[0].ToString();
                     if (dr[3].ToString().Trim() == "ADMIN") listView1.Items[3].Checked=true;
                     else
                     {
@@ -95,8 +95,8 @@ namespace quanly.frm
                         MessageBox.Show(st);
                         if (st != "")
                         {
-                            Lnhanvien nv = new Lnhanvien();
-                            nv.manhanvien= (str.Substring(1, str.Length - 1));
+                            NhanVien nv = new NhanVien();
+                            nv.MaNhanVien= (str.Substring(1, str.Length - 1));
                             if(st.IndexOf("ADMIN") >=0)
                                   nv.NangQuyen("ADMIN");
                             else

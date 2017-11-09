@@ -34,7 +34,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbmatkhau = new System.Windows.Forms.TextBox();
+            this.tbMatKhau = new System.Windows.Forms.TextBox();
             this.tbten = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -112,14 +112,14 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Lưu lại thông tin :";
             // 
-            // tbmatkhau
+            // tbMatKhau
             // 
-            this.tbmatkhau.Location = new System.Drawing.Point(129, 51);
-            this.tbmatkhau.Name = "tbmatkhau";
-            this.tbmatkhau.PasswordChar = '*';
-            this.tbmatkhau.Size = new System.Drawing.Size(158, 20);
-            this.tbmatkhau.TabIndex = 4;
-            this.tbmatkhau.UseSystemPasswordChar = true;
+            this.tbMatKhau.Location = new System.Drawing.Point(129, 51);
+            this.tbMatKhau.Name = "tbMatKhau";
+            this.tbMatKhau.PasswordChar = '*';
+            this.tbMatKhau.Size = new System.Drawing.Size(158, 20);
+            this.tbMatKhau.TabIndex = 4;
+            this.tbMatKhau.UseSystemPasswordChar = true;
             // 
             // tbten
             // 
@@ -158,7 +158,7 @@
             this.ClientSize = new System.Drawing.Size(324, 174);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.tbmatkhau);
+            this.Controls.Add(this.tbMatKhau);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.radioButton2);
@@ -186,7 +186,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbmatkhau;
+        private System.Windows.Forms.TextBox tbMatKhau;
         private System.Windows.Forms.TextBox tbten;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

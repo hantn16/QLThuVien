@@ -19,13 +19,13 @@ namespace quanlythuvien
         {
 
         }
-        public void set_giatri(string tensach, string tacgia, string soluong, string kho, string ke, string ngan)
+        public void set_giatri(string tensach, string TacGia, string SoLuong, string kho, string ke, string ngan)
         {
             lbtensach.Text = tensach;
-            lbtacgia.Text = tacgia;
+            lbTacGia.Text = TacGia;
             lbkho.Text = kho;
             lbngan.Text = ngan;
-            lbsoluong.Text = soluong;
+            lbSoLuong.Text = SoLuong;
             lbke.Text = ke;
         }
         public void set_point(int x, int y)

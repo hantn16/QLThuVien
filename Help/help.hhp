@@ -2,37 +2,37 @@
 Compatibility=1.1 or later
 Compiled file=help.chm
 Contents file=Table of Contents.hhc
-Default topic=capnhatsach.htm
+Default topic=CapNhatsach.htm
 Display compile progress=No
 Index file=Index.hhk
 Language=0x409 English (United States)
 
 
 [FILES]
-capnhatsach.htm
+CapNhatsach.htm
 dangnhap.htm
 dangxuat.htm
 giahansach.htm
 khoa.htm
 loaisach.htm
 muonsach.htm
-ngonngu.htm
+NgonNgu.htm
 nhxb.htm
-phanloaisach.htm
+TheLoaisach.htm
 phanquyen.htm
 qltaikhoan.htm
 sua.htm
-tacgia.htm
-taomoi.htm
+TacGia.htm
+TaoMoi.htm
 Thongke.htm
 Timkiemsach.htm
-tkdocgia.htm
+tkDocGia.htm
 tksachcoban.htm
 tksachnangcao.htm
 tracuusach.htm
-trasach.htm
+TraSach.htm
 ttcanhan.htm
-ttdocgia.htm
+ttDocGia.htm
 ttmuontheongay.htm
 ttmuontrongngay.htm
 ttsachhong.htm

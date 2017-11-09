@@ -1,6 +1,6 @@
 ﻿namespace quanly.frm
 {
-    partial class Frmcapnhatsach
+    partial class FrmCapNhatsach
     {
         /// <summary>
         /// Required designer variable.
@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmcapnhatsach));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCapNhatsach));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbngonngu = new System.Windows.Forms.ComboBox();
-            this.cbthethuc = new System.Windows.Forms.ComboBox();
-            this.txtngaynhap = new System.Windows.Forms.TextBox();
-            this.txtsolanmuon = new System.Windows.Forms.TextBox();
+            this.cbNgonNgu = new System.Windows.Forms.ComboBox();
+            this.cbTheThuc = new System.Windows.Forms.ComboBox();
+            this.txtNgayNhap = new System.Windows.Forms.TextBox();
+            this.txtSoLanMuon = new System.Windows.Forms.TextBox();
             this.txtke = new System.Windows.Forms.TextBox();
             this.txtngan = new System.Windows.Forms.TextBox();
             this.txtkho = new System.Windows.Forms.TextBox();
             this.txtlanxuatban = new System.Windows.Forms.TextBox();
             this.txtnamxuatban = new System.Windows.Forms.TextBox();
-            this.txtsoluong = new System.Windows.Forms.TextBox();
-            this.txtsotrang = new System.Windows.Forms.TextBox();
-            this.txtmasach = new System.Windows.Forms.TextBox();
-            this.txtnhande = new System.Windows.Forms.TextBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.txtSoTrang = new System.Windows.Forms.TextBox();
+            this.txtMaSach = new System.Windows.Forms.TextBox();
+            this.txtNhanDe = new System.Windows.Forms.TextBox();
             this.cbloaisach = new System.Windows.Forms.ComboBox();
-            this.cbtacgia = new System.Windows.Forms.ComboBox();
-            this.cbnhaxuatban = new System.Windows.Forms.ComboBox();
+            this.cbTacGia = new System.Windows.Forms.ComboBox();
+            this.cbNhaXuatBan = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.btcapnhat = new System.Windows.Forms.Button();
+            this.btCapNhat = new System.Windows.Forms.Button();
             this.btxoa = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -84,22 +84,22 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
-            this.groupBox1.Controls.Add(this.cbngonngu);
-            this.groupBox1.Controls.Add(this.cbthethuc);
-            this.groupBox1.Controls.Add(this.txtngaynhap);
-            this.groupBox1.Controls.Add(this.txtsolanmuon);
+            this.groupBox1.Controls.Add(this.cbNgonNgu);
+            this.groupBox1.Controls.Add(this.cbTheThuc);
+            this.groupBox1.Controls.Add(this.txtNgayNhap);
+            this.groupBox1.Controls.Add(this.txtSoLanMuon);
             this.groupBox1.Controls.Add(this.txtke);
             this.groupBox1.Controls.Add(this.txtngan);
             this.groupBox1.Controls.Add(this.txtkho);
             this.groupBox1.Controls.Add(this.txtlanxuatban);
             this.groupBox1.Controls.Add(this.txtnamxuatban);
-            this.groupBox1.Controls.Add(this.txtsoluong);
-            this.groupBox1.Controls.Add(this.txtsotrang);
-            this.groupBox1.Controls.Add(this.txtmasach);
-            this.groupBox1.Controls.Add(this.txtnhande);
+            this.groupBox1.Controls.Add(this.txtSoLuong);
+            this.groupBox1.Controls.Add(this.txtSoTrang);
+            this.groupBox1.Controls.Add(this.txtMaSach);
+            this.groupBox1.Controls.Add(this.txtNhanDe);
             this.groupBox1.Controls.Add(this.cbloaisach);
-            this.groupBox1.Controls.Add(this.cbtacgia);
-            this.groupBox1.Controls.Add(this.cbnhaxuatban);
+            this.groupBox1.Controls.Add(this.cbTacGia);
+            this.groupBox1.Controls.Add(this.cbNhaXuatBan);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -125,48 +125,48 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết sách";
             // 
-            // cbngonngu
+            // cbNgonNgu
             // 
-            this.cbngonngu.Enabled = false;
-            this.cbngonngu.FormattingEnabled = true;
-            this.cbngonngu.Location = new System.Drawing.Point(328, 49);
-            this.cbngonngu.Name = "cbngonngu";
-            this.cbngonngu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbngonngu.Size = new System.Drawing.Size(148, 21);
-            this.cbngonngu.TabIndex = 6;
+            this.cbNgonNgu.Enabled = false;
+            this.cbNgonNgu.FormattingEnabled = true;
+            this.cbNgonNgu.Location = new System.Drawing.Point(328, 49);
+            this.cbNgonNgu.Name = "cbNgonNgu";
+            this.cbNgonNgu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbNgonNgu.Size = new System.Drawing.Size(148, 21);
+            this.cbNgonNgu.TabIndex = 6;
             // 
-            // cbthethuc
+            // cbTheThuc
             // 
-            this.cbthethuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbthethuc.Enabled = false;
-            this.cbthethuc.FormattingEnabled = true;
-            this.cbthethuc.Items.AddRange(new object[] {
+            this.cbTheThuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTheThuc.Enabled = false;
+            this.cbTheThuc.FormattingEnabled = true;
+            this.cbTheThuc.Items.AddRange(new object[] {
             "Mượn tại chỗ",
             "Mượn về nhà",
             "Mượn giáo trình"});
-            this.cbthethuc.Location = new System.Drawing.Point(328, 134);
-            this.cbthethuc.Name = "cbthethuc";
-            this.cbthethuc.Size = new System.Drawing.Size(121, 21);
-            this.cbthethuc.TabIndex = 9;
-            this.cbthethuc.Tag = "12";
+            this.cbTheThuc.Location = new System.Drawing.Point(328, 134);
+            this.cbTheThuc.Name = "cbTheThuc";
+            this.cbTheThuc.Size = new System.Drawing.Size(121, 21);
+            this.cbTheThuc.TabIndex = 9;
+            this.cbTheThuc.Tag = "12";
             // 
-            // txtngaynhap
+            // txtNgayNhap
             // 
-            this.txtngaynhap.Enabled = false;
-            this.txtngaynhap.Location = new System.Drawing.Point(91, 203);
-            this.txtngaynhap.Name = "txtngaynhap";
-            this.txtngaynhap.Size = new System.Drawing.Size(79, 20);
-            this.txtngaynhap.TabIndex = 2;
-            this.txtngaynhap.Tag = "7";
+            this.txtNgayNhap.Enabled = false;
+            this.txtNgayNhap.Location = new System.Drawing.Point(91, 203);
+            this.txtNgayNhap.Name = "txtNgayNhap";
+            this.txtNgayNhap.Size = new System.Drawing.Size(79, 20);
+            this.txtNgayNhap.TabIndex = 2;
+            this.txtNgayNhap.Tag = "7";
             // 
-            // txtsolanmuon
+            // txtSoLanMuon
             // 
-            this.txtsolanmuon.Enabled = false;
-            this.txtsolanmuon.Location = new System.Drawing.Point(91, 177);
-            this.txtsolanmuon.Name = "txtsolanmuon";
-            this.txtsolanmuon.Size = new System.Drawing.Size(44, 20);
-            this.txtsolanmuon.TabIndex = 19;
-            this.txtsolanmuon.Tag = "6";
+            this.txtSoLanMuon.Enabled = false;
+            this.txtSoLanMuon.Location = new System.Drawing.Point(91, 177);
+            this.txtSoLanMuon.Name = "txtSoLanMuon";
+            this.txtSoLanMuon.Size = new System.Drawing.Size(44, 20);
+            this.txtSoLanMuon.TabIndex = 19;
+            this.txtSoLanMuon.Tag = "6";
             // 
             // txtke
             // 
@@ -212,43 +212,43 @@
             this.txtnamxuatban.TabIndex = 2;
             this.txtnamxuatban.Tag = "4";
             // 
-            // txtsoluong
+            // txtSoLuong
             // 
-            this.txtsoluong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtsoluong.Enabled = false;
-            this.txtsoluong.Location = new System.Drawing.Point(91, 101);
-            this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(44, 20);
-            this.txtsoluong.TabIndex = 18;
-            this.txtsoluong.Tag = "3";
+            this.txtSoLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSoLuong.Enabled = false;
+            this.txtSoLuong.Location = new System.Drawing.Point(91, 101);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(44, 20);
+            this.txtSoLuong.TabIndex = 18;
+            this.txtSoLuong.Tag = "3";
             // 
-            // txtsotrang
+            // txtSoTrang
             // 
-            this.txtsotrang.Enabled = false;
-            this.txtsotrang.Location = new System.Drawing.Point(91, 75);
-            this.txtsotrang.Name = "txtsotrang";
-            this.txtsotrang.Size = new System.Drawing.Size(44, 20);
-            this.txtsotrang.TabIndex = 2;
-            this.txtsotrang.Tag = "2";
+            this.txtSoTrang.Enabled = false;
+            this.txtSoTrang.Location = new System.Drawing.Point(91, 75);
+            this.txtSoTrang.Name = "txtSoTrang";
+            this.txtSoTrang.Size = new System.Drawing.Size(44, 20);
+            this.txtSoTrang.TabIndex = 2;
+            this.txtSoTrang.Tag = "2";
             // 
-            // txtmasach
+            // txtMaSach
             // 
-            this.txtmasach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtmasach.Enabled = false;
-            this.txtmasach.Location = new System.Drawing.Point(91, 21);
-            this.txtmasach.Name = "txtmasach";
-            this.txtmasach.Size = new System.Drawing.Size(100, 20);
-            this.txtmasach.TabIndex = 17;
-            this.txtmasach.Tag = "0";
+            this.txtMaSach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaSach.Enabled = false;
+            this.txtMaSach.Location = new System.Drawing.Point(91, 21);
+            this.txtMaSach.Name = "txtMaSach";
+            this.txtMaSach.Size = new System.Drawing.Size(100, 20);
+            this.txtMaSach.TabIndex = 17;
+            this.txtMaSach.Tag = "0";
             // 
-            // txtnhande
+            // txtNhanDe
             // 
-            this.txtnhande.Enabled = false;
-            this.txtnhande.Location = new System.Drawing.Point(91, 50);
-            this.txtnhande.Name = "txtnhande";
-            this.txtnhande.Size = new System.Drawing.Size(141, 20);
-            this.txtnhande.TabIndex = 2;
-            this.txtnhande.Tag = "1";
+            this.txtNhanDe.Enabled = false;
+            this.txtNhanDe.Location = new System.Drawing.Point(91, 50);
+            this.txtNhanDe.Name = "txtNhanDe";
+            this.txtNhanDe.Size = new System.Drawing.Size(141, 20);
+            this.txtNhanDe.TabIndex = 2;
+            this.txtNhanDe.Tag = "1";
             // 
             // cbloaisach
             // 
@@ -260,25 +260,25 @@
             this.cbloaisach.TabIndex = 1;
             this.cbloaisach.Tag = "5";
             // 
-            // cbtacgia
+            // cbTacGia
             // 
-            this.cbtacgia.Enabled = false;
-            this.cbtacgia.FormattingEnabled = true;
-            this.cbtacgia.Location = new System.Drawing.Point(328, 74);
-            this.cbtacgia.Name = "cbtacgia";
-            this.cbtacgia.Size = new System.Drawing.Size(148, 21);
-            this.cbtacgia.TabIndex = 7;
-            this.cbtacgia.Tag = "10";
+            this.cbTacGia.Enabled = false;
+            this.cbTacGia.FormattingEnabled = true;
+            this.cbTacGia.Location = new System.Drawing.Point(328, 74);
+            this.cbTacGia.Name = "cbTacGia";
+            this.cbTacGia.Size = new System.Drawing.Size(148, 21);
+            this.cbTacGia.TabIndex = 7;
+            this.cbTacGia.Tag = "10";
             // 
-            // cbnhaxuatban
+            // cbNhaXuatBan
             // 
-            this.cbnhaxuatban.Enabled = false;
-            this.cbnhaxuatban.FormattingEnabled = true;
-            this.cbnhaxuatban.Location = new System.Drawing.Point(328, 103);
-            this.cbnhaxuatban.Name = "cbnhaxuatban";
-            this.cbnhaxuatban.Size = new System.Drawing.Size(148, 21);
-            this.cbnhaxuatban.TabIndex = 8;
-            this.cbnhaxuatban.Tag = "11";
+            this.cbNhaXuatBan.Enabled = false;
+            this.cbNhaXuatBan.FormattingEnabled = true;
+            this.cbNhaXuatBan.Location = new System.Drawing.Point(328, 103);
+            this.cbNhaXuatBan.Name = "cbNhaXuatBan";
+            this.cbNhaXuatBan.Size = new System.Drawing.Size(148, 21);
+            this.cbNhaXuatBan.TabIndex = 8;
+            this.cbNhaXuatBan.Tag = "11";
             // 
             // label10
             // 
@@ -427,7 +427,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.btcapnhat);
+            this.groupBox2.Controls.Add(this.btCapNhat);
             this.groupBox2.Controls.Add(this.btxoa);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(174, 381);
@@ -448,17 +448,17 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // btcapnhat
+            // btCapNhat
             // 
-            this.btcapnhat.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btcapnhat.Location = new System.Drawing.Point(171, 12);
-            this.btcapnhat.Name = "btcapnhat";
-            this.btcapnhat.Size = new System.Drawing.Size(75, 37);
-            this.btcapnhat.TabIndex = 15;
-            this.btcapnhat.Tag = "19";
-            this.btcapnhat.Text = "Cập nhật";
-            this.btcapnhat.UseVisualStyleBackColor = false;
-            this.btcapnhat.Click += new System.EventHandler(this.btcapnhat_Click);
+            this.btCapNhat.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btCapNhat.Location = new System.Drawing.Point(171, 12);
+            this.btCapNhat.Name = "btCapNhat";
+            this.btCapNhat.Size = new System.Drawing.Size(75, 37);
+            this.btCapNhat.TabIndex = 15;
+            this.btCapNhat.Tag = "19";
+            this.btCapNhat.Text = "Cập nhật";
+            this.btCapNhat.UseVisualStyleBackColor = false;
+            this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
             // 
             // btxoa
             // 
@@ -540,9 +540,9 @@
             this.cậpNhậtToolStripMenuItem.Name = "cậpNhậtToolStripMenuItem";
             this.cậpNhậtToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.cậpNhậtToolStripMenuItem.Text = "Cập nhật";
-            this.cậpNhậtToolStripMenuItem.Click += new System.EventHandler(this.btcapnhat_Click);
+            this.cậpNhậtToolStripMenuItem.Click += new System.EventHandler(this.btCapNhat_Click);
             // 
-            // Frmcapnhatsach
+            // FrmCapNhatsach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -554,10 +554,10 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Frmcapnhatsach";
+            this.Name = "FrmCapNhatsach";
             this.Text = "Cập nhật thông tin cho sách trong kho";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frmcapnhatsach_FormClosed);
-            this.Load += new System.EventHandler(this.Frmcapnhatsach_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCapNhatsach_FormClosed);
+            this.Load += new System.EventHandler(this.FrmCapNhatsach_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -578,22 +578,22 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbloaisach;
-        private System.Windows.Forms.ComboBox cbtacgia;
-        private System.Windows.Forms.ComboBox cbnhaxuatban;
+        private System.Windows.Forms.ComboBox cbTacGia;
+        private System.Windows.Forms.ComboBox cbNhaXuatBan;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtsolanmuon;
+        private System.Windows.Forms.TextBox txtSoLanMuon;
         private System.Windows.Forms.TextBox txtlanxuatban;
         private System.Windows.Forms.TextBox txtnamxuatban;
-        private System.Windows.Forms.TextBox txtsoluong;
-        private System.Windows.Forms.TextBox txtsotrang;
-        private System.Windows.Forms.TextBox txtnhande;
-        private System.Windows.Forms.TextBox txtmasach;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtSoTrang;
+        private System.Windows.Forms.TextBox txtNhanDe;
+        private System.Windows.Forms.TextBox txtMaSach;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btcapnhat;
+        private System.Windows.Forms.Button btCapNhat;
         private System.Windows.Forms.Button btxoa;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
@@ -604,15 +604,15 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtngaynhap;
+        private System.Windows.Forms.TextBox txtNgayNhap;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cbthethuc;
+        private System.Windows.Forms.ComboBox cbTheThuc;
         private System.Windows.Forms.Label lb;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tạoMớiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xoáBỏToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtToolStripMenuItem;
-        private System.Windows.Forms.ComboBox cbngonngu;
+        private System.Windows.Forms.ComboBox cbNgonNgu;
     }
 }

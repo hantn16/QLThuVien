@@ -26,19 +26,19 @@ namespace quanly.frm
         void Load_combobox()
         {
             laydulieu dl = new laydulieu();
-            SqlDataReader dr1 = dl.lay_reader("select loai from phanloai");
+            SqlDataReader dr1 = dl.lay_reader("select loai from TheLoai");
             while (dr1.Read())
                 cbloaisach.Items.Add(dr1[0].ToString());
             L_Ketnoi.HuyKetNoi();
             L_Ketnoi.ThietlapketNoi();
-            SqlDataReader dr2 = dl.lay_reader("select ngonngu from ngonngu");
+            SqlDataReader dr2 = dl.lay_reader("select NgonNgu from NgonNgu");
             while (dr2.Read())
-                cbngonngu.Items.Add(dr2[0].ToString());
+                cbNgonNgu.Items.Add(dr2[0].ToString());
             L_Ketnoi.HuyKetNoi();
             L_Ketnoi.ThietlapketNoi();
-            SqlDataReader dr3 = dl.lay_reader("select tentacgia from tacgia");
+            SqlDataReader dr3 = dl.lay_reader("select TenTacGia from TacGia");
             while (dr3.Read())
-                cbtacgiac.Items.Add(dr3[0].ToString());
+                cbTacGiac.Items.Add(dr3[0].ToString());
             L_Ketnoi.HuyKetNoi();
             
 
@@ -53,7 +53,7 @@ namespace quanly.frm
         private void button1_Click(object sender, EventArgs e)
         {
             TimKiem tk = new TimKiem();
-            ds = tk.nangcao(textBox1.Text, cbtacgiac.Text, cbloaisach.Text, cbngonngu.Text);
+            ds = tk.nangcao(textBox1.Text, cbTacGiac.Text, cbloaisach.Text, cbNgonNgu.Text);
             dataGridView1.DataSource = ds.Tables[0];
             cm = BindingContext[this.ds.Tables[0]] as CurrencyManager;
             label5.Text = cm.Count.ToString();
@@ -61,8 +61,8 @@ namespace quanly.frm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Frmcapnhatsach cn = new Frmcapnhatsach();
-            Frmcapnhatsach.tb = ds.Tables[0].Rows[cm.Position][0].ToString();
+            FrmCapNhatsach cn = new FrmCapNhatsach();
+            FrmCapNhatsach.tb = ds.Tables[0].Rows[cm.Position][0].ToString();
             cn.Show();
         
         }

@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using quanly.lopdulieu;
 using quanly.doituong;
 using System.IO;
+using quanly.DoiTuong;
+
 namespace quanly.frm
 {
     public partial class Frmquanlybandoc : Form
@@ -33,8 +35,8 @@ namespace quanly.frm
         {
             Frmmain.tt = true;
             laydulieu dl = new laydulieu();
-            ds = dl.getdata("select * from khoa;select * from docgia");
-            DataRelation dr = new DataRelation("Danh sách sinh viên", ds.Tables[0].Columns["makhoa"], ds.Tables[1].Columns["makhoa"]);
+            ds = dl.getdata("select * from khoa;select * from DocGia");
+            DataRelation dr = new DataRelation("Danh sách sinh viên", ds.Tables[0].Columns["MaKhoa"], ds.Tables[1].Columns["MaKhoa"]);
             ds.Relations.Add(dr);
             cm = BindingContext[this.ds.Tables[1]] as CurrencyManager;
             dataGrid1.DataSource = ds.Tables[0];
@@ -48,14 +50,14 @@ namespace quanly.frm
         }
         void load_text(int i)
         {
-            txtdiachi.Text = ds.Tables[1].Rows[i]["diachi"].ToString();
-            txthoten.Text = ds.Tables[1].Rows[i]["hoten"].ToString();
-            txtmadocgia.Text = ds.Tables[1].Rows[i]["madocgia"].ToString();
-            txtngaylapthe.Text = DateTime.Parse(ds.Tables[1].Rows[i]["ngaylapthe"].ToString()).ToShortDateString();
-            txtngaysinh.Text = DateTime.Parse(ds.Tables[1].Rows[i]["ngaysinh"].ToString()).ToShortDateString();
-            txtvitri.Text = ds.Tables[1].Rows[i]["vitri"].ToString();
+            txtDiaChi.Text = ds.Tables[1].Rows[i]["DiaChi"].ToString();
+            txtHoTen.Text = ds.Tables[1].Rows[i]["HoTen"].ToString();
+            txtMaDocGia.Text = ds.Tables[1].Rows[i]["MaDocGia"].ToString();
+            txtNgayLapThe.Text = DateTime.Parse(ds.Tables[1].Rows[i]["NgayLapThe"].ToString()).ToShortDateString();
+            txtNgaySinh.Text = DateTime.Parse(ds.Tables[1].Rows[i]["NgaySinh"].ToString()).ToShortDateString();
+            txtViTri.Text = ds.Tables[1].Rows[i]["ViTri"].ToString();
             laydulieu layd = new laydulieu();
-            SqlDataReader drr = layd.lay_reader("select tenkhoa from khoa where makhoa ='" + ds.Tables[1].Rows[i]["makhoa"].ToString()+"'");
+            SqlDataReader drr = layd.lay_reader("select tenkhoa from khoa where MaKhoa ='" + ds.Tables[1].Rows[i]["MaKhoa"].ToString()+"'");
             while (drr.Read())
                 txttenkhoa.Text = drr[0].ToString();
             L_Ketnoi.HuyKetNoi();
@@ -86,12 +88,12 @@ namespace quanly.frm
         }
         #endregion
         #region Các thủ tục cập nhật , chèn , xoá
-        private void bttaomoi_Click(object sender, EventArgs e)
+        private void btTaoMoi_Click(object sender, EventArgs e)
         {
-            if (bttaomoi.Text == "OK")
+            if (btTaoMoi.Text == "OK")
             {
                 laydulieu dl = new laydulieu();
-                SqlDataReader dr = dl.lay_reader("select makhoa from khoa where tenkhoa=N'" + txttenkhoa.Text + "'");
+                SqlDataReader dr = dl.lay_reader("select MaKhoa from khoa where tenkhoa=N'" + txttenkhoa.Text + "'");
                 string tam = "";
                 while (dr.Read())
                     tam = dr[0].ToString();
@@ -101,14 +103,14 @@ namespace quanly.frm
                 {
                     try
                     {
-                        DateTime ns = DateTime.Parse(DateTime.Parse(txtngaysinh.Text).ToShortDateString());
-                        Lbandoc bd = new Lbandoc(txtmadocgia.Text, txthoten.Text, tam, txtvitri.Text, txtdiachi.Text, ns, DateTime.Parse(txtngaylapthe.Text));
-                        if (bd.taomoi())
+                        DateTime ns = DateTime.Parse(DateTime.Parse(txtNgaySinh.Text).ToShortDateString());
+                        BanDoc bd = new BanDoc(txtMaDocGia.Text, txtHoTen.Text, tam, txtViTri.Text, txtDiaChi.Text, ns, DateTime.Parse(txtNgayLapThe.Text));
+                        if (bd.TaoMoi())
                         {
-                            txtdiachi.Enabled = txthoten.Enabled = txtngaysinh.Enabled = txttenkhoa.Enabled = txtvitri.Enabled = false;
-                            bttaomoi.Text = "Tạo mới";
-                            btcapnhat.Enabled = btxoabo.Enabled = true;
-                            ctcapnhat.Enabled = cttaomoi.Enabled = ctxoabo.Enabled = ctchondoituong.Enabled = true;
+                            txtDiaChi.Enabled = txtHoTen.Enabled = txtNgaySinh.Enabled = txttenkhoa.Enabled = txtViTri.Enabled = false;
+                            btTaoMoi.Text = "Tạo mới";
+                            btCapNhat.Enabled = btXoaBo.Enabled = true;
+                            ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = ctchondoituong.Enabled = true;
                             Frmquanlybandoc_Load(sender, e);
                             MessageBox.Show("Quá trình tạo mới hoàn thành");
                             Frmmain.hf.timer5.Enabled = true;
@@ -127,23 +129,23 @@ namespace quanly.frm
             }
             else
             {
-                txtdiachi.Enabled = txthoten.Enabled = txtngaysinh.Enabled = txttenkhoa.Enabled = txtvitri.Enabled = true;
-                txtdiachi.Text = txthoten.Text = txtngaysinh.Text = txtvitri.Text = "";
-                txtngaylapthe.Text = DateTime.Now.ToShortDateString();
-                bttaomoi.Text = "OK";
-                string macuoi = taoma(ds.Tables[1].Rows[cm.Count - 1]["madocgia"].ToString());
-                txtmadocgia.Text = macuoi;
-                btcapnhat.Enabled = btxoabo.Enabled = false;
-                ctcapnhat.Enabled = cttaomoi.Enabled = ctxoabo.Enabled = ctchondoituong.Enabled = false;
+                txtDiaChi.Enabled = txtHoTen.Enabled = txtNgaySinh.Enabled = txttenkhoa.Enabled = txtViTri.Enabled = true;
+                txtDiaChi.Text = txtHoTen.Text = txtNgaySinh.Text = txtViTri.Text = "";
+                txtNgayLapThe.Text = DateTime.Now.ToShortDateString();
+                btTaoMoi.Text = "OK";
+                string macuoi = taoma(ds.Tables[1].Rows[cm.Count - 1]["MaDocGia"].ToString());
+                txtMaDocGia.Text = macuoi;
+                btCapNhat.Enabled = btXoaBo.Enabled = false;
+                ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = ctchondoituong.Enabled = false;
             }
         }
-        private void btxoabo_Click(object sender, EventArgs e)
+        private void btXoaBo_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có thực sự muốn xoá độc giả này ra khỏi danh sách không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Lbandoc bd = new Lbandoc();
-                bd.set_madocgia(txtmadocgia.Text);
-                if (bd.xoabo())
+                BanDoc bd = new BanDoc();
+                bd.MaDocGia = txtMaDocGia.Text;
+                if (bd.XoaBo())
                 {
                     i--;
                     Frmquanlybandoc_Load(sender, e);
@@ -155,12 +157,12 @@ namespace quanly.frm
                 }
             }
         }
-        private void btcapnhat_Click(object sender, EventArgs e)
+        private void btCapNhat_Click(object sender, EventArgs e)
         {
-            if (btcapnhat.Text == "OK")
+            if (btCapNhat.Text == "OK")
             {
                 laydulieu dl = new laydulieu();
-                SqlDataReader dr = dl.lay_reader("select makhoa from khoa where tenkhoa=N'" + txttenkhoa.Text + "'");
+                SqlDataReader dr = dl.lay_reader("select MaKhoa from khoa where tenkhoa=N'" + txttenkhoa.Text + "'");
                 string tam = "";
                 while (dr.Read())
                     tam = dr[0].ToString();
@@ -170,14 +172,14 @@ namespace quanly.frm
                 {
                     try
                     {
-                        DateTime ns = DateTime.Parse(DateTime.Parse(txtngaysinh.Text).ToShortDateString());
-                        Lbandoc bd = new Lbandoc(txtmadocgia.Text, txthoten.Text, tam, txtvitri.Text, txtdiachi.Text, ns, DateTime.Parse(txtngaylapthe.Text));
-                        if (bd.capnhat())
+                        DateTime ns = DateTime.Parse(DateTime.Parse(txtNgaySinh.Text).ToShortDateString());
+                        BanDoc bd = new BanDoc(txtMaDocGia.Text, txtHoTen.Text, tam, txtViTri.Text, txtDiaChi.Text, ns, DateTime.Parse(txtNgayLapThe.Text));
+                        if (bd.CapNhat())
                         {
-                            txtngaylapthe.Enabled = txtdiachi.Enabled = txthoten.Enabled = txtngaysinh.Enabled = txttenkhoa.Enabled = txtvitri.Enabled = false;
-                            btcapnhat.Text = "Cập nhật";
-                            bttaomoi.Enabled = btxoabo.Enabled = true;
-                            ctcapnhat.Enabled = cttaomoi.Enabled = ctxoabo.Enabled = ctchondoituong.Enabled = true;
+                            txtNgayLapThe.Enabled = txtDiaChi.Enabled = txtHoTen.Enabled = txtNgaySinh.Enabled = txttenkhoa.Enabled = txtViTri.Enabled = false;
+                            btCapNhat.Text = "Cập nhật";
+                            btTaoMoi.Enabled = btXoaBo.Enabled = true;
+                            ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = ctchondoituong.Enabled = true;
                             Frmquanlybandoc_Load(sender, e);
                             MessageBox.Show("Quá trình cập nhật hoàn thành");
                         }
@@ -188,10 +190,10 @@ namespace quanly.frm
             }
             else
             {
-                txtngaylapthe.Enabled = txtdiachi.Enabled = txthoten.Enabled = txtngaysinh.Enabled = txttenkhoa.Enabled = txtvitri.Enabled = true;
-                btcapnhat.Text = "OK";
-                bttaomoi.Enabled = btxoabo.Enabled = false;
-                ctcapnhat.Enabled = cttaomoi.Enabled = ctxoabo.Enabled = ctchondoituong.Enabled = false;
+                txtNgayLapThe.Enabled = txtDiaChi.Enabled = txtHoTen.Enabled = txtNgaySinh.Enabled = txttenkhoa.Enabled = txtViTri.Enabled = true;
+                btCapNhat.Text = "OK";
+                btTaoMoi.Enabled = btXoaBo.Enabled = false;
+                ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = ctchondoituong.Enabled = false;
             }
         }
         #endregion
@@ -199,29 +201,29 @@ namespace quanly.frm
         {
             if (ctchondoituong.Text == "Chọn đối tượng")
             {
-                txtmadocgia.Enabled = true;
+                txtMaDocGia.Enabled = true;
                 ctchondoituong.Text = "Thực hiện";
-                btcapnhat.Enabled = btxoabo.Enabled = bttaomoi.Enabled = false;
-                ctcapnhat.Enabled = cttaomoi.Enabled = ctxoabo.Enabled = false;
+                btCapNhat.Enabled = btXoaBo.Enabled = btTaoMoi.Enabled = false;
+                ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = false;
             }
             else
             {
-                txtmadocgia.Enabled = false;
+                txtMaDocGia.Enabled = false;
                 ctchondoituong.Text = "Chọn đối tượng";
-                btcapnhat.Enabled = btxoabo.Enabled = bttaomoi.Enabled = true;
-                ctcapnhat.Enabled = cttaomoi.Enabled = ctxoabo.Enabled = true;
+                btCapNhat.Enabled = btXoaBo.Enabled = btTaoMoi.Enabled = true;
+                ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = true;
                 DataView dv = new DataView();
                 dv.Table = ds.Tables[1];
-                dv.RowFilter = "madocgia='"+ txtmadocgia.Text+"'";
+                dv.RowFilter = "MaDocGia='"+ txtMaDocGia.Text+"'";
                 if (dv.Count == 0) MessageBox.Show("Bạn hãy kiểm tra lại mã vừa nhập", "Thông báo");
                 else 
                 {
-                    txtdiachi.Text = dv[0]["diachi"].ToString();
-                    txthoten.Text = dv[0]["hoten"].ToString();
-                    txtmadocgia.Text = dv[0]["madocgia"].ToString();
-                    txtngaylapthe.Text = DateTime.Parse(dv[0]["ngaylapthe"].ToString()).ToShortDateString();
-                    txtngaysinh.Text = DateTime.Parse(dv[0]["ngaysinh"].ToString()).ToShortDateString();
-                    txtvitri.Text = dv[0]["vitri"].ToString();
+                    txtDiaChi.Text = dv[0]["DiaChi"].ToString();
+                    txtHoTen.Text = dv[0]["HoTen"].ToString();
+                    txtMaDocGia.Text = dv[0]["MaDocGia"].ToString();
+                    txtNgayLapThe.Text = DateTime.Parse(dv[0]["NgayLapThe"].ToString()).ToShortDateString();
+                    txtNgaySinh.Text = DateTime.Parse(dv[0]["NgaySinh"].ToString()).ToShortDateString();
+                    txtViTri.Text = dv[0]["ViTri"].ToString();
                 }
             }
         }
@@ -261,19 +263,19 @@ namespace quanly.frm
                 StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
                 sw.WriteLine("==========Thông tin của độc giả thư viện===========");
                 sw.WriteLine("--------------------------------------------------");
-                sw.WriteLine("| Mã độc giả  :        " + txtmadocgia.Text);
+                sw.WriteLine("| Mã độc giả  :        " + txtMaDocGia.Text);
                 sw.WriteLine("---------------------------------------------------");
-                sw.WriteLine("| Họ tên      :        " + txthoten.Text);
+                sw.WriteLine("| Họ tên      :        " + txtHoTen.Text);
                 sw.WriteLine("---------------------------------------------------");
-                sw.WriteLine("| Địa chỉ     :        " + txtdiachi.Text);
+                sw.WriteLine("| Địa chỉ     :        " + txtDiaChi.Text);
                 sw.WriteLine("---------------------------------------------------");
-                sw.WriteLine("| Ngày sinh   :        " + txtngaysinh.Text);
+                sw.WriteLine("| Ngày sinh   :        " + txtNgaySinh.Text);
                 sw.WriteLine("---------------------------------------------------");
-                sw.WriteLine("| Ngày lập thẻ:        " + txtngaylapthe.Text);
+                sw.WriteLine("| Ngày lập thẻ:        " + txtNgayLapThe.Text);
                 sw.WriteLine("---------------------------------------------------");
                 sw.WriteLine("| Tên khoa    :        " + txttenkhoa.Text);
                 sw.WriteLine("---------------------------------------------------");
-                sw.WriteLine("| Vị trí      :        " + txtvitri.Text);
+                sw.WriteLine("| Vị trí      :        " + txtViTri.Text);
                 sw.WriteLine("---------------------------------------------------");
                 sw.Close();
             }
@@ -294,7 +296,7 @@ namespace quanly.frm
             catch { }
         }
 
-        private void txtmadocgia_KeyDown(object sender, KeyEventArgs e)
+        private void txtMaDocGia_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter) hToolStripMenuItem_Click(sender, e);
         }

@@ -16,27 +16,27 @@ namespace quanly.frm
         {
             InitializeComponent();
         }
-        string strthethuc = "";
+        string strTheThuc = "";
         bool ktsach = false, ktbandoc = false;
         private void button1_Click(object sender, EventArgs e)
         {
             laydulieu dl = new laydulieu();
             bool tam = false;
-            SqlDataReader dr = dl.lay_reader("select thethuc,ten,lanxb,nhande,soluong ,namxb,sotrang,ngonngu,tentacgia, kho,ke,ngan from sach,ngonngu,nhaxuatban,vitriluutru,tacgia where sach.matacgia = tacgia.matacgia and sach.mangonngu = ngonngu.mangonngu and sach.manxb = nhaxuatban.manxb and sach.mavitri = vitriluutru.mavitri and sach.masach='"+ txtmasach.Text+"'");
+            SqlDataReader dr = dl.lay_reader("select TheThuc,ten,LanXuatBan,NhanDe,SoLuong ,NamXuatBan,SoTrang,NgonNgu,TenTacGia, kho,ke,ngan from sach,NgonNgu,NhaXuatBan,ViTriluutru,TacGia where sach.MaTacGia = TacGia.MaTacGia and sach.MaNgonNgu = NgonNgu.MaNgonNgu and sach.MaNXB = NhaXuatBan.MaNXB and sach.MaViTri = ViTriluutru.MaViTri and sach.MaSach='"+ txtMaSach.Text+"'");
             while (dr.Read())
             {
-                txtnamxb.Text = DateTime.Parse(dr["namxb"].ToString()).ToShortDateString();
+                txtNamXuatBan.Text = DateTime.Parse(dr["NamXuatBan"].ToString()).ToShortDateString();
                 txtke.Text = dr["ke"].ToString();
                 txtkho.Text = dr["kho"].ToString();
-                txtlanxuatban.Text = dr["lanxb"].ToString();
+                txtlanxuatban.Text = dr["LanXuatBan"].ToString();
                 txtngan.Text = dr["ngan"].ToString();
-                txtngonngu.Text = dr["ngonngu"].ToString();
-                txtnhande.Text = dr["nhande"].ToString();
+                txtNgonNgu.Text = dr["NgonNgu"].ToString();
+                txtNhanDe.Text = dr["NhanDe"].ToString();
                 txtnhaxb.Text = dr["ten"].ToString();
-                txtsoluong.Text = dr["soluong"].ToString();
-                txtsotrang.Text = dr["sotrang"].ToString();
-                txttacgia.Text = dr["tentacgia"].ToString();
-                txtthethuc.Text = dr["thethuc"].ToString();
+                txtSoLuong.Text = dr["SoLuong"].ToString();
+                txtSoTrang.Text = dr["SoTrang"].ToString();
+                txtTacGia.Text = dr["TenTacGia"].ToString();
+                txtTheThuc.Text = dr["TheThuc"].ToString();
                 tam = true;
                 ktsach = true;
             }
@@ -44,7 +44,7 @@ namespace quanly.frm
             if (tam == true)
             {
                 L_Ketnoi.ThietlapketNoi();
-                SqlDataReader dr1 = dl.lay_reader("select * from sachhong where masach='" + txtmasach.Text + "'");
+                SqlDataReader dr1 = dl.lay_reader("select * from sachhong where MaSach='" + txtMaSach.Text + "'");
                 int i = 0;
                 while (dr1.Read())
                     i++;
@@ -60,7 +60,7 @@ namespace quanly.frm
                     lbhong.Visible = false;
                     lbketqua.Text = "";
                 }
-                txtmasach.Enabled = false;
+                txtMaSach.Enabled = false;
             }
         }
 
@@ -74,12 +74,12 @@ namespace quanly.frm
             laydulieu dl = new laydulieu();
             bool tam = false;
          
-            SqlDataReader dr = dl.lay_reader("select * from docgia,khoa where docgia.madocgia = '"+ txtmabandoc.Text+"'");
+            SqlDataReader dr = dl.lay_reader("select * from DocGia,khoa where DocGia.MaDocGia = '"+ txtmabandoc.Text+"'");
             while (dr.Read())
             {
-                txthoten.Text = dr["hoten"].ToString();
-                txtvitri.Text = dr["vitri"].ToString();
-                txtdiachi.Text = dr["diachi"].ToString();
+                txtHoTen.Text = dr["HoTen"].ToString();
+                txtViTri.Text = dr["ViTri"].ToString();
+                txtDiaChi.Text = dr["DiaChi"].ToString();
                 txtkhoa.Text = dr["tenkhoa"].ToString();
                 tam = true;
                 ktbandoc = true;
@@ -89,11 +89,11 @@ namespace quanly.frm
             if (ktbandoc)
             {
                 L_Ketnoi.ThietlapketNoi();
-                SqlDataReader dr1 = dl.lay_reader("select thethucmuon from phieumuon,sachmuon where phieumuon.maphieumuon = sachmuon.maphieumuon and phieumuon.madocgia='" + txtmabandoc.Text + "'");
+                SqlDataReader dr1 = dl.lay_reader("select TheThucmuon from phieumuon,sachmuon where phieumuon.maphieumuon = sachmuon.maphieumuon and phieumuon.MaDocGia='" + txtmabandoc.Text + "'");
                 while (dr1.Read())
-                    strthethuc = dr1[0].ToString();
+                    strTheThuc = dr1[0].ToString();
                 L_Ketnoi.HuyKetNoi();
-                if (strthethuc != "") MessageBox.Show("Đối tượng này đã mượn sách với thể thức là " + strthethuc);
+                if (strTheThuc != "") MessageBox.Show("Đối tượng này đã mượn sách với thể thức là " + strTheThuc);
                 if (tam)
                 {
                     txtmabandoc.Enabled = false;
@@ -116,12 +116,12 @@ namespace quanly.frm
         {
             ktbandoc = ktsach = false;
             txtmabandoc.Text = "";
-            txtdiachi.Text = txthoten.Text = txtke.Text = txtkho.Text = txtkhoa.Text = "";
-            txtlanxuatban.Text = txtmabandoc.Text = txtmasach.Text = txtnamxb.Text = "";
-            txtngan.Text = txtngonngu.Text = txtnhande.Text = txtnhaxb.Text = txtsoluong.Text = "";
-            txtsotrang.Text = txttacgia.Text = txtvitri.Text = "";txtthethuc.Text = "";
+            txtDiaChi.Text = txtHoTen.Text = txtke.Text = txtkho.Text = txtkhoa.Text = "";
+            txtlanxuatban.Text = txtmabandoc.Text = txtMaSach.Text = txtNamXuatBan.Text = "";
+            txtngan.Text = txtNgonNgu.Text = txtNhanDe.Text = txtnhaxb.Text = txtSoLuong.Text = "";
+            txtSoTrang.Text = txtTacGia.Text = txtViTri.Text = "";txtTheThuc.Text = "";
             bttkbandoc.Enabled = btsach.Enabled = true;
-            txtmasach.Enabled = txtmabandoc.Enabled= true;
+            txtMaSach.Enabled = txtmabandoc.Enabled= true;
             lbhong.Visible = false;
             lbketqua.Text = "";
         }
@@ -155,30 +155,30 @@ namespace quanly.frm
                 if(comboBox1.Text=="") MessageBox.Show("Bạn phải chọn thể thức mượn");
                 else
                 {
-                    if ((comboBox1.Text == strthethuc) && (comboBox1.Text != "Mượn giáo trình"))
-                        MessageBox.Show("Không thể " + strthethuc + " 2 quyển sách, phải trả sách mới được mượn tiếp");
+                    if ((comboBox1.Text == strTheThuc) && (comboBox1.Text != "Mượn giáo trình"))
+                        MessageBox.Show("Không thể " + strTheThuc + " 2 quyển sách, phải trả sách mới được mượn tiếp");
                     else
                     {
-                        if (int.Parse(txtsoluong.Text) < int.Parse(textBox1.Text)) MessageBox.Show("Số lượng sách trong thư viện không đủ cho bạn mượn hãy nhập lại", "Thông báo");
+                        if (int.Parse(txtSoLuong.Text) < int.Parse(textBox1.Text)) MessageBox.Show("Số lượng sách trong thư viện không đủ cho bạn mượn hãy nhập lại", "Thông báo");
                         else
                         {
 
-                            if (txtthethuc.Text != comboBox1.Text) MessageBox.Show("Thể thức bạn mượn sách này không thể đáp ứng được hãy chọn lại sách khác", "Thông báo");
+                            if (txtTheThuc.Text != comboBox1.Text) MessageBox.Show("Thể thức bạn mượn sách này không thể đáp ứng được hãy chọn lại sách khác", "Thông báo");
                             else
                             {
                                 Lsach s = new Lsach();
-                                s.set_masach(txtmasach.Text);
+                                s.MaSach =(txtMaSach.Text);
                                                              
-                                if (s.chomuon(textBox1.Text))
+                                if (s.ChoMuon(textBox1.Text))
                                 {
                                     try
                                     {
                                         int tamsl = int.Parse(textBox1.Text);
-                                        Lphieumuon pm = new Lphieumuon(tam, txtmabandoc.Text, comboBox1.Text, txtmasach.Text, KTdangnhap.strmanhanvien, DateTime.Parse(DateTime.Now.ToShortDateString()), tamsl);
-                                        if (pm.taomoi())
+                                        Lphieumuon pm = new Lphieumuon(tam, txtmabandoc.Text, comboBox1.Text, txtMaSach.Text, KTdangnhap.strMaNhanVien, DateTime.Parse(DateTime.Now.ToShortDateString()), tamsl);
+                                        if (pm.TaoMoi())
                                         {
                                             Lsachmuon sm = new Lsachmuon(tam);
-                                            if (sm.taomoi())
+                                            if (sm.TaoMoi())
                                             {
                                                 button2_Click(sender, e);
                                                 MessageBox.Show("Đã hoàn thành thao tác", "Thông báo");
@@ -223,7 +223,7 @@ namespace quanly.frm
             }
         }
 
-        private void txtmasach_KeyDown(object sender, KeyEventArgs e)
+        private void txtMaSach_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter) button1_Click(sender, e);
         }

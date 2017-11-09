@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtmanhanvien = new System.Windows.Forms.TextBox();
-            this.txtquyenhan = new System.Windows.Forms.TextBox();
-            this.txttendangnhap = new System.Windows.Forms.TextBox();
-            this.txtdiachi = new System.Windows.Forms.TextBox();
-            this.txthoten = new System.Windows.Forms.TextBox();
+            this.txtMaNhanVien = new System.Windows.Forms.TextBox();
+            this.txtQuyenHan = new System.Windows.Forms.TextBox();
+            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.btmatkhau = new System.Windows.Forms.Button();
+            this.btMatKhau = new System.Windows.Forms.Button();
             this.btthongtin = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -50,11 +50,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txtmanhanvien);
-            this.groupBox1.Controls.Add(this.txtquyenhan);
-            this.groupBox1.Controls.Add(this.txttendangnhap);
-            this.groupBox1.Controls.Add(this.txtdiachi);
-            this.groupBox1.Controls.Add(this.txthoten);
+            this.groupBox1.Controls.Add(this.txtMaNhanVien);
+            this.groupBox1.Controls.Add(this.txtQuyenHan);
+            this.groupBox1.Controls.Add(this.txtTenDangNhap);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
+            this.groupBox1.Controls.Add(this.txtHoTen);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -68,54 +68,54 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
             // 
-            // txtmanhanvien
+            // txtMaNhanVien
             // 
-            this.txtmanhanvien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtmanhanvien.Enabled = false;
-            this.txtmanhanvien.Location = new System.Drawing.Point(94, 31);
-            this.txtmanhanvien.Name = "txtmanhanvien";
-            this.txtmanhanvien.Size = new System.Drawing.Size(82, 20);
-            this.txtmanhanvien.TabIndex = 1;
+            this.txtMaNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaNhanVien.Enabled = false;
+            this.txtMaNhanVien.Location = new System.Drawing.Point(94, 31);
+            this.txtMaNhanVien.Name = "txtMaNhanVien";
+            this.txtMaNhanVien.Size = new System.Drawing.Size(82, 20);
+            this.txtMaNhanVien.TabIndex = 1;
             // 
-            // txtquyenhan
+            // txtQuyenHan
             // 
-            this.txtquyenhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtquyenhan.Enabled = false;
-            this.txtquyenhan.Location = new System.Drawing.Point(94, 153);
-            this.txtquyenhan.Name = "txtquyenhan";
-            this.txtquyenhan.Size = new System.Drawing.Size(109, 20);
-            this.txtquyenhan.TabIndex = 3;
-            this.txtquyenhan.Tag = "3";
+            this.txtQuyenHan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQuyenHan.Enabled = false;
+            this.txtQuyenHan.Location = new System.Drawing.Point(94, 153);
+            this.txtQuyenHan.Name = "txtQuyenHan";
+            this.txtQuyenHan.Size = new System.Drawing.Size(109, 20);
+            this.txtQuyenHan.TabIndex = 3;
+            this.txtQuyenHan.Tag = "3";
             // 
-            // txttendangnhap
+            // txtTenDangNhap
             // 
-            this.txttendangnhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txttendangnhap.Enabled = false;
-            this.txttendangnhap.Location = new System.Drawing.Point(94, 127);
-            this.txttendangnhap.Name = "txttendangnhap";
-            this.txttendangnhap.Size = new System.Drawing.Size(155, 20);
-            this.txttendangnhap.TabIndex = 2;
-            this.txttendangnhap.Tag = "2";
+            this.txtTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenDangNhap.Enabled = false;
+            this.txtTenDangNhap.Location = new System.Drawing.Point(94, 127);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(155, 20);
+            this.txtTenDangNhap.TabIndex = 2;
+            this.txtTenDangNhap.Tag = "2";
             // 
-            // txtdiachi
+            // txtDiaChi
             // 
-            this.txtdiachi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtdiachi.Enabled = false;
-            this.txtdiachi.Location = new System.Drawing.Point(94, 101);
-            this.txtdiachi.Name = "txtdiachi";
-            this.txtdiachi.Size = new System.Drawing.Size(186, 20);
-            this.txtdiachi.TabIndex = 1;
-            this.txtdiachi.Tag = "1";
+            this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDiaChi.Enabled = false;
+            this.txtDiaChi.Location = new System.Drawing.Point(94, 101);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(186, 20);
+            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.Tag = "1";
             // 
-            // txthoten
+            // txtHoTen
             // 
-            this.txthoten.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txthoten.Enabled = false;
-            this.txthoten.Location = new System.Drawing.Point(94, 77);
-            this.txthoten.Name = "txthoten";
-            this.txthoten.Size = new System.Drawing.Size(155, 20);
-            this.txthoten.TabIndex = 0;
-            this.txthoten.Tag = "0";
+            this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHoTen.Enabled = false;
+            this.txtHoTen.Location = new System.Drawing.Point(94, 77);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(155, 20);
+            this.txtHoTen.TabIndex = 0;
+            this.txtHoTen.Tag = "0";
             // 
             // label5
             // 
@@ -171,7 +171,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.btmatkhau);
+            this.groupBox2.Controls.Add(this.btMatKhau);
             this.groupBox2.Controls.Add(this.btthongtin);
             this.groupBox2.Location = new System.Drawing.Point(12, 226);
             this.groupBox2.Name = "groupBox2";
@@ -190,16 +190,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.THo);
             // 
-            // btmatkhau
+            // btMatKhau
             // 
-            this.btmatkhau.Location = new System.Drawing.Point(237, 19);
-            this.btmatkhau.Name = "btmatkhau";
-            this.btmatkhau.Size = new System.Drawing.Size(124, 30);
-            this.btmatkhau.TabIndex = 5;
-            this.btmatkhau.Tag = "5";
-            this.btmatkhau.Text = "Thay đổi mật khẩu";
-            this.btmatkhau.UseVisualStyleBackColor = true;
-            this.btmatkhau.Click += new System.EventHandler(this.btmatkhau_Click);
+            this.btMatKhau.Location = new System.Drawing.Point(237, 19);
+            this.btMatKhau.Name = "btMatKhau";
+            this.btMatKhau.Size = new System.Drawing.Size(124, 30);
+            this.btMatKhau.TabIndex = 5;
+            this.btMatKhau.Tag = "5";
+            this.btMatKhau.Text = "Thay đổi mật khẩu";
+            this.btMatKhau.UseVisualStyleBackColor = true;
+            this.btMatKhau.Click += new System.EventHandler(this.btMatKhau_Click);
             // 
             // btthongtin
             // 
@@ -241,15 +241,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtmanhanvien;
-        private System.Windows.Forms.TextBox txtquyenhan;
-        private System.Windows.Forms.TextBox txttendangnhap;
-        private System.Windows.Forms.TextBox txtdiachi;
-        private System.Windows.Forms.TextBox txthoten;
+        private System.Windows.Forms.TextBox txtMaNhanVien;
+        private System.Windows.Forms.TextBox txtQuyenHan;
+        private System.Windows.Forms.TextBox txtTenDangNhap;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btmatkhau;
+        private System.Windows.Forms.Button btMatKhau;
         private System.Windows.Forms.Button btthongtin;
         private System.Windows.Forms.Button button1;
     }

@@ -36,9 +36,9 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btkiemtratt = new System.Windows.Forms.Button();
-            this.txtmasach = new System.Windows.Forms.TextBox();
+            this.txtMaSach = new System.Windows.Forms.TextBox();
             this.txtngaymuon = new System.Windows.Forms.TextBox();
-            this.txtmadocgia = new System.Windows.Forms.TextBox();
+            this.txtMaDocGia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -104,9 +104,9 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox1.Controls.Add(this.btkiemtratt);
-            this.groupBox1.Controls.Add(this.txtmasach);
+            this.groupBox1.Controls.Add(this.txtMaSach);
             this.groupBox1.Controls.Add(this.txtngaymuon);
-            this.groupBox1.Controls.Add(this.txtmadocgia);
+            this.groupBox1.Controls.Add(this.txtMaDocGia);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
@@ -130,15 +130,15 @@
             this.btkiemtratt.UseVisualStyleBackColor = true;
             this.btkiemtratt.Click += new System.EventHandler(this.btkiemtratt_Click);
             // 
-            // txtmasach
+            // txtMaSach
             // 
-            this.txtmasach.Location = new System.Drawing.Point(219, 22);
-            this.txtmasach.Name = "txtmasach";
-            this.txtmasach.Size = new System.Drawing.Size(77, 20);
-            this.txtmasach.TabIndex = 1;
-            this.txtmasach.Tag = "2";
-            this.txtmasach.TextChanged += new System.EventHandler(this.txtmasach_TextChanged);
-            this.txtmasach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmasach_KeyDown);
+            this.txtMaSach.Location = new System.Drawing.Point(219, 22);
+            this.txtMaSach.Name = "txtMaSach";
+            this.txtMaSach.Size = new System.Drawing.Size(77, 20);
+            this.txtMaSach.TabIndex = 1;
+            this.txtMaSach.Tag = "2";
+            this.txtMaSach.TextChanged += new System.EventHandler(this.txtMaSach_TextChanged);
+            this.txtMaSach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaSach_KeyDown);
             // 
             // txtngaymuon
             // 
@@ -150,13 +150,13 @@
             this.txtngaymuon.TabIndex = 25;
             this.txtngaymuon.Tag = "4";
             // 
-            // txtmadocgia
+            // txtMaDocGia
             // 
-            this.txtmadocgia.Location = new System.Drawing.Point(79, 22);
-            this.txtmadocgia.Name = "txtmadocgia";
-            this.txtmadocgia.Size = new System.Drawing.Size(73, 20);
-            this.txtmadocgia.TabIndex = 0;
-            this.txtmadocgia.Tag = "1";
+            this.txtMaDocGia.Location = new System.Drawing.Point(79, 22);
+            this.txtMaDocGia.Name = "txtMaDocGia";
+            this.txtMaDocGia.Size = new System.Drawing.Size(73, 20);
+            this.txtMaDocGia.TabIndex = 0;
+            this.txtMaDocGia.Tag = "1";
             // 
             // label1
             // 
@@ -214,9 +214,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtmasach;
+        private System.Windows.Forms.TextBox txtMaSach;
         private System.Windows.Forms.TextBox txtngaymuon;
-        private System.Windows.Forms.TextBox txtmadocgia;
+        private System.Windows.Forms.TextBox txtMaDocGia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

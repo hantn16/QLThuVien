@@ -12,30 +12,30 @@ namespace quanly.lopdulieu
     public class KTdangnhap
     {
         
-        public static string strquyenhan = "", strnguoidung="",strhoten="",strdiachi="",strmanhanvien="",strmatkhau="";
-        public bool kt_dangnhap(string ten, string matkhau)
+        public static string strQuyenHan = "", strnguoidung="",strHoTen="",strDiaChi="",strMaNhanVien="",strMatKhau="";
+        public bool kt_dangnhap(string ten, string MatKhau)
         {
-            Lnhanvien nv = new Lnhanvien();
+            NhanVien nv = new NhanVien();
             try
            {
                 //if (tenserver != "")
                 //{
                 //    L_Ketnoi.strChuoiKN = L_Ketnoi.strChuoiKN + "; server= " + tenserver;
-                //    if (matkhauserver != "") L_Ketnoi.strChuoiKN = L_Ketnoi.strChuoiKN + " ; Password = " + matkhauserver;
+                //    if (MatKhauserver != "") L_Ketnoi.strChuoiKN = L_Ketnoi.strChuoiKN + " ; Password = " + MatKhauserver;
                 //}
                 //L_Ketnoi.ThietlapketNoi();
                 //laydulieu dl = new laydulieu();
-                string query = "select * from nhanvien where matkhau = '" + matkhau + "' and tendangnhap = '" + ten + "'";
+                string query = "select * from NhanVien where MatKhau = '" + MatKhau + "' and TenDangNhap = '" + ten + "'";
                 DataTable dt = DataProvider.ExecuteQuery(query);
                 if (dt.Rows.Count == 0) { return false; }
                 else
                 {
-                    strmanhanvien= dt.Rows[0]["manhanvien"].ToString();
-                    strhoten= dt.Rows[0]["hoten"].ToString();
-                    strdiachi =  dt.Rows[0]["diachi"].ToString();
-                    strquyenhan =  dt.Rows[0]["quyenhan"].ToString();
-                    strnguoidung = dt.Rows[0]["tendangnhap"].ToString();
-                    strmatkhau = dt.Rows[0]["matkhau"].ToString();
+                    strMaNhanVien= dt.Rows[0]["MaNhanVien"].ToString();
+                    strHoTen= dt.Rows[0]["HoTen"].ToString();
+                    strDiaChi =  dt.Rows[0]["DiaChi"].ToString();
+                    strQuyenHan =  dt.Rows[0]["QuyenHan"].ToString();
+                    strnguoidung = dt.Rows[0]["TenDangNhap"].ToString();
+                    strMatKhau = dt.Rows[0]["MatKhau"].ToString();
                     return true;
                 }
             }

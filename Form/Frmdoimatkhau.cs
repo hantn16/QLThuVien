@@ -9,15 +9,15 @@ using quanly.lopdulieu;
 using quanly.doituong;
 namespace quanly.frm
 {
-    public partial class Frmdoimatkhau : Form
+    public partial class FrmdoiMatKhau : Form
     {
         bool tam = true,tam1 = true;
-        public Frmdoimatkhau()
+        public FrmdoiMatKhau()
         {
             InitializeComponent();
         }
 
-        private void Frmdoimatkhau_Load(object sender, EventArgs e)
+        private void FrmdoiMatKhau_Load(object sender, EventArgs e)
         {
             Frmmain.tt = true;
         }
@@ -29,7 +29,7 @@ namespace quanly.frm
 
         private void btthaydoi_Click(object sender, EventArgs e)
         {
-            if (txtmatkhaucu.Text.Trim() != KTdangnhap.strmatkhau.Trim())
+            if (txtMatKhaucu.Text.Trim() != KTdangnhap.strMatKhau.Trim())
             {
                 l1.Visible = true;
                 tam = false;
@@ -40,7 +40,7 @@ namespace quanly.frm
                 l1.Visible = false;
                 tam = true;
             }
-            if (txtmatkhaumoi.Text != txtnhaplai.Text)
+            if (txtMatKhaumoi.Text != txtnhaplai.Text)
             {
                 l2.Visible = true;
                 tam1 = false;
@@ -52,8 +52,8 @@ namespace quanly.frm
             }
             if (tam&&tam1) 
             {
-                Lnhanvien nv = new Lnhanvien(KTdangnhap.strmanhanvien, KTdangnhap.strhoten, KTdangnhap.strdiachi, KTdangnhap.strquyenhan, KTdangnhap.strnguoidung, KTdangnhap.strmatkhau);
-                if (nv.Doimatkhau(txtmatkhaumoi.Text) == true)
+                NhanVien nv = new NhanVien(KTdangnhap.strMaNhanVien, KTdangnhap.strHoTen, KTdangnhap.strDiaChi, KTdangnhap.strQuyenHan, KTdangnhap.strnguoidung, KTdangnhap.strMatKhau);
+                if (nv.DoiMatKhau(txtMatKhaumoi.Text) == true)
                     MessageBox.Show("Đã hoàn thành việc thay đôi mật khẩu", "Thông báo");
                 else
                     MessageBox.Show("Việc thay đổi đã bị lỗi hãy thử lại sau", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Question);
@@ -65,7 +65,7 @@ namespace quanly.frm
             if (e.KeyData == Keys.Enter) btthaydoi_Click(sender, e);
         }
 
-        private void Frmdoimatkhau_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmdoiMatKhau_FormClosed(object sender, FormClosedEventArgs e)
         {
             Frmmain.tt = false;
         }

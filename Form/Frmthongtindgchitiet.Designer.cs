@@ -34,11 +34,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbngaylamthe = new System.Windows.Forms.Label();
-            this.lbvitri = new System.Windows.Forms.Label();
+            this.lbViTri = new System.Windows.Forms.Label();
             this.lbkhoa = new System.Windows.Forms.Label();
-            this.lbngaysinh = new System.Windows.Forms.Label();
-            this.lbdiachi = new System.Windows.Forms.Label();
-            this.lbhoten = new System.Windows.Forms.Label();
+            this.lbNgaySinh = new System.Windows.Forms.Label();
+            this.lbDiaChi = new System.Windows.Forms.Label();
+            this.lbHoTen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -114,17 +114,17 @@
             this.lbngaylamthe.TabIndex = 10;
             this.lbngaylamthe.Text = "Họ tên";
             // 
-            // lbvitri
+            // lbViTri
             // 
-            this.lbvitri.AutoSize = true;
-            this.lbvitri.BackColor = System.Drawing.Color.Transparent;
-            this.lbvitri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbvitri.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.lbvitri.Location = new System.Drawing.Point(124, 77);
-            this.lbvitri.Name = "lbvitri";
-            this.lbvitri.Size = new System.Drawing.Size(53, 16);
-            this.lbvitri.TabIndex = 3;
-            this.lbvitri.Text = "Họ tên";
+            this.lbViTri.AutoSize = true;
+            this.lbViTri.BackColor = System.Drawing.Color.Transparent;
+            this.lbViTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbViTri.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.lbViTri.Location = new System.Drawing.Point(124, 77);
+            this.lbViTri.Name = "lbViTri";
+            this.lbViTri.Size = new System.Drawing.Size(53, 16);
+            this.lbViTri.TabIndex = 3;
+            this.lbViTri.Text = "Họ tên";
             // 
             // lbkhoa
             // 
@@ -138,41 +138,41 @@
             this.lbkhoa.TabIndex = 2;
             this.lbkhoa.Text = "Họ tên";
             // 
-            // lbngaysinh
+            // lbNgaySinh
             // 
-            this.lbngaysinh.AutoSize = true;
-            this.lbngaysinh.BackColor = System.Drawing.Color.Transparent;
-            this.lbngaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbngaysinh.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.lbngaysinh.Location = new System.Drawing.Point(124, 44);
-            this.lbngaysinh.Name = "lbngaysinh";
-            this.lbngaysinh.Size = new System.Drawing.Size(53, 16);
-            this.lbngaysinh.TabIndex = 1;
-            this.lbngaysinh.Text = "Họ tên";
+            this.lbNgaySinh.AutoSize = true;
+            this.lbNgaySinh.BackColor = System.Drawing.Color.Transparent;
+            this.lbNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgaySinh.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.lbNgaySinh.Location = new System.Drawing.Point(124, 44);
+            this.lbNgaySinh.Name = "lbNgaySinh";
+            this.lbNgaySinh.Size = new System.Drawing.Size(53, 16);
+            this.lbNgaySinh.TabIndex = 1;
+            this.lbNgaySinh.Text = "Họ tên";
             // 
-            // lbdiachi
+            // lbDiaChi
             // 
-            this.lbdiachi.AutoSize = true;
-            this.lbdiachi.BackColor = System.Drawing.Color.Transparent;
-            this.lbdiachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbdiachi.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.lbdiachi.Location = new System.Drawing.Point(124, 28);
-            this.lbdiachi.Name = "lbdiachi";
-            this.lbdiachi.Size = new System.Drawing.Size(53, 16);
-            this.lbdiachi.TabIndex = 6;
-            this.lbdiachi.Text = "Họ tên";
+            this.lbDiaChi.AutoSize = true;
+            this.lbDiaChi.BackColor = System.Drawing.Color.Transparent;
+            this.lbDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDiaChi.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.lbDiaChi.Location = new System.Drawing.Point(124, 28);
+            this.lbDiaChi.Name = "lbDiaChi";
+            this.lbDiaChi.Size = new System.Drawing.Size(53, 16);
+            this.lbDiaChi.TabIndex = 6;
+            this.lbDiaChi.Text = "Họ tên";
             // 
-            // lbhoten
+            // lbHoTen
             // 
-            this.lbhoten.AutoSize = true;
-            this.lbhoten.BackColor = System.Drawing.Color.Transparent;
-            this.lbhoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbhoten.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.lbhoten.Location = new System.Drawing.Point(124, 9);
-            this.lbhoten.Name = "lbhoten";
-            this.lbhoten.Size = new System.Drawing.Size(53, 16);
-            this.lbhoten.TabIndex = 5;
-            this.lbhoten.Text = "Họ tên";
+            this.lbHoTen.AutoSize = true;
+            this.lbHoTen.BackColor = System.Drawing.Color.Transparent;
+            this.lbHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoTen.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.lbHoTen.Location = new System.Drawing.Point(124, 9);
+            this.lbHoTen.Name = "lbHoTen";
+            this.lbHoTen.Size = new System.Drawing.Size(53, 16);
+            this.lbHoTen.TabIndex = 5;
+            this.lbHoTen.Text = "Họ tên";
             // 
             // label1
             // 
@@ -200,11 +200,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbngaylamthe);
-            this.Controls.Add(this.lbvitri);
+            this.Controls.Add(this.lbViTri);
             this.Controls.Add(this.lbkhoa);
-            this.Controls.Add(this.lbngaysinh);
-            this.Controls.Add(this.lbdiachi);
-            this.Controls.Add(this.lbhoten);
+            this.Controls.Add(this.lbNgaySinh);
+            this.Controls.Add(this.lbDiaChi);
+            this.Controls.Add(this.lbHoTen);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -225,11 +225,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbngaylamthe;
-        private System.Windows.Forms.Label lbvitri;
+        private System.Windows.Forms.Label lbViTri;
         private System.Windows.Forms.Label lbkhoa;
-        private System.Windows.Forms.Label lbngaysinh;
-        private System.Windows.Forms.Label lbdiachi;
-        private System.Windows.Forms.Label lbhoten;
+        private System.Windows.Forms.Label lbNgaySinh;
+        private System.Windows.Forms.Label lbDiaChi;
+        private System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.Label label1;
     }
 }

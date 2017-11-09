@@ -37,9 +37,9 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txttendangnhap = new System.Windows.Forms.TextBox();
-            this.txthoten = new System.Windows.Forms.TextBox();
-            this.txtmanhanvien = new System.Windows.Forms.TextBox();
+            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.txtMaNhanVien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -72,14 +72,14 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "Options.png");
             this.imageList1.Images.SetKeyName(1, "Star3.png");
-            this.imageList1.Images.SetKeyName(2, "Copy of docgia.ICO");
+            this.imageList1.Images.SetKeyName(2, "Copy of DocGia.ICO");
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Controls.Add(this.txttendangnhap);
-            this.groupBox1.Controls.Add(this.txthoten);
-            this.groupBox1.Controls.Add(this.txtmanhanvien);
+            this.groupBox1.Controls.Add(this.txtTenDangNhap);
+            this.groupBox1.Controls.Add(this.txtHoTen);
+            this.groupBox1.Controls.Add(this.txtMaNhanVien);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
@@ -92,32 +92,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
             // 
-            // txttendangnhap
+            // txtTenDangNhap
             // 
-            this.txttendangnhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txttendangnhap.Enabled = false;
-            this.txttendangnhap.Location = new System.Drawing.Point(118, 71);
-            this.txttendangnhap.Name = "txttendangnhap";
-            this.txttendangnhap.Size = new System.Drawing.Size(155, 20);
-            this.txttendangnhap.TabIndex = 1;
+            this.txtTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenDangNhap.Enabled = false;
+            this.txtTenDangNhap.Location = new System.Drawing.Point(118, 71);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(155, 20);
+            this.txtTenDangNhap.TabIndex = 1;
             // 
-            // txthoten
+            // txtHoTen
             // 
-            this.txthoten.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txthoten.Enabled = false;
-            this.txthoten.Location = new System.Drawing.Point(118, 45);
-            this.txthoten.Name = "txthoten";
-            this.txthoten.Size = new System.Drawing.Size(155, 20);
-            this.txthoten.TabIndex = 1;
+            this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHoTen.Enabled = false;
+            this.txtHoTen.Location = new System.Drawing.Point(118, 45);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(155, 20);
+            this.txtHoTen.TabIndex = 1;
             // 
-            // txtmanhanvien
+            // txtMaNhanVien
             // 
-            this.txtmanhanvien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtmanhanvien.Enabled = false;
-            this.txtmanhanvien.Location = new System.Drawing.Point(118, 20);
-            this.txtmanhanvien.Name = "txtmanhanvien";
-            this.txtmanhanvien.Size = new System.Drawing.Size(83, 20);
-            this.txtmanhanvien.TabIndex = 1;
+            this.txtMaNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaNhanVien.Enabled = false;
+            this.txtMaNhanVien.Location = new System.Drawing.Point(118, 20);
+            this.txtMaNhanVien.Name = "txtMaNhanVien";
+            this.txtMaNhanVien.Size = new System.Drawing.Size(83, 20);
+            this.txtMaNhanVien.TabIndex = 1;
             // 
             // label3
             // 
@@ -262,10 +262,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtmanhanvien;
+        private System.Windows.Forms.TextBox txtMaNhanVien;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txttendangnhap;
-        private System.Windows.Forms.TextBox txthoten;
+        private System.Windows.Forms.TextBox txtTenDangNhap;
+        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button2;

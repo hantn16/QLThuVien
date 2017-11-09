@@ -1,0 +1,121 @@
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\Interop.Crystal.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\QLTV.GUI.csproj.ResolveComReference.cache
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Formhienthi.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frdangnhap.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmcapnhatsach.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmdoimatkhau.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.frmgiahansach.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmthongtincanhan.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmthongtindgchitiet.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmthongtinsachtheongay.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.thongtinct.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmhelpfast.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmmain.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmmuonsach.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmphanquyen.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmquanlybandoc.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmtaomoitk.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmthongbao.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmthongtinsachhong.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmthongtinsachtrongngay.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmtkcoban.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmtknangcao.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmtrasach.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.Frmtimkiemdg.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanlythuvien.Frmnangcaohelp.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.frmtaothe.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanlythuvien.Properties.Resources.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanlythuvien.Thong_ke_bao_cao.Form1.resources
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\QLTV.GUI.csproj.GenerateResource.Cache
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\QLTV.GUI.csproj.CoreCompileInputs.cache
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\msvcr100.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\SqlServerSpatial110.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\msvcr100.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\SqlServerSpatial110.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Database\quanlythuvien_Data.MDF
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Database\quanlythuvien_Data_log.ldf
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Database\quanlythuvien_Log.LDF
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\quanlythuvien.exe.config
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\quanlythuvien.exe
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\quanlythuvien.pdb
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\CrystalDecisions.Shared.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\EnvDTE.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.ReportViewer.DataVisualization.DLL
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.ReportViewer.Design.DLL
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.ReportViewer.WebDesign.DLL
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\stdole.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\EnvDTE80.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Designer.Interfaces.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.WCFReference.Interop.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Shell.Interop.10.0.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\VSLangProj.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\VSLangProj80.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.MSXML.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Interaction.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Extensibility.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\VSLangProj2.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.xml
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.Designer.Interfaces.xml
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Interaction.xml
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanlythuvien.exe
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanlythuvien.pdb
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\QLTV.GUI.csprojResolveAssemblyReference.cache
+D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanly.frm.FrmTheLoaisach.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\QLTV.GUI.csprojResolveAssemblyReference.cache
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\Interop.Crystal.dll
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\QLTV.GUI.csproj.ResolveComReference.cache
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Formhienthi.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frdangnhap.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.FrmCapNhatsach.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.FrmdoiMatKhau.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.frmgiahansach.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmthongtincanhan.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmthongtindgchitiet.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmthongtinsachtheongay.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.thongtinct.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmhelpfast.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmmain.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmmuonsach.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.FrmTheLoaisach.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmphanquyen.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmquanlybandoc.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.FrmTaoMoitk.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmthongbao.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmthongtinsachhong.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmthongtinsachtrongngay.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmtkcoban.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmtknangcao.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.FrmTraSach.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmtimkiemdg.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanlythuvien.Frmnangcaohelp.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.frmtaothe.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanlythuvien.Properties.Resources.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanlythuvien.Thong_ke_bao_cao.Form1.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\QLTV.GUI.csproj.GenerateResource.Cache
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\QLTV.GUI.csproj.CoreCompileInputs.cache

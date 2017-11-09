@@ -39,10 +39,10 @@ namespace quanly.frm
                 this.dghienthi.DataSource = ds.Tables[0];
                 switch (bangketnoi)
                 {
-                    case "tacgia": this.cbdanhmuc.Items.AddRange(new object[] { "tentacgia" }); break;
-                    case "phanloai": this.cbdanhmuc.Items.AddRange(new object[] { "loai" }); break;
-                    case "nhaxuatban": this.cbdanhmuc.Items.AddRange(new object[] { "ten" }); break;
-                    case "ngonngu": this.cbdanhmuc.Items.AddRange(new object[] { "ngonngu" }); break;
+                    case "TacGia": this.cbdanhmuc.Items.AddRange(new object[] { "TenTacGia" }); break;
+                    case "TheLoai": this.cbdanhmuc.Items.AddRange(new object[] { "loai" }); break;
+                    case "NhaXuatBan": this.cbdanhmuc.Items.AddRange(new object[] { "ten" }); break;
+                    case "NgonNgu": this.cbdanhmuc.Items.AddRange(new object[] { "NgonNgu" }); break;
                     case "khoa": this.cbdanhmuc.Items.AddRange(new object[] { "tenkhoa" }); break;
                 };
 
@@ -78,7 +78,7 @@ namespace quanly.frm
 
             }
         }
-        private void capnhat()
+        private void CapNhat()
         {
             if (MessageBox.Show("Bạn có muốn cập nhật dữ liệu", "Thông báo", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
@@ -90,9 +90,9 @@ namespace quanly.frm
                 catch { MessageBox.Show("hay kiem tra lai tinh dung dan cua du lieu"); }
             }
         }
-        private void btcapnhat_Click(object sender, EventArgs e)
+        private void btCapNhat_Click(object sender, EventArgs e)
         {
-            this.capnhat();
+            this.CapNhat();
         }
         private void btxoa_Click(object sender, EventArgs e)
         {
@@ -116,7 +116,7 @@ namespace quanly.frm
             if (ds.GetChanges() != null)
             {
                if (MessageBox.Show("Đã có sự thay đổi dữ liệu bạn có muốn lưu lại hay không ?", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                   this.capnhat();
+                   this.CapNhat();
             }
             L_Ketnoi.HuyKetNoi();
         }
@@ -126,7 +126,7 @@ namespace quanly.frm
             if (e.KeyValue == 46) btxoa_Click(sender, e);
         }
 
-        private void bttaomoi_Click(object sender, EventArgs e)
+        private void btTaoMoi_Click(object sender, EventArgs e)
         {
             try
             {
@@ -134,10 +134,10 @@ namespace quanly.frm
                 laydulieu dl = new laydulieu();
                 ds1 = dl.getdata("select * from " + bangketnoi);
                 string strmacuoi = ds1.Tables[0].Rows[ds1.Tables[0].Rows.Count - 1][0].ToString();
-                if (bttaomoi.Text == "OK")
+                if (btTaoMoi.Text == "OK")
                 {
-                    this.capnhat();
-                    bttaomoi.Text = "Tạo mới";
+                    this.CapNhat();
+                    btTaoMoi.Text = "Tạo mới";
 
 
                 }
@@ -147,7 +147,7 @@ namespace quanly.frm
                     tam = ds.Tables[0].NewRow();
                     tam[0] = macuoi(strmacuoi);
                     ds.Tables[0].Rows.Add(tam);
-                    bttaomoi.Text = "OK";
+                    btTaoMoi.Text = "OK";
                 }
             }
             catch { }
@@ -174,7 +174,7 @@ namespace quanly.frm
 
         private void button1_Click(object sender, EventArgs e)
         {
-             if (ds.GetChanges() != null) this.capnhat();
+             if (ds.GetChanges() != null) this.CapNhat();
              this.Hide();
         }
 

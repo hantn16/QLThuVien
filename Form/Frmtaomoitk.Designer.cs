@@ -1,6 +1,6 @@
 ﻿namespace quanly.frm
 {
-    partial class Frmtaomoitk
+    partial class FrmTaoMoitk
     {
         /// <summary>
         /// Required designer variable.
@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmtaomoitk));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTaoMoitk));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txttendangnhap = new System.Windows.Forms.TextBox();
-            this.txtdiachi = new System.Windows.Forms.TextBox();
+            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtmanv = new System.Windows.Forms.TextBox();
-            this.txthoten = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader(0);
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -74,7 +74,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 94);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(38, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 1;
@@ -83,7 +84,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 67);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(39, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 1;
@@ -92,7 +94,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 46);
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(40, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 1;
@@ -101,7 +104,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 125);
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(39, 120);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 1;
@@ -109,11 +113,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox1.Controls.Add(this.txttendangnhap);
-            this.groupBox1.Controls.Add(this.txtdiachi);
+            this.groupBox1.BackColor = System.Drawing.Color.Aquamarine;
+            this.groupBox1.Controls.Add(this.txtTenDangNhap);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.txtmanv);
-            this.groupBox1.Controls.Add(this.txthoten);
+            this.groupBox1.Controls.Add(this.txtHoTen);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label6);
@@ -121,7 +125,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(12, 125);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(413, 143);
@@ -129,38 +133,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cơ bản";
             // 
-            // txttendangnhap
+            // txtTenDangNhap
             // 
-            this.txttendangnhap.Enabled = false;
-            this.txttendangnhap.Location = new System.Drawing.Point(133, 87);
-            this.txttendangnhap.Name = "txttendangnhap";
-            this.txttendangnhap.Size = new System.Drawing.Size(127, 20);
-            this.txttendangnhap.TabIndex = 2;
+            this.txtTenDangNhap.Enabled = false;
+            this.txtTenDangNhap.Location = new System.Drawing.Point(132, 92);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(127, 20);
+            this.txtTenDangNhap.TabIndex = 2;
             // 
-            // txtdiachi
+            // txtDiaChi
             // 
-            this.txtdiachi.Enabled = false;
-            this.txtdiachi.Location = new System.Drawing.Point(133, 60);
-            this.txtdiachi.Name = "txtdiachi";
-            this.txtdiachi.Size = new System.Drawing.Size(177, 20);
-            this.txtdiachi.TabIndex = 1;
+            this.txtDiaChi.Enabled = false;
+            this.txtDiaChi.Location = new System.Drawing.Point(133, 66);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(274, 20);
+            this.txtDiaChi.TabIndex = 1;
             // 
             // txtmanv
             // 
             this.txtmanv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtmanv.Enabled = false;
-            this.txtmanv.Location = new System.Drawing.Point(132, 9);
+            this.txtmanv.Location = new System.Drawing.Point(133, 14);
             this.txtmanv.Name = "txtmanv";
-            this.txtmanv.Size = new System.Drawing.Size(92, 20);
+            this.txtmanv.Size = new System.Drawing.Size(128, 20);
             this.txtmanv.TabIndex = 3;
             // 
-            // txthoten
+            // txtHoTen
             // 
-            this.txthoten.Enabled = false;
-            this.txthoten.Location = new System.Drawing.Point(133, 37);
-            this.txthoten.Name = "txthoten";
-            this.txthoten.Size = new System.Drawing.Size(127, 20);
-            this.txthoten.TabIndex = 0;
+            this.txtHoTen.Enabled = false;
+            this.txtHoTen.Location = new System.Drawing.Point(133, 40);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(127, 20);
+            this.txtHoTen.TabIndex = 0;
             // 
             // comboBox1
             // 
@@ -171,15 +175,16 @@
             "QUANLY",
             "MUONTRA",
             "ADMIN"});
-            this.comboBox1.Location = new System.Drawing.Point(134, 117);
+            this.comboBox1.Location = new System.Drawing.Point(132, 117);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(128, 21);
             this.comboBox1.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 19);
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(40, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 1;
@@ -187,6 +192,7 @@
             // 
             // button1
             // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(10, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 30);
@@ -197,6 +203,7 @@
             // 
             // button2
             // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(10, 55);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 31);
@@ -253,6 +260,7 @@
             // 
             // button3
             // 
+            this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(10, 102);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 31);
@@ -263,7 +271,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox2.BackColor = System.Drawing.Color.Aquamarine;
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button3);
@@ -276,7 +284,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox3.BackColor = System.Drawing.Color.Aquamarine;
             this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.button5);
@@ -290,6 +298,7 @@
             // 
             // button7
             // 
+            this.button7.ForeColor = System.Drawing.Color.Black;
             this.button7.Location = new System.Drawing.Point(5, 108);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(56, 30);
@@ -300,6 +309,7 @@
             // 
             // button6
             // 
+            this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Location = new System.Drawing.Point(5, 75);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(56, 30);
@@ -310,6 +320,7 @@
             // 
             // button5
             // 
+            this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.Location = new System.Drawing.Point(5, 44);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(56, 30);
@@ -320,6 +331,7 @@
             // 
             // button4
             // 
+            this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(5, 11);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(56, 30);
@@ -328,7 +340,7 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // Frmtaomoitk
+            // FrmTaoMoitk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -340,10 +352,10 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Frmtaomoitk";
-            this.Text = "Tạo mới một tài khoản sử dụng chương trình";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frmtaomoitk_FormClosed);
-            this.Load += new System.EventHandler(this.Frmtaomoitk_Load);
+            this.Name = "FrmTaoMoitk";
+            this.Text = "Quản lý tài khoản sử dụng chương trình";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTaoMoitk_FormClosed);
+            this.Load += new System.EventHandler(this.FrmTaoMoitk_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -360,9 +372,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txttendangnhap;
-        private System.Windows.Forms.TextBox txtdiachi;
-        private System.Windows.Forms.TextBox txthoten;
+        private System.Windows.Forms.TextBox txtTenDangNhap;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

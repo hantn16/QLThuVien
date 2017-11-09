@@ -28,12 +28,12 @@ namespace quanly.frm
         {
            
                 laydulieu dl = new laydulieu();
-                ds = dl.getdata("select masachhong,sach.* from sach,sachhong where sach.masach = sachhong.masach ");
+                ds = dl.getdata("select MaSachhong,sach.* from sach,sachhong where sach.MaSach = sachhong.MaSach ");
                 cm = BindingContext[this.ds.Tables[0]] as CurrencyManager;    
                 dataGridView1.DataSource = ds.Tables[0];
                 
         }
-        string masachhong(string tam)
+        string MaSachhong(string tam)
         {
             if (tam == "") return "SH0000";
             int ma = int.Parse(tam.Substring(2, tam.Length - 2));
@@ -52,7 +52,7 @@ namespace quanly.frm
             if (tb.DialogResult == DialogResult.OK)
             {
                 laydulieu dl = new laydulieu();
-                SqlDataReader dr = dl.lay_reader("select masach from sach where masach='" + Frmthongbao.tam + "' ");
+                SqlDataReader dr = dl.lay_reader("select MaSach from sach where MaSach='" + Frmthongbao.tam + "' ");
                 string tam="";
                 while (dr.Read())
                     tam = dr[0].ToString();
@@ -60,13 +60,13 @@ namespace quanly.frm
                 if (tam != "")
                 {
                     L_Ketnoi.ThietlapketNoi();
-                    SqlDataReader dr1 = dl.lay_reader("select masachhong from sachhong");
+                    SqlDataReader dr1 = dl.lay_reader("select MaSachhong from sachhong");
                     string strtam = "";
                     while (dr1.Read())
                         strtam = dr1[0].ToString();
                     L_Ketnoi.HuyKetNoi();
-                    Lsachhong sh = new Lsachhong(masachhong(strtam),Frmthongbao.tam);
-                    if (sh.taomoi())
+                    Lsachhong sh = new Lsachhong(MaSachhong(strtam),Frmthongbao.tam);
+                    if (sh.TaoMoi())
                     {
                         load_grid();
                         MessageBox.Show("Thao tác thành công", "Thông báo");
@@ -90,7 +90,7 @@ namespace quanly.frm
                 Lsachhong sh = new Lsachhong(ds.Tables[0].Rows[cm.Position][0].ToString(), ds.Tables[0].Rows[cm.Position][1].ToString());
                 if (MessageBox.Show("Bạn có thật sự muốn thực hiện thao tác xoá", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    if (sh.xoabo())
+                    if (sh.XoaBo())
                     {
                         load_grid();
                         MessageBox.Show("Thao tác thành công", "Thông báo");

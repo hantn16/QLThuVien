@@ -11,9 +11,9 @@ using quanly.doituong;
 
 namespace quanly.frm
 {
-    public partial class Frmphanloaisach : Form
+    public partial class FrmTheLoaisach : Form
     {
-        public Frmphanloaisach()
+        public FrmTheLoaisach()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace quanly.frm
             this.Hide();
         }
 
-        private void Frmphanloaisach_Load(object sender, EventArgs e)
+        private void FrmTheLoaisach_Load(object sender, EventArgs e)
         {
             Frmmain.tt = true; Load_treeview();
 
@@ -31,7 +31,7 @@ namespace quanly.frm
         private void Load_treeview()
         {
             laydulieu dl = new laydulieu();
-            SqlDataReader dr = dl.lay_reader("select * from phanloai");
+            SqlDataReader dr = dl.lay_reader("select * from TheLoai");
             while(dr.Read())
             {
                 TreeNode tn = new TreeNode();
@@ -46,7 +46,7 @@ namespace quanly.frm
             foreach (TreeNode n in treeView1.Nodes)
             {
                 laydulieu dl1 = new laydulieu();
-                SqlDataReader dr1 = dl1.lay_reader("select * from sach where maphanloai='" + n.Tag.ToString().Trim() + "'");
+                SqlDataReader dr1 = dl1.lay_reader("select * from sach where MaTheLoai='" + n.Tag.ToString().Trim() + "'");
                 while (dr1.Read())
                 {
                     TreeNode tn1 = new TreeNode();
@@ -65,16 +65,16 @@ namespace quanly.frm
             if (str.Substring(0, 2) != "PL")
             {
                 laydulieu dl = new laydulieu();
-                SqlDataReader dr = dl.lay_reader("select masach,nhande,tentacgia,lanxb,loai,namxb from sach,tacgia,phanloai where sach.matacgia = tacgia.matacgia and sach.maphanloai = phanloai.maphanloai and masach='" + str + "'");
+                SqlDataReader dr = dl.lay_reader("select MaSach,NhanDe,TenTacGia,LanXuatBan,loai,NamXuatBan from sach,TacGia,TheLoai where sach.MaTacGia = TacGia.MaTacGia and sach.MaTheLoai = TheLoai.MaTheLoai and MaSach='" + str + "'");
                 while (dr.Read())
                 {
-                    lbtensach.Text = dr["nhande"].ToString();
-                    lbtacgia.Text = dr["tentacgia"].ToString();
-                    lbtaiban.Text = dr["lanxb"].ToString();
-                    lbnamxb.Text = dr["namxb"].ToString();
-                    lbmasach.Text = dr["masach"].ToString();
+                    lbtensach.Text = dr["NhanDe"].ToString();
+                    lbTacGia.Text = dr["TenTacGia"].ToString();
+                    lbtaiban.Text = dr["LanXuatBan"].ToString();
+                    lbNamXuatBan.Text = dr["NamXuatBan"].ToString();
+                    lbMaSach.Text = dr["MaSach"].ToString();
                     comboBox1.Text = dr["loai"].ToString();
-                    s.set_masach(dr["masach"].ToString());
+                    s.MaSach = (dr["MaSach"].ToString());
                 }
                 L_Ketnoi.HuyKetNoi();
             }
@@ -83,15 +83,15 @@ namespace quanly.frm
         private void button5_Click(object sender, EventArgs e)
         {
             int i = 0;
-            if (btphanloai.Text == "OK")
+            if (btTheLoai.Text == "OK")
             {
-                btphanloai.Text = "Phân loại";
+                btTheLoai.Text = "Phân loại";
                 comboBox1.Enabled = false;
                 string str = treeView1.SelectedNode.Tag.ToString();
                 if (str.Substring(0, 2) == "PL") MessageBox.Show("Bạn phải chọn sách cần đổi");
                 else
                 {
-                    if (s.phanloai(comboBox1.Text))
+                    if (s.TheLoai(comboBox1.Text))
                     {
                        
                         string str1 = treeView1.SelectedNode.Tag.ToString();
@@ -117,12 +117,12 @@ namespace quanly.frm
             }
             else
             {
-                btphanloai.Text = "OK";
+                btTheLoai.Text = "OK";
                 comboBox1.Enabled = true;
             }
         }
 
-        private void Frmphanloaisach_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmTheLoaisach_FormClosed(object sender, FormClosedEventArgs e)
         {
             Frmmain.tt = false;
         }

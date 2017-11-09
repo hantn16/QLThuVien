@@ -1,6 +1,6 @@
 ﻿namespace quanly.frm
 {
-    partial class Frmphanloaisach
+    partial class FrmTheLoaisach
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmphanloaisach));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTheLoaisach));
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbtaiban = new System.Windows.Forms.Label();
-            this.lbnamxb = new System.Windows.Forms.Label();
-            this.lbtacgia = new System.Windows.Forms.Label();
-            this.lbmasach = new System.Windows.Forms.Label();
+            this.lbNamXuatBan = new System.Windows.Forms.Label();
+            this.lbTacGia = new System.Windows.Forms.Label();
+            this.lbMaSach = new System.Windows.Forms.Label();
             this.lbtensach = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.btphanloai = new System.Windows.Forms.Button();
+            this.btTheLoai = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -81,9 +81,9 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.lbtaiban);
-            this.groupBox1.Controls.Add(this.lbnamxb);
-            this.groupBox1.Controls.Add(this.lbtacgia);
-            this.groupBox1.Controls.Add(this.lbmasach);
+            this.groupBox1.Controls.Add(this.lbNamXuatBan);
+            this.groupBox1.Controls.Add(this.lbTacGia);
+            this.groupBox1.Controls.Add(this.lbMaSach);
             this.groupBox1.Controls.Add(this.lbtensach);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -129,29 +129,29 @@
             this.lbtaiban.Size = new System.Drawing.Size(85, 23);
             this.lbtaiban.TabIndex = 1;
             // 
-            // lbnamxb
+            // lbNamXuatBan
             // 
-            this.lbnamxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbnamxb.Location = new System.Drawing.Point(127, 118);
-            this.lbnamxb.Name = "lbnamxb";
-            this.lbnamxb.Size = new System.Drawing.Size(85, 23);
-            this.lbnamxb.TabIndex = 1;
+            this.lbNamXuatBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNamXuatBan.Location = new System.Drawing.Point(127, 118);
+            this.lbNamXuatBan.Name = "lbNamXuatBan";
+            this.lbNamXuatBan.Size = new System.Drawing.Size(85, 23);
+            this.lbNamXuatBan.TabIndex = 1;
             // 
-            // lbtacgia
+            // lbTacGia
             // 
-            this.lbtacgia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtacgia.Location = new System.Drawing.Point(121, 83);
-            this.lbtacgia.Name = "lbtacgia";
-            this.lbtacgia.Size = new System.Drawing.Size(169, 23);
-            this.lbtacgia.TabIndex = 1;
+            this.lbTacGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTacGia.Location = new System.Drawing.Point(121, 83);
+            this.lbTacGia.Name = "lbTacGia";
+            this.lbTacGia.Size = new System.Drawing.Size(169, 23);
+            this.lbTacGia.TabIndex = 1;
             // 
-            // lbmasach
+            // lbMaSach
             // 
-            this.lbmasach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbmasach.Location = new System.Drawing.Point(127, 16);
-            this.lbmasach.Name = "lbmasach";
-            this.lbmasach.Size = new System.Drawing.Size(169, 23);
-            this.lbmasach.TabIndex = 1;
+            this.lbMaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaSach.Location = new System.Drawing.Point(127, 16);
+            this.lbMaSach.Name = "lbMaSach";
+            this.lbMaSach.Size = new System.Drawing.Size(169, 23);
+            this.lbMaSach.TabIndex = 1;
             // 
             // lbtensach
             // 
@@ -220,7 +220,7 @@
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.btphanloai);
+            this.groupBox2.Controls.Add(this.btTheLoai);
             this.groupBox2.ForeColor = System.Drawing.Color.Cyan;
             this.groupBox2.Location = new System.Drawing.Point(207, 247);
             this.groupBox2.Name = "groupBox2";
@@ -239,6 +239,7 @@
             // 
             // button6
             // 
+            this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Location = new System.Drawing.Point(209, 16);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(78, 42);
@@ -247,17 +248,18 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // btphanloai
+            // btTheLoai
             // 
-            this.btphanloai.Location = new System.Drawing.Point(125, 16);
-            this.btphanloai.Name = "btphanloai";
-            this.btphanloai.Size = new System.Drawing.Size(78, 42);
-            this.btphanloai.TabIndex = 0;
-            this.btphanloai.Text = "Phân loại";
-            this.btphanloai.UseVisualStyleBackColor = true;
-            this.btphanloai.Click += new System.EventHandler(this.button5_Click);
+            this.btTheLoai.ForeColor = System.Drawing.Color.Black;
+            this.btTheLoai.Location = new System.Drawing.Point(125, 16);
+            this.btTheLoai.Name = "btTheLoai";
+            this.btTheLoai.Size = new System.Drawing.Size(78, 42);
+            this.btTheLoai.TabIndex = 0;
+            this.btTheLoai.Text = "Phân loại";
+            this.btTheLoai.UseVisualStyleBackColor = true;
+            this.btTheLoai.Click += new System.EventHandler(this.button5_Click);
             // 
-            // Frmphanloaisach
+            // FrmTheLoaisach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -267,10 +269,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.treeView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Frmphanloaisach";
+            this.Name = "FrmTheLoaisach";
             this.Text = "Phân loại sách";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frmphanloaisach_FormClosed);
-            this.Load += new System.EventHandler(this.Frmphanloaisach_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTheLoaisach_FormClosed);
+            this.Load += new System.EventHandler(this.FrmTheLoaisach_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -286,7 +288,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button btphanloai;
+        private System.Windows.Forms.Button btTheLoai;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -295,10 +297,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbtaiban;
-        private System.Windows.Forms.Label lbnamxb;
-        private System.Windows.Forms.Label lbtacgia;
+        private System.Windows.Forms.Label lbNamXuatBan;
+        private System.Windows.Forms.Label lbTacGia;
         private System.Windows.Forms.Label lbtensach;
-        private System.Windows.Forms.Label lbmasach;
+        private System.Windows.Forms.Label lbMaSach;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;

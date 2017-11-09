@@ -10,9 +10,9 @@ using System.Data.SqlClient;
 using quanly.doituong;
 namespace quanly.frm
 {
-    public partial class Frmtrasach : Form
+    public partial class FrmTraSach : Form
     {
-        public Frmtrasach()
+        public FrmTraSach()
         {
             InitializeComponent();
         }
@@ -26,23 +26,23 @@ namespace quanly.frm
         {
             laydulieu dl = new laydulieu();
             bool tam = false;
-            SqlDataReader dr = dl.lay_reader("select * from phieumuon,sachmuon where phieumuon.maphieumuon = sachmuon.maphieumuon and phieumuon.madocgia='"+ txtmadocgia.Text+"' and phieumuon.thethucmuon=N'"+ comboBox1.Text+"'");
+            SqlDataReader dr = dl.lay_reader("select * from phieumuon,sachmuon where phieumuon.maphieumuon = sachmuon.maphieumuon and phieumuon.MaDocGia='"+ txtMaDocGia.Text+"' and phieumuon.TheThucmuon=N'"+ comboBox1.Text+"'");
             while (dr.Read())
             {
                 txtngaymuon.Text = dr["ngaymuon"].ToString();
                 DateTime tam1=DateTime.Parse(dr["ngaymuon"].ToString());
                 txtsongaymuon.Text = ((TimeSpan)(DateTime.Now - tam1)).Days.ToString();
-                txtsosachmuon.Text = dr["soluong"].ToString();
+                txtsosachmuon.Text = dr["SoLuong"].ToString();
                 maphieumuon = dr["maphieumuon"].ToString();
-                txtmasach.Text = dr["masach"].ToString();
+                txtMaSach.Text = dr["MaSach"].ToString();
                 tam = true;
             }
             L_Ketnoi.HuyKetNoi();
-                 bttrasach.Enabled = tam;
+                 btTraSach.Enabled = tam;
                  if (tam)
                  {
                    
-                     txtmadocgia.Enabled = false;
+                     txtMaDocGia.Enabled = false;
                      comboBox1.Enabled = false;
                      btkiemtratt.Enabled = false;
                  }
@@ -52,13 +52,13 @@ namespace quanly.frm
         private void bthuytt_Click(object sender, EventArgs e)
         {
             
-            txtmadocgia.Enabled = true;
+            txtMaDocGia.Enabled = true;
             comboBox1.Enabled = true;
             btkiemtratt.Enabled = true;
-            bttrasach.Enabled = false;
-            txtmasach.Text = txtngaymuon.Text = txtsongaymuon.Text = txtsosachmuon.Text = txtmadocgia.Text = txtmasach.Text = comboBox1.Text = "";
+            btTraSach.Enabled = false;
+            txtMaSach.Text = txtngaymuon.Text = txtsongaymuon.Text = txtsosachmuon.Text = txtMaDocGia.Text = txtMaSach.Text = comboBox1.Text = "";
         }
-        string masachhong(string tam)
+        string MaSachhong(string tam)
         { 
             if (tam=="") return "SH0000";
             int ma = int.Parse(tam.Substring(2,tam.Length -2));
@@ -70,7 +70,7 @@ namespace quanly.frm
                     if (ma < 1000) return "SH0" + ma.ToString();
                     else return "SH" + ma.ToString();
         }
-        private void bttrasach_Click(object sender, EventArgs e)
+        private void btTraSach_Click(object sender, EventArgs e)
         {
             laydulieu dl = new laydulieu();
             DataSet d = dl.getdata("select * from phieumuon where maphieumuon='" + maphieumuon + "' and GETdate()- phieumuon.ngaymuon > day(7)");
@@ -86,22 +86,22 @@ namespace quanly.frm
                     }
                     Lsachmuon sm = new Lsachmuon(maphieumuon);
                     Lsach s = new Lsach();
-                    s.set_masach(txtmasach.Text);
-                    if (s.trasach(txtsosachmuon.Text))
+                    s.MaSach = (txtMaSach.Text);
+                    if (s.TraSach(txtsosachmuon.Text))
                     {
-                        if (sm.xoabo())
+                        if (sm.XoaBo())
                         {
                             if (checkBox1.Checked)
                                 if (MessageBox.Show("Sách này có thật sự bị hỏng không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                 {
                                     L_Ketnoi.ThietlapketNoi();
-                                    SqlDataReader dr = dl.lay_reader("select masachhong from sachhong");
+                                    SqlDataReader dr = dl.lay_reader("select MaSachhong from sachhong");
                                     string strtam = "";
                                     while (dr.Read())
                                         strtam = dr[0].ToString();
                                     L_Ketnoi.HuyKetNoi();
-                                    Lsachhong sh = new Lsachhong(masachhong(strtam), txtmasach.Text);
-                                    if (sh.taomoi() == false) MessageBox.Show("Quá trình cập nhật sách hỏng bị lỗi hãy chuyển qua mục thông tin sách hỏng để làm", "Thông báo");
+                                    Lsachhong sh = new Lsachhong(MaSachhong(strtam), txtMaSach.Text);
+                                    if (sh.TaoMoi() == false) MessageBox.Show("Quá trình cập nhật sách hỏng bị lỗi hãy chuyển qua mục thông tin sách hỏng để làm", "Thông báo");
 
                                 }
                             bthuytt_Click(sender, e);
@@ -114,12 +114,12 @@ namespace quanly.frm
                 }
         }
 
-        private void Frmtrasach_Load(object sender, EventArgs e)
+        private void FrmTraSach_Load(object sender, EventArgs e)
         {
             Frmmain.tt = true;
         }
 
-        private void Frmtrasach_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmTraSach_FormClosed(object sender, FormClosedEventArgs e)
         {
             Frmmain.tt = false;
         }

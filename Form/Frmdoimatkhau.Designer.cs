@@ -1,6 +1,6 @@
 ﻿namespace quanly.frm
 {
-    partial class Frmdoimatkhau
+    partial class FrmdoiMatKhau
     {
         /// <summary>
         /// Required designer variable.
@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtmatkhaucu = new System.Windows.Forms.TextBox();
+            this.txtMatKhaucu = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.l2 = new System.Windows.Forms.Label();
             this.l1 = new System.Windows.Forms.Label();
             this.txtnhaplai = new System.Windows.Forms.TextBox();
-            this.txtmatkhaumoi = new System.Windows.Forms.TextBox();
+            this.txtMatKhaumoi = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -82,14 +82,14 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Nhập lại mật khẩu mới";
             // 
-            // txtmatkhaucu
+            // txtMatKhaucu
             // 
-            this.txtmatkhaucu.Location = new System.Drawing.Point(153, 27);
-            this.txtmatkhaucu.Name = "txtmatkhaucu";
-            this.txtmatkhaucu.PasswordChar = '*';
-            this.txtmatkhaucu.Size = new System.Drawing.Size(157, 20);
-            this.txtmatkhaucu.TabIndex = 0;
-            this.txtmatkhaucu.Tag = "1";
+            this.txtMatKhaucu.Location = new System.Drawing.Point(153, 27);
+            this.txtMatKhaucu.Name = "txtMatKhaucu";
+            this.txtMatKhaucu.PasswordChar = '*';
+            this.txtMatKhaucu.Size = new System.Drawing.Size(157, 20);
+            this.txtMatKhaucu.TabIndex = 0;
+            this.txtMatKhaucu.Tag = "1";
             // 
             // groupBox1
             // 
@@ -98,8 +98,8 @@
             this.groupBox1.Controls.Add(this.l1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtnhaplai);
-            this.groupBox1.Controls.Add(this.txtmatkhaumoi);
-            this.groupBox1.Controls.Add(this.txtmatkhaucu);
+            this.groupBox1.Controls.Add(this.txtMatKhaumoi);
+            this.groupBox1.Controls.Add(this.txtMatKhaucu);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,14 +141,14 @@
             this.txtnhaplai.Tag = "3";
             this.txtnhaplai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnhaplai_KeyDown);
             // 
-            // txtmatkhaumoi
+            // txtMatKhaumoi
             // 
-            this.txtmatkhaumoi.Location = new System.Drawing.Point(153, 61);
-            this.txtmatkhaumoi.Name = "txtmatkhaumoi";
-            this.txtmatkhaumoi.PasswordChar = '*';
-            this.txtmatkhaumoi.Size = new System.Drawing.Size(157, 20);
-            this.txtmatkhaumoi.TabIndex = 1;
-            this.txtmatkhaumoi.Tag = "2";
+            this.txtMatKhaumoi.Location = new System.Drawing.Point(153, 61);
+            this.txtMatKhaumoi.Name = "txtMatKhaumoi";
+            this.txtMatKhaumoi.PasswordChar = '*';
+            this.txtMatKhaumoi.Size = new System.Drawing.Size(157, 20);
+            this.txtMatKhaumoi.TabIndex = 1;
+            this.txtMatKhaumoi.Tag = "2";
             // 
             // button1
             // 
@@ -163,7 +163,7 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Frmdoimatkhau
+            // FrmdoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,11 +174,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btthaydoi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Frmdoimatkhau";
+            this.Name = "FrmdoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thay đổi mật khẩu đăng nhập";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frmdoimatkhau_FormClosed);
-            this.Load += new System.EventHandler(this.Frmdoimatkhau_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmdoiMatKhau_FormClosed);
+            this.Load += new System.EventHandler(this.FrmdoiMatKhau_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -191,10 +191,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtmatkhaucu;
+        private System.Windows.Forms.TextBox txtMatKhaucu;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtnhaplai;
-        private System.Windows.Forms.TextBox txtmatkhaumoi;
+        private System.Windows.Forms.TextBox txtMatKhaumoi;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label l2;
         private System.Windows.Forms.Label l1;

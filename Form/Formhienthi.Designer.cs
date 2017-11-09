@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btcapnhat = new System.Windows.Forms.ToolStripButton();
+            this.btCapNhat = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bttaomoi = new System.Windows.Forms.ToolStripButton();
+            this.btTaoMoi = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btxoa = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -56,9 +56,9 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btcapnhat,
+            this.btCapNhat,
             this.toolStripSeparator1,
-            this.bttaomoi,
+            this.btTaoMoi,
             this.toolStripSeparator2,
             this.btxoa,
             this.toolStripLabel1,
@@ -74,28 +74,28 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btcapnhat
+            // btCapNhat
             // 
-            this.btcapnhat.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btcapnhat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btcapnhat.Name = "btcapnhat";
-            this.btcapnhat.Size = new System.Drawing.Size(59, 22);
-            this.btcapnhat.Text = "Cập nhật";
-            this.btcapnhat.Click += new System.EventHandler(this.btcapnhat_Click);
+            this.btCapNhat.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCapNhat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btCapNhat.Name = "btCapNhat";
+            this.btCapNhat.Size = new System.Drawing.Size(59, 22);
+            this.btCapNhat.Text = "Cập nhật";
+            this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // bttaomoi
+            // btTaoMoi
             // 
-            this.bttaomoi.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttaomoi.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttaomoi.Name = "bttaomoi";
-            this.bttaomoi.Size = new System.Drawing.Size(55, 22);
-            this.bttaomoi.Text = "Tạo mới";
-            this.bttaomoi.Click += new System.EventHandler(this.bttaomoi_Click);
+            this.btTaoMoi.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaoMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btTaoMoi.Name = "btTaoMoi";
+            this.btTaoMoi.Size = new System.Drawing.Size(55, 22);
+            this.btTaoMoi.Text = "Tạo mới";
+            this.btTaoMoi.Click += new System.EventHandler(this.btTaoMoi_Click);
             // 
             // toolStripSeparator2
             // 
@@ -233,8 +233,8 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btcapnhat;
-        private System.Windows.Forms.ToolStripButton bttaomoi;
+        private System.Windows.Forms.ToolStripButton btCapNhat;
+        private System.Windows.Forms.ToolStripButton btTaoMoi;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btxoa;

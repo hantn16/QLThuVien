@@ -8,28 +8,28 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using quanly.lopdulieu;
 using quanly.doituong;
+using quanlythuvien.Data;
 
 namespace quanly.frm
 {
-    public partial class Frmtaomoitk : Form
+    public partial class FrmTaoMoitk : Form
     {
-        public Frmtaomoitk()
+        public FrmTaoMoitk()
         {
             InitializeComponent();
         }
-        DataSet ds = new DataSet();
+        DataTable dataTable = new DataTable();
         string[] s = new string[50];
         int i = 0;
-        private void Frmtaomoitk_Load(object sender, EventArgs e)
+        private void FrmTaoMoitk_Load(object sender, EventArgs e)
         {
             Frmmain.tt = true;
-            laydulieu dl = new laydulieu();
-            ds = dl.getdata("select * from nhanvien");
+            dataTable = DataProvider.ExecuteQuery("select * from NhanVien");
             //---xây dựng thuộc tính khoá cho trường trong bảng nhằm sau này có thể
             //---thực hiện được phương thức Find của datarows--------
-            DataColumn[] dt = new DataColumn[1];
-            dt[0] = ds.Tables[0].Columns[0];
-            ds.Tables[0].PrimaryKey = dt;
+            DataColumn[] cl = new DataColumn[1];
+            cl[0] = dataTable.Columns[0];
+            dataTable.PrimaryKey = cl;
             load_listbox();
             load_textbox(i);
             
@@ -37,22 +37,22 @@ namespace quanly.frm
         }
         void load_listbox()
         {
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                listView1.Items.Add(ds.Tables[0].Rows[i]["hoten"].ToString(),1);
-                listView1.Items[i].SubItems.Add(ds.Tables[0].Rows[i]["diachi"].ToString());
-                listView1.Items[i].SubItems.Add(ds.Tables[0].Rows[i]["tendangnhap"].ToString());
-                listView1.Items[i].SubItems.Add(ds.Tables[0].Rows[i]["quyenhan"].ToString());
-                s[i] = ds.Tables[0].Rows[i]["manhanvien"].ToString();
+                listView1.Items.Add(dataTable.Rows[i]["HoTen"].ToString(),1);
+                listView1.Items[i].SubItems.Add(dataTable.Rows[i]["DiaChi"].ToString());
+                listView1.Items[i].SubItems.Add(dataTable.Rows[i]["TenDangNhap"].ToString());
+                listView1.Items[i].SubItems.Add(dataTable.Rows[i]["QuyenHan"].ToString());
+                s[i] = dataTable.Rows[i]["MaNhanVien"].ToString();
                 
             }
         }
         void load_textbox(int i)
         {
-            txthoten.Text = listView1.Items[i].SubItems[0].Text; ;
-            txtdiachi.Text = listView1.Items[i].SubItems[1].Text;
+            txtHoTen.Text = listView1.Items[i].SubItems[0].Text; ;
+            txtDiaChi.Text = listView1.Items[i].SubItems[1].Text;
             txtmanv.Text = s[i];
-            txttendangnhap.Text = listView1.Items[i].SubItems[2].Text;
+            txtTenDangNhap.Text = listView1.Items[i].SubItems[2].Text;
             comboBox1.Text = listView1.Items[i].SubItems[3].Text;
         }
         private void button3_Click(object sender, EventArgs e)
@@ -68,9 +68,9 @@ namespace quanly.frm
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (i != ds.Tables[0].Rows.Count - 1)
+            if (i != dataTable.Rows.Count - 1)
             {
-                i = ds.Tables[0].Rows.Count - 1;
+                i = dataTable.Rows.Count - 1;
                 load_textbox(i);
             }
         }
@@ -86,7 +86,7 @@ namespace quanly.frm
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (i < ds.Tables[0].Rows.Count - 1)
+            if (i < dataTable.Rows.Count - 1)
             {
                 i++;
                 load_textbox(i);
@@ -98,15 +98,15 @@ namespace quanly.frm
         {
             if (MessageBox.Show("Bạn có thật sự muốn xoá nhân viên này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Lnhanvien nv = new Lnhanvien();
-                nv.manhanvien = (txtmanv.Text);
+                NhanVien nv = new NhanVien();
+                nv.MaNhanVien = (txtmanv.Text);
                 if (nv.XoaBo() == true)
                 {
                     MessageBox.Show("Bạn đã xoá bỏ thành công");
                     listView1.Items[i].Remove();
-                    DataRow dr = ds.Tables[0].Rows.Find(txtmanv.Text);
-                    ds.Tables[0].Rows.Remove(dr);
-                    for (int j = i; j < ds.Tables[0].Rows.Count - 1; j++)
+                    DataRow dr = dataTable.Rows.Find(txtmanv.Text);
+                    dataTable.Rows.Remove(dr);
+                    for (int j = i; j < dataTable.Rows.Count - 1; j++)
                     {
                         s[j] = s[j + 1];
                     }
@@ -140,37 +140,37 @@ namespace quanly.frm
             if (button1.Text == "OK")
             {
                 button1.Text = "Tạo mới";
-                txtdiachi.Enabled = false;
-                txthoten.Enabled = false;
-                txttendangnhap.Enabled = false;
+                txtDiaChi.Enabled = false;
+                txtHoTen.Enabled = false;
+                txtTenDangNhap.Enabled = false;
                 comboBox1.Enabled = false;
-                Lnhanvien nv = new Lnhanvien();
-                nv.manhanvien = (txtmanv.Text);
-                nv.matkhau = ("");
-                nv.diachi = (txtdiachi.Text);
-                nv.hoten = (txthoten.Text);
-                nv.quyenhan = (comboBox1.Text);
-                nv.tendangnhap = (txttendangnhap.Text);
-                i = ds.Tables[0].Rows.Count;
+                NhanVien nv = new NhanVien();
+                nv.MaNhanVien = (txtmanv.Text);
+                nv.MatKhau = ("");
+                nv.DiaChi = (txtDiaChi.Text);
+                nv.HoTen = (txtHoTen.Text);
+                nv.QuyenHan = (comboBox1.Text);
+                nv.TenDangNhap = (txtTenDangNhap.Text);
+                i = dataTable.Rows.Count;
                 if (nv.TaoMoi())
                 {
                     s[i] = txtmanv.Text;
                     //======cập nhật thông tin cho Dataset===========
                     DataRow dr ;
-                    dr = ds.Tables[0].NewRow();
+                    dr = dataTable.NewRow();
                     dr[0] = txtmanv.Text;
-                    dr[1] = txthoten.Text;
-                    dr[2] = txtdiachi.Text;
-                    dr[3] = txttendangnhap.Text;
+                    dr[1] = txtHoTen.Text;
+                    dr[2] = txtDiaChi.Text;
+                    dr[3] = txtTenDangNhap.Text;
                     dr[4] = "";
                     dr[5] = comboBox1.Text;
-                    ds.Tables[0].Rows.Add(dr);
+                    dataTable.Rows.Add(dr);
                     //-------------------------------
 
                     //======Cập nhật thông tin cho Listview==========
-                    listView1.Items.Add(txthoten.Text, 1);
-                    listView1.Items[i].SubItems.Add(txtdiachi.Text);
-                    listView1.Items[i].SubItems.Add(txttendangnhap.Text);
+                    listView1.Items.Add(txtHoTen.Text, 1);
+                    listView1.Items[i].SubItems.Add(txtDiaChi.Text);
+                    listView1.Items[i].SubItems.Add(txtTenDangNhap.Text);
                     listView1.Items[i].SubItems.Add(comboBox1.Text);
                     //---------------------------------
                     MessageBox.Show("Quá trình tạo mới đã thành công");
@@ -182,18 +182,18 @@ namespace quanly.frm
             else
             {
                 button1.Text = "OK";
-                txtdiachi.Enabled = true;
-                txthoten.Enabled = true;
-                txttendangnhap.Enabled = true;
+                txtDiaChi.Enabled = true;
+                txtHoTen.Enabled = true;
+                txtTenDangNhap.Enabled = true;
                 comboBox1.Enabled = true;
-                txtdiachi.Text = "";
-                txthoten.Text = "";
-                txttendangnhap.Text = "";
-                txtmanv.Text = taoma(s[ds.Tables[0].Rows.Count-1]);
+                txtDiaChi.Text = "";
+                txtHoTen.Text = "";
+                txtTenDangNhap.Text = "";
+                txtmanv.Text = taoma(s[dataTable.Rows.Count-1]);
             }
         }
 
-        private void Frmtaomoitk_FormClosed(object sender, FormClosedEventArgs e)
+        private void FrmTaoMoitk_FormClosed(object sender, FormClosedEventArgs e)
         {
             Frmmain.tt = false;
             Frmmain.hf.set_text(Frmhelpfast.t);

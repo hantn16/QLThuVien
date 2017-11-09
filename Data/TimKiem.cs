@@ -11,15 +11,15 @@ namespace quanly.lopdulieu
         public DataSet coban(string strtk)
         {
             laydulieu dl = new laydulieu();
-            return dl.getdata("select sach.masach as ' Mã Sách',sach.nhande as 'Nhan Đề',tacgia.tentacgia as 'Tên tác giả',ngonngu.ngonngu as 'Ngôn ngữ',sach.soluong as 'Sách còn',vitriluutru.kho, vitriluutru.ke as 'Kệ',vitriluutru.ngan as 'Ngăn' from tacgia,phanloai,ngonngu,sach,vitriluutru where sach.mavitri = vitriluutru.mavitri and sach.maphanloai = phanloai.maphanloai and tacgia.matacgia = sach.matacgia and sach.mangonngu = ngonngu.mangonngu and (sach.nhande like N'%" + strtk + "%' or tacgia.tentacgia like N'%" + strtk + "%' or sach.masach='"+ strtk+"')");
+            return dl.getdata("select sach.MaSach as ' Mã Sách',sach.NhanDe as 'Nhan Đề',TacGia.TenTacGia as 'Tên tác giả',NgonNgu.NgonNgu as 'Ngôn ngữ',sach.SoLuong as 'Sách còn',ViTriluutru.kho, ViTriluutru.ke as 'Kệ',ViTriluutru.ngan as 'Ngăn' from TacGia,TheLoai,NgonNgu,sach,ViTriluutru where sach.MaViTri = ViTriluutru.MaViTri and sach.MaTheLoai = TheLoai.MaTheLoai and TacGia.MaTacGia = sach.MaTacGia and sach.MaNgonNgu = NgonNgu.MaNgonNgu and (sach.NhanDe like N'%" + strtk + "%' or TacGia.TenTacGia like N'%" + strtk + "%' or sach.MaSach='"+ strtk+"')");
 
         }
-        public DataSet nangcao(string strsach, string tacgia, string strphanloai, string strngonngu)
+        public DataSet nangcao(string strsach, string TacGia, string strTheLoai, string strNgonNgu)
         {
-            string strkn = "select sach.masach as ' Mã Sách',sach.nhande as 'Nhan Đề',tacgia.tentacgia as 'Tên tác giả',ngonngu.ngonngu as 'Ngôn ngữ',sach.soluong as 'Sách còn',vitriluutru.kho, vitriluutru.ke as 'Kệ',vitriluutru.ngan as 'Ngăn' from tacgia,phanloai,ngonngu,sach,vitriluutru where sach.mavitri = vitriluutru.mavitri and sach.maphanloai = phanloai.maphanloai and tacgia.matacgia = sach.matacgia and sach.mangonngu = ngonngu.mangonngu and sach.nhande like N'%" + strsach + "%' ";
-            if (tacgia != "") strkn = strkn + " and tacgia.tentacgia like N'%" + tacgia + "%'";
-            if (strphanloai != "") strkn = strkn + " and phanloai.loai like N'%" + strphanloai + "%'";
-            if (strngonngu!= "") strkn = strkn + " and ngonngu.ngonngu like N'%" + strngonngu+ "%'";
+            string strkn = "select sach.MaSach as ' Mã Sách',sach.NhanDe as 'Nhan Đề',TacGia.TenTacGia as 'Tên tác giả',NgonNgu.NgonNgu as 'Ngôn ngữ',sach.SoLuong as 'Sách còn',ViTriluutru.kho, ViTriluutru.ke as 'Kệ',ViTriluutru.ngan as 'Ngăn' from TacGia,TheLoai,NgonNgu,sach,ViTriluutru where sach.MaViTri = ViTriluutru.MaViTri and sach.MaTheLoai = TheLoai.MaTheLoai and TacGia.MaTacGia = sach.MaTacGia and sach.MaNgonNgu = NgonNgu.MaNgonNgu and sach.NhanDe like N'%" + strsach + "%' ";
+            if (TacGia != "") strkn = strkn + " and TacGia.TenTacGia like N'%" + TacGia + "%'";
+            if (strTheLoai != "") strkn = strkn + " and TheLoai.loai like N'%" + strTheLoai + "%'";
+            if (strNgonNgu!= "") strkn = strkn + " and NgonNgu.NgonNgu like N'%" + strNgonNgu+ "%'";
             laydulieu dl = new laydulieu();
             return dl.getdata(strkn);
 

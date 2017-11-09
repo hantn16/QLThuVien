@@ -36,18 +36,18 @@
             this.btpreview = new System.Windows.Forms.Button();
             this.btlast = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btcapnhat = new System.Windows.Forms.Button();
-            this.bttaomoi = new System.Windows.Forms.Button();
-            this.btxoabo = new System.Windows.Forms.Button();
+            this.btCapNhat = new System.Windows.Forms.Button();
+            this.btTaoMoi = new System.Windows.Forms.Button();
+            this.btXoaBo = new System.Windows.Forms.Button();
             this.btthoat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txttenkhoa = new System.Windows.Forms.ComboBox();
-            this.txtngaysinh = new System.Windows.Forms.TextBox();
-            this.txtmadocgia = new System.Windows.Forms.TextBox();
-            this.txtngaylapthe = new System.Windows.Forms.TextBox();
-            this.txtdiachi = new System.Windows.Forms.TextBox();
-            this.txtvitri = new System.Windows.Forms.TextBox();
-            this.txthoten = new System.Windows.Forms.TextBox();
+            this.txtNgaySinh = new System.Windows.Forms.TextBox();
+            this.txtMaDocGia = new System.Windows.Forms.TextBox();
+            this.txtNgayLapThe = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtViTri = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,9 +60,9 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctchondoituong = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.cttaomoi = new System.Windows.Forms.ToolStripMenuItem();
-            this.ctxoabo = new System.Windows.Forms.ToolStripMenuItem();
-            this.ctcapnhat = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctTaoMoi = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctXoaBo = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctCapNhat = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -131,9 +131,9 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox2.Controls.Add(this.btcapnhat);
-            this.groupBox2.Controls.Add(this.bttaomoi);
-            this.groupBox2.Controls.Add(this.btxoabo);
+            this.groupBox2.Controls.Add(this.btCapNhat);
+            this.groupBox2.Controls.Add(this.btTaoMoi);
+            this.groupBox2.Controls.Add(this.btXoaBo);
             this.groupBox2.Controls.Add(this.btthoat);
             this.groupBox2.ForeColor = System.Drawing.Color.Cyan;
             this.groupBox2.Location = new System.Drawing.Point(272, 316);
@@ -142,38 +142,38 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             // 
-            // btcapnhat
+            // btCapNhat
             // 
-            this.btcapnhat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btcapnhat.Location = new System.Drawing.Point(155, 11);
-            this.btcapnhat.Name = "btcapnhat";
-            this.btcapnhat.Size = new System.Drawing.Size(75, 31);
-            this.btcapnhat.TabIndex = 7;
-            this.btcapnhat.Text = "Cập nhật";
-            this.btcapnhat.UseVisualStyleBackColor = true;
-            this.btcapnhat.Click += new System.EventHandler(this.btcapnhat_Click);
+            this.btCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btCapNhat.Location = new System.Drawing.Point(155, 11);
+            this.btCapNhat.Name = "btCapNhat";
+            this.btCapNhat.Size = new System.Drawing.Size(75, 31);
+            this.btCapNhat.TabIndex = 7;
+            this.btCapNhat.Text = "Cập nhật";
+            this.btCapNhat.UseVisualStyleBackColor = true;
+            this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
             // 
-            // bttaomoi
+            // btTaoMoi
             // 
-            this.bttaomoi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bttaomoi.Location = new System.Drawing.Point(8, 11);
-            this.bttaomoi.Name = "bttaomoi";
-            this.bttaomoi.Size = new System.Drawing.Size(75, 31);
-            this.bttaomoi.TabIndex = 5;
-            this.bttaomoi.Text = "Tạo mới";
-            this.bttaomoi.UseVisualStyleBackColor = true;
-            this.bttaomoi.Click += new System.EventHandler(this.bttaomoi_Click);
+            this.btTaoMoi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btTaoMoi.Location = new System.Drawing.Point(8, 11);
+            this.btTaoMoi.Name = "btTaoMoi";
+            this.btTaoMoi.Size = new System.Drawing.Size(75, 31);
+            this.btTaoMoi.TabIndex = 5;
+            this.btTaoMoi.Text = "Tạo mới";
+            this.btTaoMoi.UseVisualStyleBackColor = true;
+            this.btTaoMoi.Click += new System.EventHandler(this.btTaoMoi_Click);
             // 
-            // btxoabo
+            // btXoaBo
             // 
-            this.btxoabo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btxoabo.Location = new System.Drawing.Point(82, 11);
-            this.btxoabo.Name = "btxoabo";
-            this.btxoabo.Size = new System.Drawing.Size(75, 31);
-            this.btxoabo.TabIndex = 6;
-            this.btxoabo.Text = "Xoá bỏ";
-            this.btxoabo.UseVisualStyleBackColor = true;
-            this.btxoabo.Click += new System.EventHandler(this.btxoabo_Click);
+            this.btXoaBo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btXoaBo.Location = new System.Drawing.Point(82, 11);
+            this.btXoaBo.Name = "btXoaBo";
+            this.btXoaBo.Size = new System.Drawing.Size(75, 31);
+            this.btXoaBo.TabIndex = 6;
+            this.btXoaBo.Text = "Xoá bỏ";
+            this.btXoaBo.UseVisualStyleBackColor = true;
+            this.btXoaBo.Click += new System.EventHandler(this.btXoaBo_Click);
             // 
             // btthoat
             // 
@@ -190,12 +190,12 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox1.Controls.Add(this.txttenkhoa);
-            this.groupBox1.Controls.Add(this.txtngaysinh);
-            this.groupBox1.Controls.Add(this.txtmadocgia);
-            this.groupBox1.Controls.Add(this.txtngaylapthe);
-            this.groupBox1.Controls.Add(this.txtdiachi);
-            this.groupBox1.Controls.Add(this.txtvitri);
-            this.groupBox1.Controls.Add(this.txthoten);
+            this.groupBox1.Controls.Add(this.txtNgaySinh);
+            this.groupBox1.Controls.Add(this.txtMaDocGia);
+            this.groupBox1.Controls.Add(this.txtNgayLapThe);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
+            this.groupBox1.Controls.Add(this.txtViTri);
+            this.groupBox1.Controls.Add(this.txtHoTen);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -221,55 +221,55 @@
             this.txttenkhoa.Size = new System.Drawing.Size(121, 21);
             this.txttenkhoa.TabIndex = 2;
             // 
-            // txtngaysinh
+            // txtNgaySinh
             // 
-            this.txtngaysinh.Enabled = false;
-            this.txtngaysinh.Location = new System.Drawing.Point(133, 60);
-            this.txtngaysinh.Name = "txtngaysinh";
-            this.txtngaysinh.Size = new System.Drawing.Size(91, 20);
-            this.txtngaysinh.TabIndex = 1;
+            this.txtNgaySinh.Enabled = false;
+            this.txtNgaySinh.Location = new System.Drawing.Point(133, 60);
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            this.txtNgaySinh.Size = new System.Drawing.Size(91, 20);
+            this.txtNgaySinh.TabIndex = 1;
             // 
-            // txtmadocgia
+            // txtMaDocGia
             // 
-            this.txtmadocgia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtmadocgia.Enabled = false;
-            this.txtmadocgia.Location = new System.Drawing.Point(132, 9);
-            this.txtmadocgia.Name = "txtmadocgia";
-            this.txtmadocgia.Size = new System.Drawing.Size(92, 20);
-            this.txtmadocgia.TabIndex = 3;
-            this.txtmadocgia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmadocgia_KeyDown);
+            this.txtMaDocGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaDocGia.Enabled = false;
+            this.txtMaDocGia.Location = new System.Drawing.Point(132, 9);
+            this.txtMaDocGia.Name = "txtMaDocGia";
+            this.txtMaDocGia.Size = new System.Drawing.Size(92, 20);
+            this.txtMaDocGia.TabIndex = 3;
+            this.txtMaDocGia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaDocGia_KeyDown);
             // 
-            // txtngaylapthe
+            // txtNgayLapThe
             // 
-            this.txtngaylapthe.Enabled = false;
-            this.txtngaylapthe.Location = new System.Drawing.Point(411, 86);
-            this.txtngaylapthe.Name = "txtngaylapthe";
-            this.txtngaylapthe.Size = new System.Drawing.Size(85, 20);
-            this.txtngaylapthe.TabIndex = 3;
+            this.txtNgayLapThe.Enabled = false;
+            this.txtNgayLapThe.Location = new System.Drawing.Point(411, 86);
+            this.txtNgayLapThe.Name = "txtNgayLapThe";
+            this.txtNgayLapThe.Size = new System.Drawing.Size(85, 20);
+            this.txtNgayLapThe.TabIndex = 3;
             // 
-            // txtdiachi
+            // txtDiaChi
             // 
-            this.txtdiachi.Enabled = false;
-            this.txtdiachi.Location = new System.Drawing.Point(411, 63);
-            this.txtdiachi.Name = "txtdiachi";
-            this.txtdiachi.Size = new System.Drawing.Size(160, 20);
-            this.txtdiachi.TabIndex = 4;
+            this.txtDiaChi.Enabled = false;
+            this.txtDiaChi.Location = new System.Drawing.Point(411, 63);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(160, 20);
+            this.txtDiaChi.TabIndex = 4;
             // 
-            // txtvitri
+            // txtViTri
             // 
-            this.txtvitri.Enabled = false;
-            this.txtvitri.Location = new System.Drawing.Point(411, 37);
-            this.txtvitri.Name = "txtvitri";
-            this.txtvitri.Size = new System.Drawing.Size(160, 20);
-            this.txtvitri.TabIndex = 3;
+            this.txtViTri.Enabled = false;
+            this.txtViTri.Location = new System.Drawing.Point(411, 37);
+            this.txtViTri.Name = "txtViTri";
+            this.txtViTri.Size = new System.Drawing.Size(160, 20);
+            this.txtViTri.TabIndex = 3;
             // 
-            // txthoten
+            // txtHoTen
             // 
-            this.txthoten.Enabled = false;
-            this.txthoten.Location = new System.Drawing.Point(133, 37);
-            this.txthoten.Name = "txthoten";
-            this.txthoten.Size = new System.Drawing.Size(127, 20);
-            this.txthoten.TabIndex = 0;
+            this.txtHoTen.Enabled = false;
+            this.txtHoTen.Location = new System.Drawing.Point(133, 37);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(127, 20);
+            this.txtHoTen.TabIndex = 0;
             // 
             // label3
             // 
@@ -362,9 +362,9 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctchondoituong,
             this.toolStripMenuItem3,
-            this.cttaomoi,
-            this.ctxoabo,
-            this.ctcapnhat,
+            this.ctTaoMoi,
+            this.ctXoaBo,
+            this.ctCapNhat,
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.thoátToolStripMenuItem});
@@ -384,23 +384,23 @@
             this.toolStripMenuItem3.Size = new System.Drawing.Size(212, 6);
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
-            // cttaomoi
+            // ctTaoMoi
             // 
-            this.cttaomoi.Name = "cttaomoi";
-            this.cttaomoi.Size = new System.Drawing.Size(215, 22);
-            this.cttaomoi.Text = "Tạo mới";
+            this.ctTaoMoi.Name = "ctTaoMoi";
+            this.ctTaoMoi.Size = new System.Drawing.Size(215, 22);
+            this.ctTaoMoi.Text = "Tạo mới";
             // 
-            // ctxoabo
+            // ctXoaBo
             // 
-            this.ctxoabo.Name = "ctxoabo";
-            this.ctxoabo.Size = new System.Drawing.Size(215, 22);
-            this.ctxoabo.Text = "Xóa bỏ";
+            this.ctXoaBo.Name = "ctXoaBo";
+            this.ctXoaBo.Size = new System.Drawing.Size(215, 22);
+            this.ctXoaBo.Text = "Xóa bỏ";
             // 
-            // ctcapnhat
+            // ctCapNhat
             // 
-            this.ctcapnhat.Name = "ctcapnhat";
-            this.ctcapnhat.Size = new System.Drawing.Size(215, 22);
-            this.ctcapnhat.Text = "Cập nhật";
+            this.ctCapNhat.Name = "ctCapNhat";
+            this.ctCapNhat.Size = new System.Drawing.Size(215, 22);
+            this.ctCapNhat.Text = "Cập nhật";
             // 
             // toolStripMenuItem1
             // 
@@ -459,12 +459,12 @@
         private System.Windows.Forms.Button btpreview;
         private System.Windows.Forms.Button btlast;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btxoabo;
+        private System.Windows.Forms.Button btXoaBo;
         private System.Windows.Forms.Button btthoat;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtngaysinh;
-        private System.Windows.Forms.TextBox txtmadocgia;
-        private System.Windows.Forms.TextBox txthoten;
+        private System.Windows.Forms.TextBox txtNgaySinh;
+        private System.Windows.Forms.TextBox txtMaDocGia;
+        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -475,16 +475,16 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGrid dataGrid1;
-        private System.Windows.Forms.Button btcapnhat;
-        private System.Windows.Forms.Button bttaomoi;
-        private System.Windows.Forms.TextBox txtngaylapthe;
-        private System.Windows.Forms.TextBox txtdiachi;
-        private System.Windows.Forms.TextBox txtvitri;
+        private System.Windows.Forms.Button btCapNhat;
+        private System.Windows.Forms.Button btTaoMoi;
+        private System.Windows.Forms.TextBox txtNgayLapThe;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtViTri;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ctchondoituong;
-        private System.Windows.Forms.ToolStripMenuItem cttaomoi;
-        private System.Windows.Forms.ToolStripMenuItem ctxoabo;
-        private System.Windows.Forms.ToolStripMenuItem ctcapnhat;
+        private System.Windows.Forms.ToolStripMenuItem ctTaoMoi;
+        private System.Windows.Forms.ToolStripMenuItem ctXoaBo;
+        private System.Windows.Forms.ToolStripMenuItem ctCapNhat;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;

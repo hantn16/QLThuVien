@@ -24,11 +24,11 @@ namespace quanly.frm
             rong = this.Size.Height;
             hf.Show();
               lbnam.Text = "Ngày " + DateTime.Now.Day.ToString() + " Tháng " + DateTime.Now.Month.ToString() + " Năm " + DateTime.Now.Year.ToString();  
-              if(KTdangnhap.strquyenhan.IndexOf("ADMIN") >=0)  
+              if(KTdangnhap.strQuyenHan.IndexOf("ADMIN") >=0)  
               {
                 mnquanlykho.Enabled = true;
                 mnquanlymuontra.Enabled = true;
-                mnquanlydocgia.Enabled = true;
+                mnquanlyDocGia.Enabled = true;
                 mnphanquyen.Enabled = true;
                 mntaotaikhoanmoi.Enabled = true;
                 mnquanlydanhmuc.Enabled = true;
@@ -36,17 +36,17 @@ namespace quanly.frm
               }
               else
               {
-                  if(KTdangnhap.strquyenhan.IndexOf("THUKHO") >=0)
+                  if(KTdangnhap.strQuyenHan.IndexOf("THUKHO") >=0)
                     {
                         mnquanlykho.Enabled = true;
                         mnquanlydanhmuc.Enabled = true;
                         khoaToolStripMenuItem.Enabled = false;
                     }
-                    if(KTdangnhap.strquyenhan.IndexOf("MUONTRA") >=0)
+                    if(KTdangnhap.strQuyenHan.IndexOf("MUONTRA") >=0)
                         mnquanlymuontra.Enabled = true;
-                    if(KTdangnhap.strquyenhan.IndexOf("QUANLY") >=0)
+                    if(KTdangnhap.strQuyenHan.IndexOf("QUANLY") >=0)
                     {
-                        mnquanlydocgia.Enabled = true;
+                        mnquanlyDocGia.Enabled = true;
                         mnquanlydanhmuc.Enabled = true;
                         tácGiảToolStripMenuItem.Enabled = false;
                         loạiSáchToolStripMenuItem.Enabled = false;
@@ -54,7 +54,7 @@ namespace quanly.frm
                         nhàXuấtBảnToolStripMenuItem.Enabled = false;
                     }
              }
-             if (KTdangnhap.strquyenhan != "")
+             if (KTdangnhap.strQuyenHan != "")
              {
                  mnttcanhan.Enabled = true;
                  mndangxuat.Enabled = true;
@@ -67,11 +67,11 @@ namespace quanly.frm
         private void mndangxuat_Click(object sender, EventArgs e)
         {
             s = "Chương trình quản lý thư viện - Hãy đăng nhập vạo hệ thống để sử dụng        ";
-            KTdangnhap.strquyenhan = "";
+            KTdangnhap.strQuyenHan = "";
             KTdangnhap.strnguoidung = "";
             mnquanlykho.Enabled = false;
             mnquanlymuontra.Enabled = false;
-            mnquanlydocgia.Enabled = false;
+            mnquanlyDocGia.Enabled = false;
             mnphanquyen.Enabled = false;
             mnttcanhan.Enabled = false;
             mndangxuat.Enabled = false;
@@ -91,7 +91,7 @@ namespace quanly.frm
                      {
                          hf.set_text("        Nhập thông tin sách ẩu rồi giờ lại vào chỉnh thông tin");
                          hf.set_anh(3);
-                         Frmcapnhatsach cns = new Frmcapnhatsach();
+                         FrmCapNhatsach cns = new FrmCapNhatsach();
                          cns.MdiParent = this;
                          cns.Show();
                          break;
@@ -100,7 +100,7 @@ namespace quanly.frm
                      {
                          hf.set_text("        Lại huỷ sách trong thư viện rồi");
                          hf.set_anh(3);
-                         Frmcapnhatsach cns = new Frmcapnhatsach();
+                         FrmCapNhatsach cns = new FrmCapNhatsach();
                          cns.MdiParent = this;
                          cns.Show();
                          break;
@@ -109,7 +109,7 @@ namespace quanly.frm
                      {
                          hf.set_text("        Có sách mới nhập về thư viện à");
                          hf.set_anh(3);
-                         Frmcapnhatsach cns = new Frmcapnhatsach();
+                         FrmCapNhatsach cns = new FrmCapNhatsach();
                          cns.MdiParent = this;
                          cns.ht = 1;
                          cns.Show();
@@ -131,8 +131,8 @@ namespace quanly.frm
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
                          Formhienthi ht = new Formhienthi();
-                         Formhienthi.chuoiketnoi = " select matacgia as 'Mã tác giả',tentacgia as 'Tên tác giả' from tacgia";
-                         Formhienthi.bangketnoi = "tacgia";
+                         Formhienthi.chuoiketnoi = " select MaTacGia as 'Mã tác giả',TenTacGia as 'Tên tác giả' from TacGia";
+                         Formhienthi.bangketnoi = "TacGia";
                          ht.MdiParent = this;
                          ht.Show();
                          break;
@@ -144,8 +144,8 @@ namespace quanly.frm
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
                          Formhienthi ht = new Formhienthi();
-                         Formhienthi.chuoiketnoi = " select manxb as 'Mã nhà xuất bản',ten as 'Tên nhà xuất bản' from nhaxuatban";
-                         Formhienthi.bangketnoi = "nhaxuatban";
+                         Formhienthi.chuoiketnoi = " select MaNXB as 'Mã nhà xuất bản',ten as 'Tên nhà xuất bản' from NhaXuatBan";
+                         Formhienthi.bangketnoi = "NhaXuatBan";
                          ht.MdiParent = this;
                          ht.Show(); break;
                      }
@@ -156,8 +156,8 @@ namespace quanly.frm
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
                          Formhienthi ht = new Formhienthi();
-                         Formhienthi.chuoiketnoi = " select maphanloai as 'Mã phân loại',loai as 'loại sách' from phanloai";
-                         Formhienthi.bangketnoi = "phanloai";
+                         Formhienthi.chuoiketnoi = " select MaTheLoai as 'Mã phân loại',loai as 'loại sách' from TheLoai";
+                         Formhienthi.bangketnoi = "TheLoai";
                          ht.MdiParent = this;
                          ht.Show(); break;
                      }
@@ -179,8 +179,8 @@ namespace quanly.frm
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
                          Formhienthi ht = new Formhienthi();
-                         Formhienthi.chuoiketnoi = " select mangonngu as 'Mã ngôn ngữ',ngonngu as 'tên ngôn ngữ' from ngonngu";
-                         Formhienthi.bangketnoi = "ngonngu";
+                         Formhienthi.chuoiketnoi = " select MaNgonNgu as 'Mã ngôn ngữ',NgonNgu as 'tên ngôn ngữ' from NgonNgu";
+                         Formhienthi.bangketnoi = "NgonNgu";
                          ht.MdiParent = this;
                          ht.Show(); break;
                      }
@@ -191,7 +191,7 @@ namespace quanly.frm
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
                          Formhienthi ht = new Formhienthi();
-                         Formhienthi.chuoiketnoi = " select makhoa as 'Mã khoa',tenkhoa as 'tên khoa' from khoa";
+                         Formhienthi.chuoiketnoi = " select MaKhoa as 'Mã khoa',tenkhoa as 'tên khoa' from khoa";
                          Formhienthi.bangketnoi = "khoa";
                          ht.MdiParent = this;
                          ht.Show(); break;
@@ -202,7 +202,7 @@ namespace quanly.frm
                          hf.set_anh(2);
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
-                         Frmtrasach ts = new Frmtrasach();
+                         FrmTraSach ts = new FrmTraSach();
                          ts.MdiParent = this;
                          ts.Show();
                          break;
@@ -275,12 +275,12 @@ namespace quanly.frm
                          if (dn1.DialogResult == DialogResult.OK)
                          {
                              KTdangnhap dn = new KTdangnhap();
-                            if (dn.kt_dangnhap(Frdangnhap.strtendn, Frdangnhap.strmatkhaudn))
+                            if (dn.kt_dangnhap(Frdangnhap.strtendn, Frdangnhap.strMatKhaudn))
                              {
-                               s = "Người đang sử dụng chương trình có tài khoản là: " + KTdangnhap.strnguoidung.Trim() + " và quyền hạn là: " + KTdangnhap.strquyenhan + "        ";
-                                 Lnhanvien nv = new Lnhanvien(KTdangnhap.strmanhanvien, KTdangnhap.strhoten, KTdangnhap.strdiachi, KTdangnhap.strquyenhan, KTdangnhap.strnguoidung, KTdangnhap.strmatkhau);
+                               s = "Người đang sử dụng chương trình có tài khoản là: " + KTdangnhap.strnguoidung.Trim() + " và quyền hạn là: " + KTdangnhap.strQuyenHan + "        ";
+                                 NhanVien nv = new NhanVien(KTdangnhap.strMaNhanVien, KTdangnhap.strHoTen, KTdangnhap.strDiaChi, KTdangnhap.strQuyenHan, KTdangnhap.strnguoidung, KTdangnhap.strMatKhau);
                                  Frmmain_Load(sender, e);
-                                 MessageBox.Show("Bạn đã đăng nhập thành công vào hệ thống với quyền hạn là: " + KTdangnhap.strquyenhan, "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                                 MessageBox.Show("Bạn đã đăng nhập thành công vào hệ thống với quyền hạn là: " + KTdangnhap.strQuyenHan, "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
                                 
                            }
                              else { MessageBox.Show("BAN DA NHAP KHONG ĐUNG DU LIEU"); }
@@ -315,7 +315,7 @@ namespace quanly.frm
                         hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
-                        Frmphanloaisach pl = new Frmphanloaisach();
+                        FrmTheLoaisach pl = new FrmTheLoaisach();
                         pl.MdiParent = this;
                         pl.Show();
                         break;
@@ -326,7 +326,7 @@ namespace quanly.frm
                         hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
-                        Frmtaomoitk tm = new Frmtaomoitk();
+                        FrmTaoMoitk tm = new FrmTaoMoitk();
                         tm.MdiParent = this;
                         tm.Show();
                         break;
@@ -390,7 +390,7 @@ namespace quanly.frm
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         laydulieu dl = new laydulieu();
-                        DataSet ds = dl.getdata("select * from sach where soluong > 0");
+                        DataSet ds = dl.getdata("select * from sach where SoLuong > 0");
                         CrystalReportsachcon rp = new CrystalReportsachcon();
                         rp.SetDataSource(ds.Tables[0]);
                         Form1 f = new Form1();
@@ -424,7 +424,7 @@ namespace quanly.frm
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         laydulieu dl = new laydulieu();
-                        DataSet ds = dl.getdata("select * from sach inner join sachhong on sachhong.masach = sach.masach");
+                        DataSet ds = dl.getdata("select * from sach inner join sachhong on sachhong.MaSach = sach.MaSach");
                         CrystalReportsachcon rp = new CrystalReportsachcon();
                         rp.SetDataSource(ds.Tables[0]);
                         Form1 f = new Form1();
@@ -441,7 +441,7 @@ namespace quanly.frm
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         laydulieu dl = new laydulieu();
-                        DataSet ds = dl.getdata("select phieumuon.* from sachmuon inner join phieumuon on sachmuon.maphieumuon = phieumuon.maphieumuon where (GETdate()- phieumuon.ngaymuon > day(7)) or (phieumuon.thethucmuon=N'Mượn tại chỗ')");
+                        DataSet ds = dl.getdata("select phieumuon.* from sachmuon inner join phieumuon on sachmuon.maphieumuon = phieumuon.maphieumuon where (GETdate()- phieumuon.ngaymuon > day(7)) or (phieumuon.TheThucmuon=N'Mượn tại chỗ')");
                         CrystalReporttrehan rp = new CrystalReporttrehan();
                         rp.SetDataSource(ds.Tables[0]);
                         Form1 f = new Form1();

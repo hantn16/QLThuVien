@@ -40,22 +40,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtthethuc = new System.Windows.Forms.TextBox();
-            this.txtnamxb = new System.Windows.Forms.TextBox();
-            this.txttacgia = new System.Windows.Forms.TextBox();
+            this.txtTheThuc = new System.Windows.Forms.TextBox();
+            this.txtNamXuatBan = new System.Windows.Forms.TextBox();
+            this.txtTacGia = new System.Windows.Forms.TextBox();
             this.txtngan = new System.Windows.Forms.TextBox();
             this.txtke = new System.Windows.Forms.TextBox();
             this.txtnhaxb = new System.Windows.Forms.TextBox();
             this.txtkho = new System.Windows.Forms.TextBox();
-            this.txtsotrang = new System.Windows.Forms.TextBox();
-            this.txtngonngu = new System.Windows.Forms.TextBox();
+            this.txtSoTrang = new System.Windows.Forms.TextBox();
+            this.txtNgonNgu = new System.Windows.Forms.TextBox();
             this.txtlanxuatban = new System.Windows.Forms.TextBox();
-            this.txtsoluong = new System.Windows.Forms.TextBox();
-            this.txtnhande = new System.Windows.Forms.TextBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.txtNhanDe = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtmasach = new System.Windows.Forms.TextBox();
+            this.txtMaSach = new System.Windows.Forms.TextBox();
             this.lbhong = new System.Windows.Forms.Label();
             this.btsach = new System.Windows.Forms.Button();
             this.lbketqua = new System.Windows.Forms.Label();
@@ -69,10 +69,10 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtdiachi = new System.Windows.Forms.TextBox();
-            this.txtvitri = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtViTri = new System.Windows.Forms.TextBox();
             this.txtkhoa = new System.Windows.Forms.TextBox();
-            this.txthoten = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -99,22 +99,22 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtthethuc);
-            this.groupBox1.Controls.Add(this.txtnamxb);
-            this.groupBox1.Controls.Add(this.txttacgia);
+            this.groupBox1.Controls.Add(this.txtTheThuc);
+            this.groupBox1.Controls.Add(this.txtNamXuatBan);
+            this.groupBox1.Controls.Add(this.txtTacGia);
             this.groupBox1.Controls.Add(this.txtngan);
             this.groupBox1.Controls.Add(this.txtke);
             this.groupBox1.Controls.Add(this.txtnhaxb);
             this.groupBox1.Controls.Add(this.txtkho);
-            this.groupBox1.Controls.Add(this.txtsotrang);
-            this.groupBox1.Controls.Add(this.txtngonngu);
+            this.groupBox1.Controls.Add(this.txtSoTrang);
+            this.groupBox1.Controls.Add(this.txtNgonNgu);
             this.groupBox1.Controls.Add(this.txtlanxuatban);
-            this.groupBox1.Controls.Add(this.txtsoluong);
-            this.groupBox1.Controls.Add(this.txtnhande);
+            this.groupBox1.Controls.Add(this.txtSoLuong);
+            this.groupBox1.Controls.Add(this.txtNhanDe);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtmasach);
+            this.groupBox1.Controls.Add(this.txtMaSach);
             this.groupBox1.Controls.Add(this.lbhong);
             this.groupBox1.Controls.Add(this.btsach);
             this.groupBox1.Controls.Add(this.lbketqua);
@@ -217,32 +217,32 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Ngôn ngữ";
             // 
-            // txtthethuc
+            // txtTheThuc
             // 
-            this.txtthethuc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtthethuc.Enabled = false;
-            this.txtthethuc.Location = new System.Drawing.Point(281, 189);
-            this.txtthethuc.Name = "txtthethuc";
-            this.txtthethuc.Size = new System.Drawing.Size(99, 20);
-            this.txtthethuc.TabIndex = 20;
+            this.txtTheThuc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTheThuc.Enabled = false;
+            this.txtTheThuc.Location = new System.Drawing.Point(281, 189);
+            this.txtTheThuc.Name = "txtTheThuc";
+            this.txtTheThuc.Size = new System.Drawing.Size(99, 20);
+            this.txtTheThuc.TabIndex = 20;
             // 
-            // txtnamxb
+            // txtNamXuatBan
             // 
-            this.txtnamxb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtnamxb.Enabled = false;
-            this.txtnamxb.Location = new System.Drawing.Point(214, 130);
-            this.txtnamxb.Name = "txtnamxb";
-            this.txtnamxb.Size = new System.Drawing.Size(70, 20);
-            this.txtnamxb.TabIndex = 20;
+            this.txtNamXuatBan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNamXuatBan.Enabled = false;
+            this.txtNamXuatBan.Location = new System.Drawing.Point(214, 130);
+            this.txtNamXuatBan.Name = "txtNamXuatBan";
+            this.txtNamXuatBan.Size = new System.Drawing.Size(70, 20);
+            this.txtNamXuatBan.TabIndex = 20;
             // 
-            // txttacgia
+            // txtTacGia
             // 
-            this.txttacgia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txttacgia.Enabled = false;
-            this.txttacgia.Location = new System.Drawing.Point(214, 156);
-            this.txttacgia.Name = "txttacgia";
-            this.txttacgia.Size = new System.Drawing.Size(166, 20);
-            this.txttacgia.TabIndex = 21;
+            this.txtTacGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTacGia.Enabled = false;
+            this.txtTacGia.Location = new System.Drawing.Point(214, 156);
+            this.txtTacGia.Name = "txtTacGia";
+            this.txtTacGia.Size = new System.Drawing.Size(166, 20);
+            this.txtTacGia.TabIndex = 21;
             // 
             // txtngan
             // 
@@ -280,23 +280,23 @@
             this.txtkho.Size = new System.Drawing.Size(108, 20);
             this.txtkho.TabIndex = 27;
             // 
-            // txtsotrang
+            // txtSoTrang
             // 
-            this.txtsotrang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtsotrang.Enabled = false;
-            this.txtsotrang.Location = new System.Drawing.Point(86, 156);
-            this.txtsotrang.Name = "txtsotrang";
-            this.txtsotrang.Size = new System.Drawing.Size(44, 20);
-            this.txtsotrang.TabIndex = 26;
+            this.txtSoTrang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSoTrang.Enabled = false;
+            this.txtSoTrang.Location = new System.Drawing.Point(86, 156);
+            this.txtSoTrang.Name = "txtSoTrang";
+            this.txtSoTrang.Size = new System.Drawing.Size(44, 20);
+            this.txtSoTrang.TabIndex = 26;
             // 
-            // txtngonngu
+            // txtNgonNgu
             // 
-            this.txtngonngu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtngonngu.Enabled = false;
-            this.txtngonngu.Location = new System.Drawing.Point(214, 104);
-            this.txtngonngu.Name = "txtngonngu";
-            this.txtngonngu.Size = new System.Drawing.Size(114, 20);
-            this.txtngonngu.TabIndex = 22;
+            this.txtNgonNgu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNgonNgu.Enabled = false;
+            this.txtNgonNgu.Location = new System.Drawing.Point(214, 104);
+            this.txtNgonNgu.Name = "txtNgonNgu";
+            this.txtNgonNgu.Size = new System.Drawing.Size(114, 20);
+            this.txtNgonNgu.TabIndex = 22;
             // 
             // txtlanxuatban
             // 
@@ -307,23 +307,23 @@
             this.txtlanxuatban.Size = new System.Drawing.Size(44, 20);
             this.txtlanxuatban.TabIndex = 18;
             // 
-            // txtsoluong
+            // txtSoLuong
             // 
-            this.txtsoluong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtsoluong.Enabled = false;
-            this.txtsoluong.Location = new System.Drawing.Point(86, 104);
-            this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(44, 20);
-            this.txtsoluong.TabIndex = 17;
+            this.txtSoLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSoLuong.Enabled = false;
+            this.txtSoLuong.Location = new System.Drawing.Point(86, 104);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(44, 20);
+            this.txtSoLuong.TabIndex = 17;
             // 
-            // txtnhande
+            // txtNhanDe
             // 
-            this.txtnhande.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtnhande.Enabled = false;
-            this.txtnhande.Location = new System.Drawing.Point(86, 65);
-            this.txtnhande.Name = "txtnhande";
-            this.txtnhande.Size = new System.Drawing.Size(294, 20);
-            this.txtnhande.TabIndex = 19;
+            this.txtNhanDe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNhanDe.Enabled = false;
+            this.txtNhanDe.Location = new System.Drawing.Point(86, 65);
+            this.txtNhanDe.Name = "txtNhanDe";
+            this.txtNhanDe.Size = new System.Drawing.Size(294, 20);
+            this.txtNhanDe.TabIndex = 19;
             // 
             // label2
             // 
@@ -352,13 +352,13 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Mã sách";
             // 
-            // txtmasach
+            // txtMaSach
             // 
-            this.txtmasach.Location = new System.Drawing.Point(86, 20);
-            this.txtmasach.Name = "txtmasach";
-            this.txtmasach.Size = new System.Drawing.Size(87, 20);
-            this.txtmasach.TabIndex = 0;
-            this.txtmasach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmasach_KeyDown);
+            this.txtMaSach.Location = new System.Drawing.Point(86, 20);
+            this.txtMaSach.Name = "txtMaSach";
+            this.txtMaSach.Size = new System.Drawing.Size(87, 20);
+            this.txtMaSach.TabIndex = 0;
+            this.txtMaSach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaSach_KeyDown);
             // 
             // lbhong
             // 
@@ -410,10 +410,10 @@
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.txtdiachi);
-            this.groupBox3.Controls.Add(this.txtvitri);
+            this.groupBox3.Controls.Add(this.txtDiaChi);
+            this.groupBox3.Controls.Add(this.txtViTri);
             this.groupBox3.Controls.Add(this.txtkhoa);
-            this.groupBox3.Controls.Add(this.txthoten);
+            this.groupBox3.Controls.Add(this.txtHoTen);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox3.Location = new System.Drawing.Point(415, 10);
             this.groupBox3.Name = "groupBox3";
@@ -493,23 +493,23 @@
             this.label14.TabIndex = 9;
             this.label14.Text = "Họ tên";
             // 
-            // txtdiachi
+            // txtDiaChi
             // 
-            this.txtdiachi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtdiachi.Enabled = false;
-            this.txtdiachi.Location = new System.Drawing.Point(63, 114);
-            this.txtdiachi.Name = "txtdiachi";
-            this.txtdiachi.Size = new System.Drawing.Size(205, 20);
-            this.txtdiachi.TabIndex = 22;
+            this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDiaChi.Enabled = false;
+            this.txtDiaChi.Location = new System.Drawing.Point(63, 114);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(205, 20);
+            this.txtDiaChi.TabIndex = 22;
             // 
-            // txtvitri
+            // txtViTri
             // 
-            this.txtvitri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtvitri.Enabled = false;
-            this.txtvitri.Location = new System.Drawing.Point(63, 88);
-            this.txtvitri.Name = "txtvitri";
-            this.txtvitri.Size = new System.Drawing.Size(128, 20);
-            this.txtvitri.TabIndex = 22;
+            this.txtViTri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtViTri.Enabled = false;
+            this.txtViTri.Location = new System.Drawing.Point(63, 88);
+            this.txtViTri.Name = "txtViTri";
+            this.txtViTri.Size = new System.Drawing.Size(128, 20);
+            this.txtViTri.TabIndex = 22;
             // 
             // txtkhoa
             // 
@@ -520,14 +520,14 @@
             this.txtkhoa.Size = new System.Drawing.Size(128, 20);
             this.txtkhoa.TabIndex = 22;
             // 
-            // txthoten
+            // txtHoTen
             // 
-            this.txthoten.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txthoten.Enabled = false;
-            this.txthoten.Location = new System.Drawing.Point(63, 65);
-            this.txthoten.Name = "txthoten";
-            this.txthoten.Size = new System.Drawing.Size(128, 20);
-            this.txthoten.TabIndex = 22;
+            this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHoTen.Enabled = false;
+            this.txtHoTen.Location = new System.Drawing.Point(63, 65);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(128, 20);
+            this.txtHoTen.TabIndex = 22;
             // 
             // groupBox5
             // 
@@ -653,7 +653,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btsach;
-        private System.Windows.Forms.TextBox txtmasach;
+        private System.Windows.Forms.TextBox txtMaSach;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbketqua;
         private System.Windows.Forms.Label lbhong;
@@ -667,17 +667,17 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtnamxb;
-        private System.Windows.Forms.TextBox txttacgia;
+        private System.Windows.Forms.TextBox txtNamXuatBan;
+        private System.Windows.Forms.TextBox txtTacGia;
         private System.Windows.Forms.TextBox txtngan;
         private System.Windows.Forms.TextBox txtke;
         private System.Windows.Forms.TextBox txtnhaxb;
         private System.Windows.Forms.TextBox txtkho;
-        private System.Windows.Forms.TextBox txtsotrang;
-        private System.Windows.Forms.TextBox txtngonngu;
+        private System.Windows.Forms.TextBox txtSoTrang;
+        private System.Windows.Forms.TextBox txtNgonNgu;
         private System.Windows.Forms.TextBox txtlanxuatban;
-        private System.Windows.Forms.TextBox txtsoluong;
-        private System.Windows.Forms.TextBox txtnhande;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtNhanDe;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -688,10 +688,10 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtdiachi;
-        private System.Windows.Forms.TextBox txtvitri;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtViTri;
         private System.Windows.Forms.TextBox txtkhoa;
-        private System.Windows.Forms.TextBox txthoten;
+        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
@@ -701,6 +701,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtthethuc;
+        private System.Windows.Forms.TextBox txtTheThuc;
     }
 }
