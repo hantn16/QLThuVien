@@ -130,9 +130,8 @@ namespace quanly.frm
                          hf.set_anh(3); 
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
-                         Formhienthi ht = new Formhienthi();
-                         Formhienthi.chuoiketnoi = " select MaTacGia as 'Mã tác giả',TenTacGia as 'Tên tác giả' from TacGia";
-                         Formhienthi.bangketnoi = "TacGia";
+                        string query = " select MaTacGia as 'Mã tác giả',TenTacGia as 'Tên tác giả' from TacGia";
+                        Formhienthi ht = new Formhienthi() { ChuoiKetNoi = query, BangKetNoi = "TacGia", TenCotMa = "Mã tác giả", TenCotTen = "Tên tác giả" };
                          ht.MdiParent = this;
                          ht.Show();
                          break;
@@ -143,9 +142,8 @@ namespace quanly.frm
                          hf.set_anh(3); 
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
-                         Formhienthi ht = new Formhienthi();
-                         Formhienthi.chuoiketnoi = " select MaNXB as 'Mã nhà xuất bản',ten as 'Tên nhà xuất bản' from NhaXuatBan";
-                         Formhienthi.bangketnoi = "NhaXuatBan";
+                        string query = " select MaNXB as 'Mã nhà xuất bản',TenNXB as 'Tên nhà xuất bản' from NhaXuatBan";
+                        Formhienthi ht = new Formhienthi() { ChuoiKetNoi = query, BangKetNoi = "NhaXuatBan", TenCotMa = "Mã nhà xuất bản", TenCotTen = "Tên nhà xuất bản" };
                          ht.MdiParent = this;
                          ht.Show(); break;
                      }
@@ -155,9 +153,8 @@ namespace quanly.frm
                          hf.set_anh(3); 
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
-                         Formhienthi ht = new Formhienthi();
-                         Formhienthi.chuoiketnoi = " select MaTheLoai as 'Mã phân loại',loai as 'loại sách' from TheLoai";
-                         Formhienthi.bangketnoi = "TheLoai";
+                        string query = " select MaTheLoai as 'Mã thể loại',TenTheLoai as 'Tên Thể Loại' from TheLoai";
+                        Formhienthi ht = new Formhienthi() { ChuoiKetNoi = query, BangKetNoi = "TheLoai", TenCotMa = "Mã thể loại", TenCotTen = "Tên Thể Loại" };
                          ht.MdiParent = this;
                          ht.Show(); break;
                      }
@@ -178,9 +175,8 @@ namespace quanly.frm
                          hf.set_anh(3); 
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
-                         Formhienthi ht = new Formhienthi();
-                         Formhienthi.chuoiketnoi = " select MaNgonNgu as 'Mã ngôn ngữ',NgonNgu as 'tên ngôn ngữ' from NgonNgu";
-                         Formhienthi.bangketnoi = "NgonNgu";
+                        string query = " select MaNgonNgu as 'Mã ngôn ngữ',TenNgonNgu as 'Tên ngôn ngữ' from NgonNgu";
+                        Formhienthi ht = new Formhienthi() {ChuoiKetNoi = query,BangKetNoi = "NgonNgu",TenCotMa = "Mã ngôn ngữ", TenCotTen = "Tên ngôn ngữ" };
                          ht.MdiParent = this;
                          ht.Show(); break;
                      }
@@ -190,9 +186,9 @@ namespace quanly.frm
                          hf.set_anh(3);
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
-                         Formhienthi ht = new Formhienthi();
-                         Formhienthi.chuoiketnoi = " select MaKhoa as 'Mã khoa',tenkhoa as 'tên khoa' from khoa";
-                         Formhienthi.bangketnoi = "khoa";
+                         Formhienthi ht = new Formhienthi() { ChuoiKetNoi = " select MaKhoa as 'Mã khoa',TenKhoa as 'Tên Khoa' from Khoa",
+                             BangKetNoi = "Khoa", TenCotMa = "Mã khoa", TenCotTen = "Tên Khoa"
+                         };
                          ht.MdiParent = this;
                          ht.Show(); break;
                      }

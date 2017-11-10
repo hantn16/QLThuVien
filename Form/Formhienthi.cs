@@ -7,50 +7,65 @@ using System.Text;
 using System.Windows.Forms;
 using quanly.lopdulieu;
 using System.Data.SqlClient;
-
+using quanlythuvien.Data;
 
 namespace quanly.frm
 {
     public partial class Formhienthi : Form
     {
-        private SqlCommand cmd;
-        private SqlDataAdapter da = new SqlDataAdapter();
-        private DataSet ds = new DataSet();
-        private CurrencyManager bmb;
-        private SqlCommandBuilder cb;
-        public static string chuoiketnoi = "";
-        public static string bangketnoi = "";
+        private DataTable dataTable = new DataTable();
+        private CurrencyManager bmb = null;
+        public string ChuoiKetNoi { get; set; }
+        public string BangKetNoi { get; set; }
+        public string TenCotMa { get; set; }
+        public string TenCotTen { get; set; }
+        public string ActiveTab { get; set; }
 
         public Formhienthi()
         {
             InitializeComponent();
         }
-        
+
+        void SetActiveTab()
+        {
+            switch (this.ActiveTab)
+            {
+                case "TheLoai": this.tcHienThi.SelectedTab = tpTheLoai;break;
+                case "NgonNgu": this.tcHienThi.SelectedTab = tpNgonNgu; break;
+                case "Khoa": this.tcHienThi.SelectedTab = tpKhoa; break;
+                case "NXB": this.tcHienThi.SelectedTab = tpNXB; break;
+                default: this.tcHienThi.SelectedTab = tpTacGia;
+                    break;
+            }
+        }
         private void Formhienthi_Load(object sender, EventArgs e)
         {
             Frmmain.tt = true;
             try
             {
-                L_Ketnoi.ThietlapketNoi();
-                cmd = new SqlCommand(chuoiketnoi, L_Ketnoi.cn);
-                da.SelectCommand = cmd;
-                da.Fill(ds, bangketnoi);
-                bmb = BindingContext[this.ds.Tables[0]] as CurrencyManager;
-                this.dghienthi.DataSource = ds.Tables[0];
-                switch (bangketnoi)
-                {
-                    case "TacGia": this.cbdanhmuc.Items.AddRange(new object[] { "TenTacGia" }); break;
-                    case "TheLoai": this.cbdanhmuc.Items.AddRange(new object[] { "loai" }); break;
-                    case "NhaXuatBan": this.cbdanhmuc.Items.AddRange(new object[] { "ten" }); break;
-                    case "NgonNgu": this.cbdanhmuc.Items.AddRange(new object[] { "NgonNgu" }); break;
-                    case "khoa": this.cbdanhmuc.Items.AddRange(new object[] { "tenkhoa" }); break;
-                };
+                SetActiveTab();
+                dataTable = DataProvider.ExecuteQuery(ChuoiKetNoi);
+                bmb = BindingContext[dataTable] as CurrencyManager;
+                this.dgTacGia.DataSource = dataTable;
+                AddBindingData();
 
             }
-            catch { MessageBox.Show("error: ket noi du lieu "); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
         }
+        /// <summary>
+        /// Hàm binding dữ liệu giữa datagridview và các textbox
+        /// </summary>
+        private void AddBindingData()
+        {
+            txtMaTacGia.DataBindings.Add(new Binding("Text", dgTacGia.DataSource, this.TenCotMa));
+            txtTenTacGia.DataBindings.Add(new Binding("Text", dgTacGia.DataSource, this.TenCotTen));
+        }
+
         //------Bat su kien nhan enter trong textbox tim kiem
         private void tbtimkiem_KeyDown(object sender, KeyEventArgs e)
         {
@@ -59,24 +74,11 @@ namespace quanly.frm
 
         private void bttimkiem_Click(object sender, EventArgs e)
         {
-            if (cbdanhmuc.Text == "") 
-            {
-                MessageBox.Show("Ban  phai chon muc tim kiem");
-                
-            }
-            else
-            {
-                string chuoitimkiem;
-                chuoitimkiem = chuoiketnoi + " where " + cbdanhmuc.Text + " like '%" + tbtimkiem.Text + "%'";
-                cmd = new SqlCommand(chuoitimkiem, L_Ketnoi.cn);
-                ds.Clear();
-                da.SelectCommand = cmd;
-                da.Fill(ds, bangketnoi);
-                bmb = BindingContext[ds.Tables[bangketnoi]] as CurrencyManager;
-                this.dghienthi.DataSource = ds.Tables[bangketnoi];
-                this.dghienthi.Refresh();
+            string chuoitimkiem = String.Format("{0} where TenTacGia like '%{1}%'", ChuoiKetNoi, txtTimKiemTacGia.Text);
+            DataTable dt = DataProvider.ExecuteQuery(chuoitimkiem);
+            this.dgTacGia.DataSource = dt;
+            this.dgTacGia.Refresh();
 
-            }
         }
         private void CapNhat()
         {
@@ -84,8 +86,8 @@ namespace quanly.frm
             {
                 try
                 {
-                    cb = new SqlCommandBuilder(da);
-                    da.Update(ds, bangketnoi);
+                    //cb = new SqlCommandBuilder(da);
+                    //da.Update(ds, BangKetNoi);
                 }
                 catch { MessageBox.Show("hay kiem tra lai tinh dung dan cua du lieu"); }
             }
@@ -100,23 +102,24 @@ namespace quanly.frm
             {
                 try
                 {
-                    laydulieu dl = new laydulieu();
                     bmb.RemoveAt(bmb.Position);
-                     cb = new SqlCommandBuilder(da);
-                    da.Update(ds, bangketnoi);
+                    //SqlDataAdapter da = new SqlDataAdapter();
+                    //SqlCommandBuilder cb = new SqlCommandBuilder(da);
+                    //da.Update(dataTable, BangKetNoi);
+                    //da.Update()
                     MessageBox.Show("Ban da xoa thanh cong");
                 }
                 catch { MessageBox.Show("hay kiem tra lai tinh dung dan cua du lieu"); }
-                    
-                  }
+
+            }
         }
 
         private void Formhienthi_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (ds.GetChanges() != null)
+            if (dataTable.GetChanges() != null)
             {
-               if (MessageBox.Show("Đã có sự thay đổi dữ liệu bạn có muốn lưu lại hay không ?", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                   this.CapNhat();
+                if (MessageBox.Show("Đã có sự thay đổi dữ liệu bạn có muốn lưu lại hay không ?", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    this.CapNhat();
             }
             L_Ketnoi.HuyKetNoi();
         }
@@ -130,37 +133,34 @@ namespace quanly.frm
         {
             try
             {
-                DataSet ds1;
-                laydulieu dl = new laydulieu();
-                ds1 = dl.getdata("select * from " + bangketnoi);
-                string strmacuoi = ds1.Tables[0].Rows[ds1.Tables[0].Rows.Count - 1][0].ToString();
-                if (btTaoMoi.Text == "OK")
+                DataTable dt = DataProvider.ExecuteQuery("select * from " + BangKetNoi);
+                string strmacuoi = dt.Rows[dt.Rows.Count - 1][0].ToString();
+                if (btnTaoMoiTacGia.Text == "OK")
                 {
                     this.CapNhat();
-                    btTaoMoi.Text = "Tạo mới";
+                    btnTaoMoiTacGia.Text = "Tạo mới";
 
 
                 }
                 else
                 {
                     DataRow tam;
-                    tam = ds.Tables[0].NewRow();
-                    tam[0] = macuoi(strmacuoi);
-                    ds.Tables[0].Rows.Add(tam);
-                    btTaoMoi.Text = "OK";
+                    tam = dt.NewRow();
+                    tam[0] = TaoMaCuoi(strmacuoi);
+                    dt.Rows.Add(tam);
+                    btnTaoMoiTacGia.Text = "OK";
+                    dgTacGia.Refresh();
                 }
             }
             catch { }
         }
-        string macuoi(string ma)
+        string TaoMaCuoi(string ma)
         {
             string tam = ma.Substring(0, 2);
             int i = int.Parse(ma.Substring(2, ma.Length - 2));
             i++;
-            if (i < 10) return (tam + "00" + i.ToString());
-            else
-                if (i < 100) return (tam + "0" + i.ToString());
-                else  return (tam + i.ToString());
+            return i.ToString("000");
+
         }
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -174,8 +174,8 @@ namespace quanly.frm
 
         private void button1_Click(object sender, EventArgs e)
         {
-             if (ds.GetChanges() != null) this.CapNhat();
-             this.Hide();
+            if (dataTable.GetChanges() != null) this.CapNhat();
+            this.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
