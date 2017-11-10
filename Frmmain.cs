@@ -142,7 +142,7 @@ namespace quanly.frm
                          hf.set_anh(3); 
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
-                        string query = " select MaNXB as 'Mã nhà xuất bản',TenNXB as 'Tên nhà xuất bản' from NhaXuatBan";
+                        string query = " select MaNhaXuatBan as 'Mã nhà xuất bản',TenNhaXuatBan as 'Tên nhà xuất bản' from NhaXuatBan";
                         Formhienthi ht = new Formhienthi() { ChuoiKetNoi = query, BangKetNoi = "NhaXuatBan", TenCotMa = "Mã nhà xuất bản", TenCotTen = "Tên nhà xuất bản" };
                          ht.MdiParent = this;
                          ht.Show(); break;

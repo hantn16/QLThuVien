@@ -11,6 +11,12 @@ namespace quanlythuvien.Data
     public class DataProvider
     {
         public static string connectionString = "Data Source=.\\DATA1;Initial Catalog=QUANLYTHUVIEN_DATA;Integrated Security=True";
+        /// <summary>
+        /// Hàm excute 1 query trả về một dataTable chứa các bản ghi thỏa mãn
+        /// </summary>
+        /// <param name="query">query string truyền vào</param>
+        /// <param name="parameter">Mảng các parameter truyền vào</param>
+        /// <returns></returns>
         public static DataTable ExecuteQuery(string query,object[] parameter = null)
         {
             DataTable data = new DataTable();
@@ -37,6 +43,12 @@ namespace quanlythuvien.Data
             }
             return data;
         }
+        /// <summary>
+        /// Hàm excute 1 nonquery trả về giá trị nguyên
+        /// </summary>
+        /// <param name="query">query string truyền vào</param>
+        /// <param name="parameter">Mảng các parameter truyền vào</param>
+        /// <returns></returns>
         public static int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
@@ -62,6 +74,12 @@ namespace quanlythuvien.Data
             }
             return data;
         }
+        /// <summary>
+        /// Hàm excute 1 query trả về 1 object
+        /// </summary>
+        /// <param name="query">query string truyền vào</param>
+        /// <param name="parameter">Mảng các parameter truyền vào</param>
+        /// <returns></returns>
         public static Object ExecuteScalar(string query, object[] parameter = null)
         {
             Object data = 0;

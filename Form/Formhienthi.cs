@@ -20,35 +20,32 @@ namespace quanly.frm
         public string TenCotMa { get; set; }
         public string TenCotTen { get; set; }
         public string ActiveTab { get; set; }
+        public enum FormStatusOption
+        {
+            VuaTao,
+            DangSua
+
+        }
+        public FormStatusOption FormStatus { get; set; }
+        public BindingSource bindingSource = new BindingSource();
 
         public Formhienthi()
         {
             InitializeComponent();
+            this.FormStatus = FormStatusOption.VuaTao;
+
         }
 
-        void SetActiveTab()
-        {
-            switch (this.ActiveTab)
-            {
-                case "TheLoai": this.tcHienThi.SelectedTab = tpTheLoai;break;
-                case "NgonNgu": this.tcHienThi.SelectedTab = tpNgonNgu; break;
-                case "Khoa": this.tcHienThi.SelectedTab = tpKhoa; break;
-                case "NXB": this.tcHienThi.SelectedTab = tpNXB; break;
-                default: this.tcHienThi.SelectedTab = tpTacGia;
-                    break;
-            }
-        }
         private void Formhienthi_Load(object sender, EventArgs e)
         {
             Frmmain.tt = true;
             try
             {
-                SetActiveTab();
-                dataTable = DataProvider.ExecuteQuery(ChuoiKetNoi);
-                bmb = BindingContext[dataTable] as CurrencyManager;
-                this.dgTacGia.DataSource = dataTable;
-                AddBindingData();
-
+                this.lbMa.Text = TenCotMa;
+                this.lbTen.Text = TenCotTen;
+                this.txtMa.ReadOnly = true;
+                this.txtTen.ReadOnly = true;
+                LoadDataGridView();
             }
             catch (Exception ex)
             {
@@ -58,12 +55,35 @@ namespace quanly.frm
 
         }
         /// <summary>
+        /// Hàm load lại dữ liệu cho DataGridView
+        /// </summary>
+        private void LoadDataGridView()
+        {
+            dataTable = DataProvider.ExecuteQuery(ChuoiKetNoi);
+            this.dghienthi.DataSource = dataTable;
+            dghienthi.Refresh();
+        }
+
+        /// <summary>
         /// Hàm binding dữ liệu giữa datagridview và các textbox
         /// </summary>
         private void AddBindingData()
         {
-            txtMaTacGia.DataBindings.Add(new Binding("Text", dgTacGia.DataSource, this.TenCotMa));
-            txtTenTacGia.DataBindings.Add(new Binding("Text", dgTacGia.DataSource, this.TenCotTen));
+            try
+            {
+                //Xóa các bindings đã thêm trước đây vào textbox để đảm bảo mỗi textbox chỉ có 1 bindings
+                txtMa.DataBindings.Clear();
+                txtTen.DataBindings.Clear();
+
+                //Add binding vào cho các textbox
+                txtMa.DataBindings.Add(new Binding("Text", dghienthi.DataSource, this.TenCotMa));               
+                txtTen.DataBindings.Add(new Binding("Text", dghienthi.DataSource, this.TenCotTen));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
 
         //------Bat su kien nhan enter trong textbox tim kiem
@@ -74,10 +94,18 @@ namespace quanly.frm
 
         private void bttimkiem_Click(object sender, EventArgs e)
         {
-            string chuoitimkiem = String.Format("{0} where TenTacGia like '%{1}%'", ChuoiKetNoi, txtTimKiemTacGia.Text);
-            DataTable dt = DataProvider.ExecuteQuery(chuoitimkiem);
-            this.dgTacGia.DataSource = dt;
-            this.dgTacGia.Refresh();
+            try
+            {
+                string query = String.Format("{0} where (Ma{2} like '%{1}%' or Ten{2} like N'%{1}%') ", ChuoiKetNoi, txtTimKiem.Text, BangKetNoi);
+                DataTable dt = DataProvider.ExecuteQuery(query);
+                this.dghienthi.DataSource = dt;
+                this.dghienthi.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
         private void CapNhat()
@@ -131,36 +159,21 @@ namespace quanly.frm
 
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DataTable dt = DataProvider.ExecuteQuery("select * from " + BangKetNoi);
-                string strmacuoi = dt.Rows[dt.Rows.Count - 1][0].ToString();
-                if (btnTaoMoiTacGia.Text == "OK")
-                {
-                    this.CapNhat();
-                    btnTaoMoiTacGia.Text = "Tạo mới";
 
-
-                }
-                else
-                {
-                    DataRow tam;
-                    tam = dt.NewRow();
-                    tam[0] = TaoMaCuoi(strmacuoi);
-                    dt.Rows.Add(tam);
-                    btnTaoMoiTacGia.Text = "OK";
-                    dgTacGia.Refresh();
-                }
-            }
-            catch { }
         }
-        string TaoMaCuoi(string ma)
+        string TaoMaMacDinh(string ma)
         {
             string tam = ma.Substring(0, 2);
-            int i = int.Parse(ma.Substring(2, ma.Length - 2));
-            i++;
-            return i.ToString("000");
-
+            int i = 0;
+            if (int.TryParse(ma.Substring(2, ma.Length - 2),out i))
+            {
+                i++;
+                return tam + i.ToString("000");
+            }
+            else
+            {
+                return ma + "1";
+            }                       
         }
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -190,7 +203,122 @@ namespace quanly.frm
             Frmmain.hf.set_anh(1);
         }
 
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = DataProvider.ExecuteQuery("select * from " + BangKetNoi);
+                string strmacuoi = dt.Rows[dt.Rows.Count - 1][0].ToString();
+                if (btnThem.Text == "OK")
+                {
+                    //Kiểm tra mã tồn tại chưa
+                    string queryCheck = string.Format("Select * from {0} where Ma{0} = N'{1}'",BangKetNoi,txtMa.Text);
+                    if (DataProvider.ExecuteQuery(queryCheck).Rows.Count>0)
+                    {
+                        txtMa.Focus();
+                        throw new Exception("Mã đã tồn tại. Thêm mới không thành công!!!");
+                    }
+                    //Thêm vào database
+                    string addQuery = string.Format("Insert into {0} (Ma{0},Ten{0}) values (N'{1}',N'{2}')",BangKetNoi,txtMa.Text,txtTen.Text);
+                    if (DataProvider.ExecuteNonQuery(addQuery)>0)
+                    {
+                        MessageBox.Show("Thêm mới thành công!!!");
+                        LoadDataGridView();
+                        btnThem.Text = "Thêm";
+                        txtMa.ReadOnly = txtTen.ReadOnly = true;
+                        btnSua.Enabled = btnXoa.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm mới thất bại!!!");
+                    }                
+                }
+                else
+                {
+                    txtMa.ReadOnly = txtTen.ReadOnly = false;
+                    string maMacDinh = TaoMaMacDinh(strmacuoi);
+                    txtMa.Text = maMacDinh;
+                    txtTen.Text = "";
+                    btnThem.Text = "OK";
+                    btnSua.Enabled = btnXoa.Enabled = false;
+                    txtMa.Focus();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
 
+        private void dghienthi_DataSourceChanged(object sender, EventArgs e)
+        {
+            //Mỗi lần thay đổi datasource của gridview là kích hoạt sự kiện này
+            try
+            {
+                AddBindingData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (btnSua.Text == "Sửa")
+                {
+                    txtTen.ReadOnly = false;
+                    btnSua.Text = "Lưu";
+                    btnThem.Enabled = btnXoa.Enabled = false;
+                }
+                else
+                {
+                    string updateQuery = string.Format("Update {0} set Ten{0} = N'{2}' where Ma{0} = N'{1}'", BangKetNoi, txtMa.Text, txtTen.Text);
+                    if (DataProvider.ExecuteNonQuery(updateQuery) > 0)
+                    {
+                        MessageBox.Show("Sửa thành công!!!");
+                        LoadDataGridView();
+                        btnSua.Text = "Sửa";
+                        btnThem.Enabled = btnXoa.Enabled = true;
+                        txtTen.ReadOnly = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa thất bại!!!");
+                        txtTen.Focus();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Lỗi!!!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Bạn thực sự muốn xóa bản ghi này?", "Xác nhận", MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string delQuery = string.Format("Delete from {0} where Ma{0} = N'{1}'", BangKetNoi, txtMa.Text);
+                    if (DataProvider.ExecuteNonQuery(delQuery)>0)
+                    {
+                        MessageBox.Show("Xóa thành công!!!");
+                        LoadDataGridView();
+                    }
+                    else
+                    {
+                        throw new Exception("Lỗi trong quá trình xóa");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
