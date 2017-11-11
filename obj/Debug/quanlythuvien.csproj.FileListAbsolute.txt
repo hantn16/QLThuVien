@@ -87,7 +87,6 @@ D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.T
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Interaction.xml
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanlythuvien.csprojResolveAssemblyReference.cache
-D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\Interop.Crystal.dll
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csproj.ResolveComReference.cache
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Formhienthi.resources
@@ -176,3 +175,4 @@ D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.Designer.Inte
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.Windows.Design.Interaction.xml
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache

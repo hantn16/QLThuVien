@@ -22,7 +22,7 @@ namespace quanly.frm
         {
             laydulieu dl = new laydulieu();
             bool tam = false;
-            SqlDataReader dr = dl.lay_reader("select * from phieumuon where phieumuon.MaSach='" + txtMaSach.Text + "' and phieumuon.MaDocGia='" + txtMaDocGia.Text + "' and phieumuon.TheThucmuon=N'Mượn về nhà'");
+            SqlDataReader dr = dl.lay_reader("select * from phieumuon where phieumuon.MaTaiLieu='" + txtMaTaiLieu.Text + "' and phieumuon.MaDocGia='" + txtMaDocGia.Text + "' and phieumuon.TheThucmuon=N'Mượn về nhà'");
             while (dr.Read())
             {
                 txtngaymuon.Text = dr["ngaymuon"].ToString();
@@ -33,14 +33,14 @@ namespace quanly.frm
             btgiahan.Enabled = tam;
             if (tam)
             {
-                txtMaSach.Enabled = false;
+                txtMaTaiLieu.Enabled = false;
                 txtMaDocGia.Enabled = false;
                 btkiemtratt.Enabled = false;
                 btgiahan.Enabled = true;
             }
             else
             {
-                txtMaSach.Enabled = true;
+                txtMaTaiLieu.Enabled = true;
                 txtMaDocGia.Enabled = true;
                 btkiemtratt.Enabled = true;
                 btgiahan.Enabled = false;
@@ -49,13 +49,13 @@ namespace quanly.frm
 
         private void bthuythaotac_Click(object sender, EventArgs e)
         {
-            txtMaSach.Enabled = true;
+            txtMaTaiLieu.Enabled = true;
             txtMaDocGia.Enabled = true;
             btkiemtratt.Enabled = true;
             btgiahan.Enabled = false;
             txtngaymuon.Text = "";
             txtMaDocGia.Text = "";
-            txtMaSach.Text = "";
+            txtMaTaiLieu.Text = "";
         }
 
         private void btthoat_Click(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace quanly.frm
             }
         }
 
-        private void txtMaSach_KeyDown(object sender, KeyEventArgs e)
+        private void txtMaTaiLieu_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter) btkiemtratt_Click(sender, e);
         }
@@ -105,7 +105,7 @@ namespace quanly.frm
             Frmmain.tt = false;
         }
 
-        private void txtMaSach_TextChanged(object sender, EventArgs e)
+        private void txtMaTaiLieu_TextChanged(object sender, EventArgs e)
         {
 
         }

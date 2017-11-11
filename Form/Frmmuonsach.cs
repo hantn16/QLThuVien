@@ -22,7 +22,7 @@ namespace quanly.frm
         {
             laydulieu dl = new laydulieu();
             bool tam = false;
-            SqlDataReader dr = dl.lay_reader("select TheThuc,ten,LanXuatBan,NhanDe,SoLuong ,NamXuatBan,SoTrang,NgonNgu,TenTacGia, kho,ke,ngan from sach,NgonNgu,NhaXuatBan,ViTriluutru,TacGia where sach.MaTacGia = TacGia.MaTacGia and sach.MaNgonNgu = NgonNgu.MaNgonNgu and sach.MaNXB = NhaXuatBan.MaNXB and sach.MaViTri = ViTriluutru.MaViTri and sach.MaSach='"+ txtMaSach.Text+"'");
+            SqlDataReader dr = dl.lay_reader("select TheThuc,ten,LanXuatBan,NhanDe,SoLuong ,NamXuatBan,SoTrang,NgonNgu,TenTacGia, kho,ke,ngan from sach,NgonNgu,NhaXuatBan,ViTriluutru,TacGia where sach.MaTacGia = TacGia.MaTacGia and sach.MaNgonNgu = NgonNgu.MaNgonNgu and sach.MaNXB = NhaXuatBan.MaNXB and sach.MaViTri = ViTriluutru.MaViTri and sach.MaTaiLieu='"+ txtMaTaiLieu.Text+"'");
             while (dr.Read())
             {
                 txtNamXuatBan.Text = DateTime.Parse(dr["NamXuatBan"].ToString()).ToShortDateString();
@@ -44,7 +44,7 @@ namespace quanly.frm
             if (tam == true)
             {
                 L_Ketnoi.ThietlapketNoi();
-                SqlDataReader dr1 = dl.lay_reader("select * from sachhong where MaSach='" + txtMaSach.Text + "'");
+                SqlDataReader dr1 = dl.lay_reader("select * from sachhong where MaTaiLieu='" + txtMaTaiLieu.Text + "'");
                 int i = 0;
                 while (dr1.Read())
                     i++;
@@ -60,7 +60,7 @@ namespace quanly.frm
                     lbhong.Visible = false;
                     lbketqua.Text = "";
                 }
-                txtMaSach.Enabled = false;
+                txtMaTaiLieu.Enabled = false;
             }
         }
 
@@ -117,11 +117,11 @@ namespace quanly.frm
             ktbandoc = ktsach = false;
             txtmabandoc.Text = "";
             txtDiaChi.Text = txtHoTen.Text = txtke.Text = txtkho.Text = txtkhoa.Text = "";
-            txtlanxuatban.Text = txtmabandoc.Text = txtMaSach.Text = txtNamXuatBan.Text = "";
+            txtlanxuatban.Text = txtmabandoc.Text = txtMaTaiLieu.Text = txtNamXuatBan.Text = "";
             txtngan.Text = txtNgonNgu.Text = txtNhanDe.Text = txtnhaxb.Text = txtSoLuong.Text = "";
             txtSoTrang.Text = txtTacGia.Text = txtViTri.Text = "";txtTheThuc.Text = "";
             bttkbandoc.Enabled = btsach.Enabled = true;
-            txtMaSach.Enabled = txtmabandoc.Enabled= true;
+            txtMaTaiLieu.Enabled = txtmabandoc.Enabled= true;
             lbhong.Visible = false;
             lbketqua.Text = "";
         }
@@ -166,18 +166,18 @@ namespace quanly.frm
                             if (txtTheThuc.Text != comboBox1.Text) MessageBox.Show("Thể thức bạn mượn sách này không thể đáp ứng được hãy chọn lại sách khác", "Thông báo");
                             else
                             {
-                                Lsach s = new Lsach();
-                                s.MaSach =(txtMaSach.Text);
+                                TaiLieu s = new TaiLieu();
+                                s.MaTaiLieu =(txtMaTaiLieu.Text);
                                                              
                                 if (s.ChoMuon(textBox1.Text))
                                 {
                                     try
                                     {
                                         int tamsl = int.Parse(textBox1.Text);
-                                        Lphieumuon pm = new Lphieumuon(tam, txtmabandoc.Text, comboBox1.Text, txtMaSach.Text, KTdangnhap.strMaNhanVien, DateTime.Parse(DateTime.Now.ToShortDateString()), tamsl);
+                                        Lphieumuon pm = new Lphieumuon(tam, txtmabandoc.Text, comboBox1.Text, txtMaTaiLieu.Text, KTdangnhap.strMaNhanVien, DateTime.Parse(DateTime.Now.ToShortDateString()), tamsl);
                                         if (pm.TaoMoi())
                                         {
-                                            Lsachmuon sm = new Lsachmuon(tam);
+                                            TaiLieumuon sm = new TaiLieumuon(tam);
                                             if (sm.TaoMoi())
                                             {
                                                 button2_Click(sender, e);
@@ -223,7 +223,7 @@ namespace quanly.frm
             }
         }
 
-        private void txtMaSach_KeyDown(object sender, KeyEventArgs e)
+        private void txtMaTaiLieu_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter) button1_Click(sender, e);
         }

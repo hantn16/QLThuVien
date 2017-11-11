@@ -40,9 +40,9 @@ namespace quanly.frm
         {
             try
             {
-                FrmCapNhatsach cn = new FrmCapNhatsach();
-                FrmCapNhatsach.tb = ds.Tables[0].Rows[cm.Position][0].ToString();
-                cn.Show();
+                //FrmCapNhatsach cn = new FrmCapNhatsach();
+                //FrmCapNhatsach.tb = ds.Tables[0].Rows[cm.Position][0].ToString();
+                //cn.Show();
             }
             catch { MessageBox.Show("Bạn phải chọn mục để xem thông tin", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error); }
         }

@@ -55,7 +55,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtMaSach = new System.Windows.Forms.TextBox();
+            this.txtMaTaiLieu = new System.Windows.Forms.TextBox();
             this.lbhong = new System.Windows.Forms.Label();
             this.btsach = new System.Windows.Forms.Button();
             this.lbketqua = new System.Windows.Forms.Label();
@@ -114,7 +114,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtMaSach);
+            this.groupBox1.Controls.Add(this.txtMaTaiLieu);
             this.groupBox1.Controls.Add(this.lbhong);
             this.groupBox1.Controls.Add(this.btsach);
             this.groupBox1.Controls.Add(this.lbketqua);
@@ -352,13 +352,13 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Mã sách";
             // 
-            // txtMaSach
+            // txtMaTaiLieu
             // 
-            this.txtMaSach.Location = new System.Drawing.Point(86, 20);
-            this.txtMaSach.Name = "txtMaSach";
-            this.txtMaSach.Size = new System.Drawing.Size(87, 20);
-            this.txtMaSach.TabIndex = 0;
-            this.txtMaSach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaSach_KeyDown);
+            this.txtMaTaiLieu.Location = new System.Drawing.Point(86, 20);
+            this.txtMaTaiLieu.Name = "txtMaTaiLieu";
+            this.txtMaTaiLieu.Size = new System.Drawing.Size(87, 20);
+            this.txtMaTaiLieu.TabIndex = 0;
+            this.txtMaTaiLieu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaTaiLieu_KeyDown);
             // 
             // lbhong
             // 
@@ -653,7 +653,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btsach;
-        private System.Windows.Forms.TextBox txtMaSach;
+        private System.Windows.Forms.TextBox txtMaTaiLieu;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbketqua;
         private System.Windows.Forms.Label lbhong;

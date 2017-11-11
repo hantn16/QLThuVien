@@ -89,25 +89,25 @@ namespace quanly.frm
              {
                  case "Hiệu chỉnh thông tin":
                      {
-                         hf.set_text("        Nhập thông tin sách ẩu rồi giờ lại vào chỉnh thông tin");
+                         hf.set_text("        Nhập thông tin tài liệu ẩu rồi giờ lại vào chỉnh thông tin");
                          hf.set_anh(3);
                          FrmCapNhatsach cns = new FrmCapNhatsach();
                          cns.MdiParent = this;
                          cns.Show();
                          break;
                      }
-                 case "Huỷ đầu sách":
+                 case "Huỷ tài liệu":
                      {
-                         hf.set_text("        Lại huỷ sách trong thư viện rồi");
+                         hf.set_text("        Lại huỷ tài liệu trong thư viện rồi");
                          hf.set_anh(3);
                          FrmCapNhatsach cns = new FrmCapNhatsach();
                          cns.MdiParent = this;
                          cns.Show();
                          break;
                      }
-                 case "Nhập sách mới":
+                 case "Nhập tài liệu mới":
                      {
-                         hf.set_text("        Có sách mới nhập về thư viện à");
+                         hf.set_text("        Có tài liệu mới nhập về thư viện à");
                          hf.set_anh(3);
                          FrmCapNhatsach cns = new FrmCapNhatsach();
                          cns.MdiParent = this;
@@ -147,7 +147,7 @@ namespace quanly.frm
                          ht.MdiParent = this;
                          ht.Show(); break;
                      }
-                 case "Loại sách":
+                 case "Loại tài liệu":
                      {
                          hf.set_text("       cập nhật thông tin danh mục à!!");
                          hf.set_anh(3); 
@@ -158,9 +158,9 @@ namespace quanly.frm
                          ht.MdiParent = this;
                          ht.Show(); break;
                      }
-                 case "Thông tin sách mượn trong ngày":
+                 case "Thông tin tài liệu mượn trong ngày":
                      {
-                         hf.set_text("       Kiểm tra cuối ngày, để xem có độc giả nào chưa trả sách hay không!!");
+                         hf.set_text("       Kiểm tra cuối ngày, để xem có độc giả nào chưa trả tài liệu hay không!!");
                          hf.set_anh(3); 
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
@@ -192,9 +192,9 @@ namespace quanly.frm
                          ht.MdiParent = this;
                          ht.Show(); break;
                      }
-                 case "Trả sách":
+                 case "Trả tài liệu":
                      {
-                         hf.set_text("       Kiểm tra kỹ coi chừng có sách hỏng thì phải click vô mục sách hỏng!!");
+                         hf.set_text("       Kiểm tra kỹ coi chừng có tài liệu hỏng thì phải click vô mục tài liệu hỏng!!");
                          hf.set_anh(2);
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
@@ -203,9 +203,9 @@ namespace quanly.frm
                          ts.Show();
                          break;
                      }
-                 case "Thông tin sách mượn theo ngày":
+                 case "Thông tin tài liệu mượn theo ngày":
                      {
-                         hf.set_text("       Để kiểm tra sách mượn trong ngày nào đó hoặc có thể kiểm tra tình hình mượn sách trong khoản thời gian nào đó có chọn thể thức mượn sách!!");
+                         hf.set_text("       Để kiểm tra tài liệu mượn trong ngày nào đó hoặc có thể kiểm tra tình hình mượn tài liệu trong khoản thời gian nào đó có chọn thể thức mượn tài liệu!!");
                          hf.set_anh(2);
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
@@ -214,9 +214,9 @@ namespace quanly.frm
                          tn.Show();
                          break;
                      }
-                 case "Thông tin sách hỏng":
+                 case "Thông tin tài liệu hỏng":
                      {
-                         hf.set_text("       Vào xem thông tin sách hỏng để biết mà cập nhật sách mới cho thư viên!!!");
+                         hf.set_text("       Vào xem thông tin tài liệu hỏng để biết mà cập nhật tài liệu mới cho thư viên!!!");
                          hf.set_anh(3);
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
@@ -225,10 +225,10 @@ namespace quanly.frm
                          ttsh.Show();
                          break;
                      }
-                 case "Gia hạn sách":
+                 case "Gia hạn tài liệu":
                      {
 
-                         hf.set_text("       Gia hạn sách tức là cập nhật lại ngày mượn bằng ngày đến gia hạn đó!!");
+                         hf.set_text("       Gia hạn tài liệu tức là cập nhật lại ngày mượn bằng ngày đến gia hạn đó!!");
                          hf.set_anh(2);
                          ProgressBar1.Value = 0;
                          timer2.Enabled = true;
@@ -305,9 +305,9 @@ namespace quanly.frm
                         pq.Show();
                         break;
                     }
-                case "Phân loại sách":
+                case "Phân loại tài liệu":
                     {
-                        hf.set_text("        Nhập sách cho ẩu rồi giờ phân loại lại, rõ khổ");
+                        hf.set_text("        Nhập tài liệu cho ẩu rồi giờ phân loại lại, rõ khổ");
                         hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
@@ -318,7 +318,7 @@ namespace quanly.frm
                     }
                 case "Quản lý tài khoản":
                     {
-                        hf.set_text("        Nhớ kiểm tra tư chất người mượn hẵng tạo tài khoản nghe, kẻo gặp đứa ăn cắp sách !");
+                        hf.set_text("        Nhớ kiểm tra tư chất người mượn hẵng tạo tài khoản nghe, kẻo gặp đứa ăn cắp tài liệu !");
                         hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
@@ -327,7 +327,7 @@ namespace quanly.frm
                         tm.Show();
                         break;
                     }
-                case "Tra cứu sách":
+                case "Tra cứu tài liệu":
                 case "Cơ bản":
                     {
                         hf.set_text("        Không nắm rõ thông tin tìm kiếm phải không ? chọn mục này là phải rồi");
@@ -340,7 +340,7 @@ namespace quanly.frm
                     }
                 case "Nâng cao":
                     {
-                        hf.set_text("        Khi vô tìm kiếm được thông tin sách cần tìm bạn có thể thực hiện chuyển sách đó qua mục cập nhật thông tin thông qua nút xem chi tiết hoặc click d2 lần vô sách cần xử lý");
+                        hf.set_text("        Khi vô tìm kiếm được thông tin tài liệu cần tìm bạn có thể thực hiện chuyển tài liệu đó qua mục cập nhật thông tin thông qua nút xem chi tiết hoặc click d2 lần vô tài liệu cần xử lý");
                         hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
@@ -349,9 +349,9 @@ namespace quanly.frm
                         nc.Show();
                         break;
                     }
-                case "Mượn sách":
+                case "Mượn tài liệu":
                     {
-                        hf.set_text("       Chon mượn sách nhớ cẩn thận kẻo mất sách, kiểm tra kỹ thông tin của sách, của độc giả rồi hãy cho mượn ");  
+                        hf.set_text("       Chon mượn tài liệu nhớ cẩn thận kẻo mất tài liệu, kiểm tra kỹ thông tin của tài liệu, của độc giả rồi hãy cho mượn ");  
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Frmmuonsach ms = new Frmmuonsach();
@@ -359,9 +359,9 @@ namespace quanly.frm
                         ms.Show();
                         break;
                     }
-                case "Danh mục sách mượn":
+                case "Danh mục tài liệu mượn":
                     {
-                        hf.set_text("      Thong thả mà xem báo cáo tình hình mượn sách của thư viện ");
+                        hf.set_text("      Thong thả mà xem báo cáo tình hình mượn tài liệu của thư viện ");
                         hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
@@ -379,9 +379,9 @@ namespace quanly.frm
                         break;
                        
                     }
-                case "Danh mục sách còn":
+                case "Danh mục tài liệu còn":
                     {
-                        hf.set_text("      Báo cáo xem trong thư viện còn những cuốn sách nào");
+                        hf.set_text("      Báo cáo xem trong thư viện còn những cuốn tài liệu nào");
                         hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
@@ -396,9 +396,9 @@ namespace quanly.frm
                         
                         break;
                     }
-                case "Danh mục sách đang mượn":
+                case "Danh mục tài liệu đang mượn":
                     {
-                        hf.set_text("      Báo cáo xem sách nào đang được sinh viên mượn");
+                        hf.set_text("      Báo cáo xem tài liệu nào đang được sinh viên mượn");
                         hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
@@ -413,14 +413,14 @@ namespace quanly.frm
 
                         break;
                     }
-                case "Danh mục sách hỏng":
+                case "Danh mục tài liệu hỏng":
                     {
-                        hf.set_text("      Thong thả mà xem báo cáo tình hình sách hỏng đi nha");
+                        hf.set_text("      Thong thả mà xem báo cáo tình hình tài liệu hỏng đi nha");
                         hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         laydulieu dl = new laydulieu();
-                        DataSet ds = dl.getdata("select * from sach inner join sachhong on sachhong.MaSach = sach.MaSach");
+                        DataSet ds = dl.getdata("select * from sach inner join sachhong on sachhong.MaTaiLieu = sach.MaTaiLieu");
                         CrystalReportsachcon rp = new CrystalReportsachcon();
                         rp.SetDataSource(ds.Tables[0]);
                         Form1 f = new Form1();
@@ -430,9 +430,9 @@ namespace quanly.frm
                        
                         break;
                     }
-                case "Danh mục sách trễ hạn":
+                case "Danh mục tài liệu trễ hạn":
                     {
-                        hf.set_text("      Xem báo cáo tình hình sách trễ hạn ");
+                        hf.set_text("      Xem báo cáo tình hình tài liệu trễ hạn ");
                         hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;

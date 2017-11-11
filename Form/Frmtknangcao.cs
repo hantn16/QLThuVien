@@ -61,9 +61,9 @@ namespace quanly.frm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmCapNhatsach cn = new FrmCapNhatsach();
-            FrmCapNhatsach.tb = ds.Tables[0].Rows[cm.Position][0].ToString();
-            cn.Show();
+            //FrmCapNhatsach cn = new FrmCapNhatsach();
+            //FrmCapNhatsach.tb = ds.Tables[0].Rows[cm.Position][0].ToString();
+            //cn.Show();
         
         }
 

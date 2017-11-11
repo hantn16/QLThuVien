@@ -34,7 +34,7 @@ namespace quanly.frm
                 txtsongaymuon.Text = ((TimeSpan)(DateTime.Now - tam1)).Days.ToString();
                 txtsosachmuon.Text = dr["SoLuong"].ToString();
                 maphieumuon = dr["maphieumuon"].ToString();
-                txtMaSach.Text = dr["MaSach"].ToString();
+                txtMaTaiLieu.Text = dr["MaTaiLieu"].ToString();
                 tam = true;
             }
             L_Ketnoi.HuyKetNoi();
@@ -56,9 +56,9 @@ namespace quanly.frm
             comboBox1.Enabled = true;
             btkiemtratt.Enabled = true;
             btTraSach.Enabled = false;
-            txtMaSach.Text = txtngaymuon.Text = txtsongaymuon.Text = txtsosachmuon.Text = txtMaDocGia.Text = txtMaSach.Text = comboBox1.Text = "";
+            txtMaTaiLieu.Text = txtngaymuon.Text = txtsongaymuon.Text = txtsosachmuon.Text = txtMaDocGia.Text = txtMaTaiLieu.Text = comboBox1.Text = "";
         }
-        string MaSachhong(string tam)
+        string MaTaiLieuhong(string tam)
         { 
             if (tam=="") return "SH0000";
             int ma = int.Parse(tam.Substring(2,tam.Length -2));
@@ -84,9 +84,9 @@ namespace quanly.frm
                         Frmmain.hf.timer5.Enabled = true;
                         break;
                     }
-                    Lsachmuon sm = new Lsachmuon(maphieumuon);
-                    Lsach s = new Lsach();
-                    s.MaSach = (txtMaSach.Text);
+                    TaiLieumuon sm = new TaiLieumuon(maphieumuon);
+                    TaiLieu s = new TaiLieu();
+                    s.MaTaiLieu = (txtMaTaiLieu.Text);
                     if (s.TraSach(txtsosachmuon.Text))
                     {
                         if (sm.XoaBo())
@@ -95,12 +95,12 @@ namespace quanly.frm
                                 if (MessageBox.Show("Sách này có thật sự bị hỏng không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                 {
                                     L_Ketnoi.ThietlapketNoi();
-                                    SqlDataReader dr = dl.lay_reader("select MaSachhong from sachhong");
+                                    SqlDataReader dr = dl.lay_reader("select MaTaiLieuhong from sachhong");
                                     string strtam = "";
                                     while (dr.Read())
                                         strtam = dr[0].ToString();
                                     L_Ketnoi.HuyKetNoi();
-                                    Lsachhong sh = new Lsachhong(MaSachhong(strtam), txtMaSach.Text);
+                                    TaiLieuhong sh = new TaiLieuhong(MaTaiLieuhong(strtam), txtMaTaiLieu.Text);
                                     if (sh.TaoMoi() == false) MessageBox.Show("Quá trình cập nhật sách hỏng bị lỗi hãy chuyển qua mục thông tin sách hỏng để làm", "Thông báo");
 
                                 }

@@ -26,7 +26,7 @@ namespace quanly.frm
         {
             Frmmain.tt = true;    
             laydulieu dl = new laydulieu();
-                dr = dl.lay_reader("select phieumuon.MaSach,NhanDe,TenTacGia,phieumuon.MaDocGia,phieumuon.SoLuong from phieumuon,sach,TacGia where phieumuon.MaSach = sach.MaSach and sach.MaTacGia = TacGia.MaTacGia and phieumuon.TheThucmuon like N'%" + "Mượn về nhà" + "%' and ngaymuon ='" + DateTime.Now.ToShortDateString() + "'");
+                dr = dl.lay_reader("select phieumuon.MaTaiLieu,NhanDe,TenTacGia,phieumuon.MaDocGia,phieumuon.SoLuong from phieumuon,sach,TacGia where phieumuon.MaTaiLieu = sach.MaTaiLieu and sach.MaTacGia = TacGia.MaTacGia and phieumuon.TheThucmuon like N'%" + "Mượn về nhà" + "%' and ngaymuon ='" + DateTime.Now.ToShortDateString() + "'");
                 int i = 0;
                 while (dr.Read())
                 {
@@ -39,7 +39,7 @@ namespace quanly.frm
                 }
                 L_Ketnoi.HuyKetNoi();
                 L_Ketnoi.ThietlapketNoi();
-                dr = dl.lay_reader("select phieumuon.MaSach,NhanDe,TenTacGia,phieumuon.MaDocGia,phieumuon.SoLuong from phieumuon,sach,TacGia where phieumuon.MaSach = sach.MaSach and sach.MaTacGia = TacGia.MaTacGia and phieumuon.TheThucmuon like N'%" + "Mượn tại chỗ" + "%' and ngaymuon ='" + DateTime.Now.ToShortDateString() + "'");
+                dr = dl.lay_reader("select phieumuon.MaTaiLieu,NhanDe,TenTacGia,phieumuon.MaDocGia,phieumuon.SoLuong from phieumuon,sach,TacGia where phieumuon.MaTaiLieu = sach.MaTaiLieu and sach.MaTacGia = TacGia.MaTacGia and phieumuon.TheThucmuon like N'%" + "Mượn tại chỗ" + "%' and ngaymuon ='" + DateTime.Now.ToShortDateString() + "'");
                 i = 0;
                 while (dr.Read())
                 {
@@ -52,7 +52,7 @@ namespace quanly.frm
                 }
                 L_Ketnoi.HuyKetNoi();
                 L_Ketnoi.ThietlapketNoi();
-                dr = dl.lay_reader("select phieumuon.MaSach,NhanDe,TenTacGia,phieumuon.MaDocGia,phieumuon.SoLuong from phieumuon,sach,TacGia where phieumuon.MaSach = sach.MaSach and sach.MaTacGia = TacGia.MaTacGia and phieumuon.TheThucmuon like N'%" + "Mượn giáo trình" + "%' and ngaymuon ='" + DateTime.Now.ToShortDateString() + "'");
+                dr = dl.lay_reader("select phieumuon.MaTaiLieu,NhanDe,TenTacGia,phieumuon.MaDocGia,phieumuon.SoLuong from phieumuon,sach,TacGia where phieumuon.MaTaiLieu = sach.MaTaiLieu and sach.MaTacGia = TacGia.MaTacGia and phieumuon.TheThucmuon like N'%" + "Mượn giáo trình" + "%' and ngaymuon ='" + DateTime.Now.ToShortDateString() + "'");
                 i = 0;
                 while (dr.Read())
                 {
@@ -65,7 +65,7 @@ namespace quanly.frm
                 }
                 L_Ketnoi.HuyKetNoi();
                 L_Ketnoi.ThietlapketNoi();
-                dr = dl.lay_reader("select phieumuon.MaSach,phieumuon.MaDocGia from phieumuon,sachmuon where phieumuon.maphieumuon = sachmuon.maphieumuon and phieumuon.TheThucmuon like N'%" + "Mượn tại chỗ" + "%' and ngaymuon ='" + DateTime.Now.ToShortDateString() + "'");
+                dr = dl.lay_reader("select phieumuon.MaTaiLieu,phieumuon.MaDocGia from phieumuon,sachmuon where phieumuon.maphieumuon = sachmuon.maphieumuon and phieumuon.TheThucmuon like N'%" + "Mượn tại chỗ" + "%' and ngaymuon ='" + DateTime.Now.ToShortDateString() + "'");
                 i = 0;
                 while (dr.Read())
                 {

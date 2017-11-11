@@ -36,7 +36,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btkiemtratt = new System.Windows.Forms.Button();
-            this.txtMaSach = new System.Windows.Forms.TextBox();
+            this.txtMaTaiLieu = new System.Windows.Forms.TextBox();
             this.txtngaymuon = new System.Windows.Forms.TextBox();
             this.txtMaDocGia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -104,7 +104,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox1.Controls.Add(this.btkiemtratt);
-            this.groupBox1.Controls.Add(this.txtMaSach);
+            this.groupBox1.Controls.Add(this.txtMaTaiLieu);
             this.groupBox1.Controls.Add(this.txtngaymuon);
             this.groupBox1.Controls.Add(this.txtMaDocGia);
             this.groupBox1.Controls.Add(this.label1);
@@ -130,15 +130,15 @@
             this.btkiemtratt.UseVisualStyleBackColor = true;
             this.btkiemtratt.Click += new System.EventHandler(this.btkiemtratt_Click);
             // 
-            // txtMaSach
+            // txtMaTaiLieu
             // 
-            this.txtMaSach.Location = new System.Drawing.Point(219, 22);
-            this.txtMaSach.Name = "txtMaSach";
-            this.txtMaSach.Size = new System.Drawing.Size(77, 20);
-            this.txtMaSach.TabIndex = 1;
-            this.txtMaSach.Tag = "2";
-            this.txtMaSach.TextChanged += new System.EventHandler(this.txtMaSach_TextChanged);
-            this.txtMaSach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaSach_KeyDown);
+            this.txtMaTaiLieu.Location = new System.Drawing.Point(219, 22);
+            this.txtMaTaiLieu.Name = "txtMaTaiLieu";
+            this.txtMaTaiLieu.Size = new System.Drawing.Size(77, 20);
+            this.txtMaTaiLieu.TabIndex = 1;
+            this.txtMaTaiLieu.Tag = "2";
+            this.txtMaTaiLieu.TextChanged += new System.EventHandler(this.txtMaTaiLieu_TextChanged);
+            this.txtMaTaiLieu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaTaiLieu_KeyDown);
             // 
             // txtngaymuon
             // 
@@ -214,7 +214,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtMaSach;
+        private System.Windows.Forms.TextBox txtMaTaiLieu;
         private System.Windows.Forms.TextBox txtngaymuon;
         private System.Windows.Forms.TextBox txtMaDocGia;
         private System.Windows.Forms.Label label1;

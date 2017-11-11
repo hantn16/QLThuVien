@@ -36,7 +36,7 @@ namespace quanly.frm
             while (dau <= cuoi)
             {
                 laydulieu dl = new laydulieu();
-                dr = dl.lay_reader("select phieumuon.MaSach,NhanDe,TenTacGia,TheThucmuon,phieumuon.MaDocGia,phieumuon.SoLuong from phieumuon,sach,TacGia where phieumuon.MaSach = sach.MaSach and sach.MaTacGia = TacGia.MaTacGia and phieumuon.TheThucmuon like N'%" + comboBox1.Text + "%' and ngaymuon ='" + dau.ToShortDateString() + "'");
+                dr = dl.lay_reader("select phieumuon.MaTaiLieu,NhanDe,TenTacGia,TheThucmuon,phieumuon.MaDocGia,phieumuon.SoLuong from phieumuon,sach,TacGia where phieumuon.MaTaiLieu = sach.MaTaiLieu and sach.MaTacGia = TacGia.MaTacGia and phieumuon.TheThucmuon like N'%" + comboBox1.Text + "%' and ngaymuon ='" + dau.ToShortDateString() + "'");
                 int i = 0;
                 while (dr.Read())
                 {
