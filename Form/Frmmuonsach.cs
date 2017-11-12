@@ -8,6 +8,11 @@ using quanly.lopdulieu;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using quanly.doituong;
+using quanlythuvien.Data;
+using quanly.DoiTuong;
+using QLTV.GUI.DoiTuong;
+using quanlythuvien.DoiTuong;
+
 namespace quanly.frm
 {
     public partial class Frmmuonsach : Form
@@ -15,53 +20,54 @@ namespace quanly.frm
         public Frmmuonsach()
         {
             InitializeComponent();
+            AddAutoComplete();
+            Load_ComboBox();
         }
-        string strTheThuc = "";
-        bool ktsach = false, ktbandoc = false;
-        private void button1_Click(object sender, EventArgs e)
+
+        private void Load_ComboBox()
         {
-            laydulieu dl = new laydulieu();
-            bool tam = false;
-            SqlDataReader dr = dl.lay_reader("select TheThuc,ten,LanXuatBan,NhanDe,SoLuong ,NamXuatBan,SoTrang,NgonNgu,TenTacGia, kho,ke,ngan from sach,NgonNgu,NhaXuatBan,ViTriluutru,TacGia where sach.MaTacGia = TacGia.MaTacGia and sach.MaNgonNgu = NgonNgu.MaNgonNgu and sach.MaNXB = NhaXuatBan.MaNXB and sach.MaViTri = ViTriluutru.MaViTri and sach.MaTaiLieu='"+ txtMaTaiLieu.Text+"'");
-            while (dr.Read())
+            List<HinhThucMuon> list = HinhThucMuon.GetDSHinhThucMuon();
+            cbHinhThucMuon.DataSource = list;
+            cbHinhThucMuon.ValueMember = "IDHinhThucMuon";
+            cbHinhThucMuon.DisplayMember = "TenHinhThucMuon";
+        }
+
+        private void btnCheckTL_Click(object sender, EventArgs e)
+        {
+            try
             {
-                txtNamXuatBan.Text = DateTime.Parse(dr["NamXuatBan"].ToString()).ToShortDateString();
-                txtke.Text = dr["ke"].ToString();
-                txtkho.Text = dr["kho"].ToString();
-                txtlanxuatban.Text = dr["LanXuatBan"].ToString();
-                txtngan.Text = dr["ngan"].ToString();
-                txtNgonNgu.Text = dr["NgonNgu"].ToString();
-                txtNhanDe.Text = dr["NhanDe"].ToString();
-                txtnhaxb.Text = dr["ten"].ToString();
-                txtSoLuong.Text = dr["SoLuong"].ToString();
-                txtSoTrang.Text = dr["SoTrang"].ToString();
-                txtTacGia.Text = dr["TenTacGia"].ToString();
-                txtTheThuc.Text = dr["TheThuc"].ToString();
-                tam = true;
-                ktsach = true;
+                TaiLieu taiLieu = TaiLieu.GetTaiLieuTheoMa(txtMaTaiLieu.Text);
+                if (taiLieu == null) throw new Exception("Không tìm thấy tài liệu với mã tương ứng");
+
+                txtIDTL.Text = taiLieu.IDTaiLieu.ToString();
+                txtNhanDe.Text = taiLieu.NhanDe.ToString();
+                txtSoLuong.Text = taiLieu.SoLuong.ToString();
+                txtSLCoSan.Text = TaiLieu.SoLuongCoSan(taiLieu.IDTaiLieu).ToString();
+                txtLanXuatBan.Text = taiLieu.LanXuatBan.ToString();
+                txtSoTrang.Text = taiLieu.SoTrang.ToString();
+
+                NhaXuatBan nxb = NhaXuatBan.TimNXBTheoID(taiLieu.IDNXB);
+                txtNXB.Text = nxb.TenNhaXuatBan;
+                NgonNgu nn = NgonNgu.LayDSNgonNgu().Find(c => c.IDNgonNgu == taiLieu.IDNgonNgu);
+                txtNgonNgu.Text = nn.TenNgonNgu;
+                txtNamXuatBan.Text = taiLieu.NamXuatBan.ToString();
+                TacGia tg = TacGia.LayDSTacGia().Find(c => c.IDTacGia == taiLieu.IDTacGia);
+                txtTacGia.Text = tg.TenTacGia;
+                TheLoai theLoai = TheLoai.GetDanhSachTheLoai().Find(c => c.IDTheLoai == taiLieu.IDTheLoai);
+                txtTheLoai.Text = theLoai.TenTheLoai;
+                GiaXep gx = GiaXep.GetDSGiaXep().Find(c => c.IDGiaXep == taiLieu.IDGiaXep);
+                txtGiaXep.Text = gx.MaGiaXep;
+                Kho kho = Kho.GetDanhSachKho().Find(c => c.IDKho == gx.IDKho);
+                txtKho.Text = kho.MaKho;
+                txtNamXuatBan.Text = taiLieu.NamXuatBan.ToString();
             }
-            L_Ketnoi.HuyKetNoi();
-            if (tam == true)
+            catch (Exception ex)
             {
-                L_Ketnoi.ThietlapketNoi();
-                SqlDataReader dr1 = dl.lay_reader("select * from sachhong where MaTaiLieu='" + txtMaTaiLieu.Text + "'");
-                int i = 0;
-                while (dr1.Read())
-                    i++;
-                L_Ketnoi.HuyKetNoi();
-                btsach.Enabled = false;
-                if (i > 0)
-                {
-                    lbhong.Visible = true;
-                    lbketqua.Text = i.ToString() + " cuốn";
-                }
-                else
-                {
-                    lbhong.Visible = false;
-                    lbketqua.Text = "";
-                }
-                txtMaTaiLieu.Enabled = false;
+                MessageBox.Show(ex.Message);
+                txtMaTaiLieu.Focus();
+
             }
+
         }
 
         private void Frmmuonsach_Load(object sender, EventArgs e)
@@ -69,173 +75,166 @@ namespace quanly.frm
             Frmmain.tt = true;
         }
 
+        private void AddAutoComplete()
+        {
+            try
+            {
+                //AutoComplete mục gõ tên tài liệu
+                DataTable dt = DataProvider.ExecuteQuery("Select IDTaiLieu,MaTaiLieu,NhanDe From dbo.TaiLieu");
+                List<string> list = new List<string>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    string item = dr["MaTaiLieu"].ToString();
+                    list.Add(item);
+                }
+
+                AutoCompleteStringCollection autoList = new AutoCompleteStringCollection();
+                autoList.AddRange(list.ToArray());
+                txtMaTaiLieu.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtMaTaiLieu.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                txtMaTaiLieu.AutoCompleteCustomSource = autoList;
+
+                //AutoComplete mục gõ mã bạn đọc
+                DataTable dtDocGia = DataProvider.ExecuteQuery("Select MaDocGia From dbo.DocGia");
+                List<string> listDG = new List<string>();
+                foreach (DataRow dr in dtDocGia.Rows)
+                {
+                    string item = dr["MaDocGia"].ToString();
+                    listDG.Add(item);
+                }
+                txtMaDocGia.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtMaDocGia.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                AutoCompleteStringCollection autoListDG = new AutoCompleteStringCollection();
+                autoListDG.AddRange(listDG.ToArray());
+                txtMaDocGia.AutoCompleteCustomSource = autoListDG;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
         private void btbandoc(object sender, EventArgs e)
         {
-            laydulieu dl = new laydulieu();
-            bool tam = false;
-         
-            SqlDataReader dr = dl.lay_reader("select * from DocGia,khoa where DocGia.MaDocGia = '"+ txtmabandoc.Text+"'");
-            while (dr.Read())
-            {
-                txtHoTen.Text = dr["HoTen"].ToString();
-                txtViTri.Text = dr["ViTri"].ToString();
-                txtDiaChi.Text = dr["DiaChi"].ToString();
-                txtkhoa.Text = dr["tenkhoa"].ToString();
-                tam = true;
-                ktbandoc = true;
-            }
-            L_Ketnoi.HuyKetNoi();
-            
-            if (ktbandoc)
-            {
-                L_Ketnoi.ThietlapketNoi();
-                SqlDataReader dr1 = dl.lay_reader("select TheThucmuon from phieumuon,sachmuon where phieumuon.maphieumuon = sachmuon.maphieumuon and phieumuon.MaDocGia='" + txtmabandoc.Text + "'");
-                while (dr1.Read())
-                    strTheThuc = dr1[0].ToString();
-                L_Ketnoi.HuyKetNoi();
-                if (strTheThuc != "") MessageBox.Show("Đối tượng này đã mượn sách với thể thức là " + strTheThuc);
-                if (tam)
-                {
-                    txtmabandoc.Enabled = false;
-                    bttkbandoc.Enabled = false;
-                }
-                else
-                {
-                    txtmabandoc.Enabled = true;
-                    bttkbandoc.Enabled = true;
-                }
-            }
+            DocGia dg = DocGia.GetDSDocGia().Find(c => c.MaDocGia == txtMaDocGia.Text);
+
+            txtIDDocGia.Text = dg.IDDocGia.ToString();
+            txtHoTen.Text = dg.HoTen;
+            Lop lop = Lop.GetLopTheoID(dg.IDLop);
+            txtLop.Text = lop.TenLop;
+            txtDiaChi.Text = dg.DiaChi;
+            Khoa khoa = Khoa.GetDSKhoa().Find(c => c.IDKhoa == lop.IDKhoa);
+            txtKhoa.Text = khoa.TenKhoa;
+            txtHoTen.Tag = dg.Lock;
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        string SetMaPhieuMuon()
         {
-            ktbandoc = ktsach = false;
-            txtmabandoc.Text = "";
-            txtDiaChi.Text = txtHoTen.Text = txtke.Text = txtkho.Text = txtkhoa.Text = "";
-            txtlanxuatban.Text = txtmabandoc.Text = txtMaTaiLieu.Text = txtNamXuatBan.Text = "";
-            txtngan.Text = txtNgonNgu.Text = txtNhanDe.Text = txtnhaxb.Text = txtSoLuong.Text = "";
-            txtSoTrang.Text = txtTacGia.Text = txtViTri.Text = "";txtTheThuc.Text = "";
-            bttkbandoc.Enabled = btsach.Enabled = true;
-            txtMaTaiLieu.Enabled = txtmabandoc.Enabled= true;
-            lbhong.Visible = false;
-            lbketqua.Text = "";
-        }
-        string maphieumuon(string ma)
-        {
-            string s = ma.Substring(2, ma.Length - 2);
-            double i = double.Parse(s);
-            i++;
-            if (i < 10) return "PM0000" + i.ToString();
-            else
-                if (i < 100) return "PM000" + i.ToString();
-                else
-                    if (i < 1000) return "PM00" + i.ToString();
-                    else
-                        if (i < 10000) return "PM0" + i.ToString();
-                        else
-                            return "PM" + i.ToString();
-        }
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            if (ktbandoc && ktsach)
+            string TienTo = "PM" + DateTime.Now.ToString("yyMMdd")+"-";
+            string query = string.Format("Select Max(Convert(int,RIGHT(MaPhieuMuon,3)))from PhieuMuon Where MaPhieuMuon like N'{0}%'", TienTo);
+            Object obj = DataProvider.ExecuteScalar(query);
+            if (obj == DBNull.Value)
             {
-                laydulieu dl = new laydulieu();
-                SqlDataReader dr = dl.lay_reader("select maphieumuon from phieumuon");
-                string tam = "";
-                while (dr.Read())
-                    tam = dr[0].ToString();
-                L_Ketnoi.HuyKetNoi();
-                if (tam == "") tam = "PM00000";
-                else tam = maphieumuon(tam);
-                if(comboBox1.Text=="") MessageBox.Show("Bạn phải chọn thể thức mượn");
-                else
-                {
-                    if ((comboBox1.Text == strTheThuc) && (comboBox1.Text != "Mượn giáo trình"))
-                        MessageBox.Show("Không thể " + strTheThuc + " 2 quyển sách, phải trả sách mới được mượn tiếp");
-                    else
-                    {
-                        if (int.Parse(txtSoLuong.Text) < int.Parse(textBox1.Text)) MessageBox.Show("Số lượng sách trong thư viện không đủ cho bạn mượn hãy nhập lại", "Thông báo");
-                        else
-                        {
-
-                            if (txtTheThuc.Text != comboBox1.Text) MessageBox.Show("Thể thức bạn mượn sách này không thể đáp ứng được hãy chọn lại sách khác", "Thông báo");
-                            else
-                            {
-                                TaiLieu s = new TaiLieu();
-                                s.MaTaiLieu =(txtMaTaiLieu.Text);
-                                                             
-                                if (s.ChoMuon(textBox1.Text))
-                                {
-                                    try
-                                    {
-                                        int tamsl = int.Parse(textBox1.Text);
-                                        Lphieumuon pm = new Lphieumuon(tam, txtmabandoc.Text, comboBox1.Text, txtMaTaiLieu.Text, KTdangnhap.strMaNhanVien, DateTime.Parse(DateTime.Now.ToShortDateString()), tamsl);
-                                        if (pm.TaoMoi())
-                                        {
-                                            TaiLieumuon sm = new TaiLieumuon(tam);
-                                            if (sm.TaoMoi())
-                                            {
-                                                button2_Click(sender, e);
-                                                MessageBox.Show("Đã hoàn thành thao tác", "Thông báo");
-                                            }
-                                            else
-                                            {
-                                                button2_Click(sender, e);
-                                                MessageBox.Show("Thao tác gặp lỗi hãy thực hiện lại sau", "Thông báo");
-                                            }
-                                        }
-                                        else
-                                        {
-                                            button2_Click(sender, e);
-                                            MessageBox.Show("Thao tác gặp lỗi hãy thực hiện lại sau", "Thông báo");
-                                        }
-                                    }
-                                    catch { MessageBox.Show(" Nhập sai số lượng sách mượn"); }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Quá trình cho mượn sách bị thất bại");
-                                }
-                            }
-                        }
-                    }
-                }
+                return TienTo + "001";
             }
             else
             {
-                MessageBox.Show("Bạn phải kiểm tra thông tin trước mới thực hiện được thao tác này", "Thông báo");
+                return TienTo + (Convert.ToInt32(obj) + 1).ToString("000");
+            }           
+        }
+        private void btnChoMuon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (int.Parse(txtSLCoSan.Text) == 0) throw new Exception("Tài liệu không có sẵn trong thư viện, không thể mượn");
+                if (Convert.ToBoolean(txtHoTen.Tag)) throw new Exception("Mã độc giả này đang bị khóa, không thể mượn tài liệu");
+                if (cbHinhThucMuon.Text == "") MessageBox.Show("Bạn phải chọn thể thức mượn");
+                PhieuMuon pm = new PhieuMuon();
+                pm.MaPhieuMuon = SetMaPhieuMuon();
+                pm.IDNhanVien = Frmmain.nv.IDNhanVien;
+                pm.IDDocGia = int.Parse(txtIDDocGia.Text);
+                pm.IDTaiLieu = int.Parse(txtIDTL.Text);
+                pm.IDHinhThucMuon = Convert.ToInt32(cbHinhThucMuon.SelectedValue);
+                pm.SoLuong = int.Parse(txtSLMuon.Text);
+                pm.NgayMuon = DateTime.Now;
+                pm.ThoiHanTra = TinhThoiHanTra(DateTime.Now, pm.IDHinhThucMuon);
+                pm.TinhTrang = 1;
+
+                if (PhieuMuon.ThemMoi(pm)) MessageBox.Show("Thêm mới phiếu mượn thành công!!!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        /// <summary>
+        /// Hàm tính thời hạn trả theo ngày mượn và hình thức mượn
+        /// </summary>
+        /// <param name="ngayMuon">Ngày bắt đầu mượn</param>
+        /// <param name="iDHinhThucMuon">id hình thức mượn: 1-mượn tại chỗ, 2-mượn về nhà</param>
+        /// <returns></returns>
+        private DateTime TinhThoiHanTra(DateTime ngayMuon, int iDHinhThucMuon)
+        {
+            try
+            {
+                if (iDHinhThucMuon == 1) //Nếu mượn tại chỗ thì trả trước 18h cùng ngày
+                {
+                    return new DateTime(ngayMuon.Year, ngayMuon.Month, ngayMuon.Day, 18, 00, 00);
+                }
+                else //Nếu mượn về nhà thì phải trả trước 7 ngày
+                {
+                    return ngayMuon.AddDays(7);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (cbHinhThucMuon.Text == "Mượn giáo trình")
+            txtSLMuon.Enabled = true;
+        else
         {
-            if (comboBox1.Text == "Mượn giáo trình")
-                textBox1.Enabled = true;
-            else
-            {
-                textBox1.Text = "1";
-                textBox1.Enabled = false;
-            }
-        }
-
-        private void txtMaTaiLieu_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter) button1_Click(sender, e);
-        }
-
-        private void txtmabandoc_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter) btbandoc(sender, e);
-        }
-
-        private void Frmmuonsach_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Frmmain.tt = false;
+            txtSLMuon.Text = "1";
+            txtSLMuon.Enabled = false;
         }
     }
+
+    private void txtMaTaiLieu_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyData == Keys.Enter) btnCheckTL_Click(sender, e);
+    }
+
+    private void txtmabandoc_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyData == Keys.Enter) btbandoc(sender, e);
+    }
+
+    private void txtMaDocGia_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void txtNgonNgu_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Frmmuonsach_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        Frmmain.tt = false;
+    }
+}
 }

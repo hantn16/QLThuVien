@@ -67,7 +67,6 @@
             this.trảSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giaHạnSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
-            this.traCứuSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kiểmTraMượnTrảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinSáchMượnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sáchMượnTạiChỗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,9 +76,6 @@
             this.danhMụcSáchHỏngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhMụcSáchTrễHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhMụcSáchĐangMượnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnhelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinChươngTrìnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ngườiThựcHiệnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctdangxuat = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,8 +124,7 @@
             this.mnquanlykho,
             this.mnquanlyDocGia,
             this.mnquanlymuontra,
-            this.mnbaocao,
-            this.mnhelp});
+            this.mnbaocao});
             this.menuStrip1.Location = new System.Drawing.Point(0, 25);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(867, 40);
@@ -149,7 +144,7 @@
             this.toolStripMenuItem10,
             this.thoátToolStripMenuItem1});
             this.mnquanlyht.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.mnquanlyht.Image = global::quanlythuvien.Properties.Resources.Documents___Settings_Folder;
+            this.mnquanlyht.Image = ((System.Drawing.Image)(resources.GetObject("mnquanlyht.Image")));
             this.mnquanlyht.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnquanlyht.Name = "mnquanlyht";
             this.mnquanlyht.Size = new System.Drawing.Size(143, 36);
@@ -158,7 +153,7 @@
             // 
             // mndangnhap
             // 
-            this.mndangnhap.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.mndangnhap.Image = ((System.Drawing.Image)(resources.GetObject("mndangnhap.Image")));
             this.mndangnhap.Name = "mndangnhap";
             this.mndangnhap.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D)));
             this.mndangnhap.Size = new System.Drawing.Size(254, 22);
@@ -168,7 +163,7 @@
             // mndangxuat
             // 
             this.mndangxuat.Enabled = false;
-            this.mndangxuat.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.mndangxuat.Image = ((System.Drawing.Image)(resources.GetObject("mndangxuat.Image")));
             this.mndangxuat.Name = "mndangxuat";
             this.mndangxuat.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
             this.mndangxuat.Size = new System.Drawing.Size(254, 22);
@@ -183,7 +178,7 @@
             // mnphanquyen
             // 
             this.mnphanquyen.Enabled = false;
-            this.mnphanquyen.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.mnphanquyen.Image = ((System.Drawing.Image)(resources.GetObject("mnphanquyen.Image")));
             this.mnphanquyen.Name = "mnphanquyen";
             this.mnphanquyen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
             this.mnphanquyen.Size = new System.Drawing.Size(254, 22);
@@ -193,7 +188,7 @@
             // mnttcanhan
             // 
             this.mnttcanhan.Enabled = false;
-            this.mnttcanhan.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.mnttcanhan.Image = ((System.Drawing.Image)(resources.GetObject("mnttcanhan.Image")));
             this.mnttcanhan.Name = "mnttcanhan";
             this.mnttcanhan.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
             this.mnttcanhan.Size = new System.Drawing.Size(254, 22);
@@ -203,7 +198,7 @@
             // mntaotaikhoanmoi
             // 
             this.mntaotaikhoanmoi.Enabled = false;
-            this.mntaotaikhoanmoi.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.mntaotaikhoanmoi.Image = ((System.Drawing.Image)(resources.GetObject("mntaotaikhoanmoi.Image")));
             this.mntaotaikhoanmoi.Name = "mntaotaikhoanmoi";
             this.mntaotaikhoanmoi.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.K)));
             this.mntaotaikhoanmoi.Size = new System.Drawing.Size(254, 22);
@@ -217,7 +212,7 @@
             // 
             // toolStripMenuItem10
             // 
-            this.toolStripMenuItem10.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.toolStripMenuItem10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem10.Image")));
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
             this.toolStripMenuItem10.Size = new System.Drawing.Size(254, 22);
@@ -226,7 +221,7 @@
             // 
             // thoátToolStripMenuItem1
             // 
-            this.thoátToolStripMenuItem1.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.thoátToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("thoátToolStripMenuItem1.Image")));
             this.thoátToolStripMenuItem1.Name = "thoátToolStripMenuItem1";
             this.thoátToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
             this.thoátToolStripMenuItem1.Size = new System.Drawing.Size(254, 22);
@@ -243,7 +238,7 @@
             this.ngônNgữToolStripMenuItem});
             this.mnquanlydanhmuc.Enabled = false;
             this.mnquanlydanhmuc.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.mnquanlydanhmuc.Image = global::quanlythuvien.Properties.Resources.My_Pictures;
+            this.mnquanlydanhmuc.Image = ((System.Drawing.Image)(resources.GetObject("mnquanlydanhmuc.Image")));
             this.mnquanlydanhmuc.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnquanlydanhmuc.Name = "mnquanlydanhmuc";
             this.mnquanlydanhmuc.Size = new System.Drawing.Size(149, 36);
@@ -251,7 +246,7 @@
             // 
             // tácGiảToolStripMenuItem
             // 
-            this.tácGiảToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.tácGiảToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tácGiảToolStripMenuItem.Image")));
             this.tácGiảToolStripMenuItem.Name = "tácGiảToolStripMenuItem";
             this.tácGiảToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.T)));
@@ -261,7 +256,7 @@
             // 
             // nhàXuấtBảnToolStripMenuItem
             // 
-            this.nhàXuấtBảnToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.nhàXuấtBảnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nhàXuấtBảnToolStripMenuItem.Image")));
             this.nhàXuấtBảnToolStripMenuItem.Name = "nhàXuấtBảnToolStripMenuItem";
             this.nhàXuấtBảnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.N)));
@@ -271,7 +266,7 @@
             // 
             // loạiSáchToolStripMenuItem
             // 
-            this.loạiSáchToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.loạiSáchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("loạiSáchToolStripMenuItem.Image")));
             this.loạiSáchToolStripMenuItem.Name = "loạiSáchToolStripMenuItem";
             this.loạiSáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.L)));
@@ -281,7 +276,7 @@
             // 
             // khoaToolStripMenuItem
             // 
-            this.khoaToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.khoaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("khoaToolStripMenuItem.Image")));
             this.khoaToolStripMenuItem.Name = "khoaToolStripMenuItem";
             this.khoaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.K)));
@@ -291,7 +286,7 @@
             // 
             // ngônNgữToolStripMenuItem
             // 
-            this.ngônNgữToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.ngônNgữToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ngônNgữToolStripMenuItem.Image")));
             this.ngônNgữToolStripMenuItem.Name = "ngônNgữToolStripMenuItem";
             this.ngônNgữToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.G)));
@@ -309,7 +304,7 @@
             this.thôngTinSáchHỏngToolStripMenuItem});
             this.mnquanlykho.Enabled = false;
             this.mnquanlykho.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.mnquanlykho.Image = global::quanlythuvien.Properties.Resources._01__81_;
+            this.mnquanlykho.Image = ((System.Drawing.Image)(resources.GetObject("mnquanlykho.Image")));
             this.mnquanlykho.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnquanlykho.Name = "mnquanlykho";
             this.mnquanlykho.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
@@ -319,7 +314,7 @@
             // 
             // phânLoạiSáchToolStripMenuItem
             // 
-            this.phânLoạiSáchToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.phânLoạiSáchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("phânLoạiSáchToolStripMenuItem.Image")));
             this.phânLoạiSáchToolStripMenuItem.Name = "phânLoạiSáchToolStripMenuItem";
             this.phânLoạiSáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.P)));
@@ -333,14 +328,14 @@
             this.nhậpSáchMớiToolStripMenuItem1,
             this.huỷĐầuSáchToolStripMenuItem1,
             this.hiệuChỉnhThôngTinToolStripMenuItem});
-            this.nhậpSáchMớiToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Star3;
+            this.nhậpSáchMớiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nhậpSáchMớiToolStripMenuItem.Image")));
             this.nhậpSáchMớiToolStripMenuItem.Name = "nhậpSáchMớiToolStripMenuItem";
             this.nhậpSáchMớiToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.nhậpSáchMớiToolStripMenuItem.Text = "Cập nhật tài liệu";
             // 
             // nhậpSáchMớiToolStripMenuItem1
             // 
-            this.nhậpSáchMớiToolStripMenuItem1.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.nhậpSáchMớiToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("nhậpSáchMớiToolStripMenuItem1.Image")));
             this.nhậpSáchMớiToolStripMenuItem1.Name = "nhậpSáchMớiToolStripMenuItem1";
             this.nhậpSáchMớiToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
             this.nhậpSáchMớiToolStripMenuItem1.Text = "Nhập tài liệu mới";
@@ -348,7 +343,7 @@
             // 
             // huỷĐầuSáchToolStripMenuItem1
             // 
-            this.huỷĐầuSáchToolStripMenuItem1.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.huỷĐầuSáchToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("huỷĐầuSáchToolStripMenuItem1.Image")));
             this.huỷĐầuSáchToolStripMenuItem1.Name = "huỷĐầuSáchToolStripMenuItem1";
             this.huỷĐầuSáchToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
             this.huỷĐầuSáchToolStripMenuItem1.Text = "Huỷ tài liệu";
@@ -356,7 +351,7 @@
             // 
             // hiệuChỉnhThôngTinToolStripMenuItem
             // 
-            this.hiệuChỉnhThôngTinToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.hiệuChỉnhThôngTinToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hiệuChỉnhThôngTinToolStripMenuItem.Image")));
             this.hiệuChỉnhThôngTinToolStripMenuItem.Name = "hiệuChỉnhThôngTinToolStripMenuItem";
             this.hiệuChỉnhThôngTinToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.hiệuChỉnhThôngTinToolStripMenuItem.Text = "Hiệu chỉnh thông tin";
@@ -372,14 +367,14 @@
             this.tìmKiếmSáchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cơBảnToolStripMenuItem,
             this.toolStripMenuItem6});
-            this.tìmKiếmSáchToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Star3;
+            this.tìmKiếmSáchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tìmKiếmSáchToolStripMenuItem.Image")));
             this.tìmKiếmSáchToolStripMenuItem.Name = "tìmKiếmSáchToolStripMenuItem";
             this.tìmKiếmSáchToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.tìmKiếmSáchToolStripMenuItem.Text = "Tìm kiếm tài liệu";
             // 
             // cơBảnToolStripMenuItem
             // 
-            this.cơBảnToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.cơBảnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cơBảnToolStripMenuItem.Image")));
             this.cơBảnToolStripMenuItem.Name = "cơBảnToolStripMenuItem";
             this.cơBảnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
@@ -389,7 +384,7 @@
             // 
             // toolStripMenuItem6
             // 
-            this.toolStripMenuItem6.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.toolStripMenuItem6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem6.Image")));
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.A)));
@@ -399,7 +394,7 @@
             // 
             // thôngTinSáchHỏngToolStripMenuItem
             // 
-            this.thôngTinSáchHỏngToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.thôngTinSáchHỏngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thôngTinSáchHỏngToolStripMenuItem.Image")));
             this.thôngTinSáchHỏngToolStripMenuItem.Name = "thôngTinSáchHỏngToolStripMenuItem";
             this.thôngTinSáchHỏngToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.H)));
@@ -415,7 +410,7 @@
             this.tạoThẻThưViệnChoĐộcGiảToolStripMenuItem});
             this.mnquanlyDocGia.Enabled = false;
             this.mnquanlyDocGia.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.mnquanlyDocGia.Image = global::quanlythuvien.Properties.Resources.My_Pictures4;
+            this.mnquanlyDocGia.Image = ((System.Drawing.Image)(resources.GetObject("mnquanlyDocGia.Image")));
             this.mnquanlyDocGia.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnquanlyDocGia.Name = "mnquanlyDocGia";
             this.mnquanlyDocGia.Size = new System.Drawing.Size(134, 36);
@@ -423,7 +418,7 @@
             // 
             // tạoTàiKhoảnToolStripMenuItem
             // 
-            this.tạoTàiKhoảnToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.tạoTàiKhoảnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tạoTàiKhoảnToolStripMenuItem.Image")));
             this.tạoTàiKhoảnToolStripMenuItem.Name = "tạoTàiKhoảnToolStripMenuItem";
             this.tạoTàiKhoảnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.tạoTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
@@ -432,7 +427,7 @@
             // 
             // huỷTàiKhoảnToolStripMenuItem
             // 
-            this.huỷTàiKhoảnToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.huỷTàiKhoảnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("huỷTàiKhoảnToolStripMenuItem.Image")));
             this.huỷTàiKhoảnToolStripMenuItem.Name = "huỷTàiKhoảnToolStripMenuItem";
             this.huỷTàiKhoảnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
             this.huỷTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
@@ -441,7 +436,7 @@
             // 
             // tạoThẻThưViệnChoĐộcGiảToolStripMenuItem
             // 
-            this.tạoThẻThưViệnChoĐộcGiảToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.tạoThẻThưViệnChoĐộcGiảToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tạoThẻThưViệnChoĐộcGiảToolStripMenuItem.Image")));
             this.tạoThẻThưViệnChoĐộcGiảToolStripMenuItem.Name = "tạoThẻThưViệnChoĐộcGiảToolStripMenuItem";
             this.tạoThẻThưViệnChoĐộcGiảToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
             this.tạoThẻThưViệnChoĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
@@ -455,11 +450,10 @@
             this.trảSáchToolStripMenuItem,
             this.giaHạnSáchToolStripMenuItem,
             this.toolStripMenuItem4,
-            this.traCứuSáchToolStripMenuItem,
             this.kiểmTraMượnTrảToolStripMenuItem});
             this.mnquanlymuontra.Enabled = false;
             this.mnquanlymuontra.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.mnquanlymuontra.Image = global::quanlythuvien.Properties.Resources.email;
+            this.mnquanlymuontra.Image = ((System.Drawing.Image)(resources.GetObject("mnquanlymuontra.Image")));
             this.mnquanlymuontra.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnquanlymuontra.Name = "mnquanlymuontra";
             this.mnquanlymuontra.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
@@ -468,7 +462,7 @@
             // 
             // mượnSáchToolStripMenuItem
             // 
-            this.mượnSáchToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.mượnSáchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mượnSáchToolStripMenuItem.Image")));
             this.mượnSáchToolStripMenuItem.Name = "mượnSáchToolStripMenuItem";
             this.mượnSáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
             this.mượnSáchToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
@@ -477,7 +471,7 @@
             // 
             // trảSáchToolStripMenuItem
             // 
-            this.trảSáchToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.trảSáchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trảSáchToolStripMenuItem.Image")));
             this.trảSáchToolStripMenuItem.Name = "trảSáchToolStripMenuItem";
             this.trảSáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
             this.trảSáchToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
@@ -486,7 +480,7 @@
             // 
             // giaHạnSáchToolStripMenuItem
             // 
-            this.giaHạnSáchToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.giaHạnSáchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("giaHạnSáchToolStripMenuItem.Image")));
             this.giaHạnSáchToolStripMenuItem.Name = "giaHạnSáchToolStripMenuItem";
             this.giaHạnSáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
             this.giaHạnSáchToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
@@ -498,21 +492,12 @@
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(214, 6);
             // 
-            // traCứuSáchToolStripMenuItem
-            // 
-            this.traCứuSáchToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
-            this.traCứuSáchToolStripMenuItem.Name = "traCứuSáchToolStripMenuItem";
-            this.traCứuSáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.U)));
-            this.traCứuSáchToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.traCứuSáchToolStripMenuItem.Text = "Tra cứu tài liệu";
-            this.traCứuSáchToolStripMenuItem.Click += new System.EventHandler(this.mndangnhap_Click);
-            // 
             // kiểmTraMượnTrảToolStripMenuItem
             // 
             this.kiểmTraMượnTrảToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinSáchMượnToolStripMenuItem,
             this.sáchMượnTạiChỗToolStripMenuItem});
-            this.kiểmTraMượnTrảToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Star3;
+            this.kiểmTraMượnTrảToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kiểmTraMượnTrảToolStripMenuItem.Image")));
             this.kiểmTraMượnTrảToolStripMenuItem.Name = "kiểmTraMượnTrảToolStripMenuItem";
             this.kiểmTraMượnTrảToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
             this.kiểmTraMượnTrảToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
@@ -520,18 +505,18 @@
             // 
             // thôngTinSáchMượnToolStripMenuItem
             // 
-            this.thôngTinSáchMượnToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.thôngTinSáchMượnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thôngTinSáchMượnToolStripMenuItem.Image")));
             this.thôngTinSáchMượnToolStripMenuItem.Name = "thôngTinSáchMượnToolStripMenuItem";
-            this.thôngTinSáchMượnToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.thôngTinSáchMượnToolStripMenuItem.Text = "Thông tin sách mượn theo ngày";
+            this.thôngTinSáchMượnToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.thôngTinSáchMượnToolStripMenuItem.Text = "Thông tin tài liệu mượn theo ngày";
             this.thôngTinSáchMượnToolStripMenuItem.Click += new System.EventHandler(this.mndangnhap_Click);
             // 
             // sáchMượnTạiChỗToolStripMenuItem
             // 
-            this.sáchMượnTạiChỗToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.sáchMượnTạiChỗToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sáchMượnTạiChỗToolStripMenuItem.Image")));
             this.sáchMượnTạiChỗToolStripMenuItem.Name = "sáchMượnTạiChỗToolStripMenuItem";
-            this.sáchMượnTạiChỗToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.sáchMượnTạiChỗToolStripMenuItem.Text = "Thông tin sách mượn trong ngày";
+            this.sáchMượnTạiChỗToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
+            this.sáchMượnTạiChỗToolStripMenuItem.Text = "Thông tin tài liệu mượn trong ngày";
             this.sáchMượnTạiChỗToolStripMenuItem.Click += new System.EventHandler(this.mndangnhap_Click);
             // 
             // mnbaocao
@@ -543,7 +528,7 @@
             this.danhMụcSáchTrễHạnToolStripMenuItem,
             this.danhMụcSáchĐangMượnToolStripMenuItem});
             this.mnbaocao.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.mnbaocao.Image = global::quanlythuvien.Properties.Resources.My_Documents;
+            this.mnbaocao.Image = ((System.Drawing.Image)(resources.GetObject("mnbaocao.Image")));
             this.mnbaocao.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnbaocao.Name = "mnbaocao";
             this.mnbaocao.Size = new System.Drawing.Size(101, 36);
@@ -551,7 +536,7 @@
             // 
             // danhMụcSáchCònToolStripMenuItem
             // 
-            this.danhMụcSáchCònToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.danhMụcSáchCònToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("danhMụcSáchCònToolStripMenuItem.Image")));
             this.danhMụcSáchCònToolStripMenuItem.Name = "danhMụcSáchCònToolStripMenuItem";
             this.danhMụcSáchCònToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D1)));
             this.danhMụcSáchCònToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
@@ -560,7 +545,7 @@
             // 
             // danhMụcSáchMượnToolStripMenuItem
             // 
-            this.danhMụcSáchMượnToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.danhMụcSáchMượnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("danhMụcSáchMượnToolStripMenuItem.Image")));
             this.danhMụcSáchMượnToolStripMenuItem.Name = "danhMụcSáchMượnToolStripMenuItem";
             this.danhMụcSáchMượnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D2)));
             this.danhMụcSáchMượnToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
@@ -569,7 +554,7 @@
             // 
             // danhMụcSáchHỏngToolStripMenuItem
             // 
-            this.danhMụcSáchHỏngToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.danhMụcSáchHỏngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("danhMụcSáchHỏngToolStripMenuItem.Image")));
             this.danhMụcSáchHỏngToolStripMenuItem.Name = "danhMụcSáchHỏngToolStripMenuItem";
             this.danhMụcSáchHỏngToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D3)));
             this.danhMụcSáchHỏngToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
@@ -578,7 +563,7 @@
             // 
             // danhMụcSáchTrễHạnToolStripMenuItem
             // 
-            this.danhMụcSáchTrễHạnToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.danhMụcSáchTrễHạnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("danhMụcSáchTrễHạnToolStripMenuItem.Image")));
             this.danhMụcSáchTrễHạnToolStripMenuItem.Name = "danhMụcSáchTrễHạnToolStripMenuItem";
             this.danhMụcSáchTrễHạnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D4)));
             this.danhMụcSáchTrễHạnToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
@@ -587,41 +572,12 @@
             // 
             // danhMụcSáchĐangMượnToolStripMenuItem
             // 
-            this.danhMụcSáchĐangMượnToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.danhMụcSáchĐangMượnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("danhMụcSáchĐangMượnToolStripMenuItem.Image")));
             this.danhMụcSáchĐangMượnToolStripMenuItem.Name = "danhMụcSáchĐangMượnToolStripMenuItem";
             this.danhMụcSáchĐangMượnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D5)));
             this.danhMụcSáchĐangMượnToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
             this.danhMụcSáchĐangMượnToolStripMenuItem.Text = "Danh mục tài liệu đang mượn";
             this.danhMụcSáchĐangMượnToolStripMenuItem.Click += new System.EventHandler(this.mndangnhap_Click);
-            // 
-            // mnhelp
-            // 
-            this.mnhelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thôngTinChươngTrìnhToolStripMenuItem,
-            this.ngườiThựcHiệnToolStripMenuItem});
-            this.mnhelp.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.mnhelp.Image = global::quanlythuvien.Properties.Resources.help;
-            this.mnhelp.Name = "mnhelp";
-            this.mnhelp.Size = new System.Drawing.Size(77, 36);
-            this.mnhelp.Text = "Giúp đỡ";
-            // 
-            // thôngTinChươngTrìnhToolStripMenuItem
-            // 
-            this.thôngTinChươngTrìnhToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
-            this.thôngTinChươngTrìnhToolStripMenuItem.Name = "thôngTinChươngTrìnhToolStripMenuItem";
-            this.thôngTinChươngTrìnhToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.thôngTinChươngTrìnhToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.thôngTinChươngTrìnhToolStripMenuItem.Text = "Thông tin chương trình";
-            this.thôngTinChươngTrìnhToolStripMenuItem.Click += new System.EventHandler(this.thôngTinChươngTrìnhToolStripMenuItem_Click);
-            // 
-            // ngườiThựcHiệnToolStripMenuItem
-            // 
-            this.ngườiThựcHiệnToolStripMenuItem.Image = global::quanlythuvien.Properties.Resources.Options;
-            this.ngườiThựcHiệnToolStripMenuItem.Name = "ngườiThựcHiệnToolStripMenuItem";
-            this.ngườiThựcHiệnToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.ngườiThựcHiệnToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.ngườiThựcHiệnToolStripMenuItem.Text = "Người thực hiện";
-            this.ngườiThựcHiệnToolStripMenuItem.Click += new System.EventHandler(this.ngườiThựcHiệnToolStripMenuItem_Click);
             // 
             // notifyIcon1
             // 
@@ -754,7 +710,7 @@
             // toolStripButton2
             // 
             this.toolStripButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton2.Image = global::quanlythuvien.Properties.Resources.thoat;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(130, 22);
@@ -764,7 +720,7 @@
             // toolStripButton1
             // 
             this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton1.Image = global::quanlythuvien.Properties.Resources.Options;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(114, 22);
@@ -775,7 +731,7 @@
             // 
             this.toolStripButton3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripButton3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.toolStripButton3.Image = global::quanlythuvien.Properties.Resources.help;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(52, 22);
@@ -942,15 +898,11 @@
         private System.Windows.Forms.ToolStripMenuItem trảSáchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giaHạnSáchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem traCứuSáchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnbaocao;
         private System.Windows.Forms.ToolStripMenuItem danhMụcSáchCònToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem danhMụcSáchMượnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem danhMụcSáchHỏngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem danhMụcSáchTrễHạnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnhelp;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinChươngTrìnhToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ngườiThựcHiệnToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;

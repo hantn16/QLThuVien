@@ -13,24 +13,19 @@ namespace quanly.lopdulieu
     {
         
         public static string strQuyenHan = "", strnguoidung="",strHoTen="",strDiaChi="",strMaNhanVien="",strMatKhau="";
+        public static int idNhanVien = 0;
         public bool kt_dangnhap(string ten, string MatKhau)
         {
             NhanVien nv = new NhanVien();
             try
            {
-                //if (tenserver != "")
-                //{
-                //    L_Ketnoi.strChuoiKN = L_Ketnoi.strChuoiKN + "; server= " + tenserver;
-                //    if (MatKhauserver != "") L_Ketnoi.strChuoiKN = L_Ketnoi.strChuoiKN + " ; Password = " + MatKhauserver;
-                //}
-                //L_Ketnoi.ThietlapketNoi();
-                //laydulieu dl = new laydulieu();
                 string query = "select * from NhanVien where MatKhau = '" + MatKhau + "' and TenDangNhap = '" + ten + "'";
                 DataTable dt = DataProvider.ExecuteQuery(query);
                 if (dt.Rows.Count == 0) { return false; }
                 else
                 {
-                    strMaNhanVien= dt.Rows[0]["MaNhanVien"].ToString();
+                    idNhanVien = Convert.ToInt32(dt.Rows[0]["IDNhanVien"]);
+                    strMaNhanVien = dt.Rows[0]["MaNhanVien"].ToString();
                     strHoTen= dt.Rows[0]["HoTen"].ToString();
                     strDiaChi =  dt.Rows[0]["DiaChi"].ToString();
                     strQuyenHan =  dt.Rows[0]["QuyenHan"].ToString();

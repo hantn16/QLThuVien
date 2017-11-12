@@ -10,6 +10,8 @@ using quanly.lopdulieu;
 using quanly.doituong;
 using System.IO;
 using quanly.DoiTuong;
+using quanlythuvien.DoiTuong;
+using quanlythuvien.Data;
 
 namespace quanly.frm
 {
@@ -24,131 +26,138 @@ namespace quanly.frm
         {
             this.Close();
         }
-        DataSet ds;
-        CurrencyManager cm;
-        public static int i = 0;
         private void Frmquanlybandoc_Load(object sender, EventArgs e)
         {
             set_giattri();
         }
         public void set_giattri()
         {
-            Frmmain.tt = true;
-            laydulieu dl = new laydulieu();
-            ds = dl.getdata("select * from khoa;select * from DocGia");
-            DataRelation dr = new DataRelation("Danh sách sinh viên", ds.Tables[0].Columns["MaKhoa"], ds.Tables[1].Columns["MaKhoa"]);
-            ds.Relations.Add(dr);
-            cm = BindingContext[this.ds.Tables[1]] as CurrencyManager;
-            dataGrid1.DataSource = ds.Tables[0];
-            txttenkhoa.Items.Clear();
-            laydulieu dl1 = new laydulieu();
-            SqlDataReader dr1 = dl1.lay_reader("select tenkhoa from khoa");
-            while (dr1.Read())
-                txttenkhoa.Items.Add(dr1[0].ToString());
-            L_Ketnoi.HuyKetNoi();
-            load_text(i);
+            try
+            {
+                Load_DataGridView(txtTimKiem.Text);
+                DataGridViewCell cell = dgvListDocGia.Rows[0].Cells["ID"];
+                dgvListDocGia.CurrentCell = cell;
+                load_combobox();
+                load_text(Convert.ToInt32(cell.Value));
+                Enable_Controls(false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
+
+        private void Load_DataGridView(string dieukien = "")
+        {
+            try
+            {
+                DataTable dt = DocGia.GetDSDocGiaFull(dieukien);
+                dgvListDocGia.DataSource = dt;
+                dgvListDocGia.Refresh();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        private void load_combobox()
+        {
+            try
+            {
+                DataTable dt = DataProvider.ExecuteQuery("Select IDLop,TenLop from Lop");
+                cbLop.DataSource = dt;
+                cbLop.ValueMember = "IDLop";
+                cbLop.DisplayMember = "TenLop";
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
         void load_text(int i)
         {
-            txtDiaChi.Text = ds.Tables[1].Rows[i]["DiaChi"].ToString();
-            txtHoTen.Text = ds.Tables[1].Rows[i]["HoTen"].ToString();
-            txtMaDocGia.Text = ds.Tables[1].Rows[i]["MaDocGia"].ToString();
-            txtNgayLapThe.Text = DateTime.Parse(ds.Tables[1].Rows[i]["NgayLapThe"].ToString()).ToShortDateString();
-            txtNgaySinh.Text = DateTime.Parse(ds.Tables[1].Rows[i]["NgaySinh"].ToString()).ToShortDateString();
-            txtViTri.Text = ds.Tables[1].Rows[i]["ViTri"].ToString();
-            laydulieu layd = new laydulieu();
-            SqlDataReader drr = layd.lay_reader("select tenkhoa from khoa where MaKhoa ='" + ds.Tables[1].Rows[i]["MaKhoa"].ToString()+"'");
-            while (drr.Read())
-                txttenkhoa.Text = drr[0].ToString();
-            L_Ketnoi.HuyKetNoi();
-        }
-        #region Di chuyển
-        private void btlast_Click(object sender, EventArgs e)
-        {
-            cm.Position = 0;
-            load_text(0);
-        }
+            try
+            {
+                DocGia dg = DocGia.GetDocGiaTheoID(i);
+                txtID.Text = i.ToString(); txtMaDocGia.Text = dg.MaDocGia;
+                txtHoTen.Text = dg.HoTen;
+                txtNgaySinh.Text = dg.NgaySinh.ToString("dd/MM/yyyy");
+                txtDiaChi.Text = dg.DiaChi;
+                txtDienThoai.Text = dg.DienThoai;
+                txtEmail.Text = dg.Email;
+                txtNgayLapThe.Text = dg.NgayLapThe.ToString("dd/MM/yyyy");
+                chkLock.Checked = dg.Lock;
+                Lop lop = Lop.GetLopTheoID(dg.IDLop);
+                cbLop.Text = lop.TenLop;
+            }
+            catch (Exception)
+            {
 
-        private void btpreview_Click(object sender, EventArgs e)
-        {
-            if (cm.Position > 0) cm.Position -= 1;
-            load_text(cm.Position);
-        }
+                throw;
+            }
 
-        private void btnext_Click(object sender, EventArgs e)
-        {
-            if (cm.Position < cm.Count) cm.Position += 1;
-            load_text(cm.Position);
         }
-
-        private void bttop_Click(object sender, EventArgs e)
-        {
-            cm.Position = cm.Count;
-            load_text(cm.Position);
-        }
-        #endregion
         #region Các thủ tục cập nhật , chèn , xoá
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
-            if (btTaoMoi.Text == "OK")
+            if (btnTaoMoi.Text == "OK")
             {
-                laydulieu dl = new laydulieu();
-                SqlDataReader dr = dl.lay_reader("select MaKhoa from khoa where tenkhoa=N'" + txttenkhoa.Text + "'");
-                string tam = "";
-                while (dr.Read())
-                    tam = dr[0].ToString();
-                L_Ketnoi.HuyKetNoi();
-                if (tam == "") MessageBox.Show("Bạn hãy kiểm tra lại giá trị khoa");
-                else
+                string query = string.Format("Select * from DocGia where MaDocGia = N'{0}'", txtMaDocGia.Text);
+                if (DataProvider.ExecuteQuery(query).Rows.Count > 0)
                 {
-                    try
-                    {
-                        DateTime ns = DateTime.Parse(DateTime.Parse(txtNgaySinh.Text).ToShortDateString());
-                        BanDoc bd = new BanDoc(txtMaDocGia.Text, txtHoTen.Text, tam, txtViTri.Text, txtDiaChi.Text, ns, DateTime.Parse(txtNgayLapThe.Text));
-                        if (bd.TaoMoi())
-                        {
-                            txtDiaChi.Enabled = txtHoTen.Enabled = txtNgaySinh.Enabled = txttenkhoa.Enabled = txtViTri.Enabled = false;
-                            btTaoMoi.Text = "Tạo mới";
-                            btCapNhat.Enabled = btXoaBo.Enabled = true;
-                            ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = ctchondoituong.Enabled = true;
-                            Frmquanlybandoc_Load(sender, e);
-                            MessageBox.Show("Quá trình tạo mới hoàn thành");
-                            Frmmain.hf.timer5.Enabled = true;
-                            Frmmain.hf.set_text("     OK làm tốt lắm !");
-                            Frmmain.hf.set_anh(3);
-                        }
-                        else MessageBox.Show("Bị lỗi hãy kiểm tra lại thông tin");
-                    }
-                    catch 
-                    {
-                        Frmmain.hf.set_anh(2);
-                        Frmmain.hf.set_text("     Chú ý ngày sinh có dạng như sau : ngày/tháng/năm nhập lại cho đúng đi ");
-                        Frmmain.hf.timer5.Enabled = true;
-                    }
+                    throw new Exception("Mã độc giả đã tồn tại!!!");
+                }
+                DocGia dg = new DocGia();
+                dg.MaDocGia = txtMaDocGia.Text;
+                dg.HoTen = txtHoTen.Text;
+                dg.NgaySinh = String.IsNullOrEmpty(txtNgaySinh.Text)? DateTime.Now : Convert.ToDateTime(txtNgaySinh.Text);
+                dg.IDLop = Convert.ToInt32(cbLop.SelectedValue);
+                dg.DiaChi = txtDiaChi.Text;
+                dg.DienThoai = txtDienThoai.Text;
+                dg.Email = txtEmail.Text;
+                dg.NgayLapThe = Convert.ToDateTime(txtNgayLapThe.Text);
+                dg.Lock = chkLock.Checked;
+                if (DocGia.TaoMoi(dg))
+                {
+                    
+                    btnTaoMoi.Text = "Tạo Mới";
+                    btnCapNhat.Enabled = btnXoaBo.Enabled = true;
+                    Enable_Controls(false);
+                    Load_DataGridView();
+                    MessageBox.Show("Thêm mới độc giả thành công!!!");
                 }
             }
             else
             {
-                txtDiaChi.Enabled = txtHoTen.Enabled = txtNgaySinh.Enabled = txttenkhoa.Enabled = txtViTri.Enabled = true;
-                txtDiaChi.Text = txtHoTen.Text = txtNgaySinh.Text = txtViTri.Text = "";
+                Enable_Controls(true);
+                txtDiaChi.Text = txtHoTen.Text = txtNgaySinh.Text = txtDienThoai.Text = txtEmail.Text = txtMaDocGia.Text = "";
                 txtNgayLapThe.Text = DateTime.Now.ToShortDateString();
-                btTaoMoi.Text = "OK";
-                string macuoi = taoma(ds.Tables[1].Rows[cm.Count - 1]["MaDocGia"].ToString());
-                txtMaDocGia.Text = macuoi;
-                btCapNhat.Enabled = btXoaBo.Enabled = false;
+                btnTaoMoi.Text = "OK";
+                btnCapNhat.Enabled = btnXoaBo.Enabled = false;
                 ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = ctchondoituong.Enabled = false;
             }
         }
+
+        private void Enable_Controls(bool value)
+        {
+            txtDiaChi.Enabled = txtDienThoai.Enabled = txtEmail.Enabled = txtHoTen.Enabled = txtMaDocGia.Enabled = txtNgayLapThe.Enabled
+            = txtNgaySinh.Enabled = cbLop.Enabled = chkLock.Enabled = value;
+        }
+
         private void btXoaBo_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có thực sự muốn xoá độc giả này ra khỏi danh sách không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                BanDoc bd = new BanDoc();
-                bd.MaDocGia = txtMaDocGia.Text;
-                if (bd.XoaBo())
+                int id = int.Parse(txtID.Text);
+                if (DocGia.XoaBo(id))
                 {
-                    i--;
-                    Frmquanlybandoc_Load(sender, e);
+                    set_giattri();
                     MessageBox.Show("Đã xoá thành công", "Thông báo");
                 }
                 else
@@ -159,73 +168,66 @@ namespace quanly.frm
         }
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            if (btCapNhat.Text == "OK")
+            if (btnCapNhat.Text == "OK")
             {
-                laydulieu dl = new laydulieu();
-                SqlDataReader dr = dl.lay_reader("select MaKhoa from khoa where tenkhoa=N'" + txttenkhoa.Text + "'");
-                string tam = "";
-                while (dr.Read())
-                    tam = dr[0].ToString();
-                L_Ketnoi.HuyKetNoi();
-                if (tam == "") MessageBox.Show("Bạn hãy kiểm tra lại giá trị khoa");
-                else
+                DocGia dg = new DocGia();
+                dg.IDDocGia = int.Parse(txtID.Text);
+                dg.MaDocGia = txtMaDocGia.Text;
+                dg.HoTen = txtHoTen.Text;
+                dg.NgaySinh = Convert.ToDateTime(txtNgaySinh.Text);
+                dg.IDLop = Convert.ToInt32(cbLop.SelectedValue);
+                dg.DiaChi = txtDiaChi.Text;
+                dg.DienThoai = txtDienThoai.Text;
+                dg.Email = txtEmail.Text;
+                dg.NgayLapThe = Convert.ToDateTime(txtNgayLapThe.Text);
+                dg.Lock = chkLock.Checked;
+                if (DocGia.CapNhat(dg))
                 {
-                    try
-                    {
-                        DateTime ns = DateTime.Parse(DateTime.Parse(txtNgaySinh.Text).ToShortDateString());
-                        BanDoc bd = new BanDoc(txtMaDocGia.Text, txtHoTen.Text, tam, txtViTri.Text, txtDiaChi.Text, ns, DateTime.Parse(txtNgayLapThe.Text));
-                        if (bd.CapNhat())
-                        {
-                            txtNgayLapThe.Enabled = txtDiaChi.Enabled = txtHoTen.Enabled = txtNgaySinh.Enabled = txttenkhoa.Enabled = txtViTri.Enabled = false;
-                            btCapNhat.Text = "Cập nhật";
-                            btTaoMoi.Enabled = btXoaBo.Enabled = true;
-                            ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = ctchondoituong.Enabled = true;
-                            Frmquanlybandoc_Load(sender, e);
-                            MessageBox.Show("Quá trình cập nhật hoàn thành");
-                        }
-                        else MessageBox.Show("Bị lỗi hãy kiểm tra lại thông tin");
-                    }
-                    catch { MessageBox.Show("Nhập lại giá trị ngày sinh"); }
+                    Enable_Controls(false);
+                    btnCapNhat.Text = "Cập nhật";
+                    btnTaoMoi.Enabled = btnXoaBo.Enabled = true;
+                    ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = ctchondoituong.Enabled = true;
+                    MessageBox.Show("Cập nhật thông tin độc giả thành công");
                 }
             }
             else
             {
-                txtNgayLapThe.Enabled = txtDiaChi.Enabled = txtHoTen.Enabled = txtNgaySinh.Enabled = txttenkhoa.Enabled = txtViTri.Enabled = true;
-                btCapNhat.Text = "OK";
-                btTaoMoi.Enabled = btXoaBo.Enabled = false;
+                Enable_Controls(true);
+                btnCapNhat.Text = "OK";
+                btnTaoMoi.Enabled = btnXoaBo.Enabled = false;
                 ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = ctchondoituong.Enabled = false;
             }
         }
         #endregion
         private void hToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ctchondoituong.Text == "Chọn đối tượng")
-            {
-                txtMaDocGia.Enabled = true;
-                ctchondoituong.Text = "Thực hiện";
-                btCapNhat.Enabled = btXoaBo.Enabled = btTaoMoi.Enabled = false;
-                ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = false;
-            }
-            else
-            {
-                txtMaDocGia.Enabled = false;
-                ctchondoituong.Text = "Chọn đối tượng";
-                btCapNhat.Enabled = btXoaBo.Enabled = btTaoMoi.Enabled = true;
-                ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = true;
-                DataView dv = new DataView();
-                dv.Table = ds.Tables[1];
-                dv.RowFilter = "MaDocGia='"+ txtMaDocGia.Text+"'";
-                if (dv.Count == 0) MessageBox.Show("Bạn hãy kiểm tra lại mã vừa nhập", "Thông báo");
-                else 
-                {
-                    txtDiaChi.Text = dv[0]["DiaChi"].ToString();
-                    txtHoTen.Text = dv[0]["HoTen"].ToString();
-                    txtMaDocGia.Text = dv[0]["MaDocGia"].ToString();
-                    txtNgayLapThe.Text = DateTime.Parse(dv[0]["NgayLapThe"].ToString()).ToShortDateString();
-                    txtNgaySinh.Text = DateTime.Parse(dv[0]["NgaySinh"].ToString()).ToShortDateString();
-                    txtViTri.Text = dv[0]["ViTri"].ToString();
-                }
-            }
+            //if (ctchondoituong.Text == "Chọn đối tượng")
+            //{
+            //    txtMaDocGia.Enabled = true;
+            //    ctchondoituong.Text = "Thực hiện";
+            //    btnCapNhat.Enabled = btnXoaBo.Enabled = btnTaoMoi.Enabled = false;
+            //    ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = false;
+            //}
+            //else
+            //{
+            //    txtMaDocGia.Enabled = false;
+            //    ctchondoituong.Text = "Chọn đối tượng";
+            //    btnCapNhat.Enabled = btnXoaBo.Enabled = btnTaoMoi.Enabled = true;
+            //    ctCapNhat.Enabled = ctTaoMoi.Enabled = ctXoaBo.Enabled = true;
+            //    DataView dv = new DataView();
+            //    dv.Table = ds.Tables[1];
+            //    dv.RowFilter = "MaDocGia='" + txtMaDocGia.Text + "'";
+            //    if (dv.Count == 0) MessageBox.Show("Bạn hãy kiểm tra lại mã vừa nhập", "Thông báo");
+            //    else
+            //    {
+            //        txtDiaChi.Text = dv[0]["DiaChi"].ToString();
+            //        txtHoTen.Text = dv[0]["HoTen"].ToString();
+            //        txtMaDocGia.Text = dv[0]["MaDocGia"].ToString();
+            //        txtNgayLapThe.Text = DateTime.Parse(dv[0]["NgayLapThe"].ToString()).ToShortDateString();
+            //        txtNgaySinh.Text = DateTime.Parse(dv[0]["NgaySinh"].ToString()).ToShortDateString();
+            //        txtDienThoai.Text = dv[0]["ViTri"].ToString();
+            //    }
+            //}
         }
         string taoma(string ma)
         {
@@ -235,11 +237,11 @@ namespace quanly.frm
             if (i < 10) return "DG0000" + Convert.ToString(i);
             else
                 if (i < 100) return "DG000" + Convert.ToString(i);
-                else
+            else
                     if (i < 1000) return "DG00" + Convert.ToString(i);
-                    else
+            else
                         if (i < 10000) return "DG0" + Convert.ToString(i);
-                        else return "DG" + Convert.ToString(i);
+            else return "DG" + Convert.ToString(i);
 
         }
 
@@ -273,33 +275,49 @@ namespace quanly.frm
                 sw.WriteLine("---------------------------------------------------");
                 sw.WriteLine("| Ngày lập thẻ:        " + txtNgayLapThe.Text);
                 sw.WriteLine("---------------------------------------------------");
-                sw.WriteLine("| Tên khoa    :        " + txttenkhoa.Text);
+                sw.WriteLine("| Tên khoa    :        " + cbLop.Text);
                 sw.WriteLine("---------------------------------------------------");
-                sw.WriteLine("| Vị trí      :        " + txtViTri.Text);
+                sw.WriteLine("| Vị trí      :        " + txtDienThoai.Text);
                 sw.WriteLine("---------------------------------------------------");
                 sw.Close();
             }
             catch { };
         }
 
-        private void dataGrid1_CurrentCellChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                int i = 0;
-                if (dataGrid1[dataGrid1.CurrentCell].ToString().Substring(0, 2) == "DG")
-                    while (ds.Tables[1].Rows[i][0].ToString() != dataGrid1[dataGrid1.CurrentCell].ToString())
-                        i++;
-                load_text(i);
-                cm.Position = i;
-            }
-            catch { }
-        }
-
         private void txtMaDocGia_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter) hToolStripMenuItem_Click(sender, e);
         }
-        
+
+        private void dgvListDocGia_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvListDocGia.SelectedCells.Count>0)
+                {
+                    int id = Convert.ToInt32(dgvListDocGia.SelectedCells[0].OwningRow.Cells["ID"].Value);
+                    if (id > 0)
+                    {
+                        load_text(id);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Load_DataGridView(txtTimKiem.Text);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

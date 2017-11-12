@@ -29,142 +29,123 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmthongtinsachtheongay));
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.mCldChonNgay = new System.Windows.Forms.MonthCalendar();
+            this.cbHinhThucMuon = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.dgvData = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLoad = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // monthCalendar1
+            // mCldChonNgay
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(28, 18);
-            this.monthCalendar1.MaxSelectionCount = 30;
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.mCldChonNgay.Location = new System.Drawing.Point(12, 17);
+            this.mCldChonNgay.MaxSelectionCount = 30;
+            this.mCldChonNgay.Name = "mCldChonNgay";
+            this.mCldChonNgay.TabIndex = 0;
+            this.mCldChonNgay.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.mCldChonNgay.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
-            // listView1
+            // cbHinhThucMuon
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(216, 18);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(492, 232);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã sách";
-            this.columnHeader1.Width = 58;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Nhan đề";
-            this.columnHeader2.Width = 137;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Tác giả";
-            this.columnHeader3.Width = 98;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Thể thức mượn";
-            this.columnHeader4.Width = 85;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Mã người mượn";
-            this.columnHeader5.Width = 87;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "SL";
-            this.columnHeader6.Width = 32;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbHinhThucMuon.FormattingEnabled = true;
+            this.cbHinhThucMuon.Items.AddRange(new object[] {
             "Mượn tại chỗ",
             "Mượn về nhà",
             "Mượn giáo trình"});
-            this.comboBox1.Location = new System.Drawing.Point(85, 200);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 12;
+            this.cbHinhThucMuon.Location = new System.Drawing.Point(12, 204);
+            this.cbHinhThucMuon.Name = "cbHinhThucMuon";
+            this.cbHinhThucMuon.Size = new System.Drawing.Size(121, 21);
+            this.cbHinhThucMuon.TabIndex = 12;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.ForeColor = System.Drawing.Color.Transparent;
-            this.label18.Location = new System.Drawing.Point(25, 184);
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(9, 188);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(79, 13);
             this.label18.TabIndex = 11;
             this.label18.Text = "Thể thức mượn";
             // 
-            // button2
+            // btnExit
             // 
-            this.button2.Location = new System.Drawing.Point(131, 227);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnExit.Location = new System.Drawing.Point(108, 231);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 13;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dgvData
+            // 
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Location = new System.Drawing.Point(213, 12);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.Size = new System.Drawing.Size(779, 267);
+            this.dgvData.TabIndex = 14;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.btnLoad);
+            this.groupBox1.Controls.Add(this.mCldChonNgay);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.btnExit);
+            this.groupBox1.Controls.Add(this.cbHinhThucMuon);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(195, 267);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tùy chọn";
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(12, 231);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 14;
+            this.btnLoad.Text = "Cập nhật";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // Frmthongtinsachtheongay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::quanlythuvien.Properties.Resources.nen1_copy;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(720, 262);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.monthCalendar1);
+            this.ClientSize = new System.Drawing.Size(1004, 286);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dgvData);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frmthongtinsachtheongay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý thông tin sách theo ngày";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frmthongtinsachtheongay_FormClosed);
             this.Load += new System.EventHandler(this.Frmthongtinsachtheongay_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.MonthCalendar mCldChonNgay;
+        private System.Windows.Forms.ComboBox cbHinhThucMuon;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.DataGridView dgvData;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnLoad;
     }
 }

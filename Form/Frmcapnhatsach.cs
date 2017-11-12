@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -21,7 +22,7 @@ namespace quanly.frm
         {
             InitializeComponent();
         }
-        public static int tb = 0;
+        public int selectedID = 0;
         public int ht = 0;
         private void FrmCapNhatsach_Load(object sender, EventArgs e)
         {
@@ -42,12 +43,12 @@ namespace quanly.frm
                 Frmmain.tt = true;
                 Load_combobox(); //gọi thủ tục Load_combobox
                 Load_treeview(); //gọi thủ tục Load_treeview
-                if (tb == 0)
+                if (selectedID == 0)
                 {
                     int idTaiLieu = (int)trvListTaiLieu.Nodes[0].Tag;
                     Load_textbox(idTaiLieu);
                 }
-                else Load_textbox(tb);
+                else Load_textbox(selectedID);
                 if (ht == 1) btnThemMoi_Click(sender, e);
             }
             catch (Exception ex)
@@ -82,22 +83,22 @@ namespace quanly.frm
         {
             //DataTable dtTheLoai = DataProvider.ExecuteQuery("select * from TheLoai");
             cbloaisach.DataSource = TheLoai.GetDanhSachTheLoai();
-            cbloaisach.ValueMember = "MaTheLoai";
+            cbloaisach.ValueMember = "IDTheLoai";
             cbloaisach.DisplayMember = "TenTheLoai";
 
             DataTable dtNgonNgu = DataProvider.ExecuteQuery("select * from NgonNgu");
             cbNgonNgu.DataSource = dtNgonNgu;
-            cbNgonNgu.ValueMember = "MaNgonNgu";
+            cbNgonNgu.ValueMember = "IDNgonNgu";
             cbNgonNgu.DisplayMember = "TenNgonNgu";
 
             DataTable dtTacGia = DataProvider.ExecuteQuery("select * from TacGia");
             cbTacGia.DataSource = dtTacGia;
-            cbTacGia.ValueMember = "MaTacGia";
+            cbTacGia.ValueMember = "IDTacGia";
             cbTacGia.DisplayMember = "TenTacGia";
 
             DataTable dtNhaXuatBan = DataProvider.ExecuteQuery("select * from NhaXuatBan");
             cbNhaXuatBan.DataSource = dtNhaXuatBan;
-            cbNhaXuatBan.ValueMember = "MaNhaXuatBan";
+            cbNhaXuatBan.ValueMember = "IDNhaXuatBan";
             cbNhaXuatBan.DisplayMember = "TenNhaXuatBan";
 
             cbGiaXep.DataSource = GiaXep.GetDSGiaXep();
@@ -107,19 +108,40 @@ namespace quanly.frm
         }
         void Load_treeview()
         {
-            trvListTaiLieu.Nodes.Clear();
-            DataTable dtTaiLieu = DataProvider.ExecuteQuery("select IDTaiLieu, NhanDe from TaiLieu");
-            if (dtTaiLieu.Rows.Count > 0)
+            try
             {
-                foreach (DataRow dr in dtTaiLieu.Rows)
+                trvListTaiLieu.Nodes.Clear();
+                DataTable dtTaiLieu = DataProvider.ExecuteQuery("select IDTaiLieu, NhanDe from TaiLieu");
+                if (dtTaiLieu.Rows.Count > 0)
                 {
-                    TreeNode n = new TreeNode();
-                    n.Tag = Convert.ToInt32(dr["IDTaiLieu"].ToString());
-                    n.Text = dr["NhanDe"].ToString();
-                    n.ImageIndex = 0;
-                    trvListTaiLieu.Nodes.Add(n);
+                    foreach (DataRow dr in dtTaiLieu.Rows)
+                    {
+                        TreeNode n = new TreeNode();
+                        n.Tag = Convert.ToInt32(dr["IDTaiLieu"].ToString());
+                        n.Text = dr["NhanDe"].ToString();
+                        n.ImageIndex = 0;
+                        trvListTaiLieu.Nodes.Add(n);
+                    }
+                }
+
+                //Set selected node cho node có Tag = selectedID
+                if (selectedID != 0)
+                {
+                    foreach (TreeNode item in trvListTaiLieu.Nodes)
+                    {
+                        if ((int)item.Tag == selectedID)
+                        {
+                            trvListTaiLieu.SelectedNode = item;
+                            break;
+                        }
+                    }
                 }
             }
+            catch (Exception)
+            {
+                throw;
+            }
+
 
         }
         void Binding()
@@ -171,12 +193,12 @@ namespace quanly.frm
                         if (i < 10000) return "VT0" + i.ToString();
             else return "VT" + i.ToString();
         }
-        string MaTheLoai()
+        string IDTheLoai()
         {
             laydulieu dl = new laydulieu();
             string tam = "";
             int i = 0;
-            SqlDataReader dr = dl.lay_reader("select MaTheLoai from TheLoai");
+            SqlDataReader dr = dl.lay_reader("select IDTheLoai from TheLoai");
             while (dr.Read())
                 tam = dr[0].ToString();
             L_Ketnoi.HuyKetNoi();
@@ -188,12 +210,12 @@ namespace quanly.frm
             else return "PL" + i.ToString();
 
         }
-        string MaTacGia()
+        string IDTacGia()
         {
             laydulieu dl = new laydulieu();
             string tam = "";
             int i = 0;
-            SqlDataReader dr = dl.lay_reader("select MaTacGia from TacGia");
+            SqlDataReader dr = dl.lay_reader("select IDTacGia from TacGia");
             while (dr.Read())
                 tam = dr[0].ToString();
             L_Ketnoi.HuyKetNoi();
@@ -221,12 +243,12 @@ namespace quanly.frm
                 if (i < 100) return "XB0" + i.ToString();
             else return "XB" + i.ToString();
         }
-        string MaNgonNgu()
+        string IDNgonNgu()
         {
             laydulieu dl = new laydulieu();
             string tam = "";
             int i = 0;
-            SqlDataReader dr = dl.lay_reader("select MaNgonNgu from NgonNgu");
+            SqlDataReader dr = dl.lay_reader("select IDNgonNgu from NgonNgu");
             while (dr.Read())
                 tam = dr[0].ToString();
             L_Ketnoi.HuyKetNoi();
@@ -253,9 +275,9 @@ namespace quanly.frm
                     taiLieu.NamXuatBan = int.Parse(txtnamxuatban.Text);
                     taiLieu.LanXuatBan = int.Parse(txtlanxuatban.Text);
                     taiLieu.NgayNhap = DateTime.Parse(txtNgayNhap.Text);
-                    taiLieu.MaTheLoai = cbloaisach.SelectedValue.ToString();
-                    taiLieu.MaNgonNgu = (int)cbNgonNgu.SelectedValue;
-                    taiLieu.MaTacGia = (int)cbTacGia.SelectedValue;
+                    taiLieu.IDTheLoai = cbloaisach.SelectedValue.ToString();
+                    taiLieu.IDNgonNgu = (int)cbNgonNgu.SelectedValue;
+                    taiLieu.IDTacGia = (int)cbTacGia.SelectedValue;
                     taiLieu.IDNXB = (int)cbNhaXuatBan.SelectedValue;
                     taiLieu.TheThuc = String.IsNullOrEmpty(cbTheThuc.Text) ? "Không mượn về nhà" : cbTheThuc.Text;
                     taiLieu.IDGiaXep = (int)cbGiaXep.SelectedValue;
@@ -328,9 +350,9 @@ namespace quanly.frm
                 taiLieu.NamXuatBan = int.Parse(txtnamxuatban.Text);
                 taiLieu.LanXuatBan = int.Parse(txtlanxuatban.Text);
                 taiLieu.NgayNhap = DateTime.Parse(txtNgayNhap.Text);
-                taiLieu.MaTheLoai = cbloaisach.SelectedValue.ToString();
-                taiLieu.MaNgonNgu = (int)cbNgonNgu.SelectedValue;
-                taiLieu.MaTacGia = (int)cbTacGia.SelectedValue;
+                taiLieu.IDTheLoai = cbloaisach.SelectedValue.ToString();
+                taiLieu.IDNgonNgu = (int)cbNgonNgu.SelectedValue;
+                taiLieu.IDTacGia = (int)cbTacGia.SelectedValue;
                 taiLieu.IDNXB = (int)cbNhaXuatBan.SelectedValue;
                 taiLieu.TheThuc = String.IsNullOrEmpty(cbTheThuc.Text) ? "Không mượn về nhà" : cbTheThuc.Text;
                 taiLieu.IDGiaXep = (int)cbGiaXep.SelectedValue;

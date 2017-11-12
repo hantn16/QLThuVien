@@ -8,6 +8,7 @@ namespace quanly.doituong
 {
     public class NhanVien
     {
+        public int IDNhanVien { get; set; }
         public string MaNhanVien { get; set; }
         public string HoTen { get; set; }
         public string DiaChi { get; set; }
@@ -16,8 +17,9 @@ namespace quanly.doituong
         public string MatKhau { get; set; }
         // Thủ tục khởi tạo
         public NhanVien() { }
-        public NhanVien(string maNhanVien, string hoTen, string diaChi, string quyenHan, string tenDangNhap, string matKhau)
+        public NhanVien(int id,string maNhanVien, string hoTen, string diaChi, string quyenHan, string tenDangNhap, string matKhau)
         {
+            this.IDNhanVien = id;
             this.MaNhanVien = maNhanVien;
             this.HoTen = hoTen;
             this.DiaChi = diaChi;

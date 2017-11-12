@@ -9,22 +9,22 @@ namespace quanly.DoiTuong
 {
     public class TheLoai
     {
-        public string MaTheLoai { get; set; }
+        public string IDTheLoai { get; set; }
         public string TenTheLoai { get; set; }
         public TheLoai() { }
         public TheLoai(string maTheLoai, string tenLoai)
         {
-            this.MaTheLoai = maTheLoai;
+            this.IDTheLoai = maTheLoai;
             this.TenTheLoai = tenLoai;
         }
         public bool TaoMoi()
         {
-            string query = "insert into TheLoai values ('" + MaTheLoai + "',N'" + TenTheLoai + "')";
+            string query = "insert into TheLoai values ('" + IDTheLoai + "',N'" + TenTheLoai + "')";
             if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
         }
         public bool CapNhat()
         {
-            string query = "update TheLoai set loai = N'" + TenTheLoai + "' where MaTheLoai='" + MaTheLoai + "'";
+            string query = "update TheLoai set loai = N'" + TenTheLoai + "' where IDTheLoai='" + IDTheLoai + "'";
             if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
         }
         public static List<TheLoai> GetDanhSachTheLoai()
@@ -33,7 +33,7 @@ namespace quanly.DoiTuong
             List<TheLoai> list = new List<TheLoai>();
             foreach (DataRow dr in dtTheLoai.Rows)
             {
-                TheLoai item = new TheLoai(dr["MaTheLoai"].ToString(), dr["TenTheLoai"].ToString());
+                TheLoai item = new TheLoai(dr["IDTheLoai"].ToString(), dr["TenTheLoai"].ToString());
                 list.Add(item);
             }
             return list;

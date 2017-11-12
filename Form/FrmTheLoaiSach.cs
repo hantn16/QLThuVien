@@ -46,7 +46,7 @@ namespace quanly.frm
             foreach (TreeNode n in treeView1.Nodes)
             {
                 laydulieu dl1 = new laydulieu();
-                SqlDataReader dr1 = dl1.lay_reader("select * from sach where MaTheLoai='" + n.Tag.ToString().Trim() + "'");
+                SqlDataReader dr1 = dl1.lay_reader("select * from sach where IDTheLoai='" + n.Tag.ToString().Trim() + "'");
                 while (dr1.Read())
                 {
                     TreeNode tn1 = new TreeNode();
@@ -65,7 +65,7 @@ namespace quanly.frm
             if (str.Substring(0, 2) != "PL")
             {
                 laydulieu dl = new laydulieu();
-                SqlDataReader dr = dl.lay_reader("select MaTaiLieu,NhanDe,TenTacGia,LanXuatBan,loai,NamXuatBan from sach,TacGia,TheLoai where sach.MaTacGia = TacGia.MaTacGia and sach.MaTheLoai = TheLoai.MaTheLoai and MaTaiLieu='" + str + "'");
+                SqlDataReader dr = dl.lay_reader("select MaTaiLieu,NhanDe,TenTacGia,LanXuatBan,loai,NamXuatBan from sach,TacGia,TheLoai where sach.IDTacGia = TacGia.IDTacGia and sach.IDTheLoai = TheLoai.IDTheLoai and MaTaiLieu='" + str + "'");
                 while (dr.Read())
                 {
                     lbtensach.Text = dr["NhanDe"].ToString();

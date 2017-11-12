@@ -15,10 +15,10 @@ namespace quanly.doituong
         public string MaTaiLieu { get; set; }
 
         public string NhanDe { get; set; }
-        public string MaTheLoai { get; set; }
+        public string IDTheLoai { get; set; }
         public int IDNXB { get; set; }
-        public int MaNgonNgu { get; set; }
-        public int MaTacGia { get; set; }
+        public int IDNgonNgu { get; set; }
+        public int IDTacGia { get; set; }
         public int IDGiaXep { get; set; }
         public int SoTrang { get; set; }
         public int SoLuong { get; set; }
@@ -31,27 +31,27 @@ namespace quanly.doituong
         public TaiLieu() { }
 
         #region các thủ tục lấy mã
-        //public int LayMaTheLoai(string tam)
+        //public int LayIDTheLoai(string tam)
         //{
         //    try
         //    {
-        //        string query = "select MaTheLoai from TheLoai where TenTheLoai = N'" + tam + "'";
+        //        string query = "select IDTheLoai from TheLoai where TenTheLoai = N'" + tam + "'";
         //        DataTable dt = DataProvider.ExecuteQuery(query);
-        //        this.MaTheLoai = dt.Rows[0][0].ToString();
+        //        this.IDTheLoai = dt.Rows[0][0].ToString();
 
-        //        if (String.IsNullOrEmpty(this.MaTheLoai)) return 0; else return 1;
+        //        if (String.IsNullOrEmpty(this.IDTheLoai)) return 0; else return 1;
         //    }
         //    catch { return 0; }
         //}
-        //public int LayMaTacGia(string tam)
+        //public int LayIDTacGia(string tam)
         //{
         //    try
         //    {
-        //        string query = "select MaTacGia from TacGia where TenTacGia=N'" + tam + "'";
+        //        string query = "select IDTacGia from TacGia where TenTacGia=N'" + tam + "'";
         //        DataTable dt = DataProvider.ExecuteQuery(query);
         //        if (dt.Rows.Count > 0)
         //        {
-        //            this.MaTacGia = int.Parse(dt.Rows[0][0].ToString());
+        //            this.IDTacGia = int.Parse(dt.Rows[0][0].ToString());
         //            return 1;
         //        }
         //        else
@@ -61,15 +61,15 @@ namespace quanly.doituong
         //    }
         //    catch { return 0; }
         //}
-        //public int LayMaNgonNgu(string tam)
+        //public int LayIDNgonNgu(string tam)
         //{
         //    try
         //    {
-        //        string query = "select MaNgonNgu from NgonNgu where TenNgonNgu= '" + tam + "'";
+        //        string query = "select IDNgonNgu from NgonNgu where TenNgonNgu= '" + tam + "'";
         //        DataTable dt = DataProvider.ExecuteQuery(query);
         //        if (dt.Rows.Count > 0)
         //        {
-        //            this.MaNgonNgu = int.Parse(dt.Rows[0][0].ToString());
+        //            this.IDNgonNgu = int.Parse(dt.Rows[0][0].ToString());
         //            return 1;
         //        }
         //        else
@@ -122,11 +122,11 @@ namespace quanly.doituong
         {
             try
             {
-                string query = "select MaTheLoai from TheLoai where TenTheLoai=N'" + loai + "'";
+                string query = "select IDTheLoai from TheLoai where TenTheLoai=N'" + loai + "'";
                 DataTable dt = DataProvider.ExecuteQuery(query);
                 if (dt.Rows.Count <= 0) throw new Exception("Không tìm thấy mã thể loại với tên tương ứng!!!");
-                this.MaTheLoai = dt.Rows[0]["MaTheLoai"].ToString();
-                string updateQuery = " update Sach set MaTheLoai ='" + this.MaTheLoai + "' where MaTaiLieu = '" + MaTaiLieu + "'";
+                this.IDTheLoai = dt.Rows[0]["IDTheLoai"].ToString();
+                string updateQuery = " update Sach set IDTheLoai ='" + this.IDTheLoai + "' where MaTaiLieu = '" + MaTaiLieu + "'";
                 if (DataProvider.ExecuteNonQuery(updateQuery) == 1) return true; else return false;
             }
             catch (Exception ex)
@@ -139,9 +139,9 @@ namespace quanly.doituong
         //Chưa cập nhật xong
         public static bool ThemMoi(TaiLieu taiLieu)
         {
-            string query = string.Format("INSERT INTO TaiLieu (MaTaiLieu, NhanDe, SoTrang, SoLuong, NamXuatBan, LanXuatBan, SoLanMuon, MaTheLoai, IDNXB, MaNgonNgu, MaTacGia, IDGiaXep, NgayNhap, TheThuc) VALUES ('{0}',N'{1}',{2},{3},{4},{5},{6},N'{7}',{8},{9},{10},{11},Convert(datetime,'{12}'),N'{13}')",
-                taiLieu.MaTaiLieu, taiLieu.NhanDe, taiLieu.SoTrang, taiLieu.SoLuong, taiLieu.NamXuatBan, taiLieu.LanXuatBan, 0, taiLieu.MaTheLoai, taiLieu.IDNXB,
-                taiLieu.MaNgonNgu, taiLieu.MaTacGia, taiLieu.IDGiaXep, taiLieu.NgayNhap.ToShortDateString(), taiLieu.TheThuc);
+            string query = string.Format("INSERT INTO TaiLieu (MaTaiLieu, NhanDe, SoTrang, SoLuong, NamXuatBan, LanXuatBan, SoLanMuon, IDTheLoai, IDNXB, IDNgonNgu, IDTacGia, IDGiaXep, NgayNhap, TheThuc) VALUES ('{0}',N'{1}',{2},{3},{4},{5},{6},N'{7}',{8},{9},{10},{11},Convert(datetime,'{12}'),N'{13}')",
+                taiLieu.MaTaiLieu, taiLieu.NhanDe, taiLieu.SoTrang, taiLieu.SoLuong, taiLieu.NamXuatBan, taiLieu.LanXuatBan, 0, taiLieu.IDTheLoai, taiLieu.IDNXB,
+                taiLieu.IDNgonNgu, taiLieu.IDTacGia, taiLieu.IDGiaXep, taiLieu.NgayNhap.ToShortDateString(), taiLieu.TheThuc);
             if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
         }
         public static bool CapNhat(TaiLieu taiLieu)
@@ -153,17 +153,17 @@ namespace quanly.doituong
                 SoLuong = {3},
                 NamXuatBan = {4},
                 LanXuatBan = {5},
-                MaTheLoai = N'{6}',
+                IDTheLoai = N'{6}',
                 IDNXB = {7},
-                MaNgonNgu = {8},
-                MaTacGia = {9},
+                IDNgonNgu = {8},
+                IDTacGia = {9},
                 IDGiaXep = {10},
                 NgayNhap = Convert(datetime,N'{11}'),
                 TheThuc = N'{12}'
                 Where IDTaiLieu = {13}
                 ",
-                taiLieu.MaTaiLieu, taiLieu.NhanDe, taiLieu.SoTrang, taiLieu.SoLuong, taiLieu.NamXuatBan, taiLieu.LanXuatBan, taiLieu.MaTheLoai, taiLieu.IDNXB,
-                taiLieu.MaNgonNgu, taiLieu.MaTacGia, taiLieu.IDGiaXep, taiLieu.NgayNhap.ToString("yyyy-MM-dd hh:mm:ss"), taiLieu.TheThuc,taiLieu.IDTaiLieu);
+                taiLieu.MaTaiLieu, taiLieu.NhanDe, taiLieu.SoTrang, taiLieu.SoLuong, taiLieu.NamXuatBan, taiLieu.LanXuatBan, taiLieu.IDTheLoai, taiLieu.IDNXB,
+                taiLieu.IDNgonNgu, taiLieu.IDTacGia, taiLieu.IDGiaXep, taiLieu.NgayNhap.ToString("yyyy-MM-dd hh:mm:ss"), taiLieu.TheThuc,taiLieu.IDTaiLieu);
             if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
         }
         public static bool XoaBo(long id)
@@ -199,10 +199,10 @@ namespace quanly.doituong
                     taiLieu.NamXuatBan = int.Parse(dr["NamXuatBan"].ToString());
                     taiLieu.LanXuatBan = int.Parse(dr["LanXuatBan"].ToString());
                     taiLieu.SoLanMuon = int.Parse(dr["SoLanMuon"].ToString());
-                    taiLieu.MaTheLoai = dr["MaTheLoai"].ToString();
+                    taiLieu.IDTheLoai = dr["IDTheLoai"].ToString();
                     taiLieu.IDNXB = int.Parse(dr["IDNXB"].ToString());
-                    taiLieu.MaNgonNgu = int.Parse(dr["MaNgonNgu"].ToString());
-                    taiLieu.MaTacGia = int.Parse(dr["MaTacGia"].ToString());
+                    taiLieu.IDNgonNgu = int.Parse(dr["IDNgonNgu"].ToString());
+                    taiLieu.IDTacGia = int.Parse(dr["IDTacGia"].ToString());
                     taiLieu.IDGiaXep = int.Parse(dr["IDGiaXep"].ToString());
                     taiLieu.NgayNhap = (DateTime)dr["NgayNhap"];
                     taiLieu.TheThuc = dr["TheThuc"].ToString();
@@ -218,6 +218,39 @@ namespace quanly.doituong
             {
                 MessageBox.Show(ex.Message);
                 return null;
+            }
+        }
+        public static string GetMaTLTheoID(long id)
+        {
+            try
+            {
+                DataTable dt = DataProvider.ExecuteQuery("Select MaTaiLieu from TaiLieu Where IDTaiLieu = " + id);
+                if (dt.Rows.Count <= 0) throw new Exception("Không tìm thấy Mã tài liệu nào với id đã cho");
+                DataRow dr = dt.Rows[0];
+                return dr["MaTaiLieu"].ToString();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+        public static int SoLuongCoSan(long id)
+        {
+            try
+            {
+                string maTL = TaiLieu.GetMaTLTheoID(id);
+                TaiLieu taiLieu = TaiLieu.GetTaiLieuTheoMa(maTL);
+                int tongSL = taiLieu.SoLuong;
+                int slMuon = 0;
+                string query = string.Format(@"Select SUM(SoLuong) from dbo.PhieuMuon
+                            Where IDTaiLieu = {0} and TinhTrang > 0", id);
+                slMuon = Convert.ToInt32(DataProvider.ExecuteScalar(query));
+                return (tongSL - slMuon);
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
         #endregion

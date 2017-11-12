@@ -40,7 +40,7 @@ namespace quanly.frm
                 KTdangnhap.strDiaChi=txtDiaChi.Text;
                 KTdangnhap.strHoTen=txtHoTen.Text;
                 KTdangnhap.strnguoidung=txtTenDangNhap.Text;
-                NhanVien nv = new NhanVien(KTdangnhap.strMaNhanVien, KTdangnhap.strHoTen, KTdangnhap.strDiaChi, KTdangnhap.strQuyenHan, KTdangnhap.strnguoidung, KTdangnhap.strMatKhau);
+                NhanVien nv = new NhanVien(KTdangnhap.idNhanVien,KTdangnhap.strMaNhanVien, KTdangnhap.strHoTen, KTdangnhap.strDiaChi, KTdangnhap.strQuyenHan, KTdangnhap.strnguoidung, KTdangnhap.strMatKhau);
                 if (nv.CapNhat() == true)
                 {
                     txtDiaChi.Enabled = txtHoTen.Enabled = txtTenDangNhap.Enabled = false;

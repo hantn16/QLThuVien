@@ -19,29 +19,37 @@ namespace quanlythuvien.Data
         /// <returns></returns>
         public static DataTable ExecuteQuery(string query,object[] parameter = null)
         {
-            DataTable data = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                if (parameter!=null)
+                DataTable data = new DataTable();
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string[] listParams = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listParams)
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    if (parameter != null)
                     {
-                        if (item.StartsWith("@"))
+                        string[] listParams = query.Split(' ');
+                        int i = 0;
+                        foreach (string item in listParams)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            if (item.StartsWith("@"))
+                            {
+                                command.Parameters.AddWithValue(item, parameter[i]);
+                                i++;
+                            }
                         }
                     }
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(data);
+                    connection.Close();
                 }
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(data);
-                connection.Close();
+                return data;
             }
-            return data;
+            catch (Exception)
+            {               
+                throw;
+            }
+
         }
         /// <summary>
         /// Hàm excute 1 nonquery trả về giá trị nguyên
@@ -62,7 +70,7 @@ namespace quanlythuvien.Data
                     int i = 0;
                     foreach (string item in listParams)
                     {
-                        if (item.StartsWith("@"))
+                        if (item.Contains("@"))
                         {
                             command.Parameters.AddWithValue(item, parameter[i]);
                             i++;

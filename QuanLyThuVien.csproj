@@ -107,18 +107,25 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\ketnoi.cs" />
     <Compile Include="Data\laydulieu.cs" />
     <Compile Include="DoiTuong\GiaXep.cs" />
+    <Compile Include="DoiTuong\HinhThucMuon.cs" />
     <Compile Include="DoiTuong\Kho.cs" />
+    <Compile Include="DoiTuong\Khoa.cs" />
+    <Compile Include="DoiTuong\Lop.cs" />
+    <Compile Include="DoiTuong\NhanVienHienTai.cs" />
+    <Compile Include="DoiTuong\PhieuMuon.cs" />
     <Compile Include="Form\Formhienthi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,7 +174,7 @@
     <Compile Include="frmtaothe.Designer.cs">
       <DependentUpon>frmtaothe.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoiTuong\BanDoc.cs" />
+    <Compile Include="DoiTuong\DocGia.cs" />
     <Compile Include="DoiTuong\NgonNgu.cs" />
     <Compile Include="DoiTuong\NhanVien.cs" />
     <Compile Include="Data\DataProvider.cs" />
@@ -216,11 +223,11 @@
     <Compile Include="Form\Frmmuonsach.Designer.cs">
       <DependentUpon>Frmmuonsach.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Frmphanloaisach.cs">
+    <Compile Include="Form\FrmTheLoaiSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Frmphanloaisach.Designer.cs">
-      <DependentUpon>Frmphanloaisach.cs</DependentUpon>
+    <Compile Include="Form\FrmTheLoaiSach.Designer.cs">
+      <DependentUpon>FrmTheLoaiSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Frmphanquyen.cs">
       <SubType>Form</SubType>
@@ -327,9 +334,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>Frmmuonsach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Frmphanloaisach.resx">
+    <EmbeddedResource Include="Form\FrmTheLoaiSach.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Frmphanloaisach.cs</DependentUpon>
+      <DependentUpon>FrmTheLoaiSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Frmphanquyen.resx">
       <SubType>Designer</SubType>
@@ -475,6 +482,7 @@
     <Content Include="packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\SqlServerSpatial110.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\blue-backgroud.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Help\help.chm" />
     <None Include="Help\help.hhp" />

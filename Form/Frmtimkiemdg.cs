@@ -65,7 +65,7 @@ namespace quanly.frm
                     if (dr[0].ToString() == str) break;
                     else i++;
                 L_Ketnoi.HuyKetNoi();
-                Frmquanlybandoc.i = i;
+                //Frmquanlybandoc.i = i;
                 Frmquanlybandoc bd = new Frmquanlybandoc();
                 bd.MdiParent = this.MdiParent;
                 bd.set_giattri();
