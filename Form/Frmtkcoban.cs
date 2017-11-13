@@ -15,36 +15,35 @@ namespace quanly.frm
         {
             InitializeComponent();
         }
-        DataSet ds;
-        CurrencyManager cm;
         private void Frmtkcoban_Load(object sender, EventArgs e)
         {
             Frmmain.tt = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
             TimKiem tk = new TimKiem();
-            ds = tk.coban(txttimkiem.Text);
-            lbdem.Text = ds.Tables[0].Rows.Count.ToString();
-            dataGridView1.DataSource = ds.Tables[0];
-            cm = BindingContext[this.ds.Tables[0]] as CurrencyManager;
+            DataTable dt = tk.TKCoBan(txtTimKiem.Text);
+            dgvListTaiLieu.DataSource = dt;
+            dgvListTaiLieu.Refresh();
         }
 
         private void txttimkiem_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == 13) button1_Click(sender, e);
+            if (e.KeyValue == 13) btnTimKiem_Click(sender, e);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                FrmCapNhatsach cn = new FrmCapNhatsach();
-                FrmCapNhatsach.tb = ds.Tables[0].Rows[cm.Position][0].ToString();
-                cn.Show();
+                FrmCapNhatsach frm = new FrmCapNhatsach();
+                frm.selectedID = Convert.ToInt32(dgvListTaiLieu.SelectedCells[0].OwningRow.Cells["ID"].Value);
+                frm.ShowDialog();
+                //FrmCapNhatsach.tb = ds.Tables[0].Rows[cm.Position][0].ToString();
+                //cn.Show();
             }
-            catch { MessageBox.Show("Bạn phải chọn mục để xem thông tin", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error); }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -55,6 +54,12 @@ namespace quanly.frm
         private void Frmtkcoban_FormClosed(object sender, FormClosedEventArgs e)
         {
             Frmmain.tt = false;
+        }
+
+        private void dgvListTaiLieu_DataSourceChanged(object sender, EventArgs e)
+        {
+            DataTable dt = (DataTable)dgvListTaiLieu.DataSource;
+            lbdem.Text = dt.Rows.Count.ToString();
         }
     }
 }

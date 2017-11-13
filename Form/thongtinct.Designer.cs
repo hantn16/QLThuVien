@@ -40,10 +40,8 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(141, 175);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(115, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(0, 13);
             this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "http://www.It4form.net";
             // 
             // label1
             // 
@@ -59,9 +57,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(141, 154);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 13);
+            this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nhóm lập trình TinK27A";
+            this.label2.Text = "Trần Thị Thanh Thư";
             // 
             // label3
             // 
@@ -76,9 +74,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(89, 175);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Website";
+            this.label4.Text = "Lớp:";
             // 
             // thongtinct
             // 

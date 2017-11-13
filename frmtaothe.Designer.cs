@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmtaothe));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnLuuMau = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnLayMau = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnIn = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -72,8 +72,8 @@
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnHoanDoi = new System.Windows.Forms.Button();
+            this.btnChonTat = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -91,44 +91,44 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
+            this.tsBtnLuuMau,
+            this.tsBtnLayMau,
+            this.tsBtnIn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(620, 39);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // tsBtnLuuMau
             // 
-            this.toolStripButton1.Image = global::quanlythuvien.Properties.Resources.inBox;
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(90, 36);
-            this.toolStripButton1.Text = "Lưu mẫu";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.tsBtnLuuMau.Image = global::quanlythuvien.Properties.Resources.inBox;
+            this.tsBtnLuuMau.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsBtnLuuMau.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnLuuMau.Name = "tsBtnLuuMau";
+            this.tsBtnLuuMau.Size = new System.Drawing.Size(90, 36);
+            this.tsBtnLuuMau.Text = "Lưu mẫu";
+            this.tsBtnLuuMau.Click += new System.EventHandler(this.tsBtnLuuMau_Click);
             // 
-            // toolStripButton2
+            // tsBtnLayMau
             // 
-            this.toolStripButton2.Image = global::quanlythuvien.Properties.Resources.outBox;
-            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(88, 36);
-            this.toolStripButton2.Text = "Lấy mẫu";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.tsBtnLayMau.Image = global::quanlythuvien.Properties.Resources.outBox;
+            this.tsBtnLayMau.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsBtnLayMau.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnLayMau.Name = "tsBtnLayMau";
+            this.tsBtnLayMau.Size = new System.Drawing.Size(88, 36);
+            this.tsBtnLayMau.Text = "Lấy mẫu";
+            this.tsBtnLayMau.Click += new System.EventHandler(this.tsBtnLayMau_Click);
             // 
-            // toolStripButton3
+            // tsBtnIn
             // 
-            this.toolStripButton3.Image = global::quanlythuvien.Properties.Resources._01__27_1;
-            this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(207, 36);
-            this.toolStripButton3.Text = "In thẻ  độc giả trong danh sách";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.tsBtnIn.Image = global::quanlythuvien.Properties.Resources._01__27_1;
+            this.tsBtnIn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsBtnIn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnIn.Name = "tsBtnIn";
+            this.tsBtnIn.Size = new System.Drawing.Size(207, 36);
+            this.tsBtnIn.Text = "In thẻ  độc giả trong danh sách";
+            this.tsBtnIn.Click += new System.EventHandler(this.tsBtnIn_Click);
             // 
             // groupBox1
             // 
@@ -501,31 +501,31 @@
             this.openFileDialog2.FileName = "openFileDialog2";
             this.openFileDialog2.Filter = "bmp | *.Bmp | jpg | *.jpg| Gif | *.gif|All files | *.*";
             // 
-            // button3
+            // btnHoanDoi
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(119, 269);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Đánh dấu hoán đổi";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button2_Click);
+            this.btnHoanDoi.BackColor = System.Drawing.Color.Transparent;
+            this.btnHoanDoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoanDoi.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHoanDoi.Location = new System.Drawing.Point(119, 269);
+            this.btnHoanDoi.Name = "btnHoanDoi";
+            this.btnHoanDoi.Size = new System.Drawing.Size(140, 23);
+            this.btnHoanDoi.TabIndex = 10;
+            this.btnHoanDoi.Text = "Đánh dấu hoán đổi";
+            this.btnHoanDoi.UseVisualStyleBackColor = false;
+            this.btnHoanDoi.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button2
+            // btnChonTat
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.Location = new System.Drawing.Point(6, 269);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Đánh dấu tất cả";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button1_Click);
+            this.btnChonTat.BackColor = System.Drawing.Color.Transparent;
+            this.btnChonTat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonTat.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnChonTat.Location = new System.Drawing.Point(6, 269);
+            this.btnChonTat.Name = "btnChonTat";
+            this.btnChonTat.Size = new System.Drawing.Size(107, 23);
+            this.btnChonTat.TabIndex = 11;
+            this.btnChonTat.Text = "Đánh dấu tất cả";
+            this.btnChonTat.UseVisualStyleBackColor = false;
+            this.btnChonTat.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmtaothe
             // 
@@ -535,8 +535,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(620, 450);
             this.ContextMenuStrip = this.contextMenuStrip2;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnChonTat);
+            this.Controls.Add(this.btnHoanDoi);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
@@ -562,7 +562,7 @@
 
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tsBtnLuuMau;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -571,8 +571,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton tsBtnLayMau;
+        private System.Windows.Forms.ToolStripButton tsBtnIn;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt1;
         private System.Windows.Forms.TextBox txt15;
@@ -602,7 +602,7 @@
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnHoanDoi;
+        private System.Windows.Forms.Button btnChonTat;
     }
 }

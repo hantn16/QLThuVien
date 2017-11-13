@@ -6,11 +6,11 @@ using quanlythuvien.Data;
 
 namespace quanly.doituong
 {
-    public class Lsachmuon
+    public class TaiLieumuon
     {
         string maphieumuon;
-        public Lsachmuon() { }
-        public Lsachmuon(string maphieumuon)
+        public TaiLieumuon() { }
+        public TaiLieumuon(string maphieumuon)
         {
             this.maphieumuon = maphieumuon;
         }

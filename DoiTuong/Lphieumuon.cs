@@ -8,18 +8,18 @@ namespace quanly.doituong
 {
     public class Lphieumuon
     {
-        string maphieumuon, MaDocGia, TheThucmuon, MaSach,MaNhanVien;
+        string maphieumuon, MaDocGia, TheThucmuon, MaTaiLieu,MaNhanVien;
         DateTime ngaymuon;
         int SoLuongmuon;
         public Lphieumuon() { }
-        public Lphieumuon(string maphieumuon, string MaDocGia,string TheThucmuon,string MaSach,string MaNhanVien,DateTime ngaymuon,int SoLuongmuon)
+        public Lphieumuon(string maphieumuon, string MaDocGia,string TheThucmuon,string MaTaiLieu,string MaNhanVien,DateTime ngaymuon,int SoLuongmuon)
         {
             this.SoLuongmuon = SoLuongmuon;
             this.ngaymuon = ngaymuon;
             this.maphieumuon = maphieumuon;
             this.MaDocGia= MaDocGia;
             this.TheThucmuon = TheThucmuon;
-            this.MaSach = MaSach;
+            this.MaTaiLieu = MaTaiLieu;
             this.MaNhanVien = MaNhanVien;
         }
         public void set_maphieumuon(string ma)
@@ -33,7 +33,7 @@ namespace quanly.doituong
         public bool TaoMoi()
         {
             laydulieu dl = new laydulieu();
-            if (DataProvider.ExecuteNonQuery("insert into phieumuon values ('"+maphieumuon+"','"+ MaDocGia+"',N'"+ TheThucmuon+"','"+ngaymuon+"','"+ MaSach+"','"+MaNhanVien+"','"+ SoLuongmuon+"')") == 1)
+            if (DataProvider.ExecuteNonQuery("insert into phieumuon values ('"+maphieumuon+"','"+ MaDocGia+"',N'"+ TheThucmuon+"','"+ngaymuon+"','"+ MaTaiLieu+"','"+MaNhanVien+"','"+ SoLuongmuon+"')") == 1)
             {
                 L_Ketnoi.HuyKetNoi();
                 return true;
@@ -47,7 +47,7 @@ namespace quanly.doituong
         public bool CapNhat()
         {
             laydulieu dl = new laydulieu();
-            if (DataProvider.ExecuteNonQuery("update phieumuon set MaDocGia='" + MaDocGia + "',TheThucmuon=N'" + TheThucmuon + "',ngaymuon='" + ngaymuon + "',MaSach='" + MaSach + "',MaNhanVien='" + MaNhanVien + "',SoLuongmuon='"+ SoLuongmuon+"' where maphieumuon='" + maphieumuon + "'") == 1)
+            if (DataProvider.ExecuteNonQuery("update phieumuon set MaDocGia='" + MaDocGia + "',TheThucmuon=N'" + TheThucmuon + "',ngaymuon='" + ngaymuon + "',MaTaiLieu='" + MaTaiLieu + "',MaNhanVien='" + MaNhanVien + "',SoLuongmuon='"+ SoLuongmuon+"' where maphieumuon='" + maphieumuon + "'") == 1)
             {
                 L_Ketnoi.HuyKetNoi();
                 return true;

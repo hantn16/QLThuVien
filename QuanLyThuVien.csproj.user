@@ -2,8 +2,7 @@
   <PropertyGroup>
     <ReferencePath>C:\Program Files\Common Files\Business Objects\2.7\Managed\</ReferencePath>
     <ProjectView>ProjectFiles</ProjectView>
-    <PublishUrlHistory>
-    </PublishUrlHistory>
+    <PublishUrlHistory>http://localhost/quanlythuvien/</PublishUrlHistory>
     <InstallUrlHistory>
     </InstallUrlHistory>
     <SupportUrlHistory>

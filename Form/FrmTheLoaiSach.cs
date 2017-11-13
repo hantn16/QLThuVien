@@ -39,14 +39,14 @@ namespace quanly.frm
                 tn.Text = dr[1].ToString();
                 tn.ImageIndex = 1;
                 treeView1.Nodes.Add(tn);
-                comboBox1.Items.Add(dr[1].ToString());
+                cbTheLoaiSach.Items.Add(dr[1].ToString());
                 
             }
             L_Ketnoi.HuyKetNoi();
             foreach (TreeNode n in treeView1.Nodes)
             {
                 laydulieu dl1 = new laydulieu();
-                SqlDataReader dr1 = dl1.lay_reader("select * from sach where MaTheLoai='" + n.Tag.ToString().Trim() + "'");
+                SqlDataReader dr1 = dl1.lay_reader("select * from sach where IDTheLoai='" + n.Tag.ToString().Trim() + "'");
                 while (dr1.Read())
                 {
                     TreeNode tn1 = new TreeNode();
@@ -58,23 +58,23 @@ namespace quanly.frm
                 L_Ketnoi.HuyKetNoi();
             }            
         }
-        Lsach s = new Lsach();
+        TaiLieu s = new TaiLieu();
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             string str = treeView1.SelectedNode.Tag.ToString();
             if (str.Substring(0, 2) != "PL")
             {
                 laydulieu dl = new laydulieu();
-                SqlDataReader dr = dl.lay_reader("select MaSach,NhanDe,TenTacGia,LanXuatBan,loai,NamXuatBan from sach,TacGia,TheLoai where sach.MaTacGia = TacGia.MaTacGia and sach.MaTheLoai = TheLoai.MaTheLoai and MaSach='" + str + "'");
+                SqlDataReader dr = dl.lay_reader("select MaTaiLieu,NhanDe,TenTacGia,LanXuatBan,loai,NamXuatBan from sach,TacGia,TheLoai where sach.IDTacGia = TacGia.IDTacGia and sach.IDTheLoai = TheLoai.IDTheLoai and MaTaiLieu='" + str + "'");
                 while (dr.Read())
                 {
                     lbtensach.Text = dr["NhanDe"].ToString();
                     lbTacGia.Text = dr["TenTacGia"].ToString();
                     lbtaiban.Text = dr["LanXuatBan"].ToString();
                     lbNamXuatBan.Text = dr["NamXuatBan"].ToString();
-                    lbMaSach.Text = dr["MaSach"].ToString();
-                    comboBox1.Text = dr["loai"].ToString();
-                    s.MaSach = (dr["MaSach"].ToString());
+                    lbMaTaiLieu.Text = dr["MaTaiLieu"].ToString();
+                    cbTheLoaiSach.Text = dr["loai"].ToString();
+                    s.MaTaiLieu = (dr["MaTaiLieu"].ToString());
                 }
                 L_Ketnoi.HuyKetNoi();
             }
@@ -86,12 +86,12 @@ namespace quanly.frm
             if (btTheLoai.Text == "OK")
             {
                 btTheLoai.Text = "Phân loại";
-                comboBox1.Enabled = false;
+                cbTheLoaiSach.Enabled = false;
                 string str = treeView1.SelectedNode.Tag.ToString();
                 if (str.Substring(0, 2) == "PL") MessageBox.Show("Bạn phải chọn sách cần đổi");
                 else
                 {
-                    if (s.TheLoai(comboBox1.Text))
+                    if (s.TheLoai(cbTheLoaiSach.Text))
                     {
                        
                         string str1 = treeView1.SelectedNode.Tag.ToString();
@@ -99,7 +99,7 @@ namespace quanly.frm
                         treeView1.SelectedNode.Remove();
                         while(true)
                         {
-                            if (treeView1.Nodes[i].Text == comboBox1.Text)
+                            if (treeView1.Nodes[i].Text == cbTheLoaiSach.Text)
                             {
                                 TreeNode n1 = new TreeNode();
                                 n1.Tag = str1;
@@ -118,7 +118,7 @@ namespace quanly.frm
             else
             {
                 btTheLoai.Text = "OK";
-                comboBox1.Enabled = true;
+                cbTheLoaiSach.Enabled = true;
             }
         }
 

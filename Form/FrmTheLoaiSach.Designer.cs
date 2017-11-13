@@ -34,11 +34,11 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbTheLoaiSach = new System.Windows.Forms.ComboBox();
             this.lbtaiban = new System.Windows.Forms.Label();
             this.lbNamXuatBan = new System.Windows.Forms.Label();
             this.lbTacGia = new System.Windows.Forms.Label();
-            this.lbMaSach = new System.Windows.Forms.Label();
+            this.lbMaTaiLieu = new System.Windows.Forms.Label();
             this.lbtensach = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -79,11 +79,11 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbTheLoaiSach);
             this.groupBox1.Controls.Add(this.lbtaiban);
             this.groupBox1.Controls.Add(this.lbNamXuatBan);
             this.groupBox1.Controls.Add(this.lbTacGia);
-            this.groupBox1.Controls.Add(this.lbMaSach);
+            this.groupBox1.Controls.Add(this.lbMaTaiLieu);
             this.groupBox1.Controls.Add(this.lbtensach);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -112,14 +112,14 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // comboBox1
+            // cbTheLoaiSach
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(124, 193);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbTheLoaiSach.Enabled = false;
+            this.cbTheLoaiSach.FormattingEnabled = true;
+            this.cbTheLoaiSach.Location = new System.Drawing.Point(124, 193);
+            this.cbTheLoaiSach.Name = "cbTheLoaiSach";
+            this.cbTheLoaiSach.Size = new System.Drawing.Size(121, 21);
+            this.cbTheLoaiSach.TabIndex = 2;
             // 
             // lbtaiban
             // 
@@ -145,13 +145,13 @@
             this.lbTacGia.Size = new System.Drawing.Size(169, 23);
             this.lbTacGia.TabIndex = 1;
             // 
-            // lbMaSach
+            // lbMaTaiLieu
             // 
-            this.lbMaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaSach.Location = new System.Drawing.Point(127, 16);
-            this.lbMaSach.Name = "lbMaSach";
-            this.lbMaSach.Size = new System.Drawing.Size(169, 23);
-            this.lbMaSach.TabIndex = 1;
+            this.lbMaTaiLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaTaiLieu.Location = new System.Drawing.Point(127, 16);
+            this.lbMaTaiLieu.Name = "lbMaTaiLieu";
+            this.lbMaTaiLieu.Size = new System.Drawing.Size(169, 23);
+            this.lbMaTaiLieu.TabIndex = 1;
             // 
             // lbtensach
             // 
@@ -295,12 +295,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTheLoaiSach;
         private System.Windows.Forms.Label lbtaiban;
         private System.Windows.Forms.Label lbNamXuatBan;
         private System.Windows.Forms.Label lbTacGia;
         private System.Windows.Forms.Label lbtensach;
-        private System.Windows.Forms.Label lbMaSach;
+        private System.Windows.Forms.Label lbMaTaiLieu;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;

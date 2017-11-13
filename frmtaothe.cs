@@ -17,7 +17,7 @@ namespace quanly.frm
             InitializeComponent();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void tsBtnLuuMau_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -85,7 +85,7 @@ namespace quanly.frm
             }
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void tsBtnLayMau_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -217,7 +217,7 @@ namespace quanly.frm
             }
         
         }
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void tsBtnIn_Click(object sender, EventArgs e)
         {
           
                 printPreviewDialog1.ShowDialog();

@@ -87,7 +87,6 @@ D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.T
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Interaction.xml
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanlythuvien.csprojResolveAssemblyReference.cache
-D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\Interop.Crystal.dll
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csproj.ResolveComReference.cache
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Formhienthi.resources
@@ -96,7 +95,6 @@ D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.FrmCapNhatsach.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.FrmdoiMatKhau.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.frmgiahansach.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmthongtincanhan.resources
-D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmthongtindgchitiet.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmthongtinsachtheongay.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.thongtinct.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmhelpfast.resources
@@ -150,9 +148,9 @@ D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.Shell.Interop
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\EnvDTE80.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.dll
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.Designer.Interfaces.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.MSXML.dll
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.WCFReference.Interop.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
@@ -166,13 +164,11 @@ D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.ComponentMode
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.MSXML.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.Windows.Design.Interaction.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.Windows.Design.Extensibility.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\VSLangProj2.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.xml
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.Designer.Interfaces.xml
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.Windows.Design.Interaction.xml
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.frmThongKeChiTiet.resources

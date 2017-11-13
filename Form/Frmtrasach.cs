@@ -8,10 +8,16 @@ using System.Windows.Forms;
 using quanly.lopdulieu;
 using System.Data.SqlClient;
 using quanly.doituong;
+using quanlythuvien.DoiTuong;
+using quanly.DoiTuong;
+using quanlythuvien.Data;
+
 namespace quanly.frm
 {
+    public delegate void GetDateTime(DateTime dateTime);
     public partial class FrmTraSach : Form
     {
+        public DateTime NgayGiaHan = new DateTime();
         public FrmTraSach()
         {
             InitializeComponent();
@@ -19,109 +25,159 @@ namespace quanly.frm
 
         private void btthoat_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
-        string maphieumuon="";
-        private void btkiemtratt_Click(object sender, EventArgs e)
+
+        private void btnTraSach_Click(object sender, EventArgs e)
         {
-            laydulieu dl = new laydulieu();
-            bool tam = false;
-            SqlDataReader dr = dl.lay_reader("select * from phieumuon,sachmuon where phieumuon.maphieumuon = sachmuon.maphieumuon and phieumuon.MaDocGia='"+ txtMaDocGia.Text+"' and phieumuon.TheThucmuon=N'"+ comboBox1.Text+"'");
-            while (dr.Read())
+            try
             {
-                txtngaymuon.Text = dr["ngaymuon"].ToString();
-                DateTime tam1=DateTime.Parse(dr["ngaymuon"].ToString());
-                txtsongaymuon.Text = ((TimeSpan)(DateTime.Now - tam1)).Days.ToString();
-                txtsosachmuon.Text = dr["SoLuong"].ToString();
-                maphieumuon = dr["maphieumuon"].ToString();
-                txtMaSach.Text = dr["MaSach"].ToString();
-                tam = true;
+                PhieuMuon pm = PhieuMuon.GetPhieuMuonTheoID(Convert.ToInt32(grbPhieuMuon.Tag));
+                pm.NgayTra = DateTime.Now;
+                pm.TinhTrang = 0;
+                if(PhieuMuon.CapNhat(pm)) MessageBox.Show("Trả sách thành công!!!");
             }
-            L_Ketnoi.HuyKetNoi();
-                 btTraSach.Enabled = tam;
-                 if (tam)
-                 {
-                   
-                     txtMaDocGia.Enabled = false;
-                     comboBox1.Enabled = false;
-                     btkiemtratt.Enabled = false;
-                 }
-                 
-        }
-
-        private void bthuytt_Click(object sender, EventArgs e)
-        {
-            
-            txtMaDocGia.Enabled = true;
-            comboBox1.Enabled = true;
-            btkiemtratt.Enabled = true;
-            btTraSach.Enabled = false;
-            txtMaSach.Text = txtngaymuon.Text = txtsongaymuon.Text = txtsosachmuon.Text = txtMaDocGia.Text = txtMaSach.Text = comboBox1.Text = "";
-        }
-        string MaSachhong(string tam)
-        { 
-            if (tam=="") return "SH0000";
-            int ma = int.Parse(tam.Substring(2,tam.Length -2));
-            ma++;
-            if (ma < 10) return "SH000" + ma.ToString();
-            else
-                if (ma < 100) return "SH00" + ma.ToString();
-                else
-                    if (ma < 1000) return "SH0" + ma.ToString();
-                    else return "SH" + ma.ToString();
-        }
-        private void btTraSach_Click(object sender, EventArgs e)
-        {
-            laydulieu dl = new laydulieu();
-            DataSet d = dl.getdata("select * from phieumuon where maphieumuon='" + maphieumuon + "' and GETdate()- phieumuon.ngaymuon > day(7)");
-            while (true)
+            catch (Exception ex)
             {
-                if(d.Tables[0].Rows.Count > 0)
-                    if (MessageBox.Show("Sách này đã quá hạn bạn có thật sự muốn tiếp tục thực hiện thao tác này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
-                    {
-                        Frmmain.hf.set_text("Sách quá hạn là sách mượn vượt quá 7 ngày không xét trường hợp sách mượn đọc tại chỗ");
-                        Frmmain.hf.set_anh(2);
-                        Frmmain.hf.timer5.Enabled = true;
-                        break;
-                    }
-                    Lsachmuon sm = new Lsachmuon(maphieumuon);
-                    Lsach s = new Lsach();
-                    s.MaSach = (txtMaSach.Text);
-                    if (s.TraSach(txtsosachmuon.Text))
-                    {
-                        if (sm.XoaBo())
-                        {
-                            if (checkBox1.Checked)
-                                if (MessageBox.Show("Sách này có thật sự bị hỏng không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                                {
-                                    L_Ketnoi.ThietlapketNoi();
-                                    SqlDataReader dr = dl.lay_reader("select MaSachhong from sachhong");
-                                    string strtam = "";
-                                    while (dr.Read())
-                                        strtam = dr[0].ToString();
-                                    L_Ketnoi.HuyKetNoi();
-                                    Lsachhong sh = new Lsachhong(MaSachhong(strtam), txtMaSach.Text);
-                                    if (sh.TaoMoi() == false) MessageBox.Show("Quá trình cập nhật sách hỏng bị lỗi hãy chuyển qua mục thông tin sách hỏng để làm", "Thông báo");
-
-                                }
-                            bthuytt_Click(sender, e);
-                            MessageBox.Show("Thao tác trả hoàn thành", "Thông báo");
-                        }
-                        else MessageBox.Show("Thao tác xoá gặp lỗi thành", "Thông báo");
-                    }
-                    else MessageBox.Show("Thao tác xoá gặp lỗi thành", "Thông báo");
-                    break;
-                }
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FrmTraSach_Load(object sender, EventArgs e)
         {
-            Frmmain.tt = true;
+            try
+            {
+                Frmmain.tt = true;
+                Load_AutoComplete();
+                Load_ComboBox();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Load_ComboBox()
+        {
+            try
+            {
+                List<HinhThucMuon> list = HinhThucMuon.GetDSHinhThucMuon();
+                cbHinhThucMuon.DataSource = list;
+                cbHinhThucMuon.ValueMember = "IDHinhThucMuon";
+                cbHinhThucMuon.DisplayMember = "TenHinhThucMuon";
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Load_AutoComplete()
+        {
+            try
+            {
+                List<PhieuMuon> list = PhieuMuon.GetDSPhieuMuon();
+                List<string> listMaPhieuMuon = new List<string>();
+                foreach (PhieuMuon item in list)
+                {
+                    listMaPhieuMuon.Add(item.MaPhieuMuon);
+                }
+                txtPhieuMuon.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtPhieuMuon.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+                collection.AddRange(listMaPhieuMuon.ToArray());
+                txtPhieuMuon.AutoCompleteCustomSource = collection;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void FrmTraSach_FormClosed(object sender, FormClosedEventArgs e)
         {
             Frmmain.tt = false;
+        }
+
+        private void btnKiemTra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PhieuMuon pm = PhieuMuon.GetDSPhieuMuon().Find(c => c.MaPhieuMuon == txtPhieuMuon.Text);
+                if (pm.TinhTrang == 0) { MessageBox.Show("Phiếu mượn này đã trả sách"); btnTraSach.Enabled = false; } else btnTraSach.Enabled = true;
+                Load_ThongTinPhieu(pm.IDPhieuMuon);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Load_ThongTinPhieu(long id)
+        {
+            try
+            {
+                PhieuMuon pm = PhieuMuon.GetPhieuMuonTheoID(id);
+                //Load thông tin độc giả
+                txtIDDocGia.Text = pm.IDDocGia.ToString();
+                DocGia dg = DocGia.GetDocGiaTheoID(pm.IDDocGia);
+                txtMaDocGia.Text = dg.MaDocGia;
+                txtTenDocGia.Text = dg.HoTen;
+                //Load thông tin tài liệu
+                txtIDTaiLieu.Text = pm.IDTaiLieu.ToString();
+                txtMaTaiLieu.Text = TaiLieu.GetMaTLTheoID(pm.IDTaiLieu);
+                TaiLieu tl = TaiLieu.GetTaiLieuTheoMa(txtMaTaiLieu.Text);
+                txtTenTaiLieu.Text = tl.NhanDe;
+                txtSLMuon.Text = pm.SoLuong.ToString();
+                //Load thông tin phiếu mượn
+                cbHinhThucMuon.SelectedValue = pm.IDHinhThucMuon;
+                txtNgayMuon.Text = pm.NgayMuon.ToString("dd/MM/yyyy");
+                txtThoiHanTra.Text = pm.ThoiHanTra.ToString("dd/MM/yyyy");
+                //Tính ngày quá hạn
+                if (pm.ThoiHanTra < DateTime.Now)
+                {
+                    lblQuaHan.Text = "Quá hạn " + Math.Round((pm.ThoiHanTra - DateTime.Now).TotalDays, 2) + " ngày";
+                    btnGiaHan.Enabled = true;
+                }
+                else
+                { lblQuaHan.Text = ""; btnGiaHan.Enabled = true; }
+                grbPhieuMuon.Tag = pm.IDPhieuMuon;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        private void GetNgayTraMoi(DateTime date)
+        {
+            this.NgayGiaHan = date;
+        }
+        private void btnGiaHan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PhieuMuon pm = PhieuMuon.GetPhieuMuonTheoID(Convert.ToInt32(grbPhieuMuon.Tag));
+                if (pm.TinhTrang == 0) throw new Exception("Phiếu mượn này đã trả rồi hoặc chưa đén hạn!!!");
+                frmgiahansach frm = new frmgiahansach();
+                DialogResult dialog = frm.ShowDialog();
+                if (dialog == DialogResult.OK)
+                {                  
+                    pm.ThoiHanTra = frm.NgayGiaHan;
+                    pm.TinhTrang = 1;
+                    string query = string.Format(@"Update PhieuMuon Set ThoiHanTra = Convert(datetime,N'{0}'),
+                    TinhTrang = {1} Where IDPhieuMuon = {2}", pm.ThoiHanTra.ToString("yyyy-MM-dd HH:mm:ss"), 1, pm.IDPhieuMuon);
+                    int result = DataProvider.ExecuteNonQuery(query);
+                    if (result>0) { MessageBox.Show("Gia hạn thành công"); Load_ThongTinPhieu(pm.IDPhieuMuon); }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

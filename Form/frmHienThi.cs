@@ -76,8 +76,8 @@ namespace quanly.frm
                 txtTen.DataBindings.Clear();
 
                 //Add binding vào cho các textbox
-                txtMa.DataBindings.Add(new Binding("Text", dghienthi.DataSource, this.TenCotMa));               
-                txtTen.DataBindings.Add(new Binding("Text", dghienthi.DataSource, this.TenCotTen));
+                txtMa.DataBindings.Add(new Binding("Text", dghienthi.DataSource, this.TenCotMa,true,DataSourceUpdateMode.Never));               
+                txtTen.DataBindings.Add(new Binding("Text", dghienthi.DataSource, this.TenCotTen,true,DataSourceUpdateMode.Never));
             }
             catch (Exception)
             {

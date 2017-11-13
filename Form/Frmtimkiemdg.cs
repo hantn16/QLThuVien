@@ -65,7 +65,7 @@ namespace quanly.frm
                     if (dr[0].ToString() == str) break;
                     else i++;
                 L_Ketnoi.HuyKetNoi();
-                Frmquanlybandoc.i = i;
+                //Frmquanlybandoc.i = i;
                 Frmquanlybandoc bd = new Frmquanlybandoc();
                 bd.MdiParent = this.MdiParent;
                 bd.set_giattri();
@@ -79,7 +79,6 @@ namespace quanly.frm
         {
             button1_Click(sender, e);
         }
-        Frmthongtindgchitiet dg = new Frmthongtindgchitiet();
         private void Frmtimkiemdg_FormClosed(object sender, FormClosedEventArgs e)
         {
             Frmmain.tt = false;
@@ -87,25 +86,25 @@ namespace quanly.frm
 
         private void listView1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
-                
-            if (listView1.SelectedItems.Count > 0)
-            {
-                dg.set_giatri(listView1.SelectedItems[0].SubItems[1].Text, listView1.SelectedItems[0].SubItems[2].Text, listView1.SelectedItems[0].SubItems[5].Text, listView1.SelectedItems[0].SubItems[3].Text, listView1.SelectedItems[0].SubItems[6].Text, listView1.SelectedItems[0].SubItems[4].Text);
-                dg.Show();
-                timer1.Enabled = true;
-            }
+            //if (e.Button == MouseButtons.Right)
+
+            //    if (listView1.SelectedItems.Count > 0)
+            //    {
+            //        dg.set_giatri(listView1.SelectedItems[0].SubItems[1].Text, listView1.SelectedItems[0].SubItems[2].Text, listView1.SelectedItems[0].SubItems[5].Text, listView1.SelectedItems[0].SubItems[3].Text, listView1.SelectedItems[0].SubItems[6].Text, listView1.SelectedItems[0].SubItems[4].Text);
+            //        dg.Show();
+            //        timer1.Enabled = true;
+            //    }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-             dg.set_point(MousePosition.X, MousePosition.Y - 197);
+            //dg.set_point(MousePosition.X, MousePosition.Y - 197);
         }
 
         private void listView1_MouseUp(object sender, MouseEventArgs e)
         {
-            timer1.Enabled = false;
-            dg.Hide();
+            //timer1.Enabled = false;
+            //dg.Hide();
         }
 
         private void bttaothe_Click(object sender, EventArgs e)

@@ -6,19 +6,19 @@ using quanlythuvien.Data;
 
 namespace quanly.doituong
 {
-    public class Lsachhong
+    public class TaiLieuhong
     {
-        string MaSachhong,MaSach;
-        public Lsachhong() { }
-        public Lsachhong(string MaSachhong,string MaSach)
+        string MaTaiLieuhong,MaTaiLieu;
+        public TaiLieuhong() { }
+        public TaiLieuhong(string MaTaiLieuhong,string MaTaiLieu)
         {
-            this.MaSachhong = MaSachhong;
-            this.MaSach = MaSach;
+            this.MaTaiLieuhong = MaTaiLieuhong;
+            this.MaTaiLieu = MaTaiLieu;
         }
         public bool TaoMoi()
         {
             laydulieu dl = new laydulieu();
-            if (DataProvider.ExecuteNonQuery("insert into sachhong values ('" + MaSachhong+ "','"+ MaSach+"')") == 1)
+            if (DataProvider.ExecuteNonQuery("insert into sachhong values ('" + MaTaiLieuhong+ "','"+ MaTaiLieu+"')") == 1)
             {
                 L_Ketnoi.HuyKetNoi();
                 return true;
@@ -32,7 +32,7 @@ namespace quanly.doituong
         public bool XoaBo()
         {
             laydulieu dl = new laydulieu();
-            if (DataProvider.ExecuteNonQuery("delete from sachhong where MaSachhong='" + MaSachhong+ "'") == 1)
+            if (DataProvider.ExecuteNonQuery("delete from sachhong where MaTaiLieuhong='" + MaTaiLieuhong+ "'") == 1)
             {
                 L_Ketnoi.HuyKetNoi();
                 return true;
