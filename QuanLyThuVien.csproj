@@ -10,7 +10,7 @@
     <RootNamespace>quanlythuvien</RootNamespace>
     <AssemblyName>quanlythuvien</AssemblyName>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
