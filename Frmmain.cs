@@ -9,6 +9,9 @@ using quanly.lopdulieu;
 using quanlythuvien.Thong_ke_bao_cao;
 using System.Data.SqlClient;
 using quanly.doituong;
+using quanlythuvien.Data;
+using CrystalDecisions.Windows.Forms;
+
 namespace quanly.frm
 {
     public partial class Frmmain : Form
@@ -219,15 +222,13 @@ namespace quanly.frm
                         tn.Show();
                         break;
                     }
-                case "Thông tin tài liệu hỏng":
+                case "Thống kê tài liệu":
                     {
-                        hf.set_text("       Vào xem thông tin tài liệu hỏng để biết mà cập nhật tài liệu mới cho thư viên!!!");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
-                        Frmthongtinsachhong ttsh = new Frmthongtinsachhong();
-                        ttsh.MdiParent = this;
-                        ttsh.Show();
+                        frmThongKeChiTiet tkct = new frmThongKeChiTiet();
+                        tkct.MdiParent = this;
+                        tkct.Show();
                         break;
                     }
                 case "Gia hạn mượn":
@@ -370,12 +371,13 @@ namespace quanly.frm
                         timer2.Enabled = true;
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
-                        laydulieu dl = new laydulieu();
-                        DataSet ds = dl.getdata("select * from sach");
+                        DataTable dtMuon = DataProvider.ExecuteQuery("Select * from TaiLieu");
                         CrystalReportsachmuon rp = new CrystalReportsachmuon();
-                        rp.SetDataSource(ds.Tables[0]);
+                        rp.SetDataSource(dtMuon);
                         Form1 f = new Form1();
-                        f.crystalReportViewer1.ReportSource = rp;
+                        CrystalReportViewer rpv = new CrystalReportViewer();
+                        f.Controls.Add(rpv);
+                        rpv.ReportSource = rp;
                         f.MdiParent = this;
                         f.Show();
 

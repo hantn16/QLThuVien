@@ -126,11 +126,11 @@
     <Compile Include="DoiTuong\Lop.cs" />
     <Compile Include="DoiTuong\NhanVienHienTai.cs" />
     <Compile Include="DoiTuong\PhieuMuon.cs" />
-    <Compile Include="Form\Formhienthi.cs">
+    <Compile Include="Form\frmHienThi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Formhienthi.Designer.cs">
-      <DependentUpon>Formhienthi.cs</DependentUpon>
+    <Compile Include="Form\frmHienThi.Designer.cs">
+      <DependentUpon>frmHienThi.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Frmthongtincanhan.cs">
       <SubType>Form</SubType>
@@ -162,11 +162,11 @@
     <Compile Include="Frmnangcaohelp.Designer.cs">
       <DependentUpon>Frmnangcaohelp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Frmthongtindgchitiet.cs">
+    <Compile Include="Form\frmThongKeChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Frmthongtindgchitiet.Designer.cs">
-      <DependentUpon>Frmthongtindgchitiet.cs</DependentUpon>
+    <Compile Include="Form\frmThongKeChiTiet.Designer.cs">
+      <DependentUpon>frmThongKeChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="frmtaothe.cs">
       <SubType>Form</SubType>
@@ -286,9 +286,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\Formhienthi.resx">
+    <EmbeddedResource Include="Form\frmHienThi.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Formhienthi.cs</DependentUpon>
+      <DependentUpon>frmHienThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Frdangnhap.resx">
       <SubType>Designer</SubType>
@@ -310,9 +310,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>Frmthongtincanhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Frmthongtindgchitiet.resx">
+    <EmbeddedResource Include="Form\frmThongKeChiTiet.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Frmthongtindgchitiet.cs</DependentUpon>
+      <DependentUpon>frmThongKeChiTiet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Frmthongtinsachtheongay.resx">
       <SubType>Designer</SubType>
