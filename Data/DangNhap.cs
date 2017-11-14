@@ -9,10 +9,10 @@ using quanlythuvien.Data;
 
 namespace quanly.lopdulieu
 {
-    public class KTdangnhap
+    public class DangNhap
     {
         
-        public static string strQuyenHan = "", strnguoidung="",strHoTen="",strDiaChi="",strMaNhanVien="",strMatKhau="";
+        public static string strQuyenHan = "", strnguoidung="",strHoTen="",strDiaChi="",strMatKhau="";
         public static int idNhanVien = 0;
         public bool kt_dangnhap(string ten, string MatKhau)
         {
@@ -25,7 +25,6 @@ namespace quanly.lopdulieu
                 else
                 {
                     idNhanVien = Convert.ToInt32(dt.Rows[0]["IDNhanVien"]);
-                    strMaNhanVien = dt.Rows[0]["MaNhanVien"].ToString();
                     strHoTen= dt.Rows[0]["HoTen"].ToString();
                     strDiaChi =  dt.Rows[0]["DiaChi"].ToString();
                     strQuyenHan =  dt.Rows[0]["QuyenHan"].ToString();

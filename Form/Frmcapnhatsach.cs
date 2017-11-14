@@ -29,7 +29,7 @@ namespace quanly.frm
             try
             {
                 //Kiểm tra quyền
-                if ((KTdangnhap.strQuyenHan.Trim() == "ADMIN") || KTdangnhap.strQuyenHan.IndexOf("THUKHO") >= 0)
+                if ((DangNhap.strQuyenHan.Trim() == "ADMIN") || DangNhap.strQuyenHan.IndexOf("THUKHO") >= 0)
                 {
                     btCapNhat.Enabled = btxoa.Enabled = btnThemMoi.Enabled = true;
                     ctmnEdit.Enabled = true;
@@ -170,94 +170,6 @@ namespace quanly.frm
             cbTheThuc.Enabled = tam;
             cbGiaXep.Enabled = tam;
 
-        }
-        #endregion
-        #region Sinh mã tự động
-        string MaViTri()
-        {
-            laydulieu dl = new laydulieu();
-            string tam = "";
-            int i = 0;
-            SqlDataReader dr = dl.lay_reader("select MaViTri from ViTriluutru");
-            while (dr.Read())
-                tam = dr[0].ToString();
-            L_Ketnoi.HuyKetNoi();
-            i = int.Parse(tam.Substring(2, tam.Length - 2));
-            i++;
-            if (i < 10) return "VT0000" + i.ToString();
-            else
-                if (i < 100) return "VT000" + i.ToString();
-            else
-                    if (i < 1000) return "VT00" + i.ToString();
-            else
-                        if (i < 10000) return "VT0" + i.ToString();
-            else return "VT" + i.ToString();
-        }
-        string IDTheLoai()
-        {
-            laydulieu dl = new laydulieu();
-            string tam = "";
-            int i = 0;
-            SqlDataReader dr = dl.lay_reader("select IDTheLoai from TheLoai");
-            while (dr.Read())
-                tam = dr[0].ToString();
-            L_Ketnoi.HuyKetNoi();
-            i = int.Parse(tam.Substring(2, tam.Length - 2));
-            i++;
-            if (i < 10) return "PL00" + i.ToString();
-            else
-                if (i < 100) return "PL0" + i.ToString();
-            else return "PL" + i.ToString();
-
-        }
-        string IDTacGia()
-        {
-            laydulieu dl = new laydulieu();
-            string tam = "";
-            int i = 0;
-            SqlDataReader dr = dl.lay_reader("select IDTacGia from TacGia");
-            while (dr.Read())
-                tam = dr[0].ToString();
-            L_Ketnoi.HuyKetNoi();
-            i = int.Parse(tam.Substring(2, tam.Length - 2));
-            i++;
-            if (i < 10) return "TG00" + i.ToString();
-            else
-                if (i < 100) return "TG0" + i.ToString();
-            else
-                return "TG" + i.ToString();
-        }
-        string maNhaXuatBan()
-        {
-            laydulieu dl = new laydulieu();
-            string tam = "";
-            int i = 0;
-            SqlDataReader dr = dl.lay_reader("select MaNXB from NhaXuatBan");
-            while (dr.Read())
-                tam = dr[0].ToString();
-            L_Ketnoi.HuyKetNoi();
-            i = int.Parse(tam.Substring(2, tam.Length - 2));
-            i++;
-            if (i < 10) return "XB00" + i.ToString();
-            else
-                if (i < 100) return "XB0" + i.ToString();
-            else return "XB" + i.ToString();
-        }
-        string IDNgonNgu()
-        {
-            laydulieu dl = new laydulieu();
-            string tam = "";
-            int i = 0;
-            SqlDataReader dr = dl.lay_reader("select IDNgonNgu from NgonNgu");
-            while (dr.Read())
-                tam = dr[0].ToString();
-            L_Ketnoi.HuyKetNoi();
-            i = int.Parse(tam.Substring(2, tam.Length - 2));
-            i++;
-            if (i < 10) return "NN00" + i.ToString();
-            else
-                if (i < 100) return "NN0" + i.ToString();
-            else return "NN" + i.ToString();
         }
         #endregion
         private void btnThemMoi_Click(object sender, EventArgs e)

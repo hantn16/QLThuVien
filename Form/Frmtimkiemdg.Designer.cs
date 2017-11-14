@@ -76,7 +76,6 @@
             this.bttimkiem.TabIndex = 2;
             this.bttimkiem.Text = "Tìm kiếm";
             this.bttimkiem.UseVisualStyleBackColor = true;
-            this.bttimkiem.Click += new System.EventHandler(this.bttimkiem_Click);
             // 
             // txttimkiem
             // 
@@ -84,7 +83,6 @@
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(240, 20);
             this.txttimkiem.TabIndex = 1;
-            this.txttimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label1
             // 
@@ -124,9 +122,6 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
-            this.listView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseUp);
-            this.listView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDown);
             // 
             // columnHeader1
             // 
@@ -196,7 +191,6 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Thực hiện xử lý thông tin";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -213,7 +207,6 @@
             // timer1
             // 
             this.timer1.Interval = 30;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // contextMenuStrip1
             // 

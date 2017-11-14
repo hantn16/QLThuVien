@@ -11,7 +11,6 @@ namespace quanly.frm
 {
     public partial class FrmdoiMatKhau : Form
     {
-        bool tam = true,tam1 = true;
         public FrmdoiMatKhau()
         {
             InitializeComponent();
@@ -22,42 +21,34 @@ namespace quanly.frm
             Frmmain.tt = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void btthaydoi_Click(object sender, EventArgs e)
         {
-            if (txtMatKhaucu.Text.Trim() != KTdangnhap.strMatKhau.Trim())
+            try
             {
-                l1.Visible = true;
-                tam = false;
-               
-            }
-            else
-            {
-                l1.Visible = false;
-                tam = true;
-            }
-            if (txtMatKhaumoi.Text != txtnhaplai.Text)
-            {
-                l2.Visible = true;
-                tam1 = false;
-            }
-            else
-            {
-                l2.Visible = false;
-                tam1 = true;
-            }
-            if (tam&&tam1) 
-            {
-                NhanVien nv = new NhanVien(KTdangnhap.idNhanVien,KTdangnhap.strMaNhanVien, KTdangnhap.strHoTen, KTdangnhap.strDiaChi, KTdangnhap.strQuyenHan, KTdangnhap.strnguoidung, KTdangnhap.strMatKhau);
-                if (nv.DoiMatKhau(txtMatKhaumoi.Text) == true)
+                if (txtMatKhaucu.Text.Trim() != DangNhap.strMatKhau.Trim()) throw new Exception("Mật khẩu hiện tại không đúng!!!");
+
+                if (txtMatKhaumoi.Text != txtnhaplai.Text) throw new Exception("Mật khẩu nhập lại không khớp với mật khẩu mới");
+
+                if (NhanVien.DoiMatKhau(DangNhap.idNhanVien, txtMatKhaumoi.Text) == true)
+                {
                     MessageBox.Show("Đã hoàn thành việc thay đôi mật khẩu", "Thông báo");
+                    btnThoat_Click(this, e);
+                }
+                
                 else
-                    MessageBox.Show("Việc thay đổi đã bị lỗi hãy thử lại sau", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Question);
+                    MessageBox.Show("Việc thay đổi đã bị lỗi hãy thử lại sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         private void txtnhaplai_KeyDown(object sender, KeyEventArgs e)

@@ -142,16 +142,6 @@ namespace quanly.frm
             }
         }
 
-        private void Formhienthi_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (dataTable.GetChanges() != null)
-            {
-                if (MessageBox.Show("Đã có sự thay đổi dữ liệu bạn có muốn lưu lại hay không ?", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    this.CapNhat();
-            }
-            L_Ketnoi.HuyKetNoi();
-        }
-
         private void dghienthi_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 46) btxoa_Click(sender, e);

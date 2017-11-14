@@ -28,7 +28,7 @@ namespace quanly.frm
             rong = this.Size.Height;
             hf.Show();
             lbnam.Text = "Ngày " + DateTime.Now.Day.ToString() + " Tháng " + DateTime.Now.Month.ToString() + " Năm " + DateTime.Now.Year.ToString();
-            if (KTdangnhap.strQuyenHan.IndexOf("ADMIN") >= 0)
+            if (DangNhap.strQuyenHan.IndexOf("ADMIN") >= 0)
             {
                 mnquanlykho.Enabled = true;
                 mnquanlymuontra.Enabled = true;
@@ -40,15 +40,15 @@ namespace quanly.frm
             }
             else
             {
-                if (KTdangnhap.strQuyenHan.IndexOf("THUKHO") >= 0)
+                if (DangNhap.strQuyenHan.IndexOf("THUKHO") >= 0)
                 {
                     mnquanlykho.Enabled = true;
                     mnquanlydanhmuc.Enabled = true;
                     khoaToolStripMenuItem.Enabled = false;
                 }
-                if (KTdangnhap.strQuyenHan.IndexOf("MUONTRA") >= 0)
+                if (DangNhap.strQuyenHan.IndexOf("MUONTRA") >= 0)
                     mnquanlymuontra.Enabled = true;
-                if (KTdangnhap.strQuyenHan.IndexOf("QUANLY") >= 0)
+                if (DangNhap.strQuyenHan.IndexOf("QUANLY") >= 0)
                 {
                     mnquanlyDocGia.Enabled = true;
                     mnquanlydanhmuc.Enabled = true;
@@ -58,7 +58,7 @@ namespace quanly.frm
                     nhàXuấtBảnToolStripMenuItem.Enabled = false;
                 }
             }
-            if (KTdangnhap.strQuyenHan != "")
+            if (DangNhap.strQuyenHan != "")
             {
                 mnttcanhan.Enabled = true;
                 mndangxuat.Enabled = true;
@@ -71,8 +71,8 @@ namespace quanly.frm
         private void mndangxuat_Click(object sender, EventArgs e)
         {
             s = "Chương trình quản lý thư viện - Hãy đăng nhập vạo hệ thống để sử dụng        ";
-            KTdangnhap.strQuyenHan = "";
-            KTdangnhap.strnguoidung = "";
+            DangNhap.strQuyenHan = "";
+            DangNhap.strnguoidung = "";
             mnquanlykho.Enabled = false;
             mnquanlymuontra.Enabled = false;
             mnquanlyDocGia.Enabled = false;
@@ -116,15 +116,6 @@ namespace quanly.frm
                         FrmCapNhatsach cns = new FrmCapNhatsach();
                         cns.MdiParent = this;
                         cns.ht = 1;
-                        cns.Show();
-                        break;
-                    }
-                case "Tạo thẻ thư viện cho độc giả":
-                    {
-                        hf.set_text("        Vô tạo thẻ cho đoàn hoàn kẻo  in nhầm tốn giấy đó");
-                        hf.set_anh(3);
-                        frmtaothe cns = new frmtaothe();
-                        cns.MdiParent = this;
                         cns.Show();
                         break;
                     }
@@ -274,13 +265,13 @@ namespace quanly.frm
                         dn1.MdiParent = this;
                         if (dn1.DialogResult == DialogResult.OK)
                         {
-                            KTdangnhap dn = new KTdangnhap();
+                            DangNhap dn = new DangNhap();
                             if (dn.kt_dangnhap(Frdangnhap.strtendn, Frdangnhap.strMatKhaudn))
                             {
-                                s = "Người đang sử dụng chương trình có tài khoản là: " + KTdangnhap.strnguoidung.Trim() + " và quyền hạn là: " + KTdangnhap.strQuyenHan + "        ";
-                                NhanVien nv = new NhanVien(KTdangnhap.idNhanVien, KTdangnhap.strMaNhanVien, KTdangnhap.strHoTen, KTdangnhap.strDiaChi, KTdangnhap.strQuyenHan, KTdangnhap.strnguoidung, KTdangnhap.strMatKhau);
+                                s = "Người đang sử dụng chương trình có tài khoản là: " + DangNhap.strnguoidung.Trim() + " và quyền hạn là: " + DangNhap.strQuyenHan + "        ";
+                                NhanVien nv = new NhanVien(DangNhap.idNhanVien, DangNhap.strHoTen, DangNhap.strDiaChi, DangNhap.strQuyenHan, DangNhap.strnguoidung, DangNhap.strMatKhau);
                                 Frmmain_Load(sender, e);
-                                MessageBox.Show("Bạn đã đăng nhập thành công vào hệ thống với quyền hạn là: " + KTdangnhap.strQuyenHan, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Bạn đã đăng nhập thành công vào hệ thống với quyền hạn là: " + DangNhap.strQuyenHan, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             }
                             else { MessageBox.Show("BAN DA NHAP KHONG ĐUNG DU LIEU"); }
@@ -307,17 +298,6 @@ namespace quanly.frm
                         Frmphanquyen pq = new Frmphanquyen();
                         pq.MdiParent = this;
                         pq.Show();
-                        break;
-                    }
-                case "Phân loại tài liệu":
-                    {
-                        hf.set_text("        Nhập tài liệu cho ẩu rồi giờ phân loại lại, rõ khổ");
-                        hf.set_anh(3);
-                        ProgressBar1.Value = 0;
-                        timer2.Enabled = true;
-                        FrmTheLoaisach pl = new FrmTheLoaisach();
-                        pl.MdiParent = this;
-                        pl.Show();
                         break;
                     }
                 case "Quản lý tài khoản":
@@ -361,95 +341,6 @@ namespace quanly.frm
                         Frmmuonsach ms = new Frmmuonsach();
                         ms.MdiParent = this;
                         ms.Show();
-                        break;
-                    }
-                case "Danh mục tài liệu mượn":
-                    {
-                        hf.set_text("      Thong thả mà xem báo cáo tình hình mượn tài liệu của thư viện ");
-                        hf.set_anh(3);
-                        ProgressBar1.Value = 0;
-                        timer2.Enabled = true;
-                        ProgressBar1.Value = 0;
-                        timer2.Enabled = true;
-                        DataTable dtMuon = DataProvider.ExecuteQuery("Select * from TaiLieu");
-                        CrystalReportsachmuon rp = new CrystalReportsachmuon();
-                        rp.SetDataSource(dtMuon);
-                        Form1 f = new Form1();
-                        CrystalReportViewer rpv = new CrystalReportViewer();
-                        f.Controls.Add(rpv);
-                        rpv.ReportSource = rp;
-                        f.MdiParent = this;
-                        f.Show();
-
-                        break;
-
-                    }
-                case "Danh mục tài liệu còn":
-                    {
-                        hf.set_text("      Báo cáo xem trong thư viện còn những cuốn tài liệu nào");
-                        hf.set_anh(3);
-                        ProgressBar1.Value = 0;
-                        timer2.Enabled = true;
-                        laydulieu dl = new laydulieu();
-                        DataSet ds = dl.getdata("select * from sach where SoLuong > 0");
-                        CrystalReportsachcon rp = new CrystalReportsachcon();
-                        rp.SetDataSource(ds.Tables[0]);
-                        Form1 f = new Form1();
-                        f.crystalReportViewer1.ReportSource = rp;
-                        f.MdiParent = this; timer2.Enabled = true;
-                        f.Show();
-
-                        break;
-                    }
-                case "Danh mục tài liệu đang mượn":
-                    {
-                        hf.set_text("      Báo cáo xem tài liệu nào đang được sinh viên mượn");
-                        hf.set_anh(3);
-                        ProgressBar1.Value = 0;
-                        timer2.Enabled = true;
-                        laydulieu dl = new laydulieu();
-                        DataSet ds = dl.getdata("select phieumuon.* from sachmuon inner join phieumuon on sachmuon.maphieumuon = phieumuon.maphieumuon ");
-                        CrystalReportdangmuon1 rp = new CrystalReportdangmuon1();
-                        rp.SetDataSource(ds.Tables[0]);
-                        Form1 f = new Form1();
-                        f.crystalReportViewer1.ReportSource = rp;
-                        f.MdiParent = this; timer2.Enabled = true;
-                        f.Show();
-
-                        break;
-                    }
-                case "Danh mục tài liệu hỏng":
-                    {
-                        hf.set_text("      Thong thả mà xem báo cáo tình hình tài liệu hỏng đi nha");
-                        hf.set_anh(3);
-                        ProgressBar1.Value = 0;
-                        timer2.Enabled = true;
-                        laydulieu dl = new laydulieu();
-                        DataSet ds = dl.getdata("select * from sach inner join sachhong on sachhong.MaTaiLieu = sach.MaTaiLieu");
-                        CrystalReportsachcon rp = new CrystalReportsachcon();
-                        rp.SetDataSource(ds.Tables[0]);
-                        Form1 f = new Form1();
-                        f.crystalReportViewer1.ReportSource = rp;
-                        f.MdiParent = this;
-                        f.Show();
-
-                        break;
-                    }
-                case "Danh mục tài liệu trễ hạn":
-                    {
-                        hf.set_text("      Xem báo cáo tình hình tài liệu trễ hạn ");
-                        hf.set_anh(3);
-                        ProgressBar1.Value = 0;
-                        timer2.Enabled = true;
-                        laydulieu dl = new laydulieu();
-                        DataSet ds = dl.getdata("select phieumuon.* from sachmuon inner join phieumuon on sachmuon.maphieumuon = phieumuon.maphieumuon where (GETdate()- phieumuon.ngaymuon > day(7)) or (phieumuon.TheThucmuon=N'Mượn tại chỗ')");
-                        CrystalReporttrehan rp = new CrystalReporttrehan();
-                        rp.SetDataSource(ds.Tables[0]);
-                        Form1 f = new Form1();
-                        f.crystalReportViewer1.ReportSource = rp;
-                        f.MdiParent = this;
-                        f.Show();
-
                         break;
                     }
             }

@@ -16,53 +16,81 @@ namespace quanly.frm
         {
             InitializeComponent();
         }
-        bool tam = false;
         private void Frmthongtincanhan_Load(object sender, EventArgs e)
         {
             Frmmain.tt = true;
-            txtMaNhanVien.Text = KTdangnhap.strMaNhanVien;
-            txtQuyenHan.Text = KTdangnhap.strQuyenHan;
-            txtTenDangNhap.Text = KTdangnhap.strnguoidung;
-            txtHoTen.Text = KTdangnhap.strHoTen;
-            txtDiaChi.Text = KTdangnhap.strDiaChi;
+            txtIDNhanVien.Text = DangNhap.idNhanVien.ToString();
+            txtTenDangNhap.Text = DangNhap.strnguoidung;
+            txtHoTen.Text = DangNhap.strHoTen;
+            txtDiaChi.Text = DangNhap.strDiaChi;
+
+            if (DangNhap.strQuyenHan.Contains("ADMIN")) chkAdmin.Checked = true;
+            if (DangNhap.strQuyenHan.Contains("QUANLY")) chkQuanLy.Checked = true;
+            if (DangNhap.strQuyenHan.Contains("MUONTRA")) chkMuonTra.Checked = true;
+            if (DangNhap.strQuyenHan.Contains("THUKHO")) chkThuKho.Checked = true;
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnThongTin_Click(object sender, EventArgs e)
         {
-            if (tam == false)
+
+            try
             {
-                txtDiaChi.Enabled = txtHoTen.Enabled = txtTenDangNhap.Enabled = true;
-                tam = true;
-                btthongtin.Text = "OK";
-            }
-            else
-            {
-                KTdangnhap.strDiaChi=txtDiaChi.Text;
-                KTdangnhap.strHoTen=txtHoTen.Text;
-                KTdangnhap.strnguoidung=txtTenDangNhap.Text;
-                NhanVien nv = new NhanVien(KTdangnhap.idNhanVien,KTdangnhap.strMaNhanVien, KTdangnhap.strHoTen, KTdangnhap.strDiaChi, KTdangnhap.strQuyenHan, KTdangnhap.strnguoidung, KTdangnhap.strMatKhau);
-                if (nv.CapNhat() == true)
+                if (btnThongTin.Text != "OK")
                 {
-                    txtDiaChi.Enabled = txtHoTen.Enabled = txtTenDangNhap.Enabled = false;
-                    tam = false;
-                    btthongtin.Text = "Thay đổi thông tin";
-                    MessageBox.Show("Đã cập nhật thành công", "Thông báo");
+                    txtDiaChi.ReadOnly = txtHoTen.ReadOnly = txtTenDangNhap.ReadOnly = false;
+                    chkThuKho.Enabled = chkQuanLy.Enabled = chkMuonTra.Enabled = chkAdmin.Enabled = true;
+                    btnThongTin.Text = "OK";
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thất bại bạn hãy thử lại", "Thông báo");
-                }
+                    List<String> list = new List<string>();
+                    if (chkAdmin.Checked) list.Add(chkAdmin.Text);
+                    if (chkMuonTra.Checked) list.Add(chkMuonTra.Text);
+                    if (chkQuanLy.Checked) list.Add(chkQuanLy.Text);
+                    if (chkThuKho.Checked) list.Add(chkThuKho.Text);
+                    string strQuyen = String.Join(",", list.ToArray());
 
+                    NhanVien nv = new NhanVien(DangNhap.idNhanVien, txtHoTen.Text, txtDiaChi.Text, strQuyen, txtTenDangNhap.Text, DangNhap.strMatKhau);
+                    if (NhanVien.CapNhat(nv) == true)
+                    {
+                        DangNhap.strDiaChi = txtDiaChi.Text;
+                        DangNhap.strHoTen = txtHoTen.Text;
+                        DangNhap.strnguoidung = txtTenDangNhap.Text;
+                        DangNhap.strQuyenHan = strQuyen;
+                        txtDiaChi.ReadOnly = txtHoTen.ReadOnly = txtTenDangNhap.ReadOnly = true;
+                        chkThuKho.Enabled = chkQuanLy.Enabled = chkMuonTra.Enabled = chkAdmin.Enabled = false;
+                        btnThongTin.Text = "Thay đổi thông tin";
+                        MessageBox.Show("Đã cập nhật thành công", "Thông báo");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thất bại bạn hãy thử lại", "Thông báo");
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btMatKhau_Click(object sender, EventArgs e)
         {
-            FrmdoiMatKhau mk = new FrmdoiMatKhau();
-            mk.Show();
+            try
+            {
+                FrmdoiMatKhau mk = new FrmdoiMatKhau();
+                mk.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
-        private void THo(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
@@ -71,7 +99,5 @@ namespace quanly.frm
         {
             Frmmain.tt = false;
         }
-
-      
     }
 }

@@ -117,8 +117,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\ketnoi.cs" />
-    <Compile Include="Data\laydulieu.cs" />
     <Compile Include="DoiTuong\GiaXep.cs" />
     <Compile Include="DoiTuong\HinhThucMuon.cs" />
     <Compile Include="DoiTuong\Kho.cs" />
@@ -168,22 +166,14 @@
     <Compile Include="Form\frmThongKeChiTiet.Designer.cs">
       <DependentUpon>frmThongKeChiTiet.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmtaothe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmtaothe.Designer.cs">
-      <DependentUpon>frmtaothe.cs</DependentUpon>
-    </Compile>
     <Compile Include="DoiTuong\DocGia.cs" />
     <Compile Include="DoiTuong\NgonNgu.cs" />
     <Compile Include="DoiTuong\NhanVien.cs" />
     <Compile Include="Data\DataProvider.cs" />
-    <Compile Include="Data\KTdangnhap.cs" />
+    <Compile Include="Data\DangNhap.cs" />
     <Compile Include="DoiTuong\NhaXuatBan.cs" />
     <Compile Include="DoiTuong\TheLoai.cs" />
     <Compile Include="DoiTuong\TaiLieu.cs" />
-    <Compile Include="DoiTuong\Lsachhong.cs" />
-    <Compile Include="DoiTuong\Lsachmuon.cs" />
     <Compile Include="DoiTuong\TacGia.cs" />
     <Compile Include="Data\TimKiem.cs" />
     <Compile Include="DoiTuong\ViTriLuuTru.cs" />
@@ -223,12 +213,6 @@
     <Compile Include="Form\Frmmuonsach.Designer.cs">
       <DependentUpon>Frmmuonsach.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmTheLoaiSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmTheLoaiSach.Designer.cs">
-      <DependentUpon>FrmTheLoaiSach.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\Frmphanquyen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,12 +237,6 @@
     <Compile Include="Form\Frmthongbao.Designer.cs">
       <DependentUpon>Frmthongbao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Frmthongtinsachhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Frmthongtinsachhong.Designer.cs">
-      <DependentUpon>Frmthongtinsachhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\Frmthongtinsachtrongngay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,7 +255,6 @@
     <Compile Include="Form\Frmtknangcao.Designer.cs">
       <DependentUpon>Frmtknangcao.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoiTuong\Lphieumuon.cs" />
     <Compile Include="Form\Frmtrasach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,10 +311,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>Frmmuonsach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmTheLoaiSach.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmTheLoaiSach.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\Frmphanquyen.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Frmphanquyen.cs</DependentUpon>
@@ -353,10 +326,6 @@
     <EmbeddedResource Include="Form\Frmthongbao.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Frmthongbao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Frmthongtinsachhong.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Frmthongtinsachhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Frmthongtinsachtrongngay.resx">
       <SubType>Designer</SubType>
@@ -381,10 +350,6 @@
     <EmbeddedResource Include="Frmnangcaohelp.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Frmnangcaohelp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmtaothe.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>frmtaothe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
