@@ -20,7 +20,6 @@ namespace quanly.frm
         }
         DataTable dataTable = new DataTable();
         string[] s = new string[50];
-        int i = 0;
         private void FrmTaoMoitk_Load(object sender, EventArgs e)
         {
             try

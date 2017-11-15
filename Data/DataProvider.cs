@@ -11,6 +11,8 @@ namespace quanlythuvien.Data
     public class DataProvider
     {
         public static string connectionString = "Data Source=.\\DATA1;Initial Catalog=QUANLYTHUVIEN_DATA;Integrated Security=True";
+        public static string cStr2 = @"Server=.\DATA1;AttachDbFilename=D:\hoc tap\Projects\quanlythuvien\Database\quanlythuvien_Data.mdf;Database=QUANLYTHUVIEN_DATA;
+Trusted_Connection=Yes";
         /// <summary>
         /// Hàm excute 1 query trả về một dataTable chứa các bản ghi thỏa mãn
         /// </summary>
@@ -22,7 +24,7 @@ namespace quanlythuvien.Data
             try
             {
                 DataTable data = new DataTable();
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(cStr2))
                 {
                     connection.Open();
                     SqlCommand command = new SqlCommand(query, connection);
@@ -60,7 +62,7 @@ namespace quanlythuvien.Data
         public static int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(cStr2))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
@@ -91,7 +93,7 @@ namespace quanlythuvien.Data
         public static Object ExecuteScalar(string query, object[] parameter = null)
         {
             Object data = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(cStr2))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);

@@ -148,18 +148,6 @@
     <Compile Include="Form\Frmtimkiemdg.Designer.cs">
       <DependentUpon>Frmtimkiemdg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frmhelpfast.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frmhelpfast.Designer.cs">
-      <DependentUpon>Frmhelpfast.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frmnangcaohelp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frmnangcaohelp.Designer.cs">
-      <DependentUpon>Frmnangcaohelp.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\frmThongKeChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,10 +287,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>thongtinct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frmhelpfast.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Frmhelpfast.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frmmain.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Frmmain.cs</DependentUpon>
@@ -347,34 +331,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>Frmtimkiemdg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frmnangcaohelp.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Frmnangcaohelp.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Thong ke bao cao\CrystalReportdangmuon1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportdangmuon1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Thong ke bao cao\CrystalReportsachcon.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportsachcon.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Thong ke bao cao\CrystalReportsachmuon.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportsachmuon.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Thong ke bao cao\CrystalReporttrehan.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReporttrehan.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Thong ke bao cao\Form1.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -391,37 +351,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Thong ke bao cao\CrystalReportdangmuon1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportdangmuon1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Thong ke bao cao\CrystalReportsachcon.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportsachcon.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Thong ke bao cao\CrystalReportsachmuon.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportsachmuon.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Thong ke bao cao\CrystalReporttrehan.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReporttrehan.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Thong ke bao cao\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Thong ke bao cao\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\thongtinct.cs">
       <SubType>Form</SubType>
@@ -448,59 +377,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\blue-backgroud.jpg" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <None Include="Help\help.chm" />
-    <None Include="Help\help.hhp" />
-    <None Include="Help\Index.hhk" />
-    <None Include="Help\Log1.log" />
-    <None Include="Help\Table of Contents.hhc" />
     <None Include="Images\01 %2881%29.ico" />
-    <Content Include="Database\quanlythuvien_Data.MDF">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\quanlythuvien_Data_log.ldf">
-      <DependentUpon>quanlythuvien_Data.MDF</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\quanlythuvien_Log.LDF">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Help\Anh\dangnhap.bmp" />
-    <Content Include="Help\Anh\index.bmp" />
-    <Content Include="Help\capnhatsach.htm" />
-    <Content Include="Help\dangnhap.htm" />
-    <Content Include="Help\dangxuat.htm" />
-    <Content Include="Help\giahansach.htm" />
-    <Content Include="Help\gioithieu.htm" />
-    <Content Include="Help\khoa.htm" />
-    <Content Include="Help\loaisach.htm" />
-    <Content Include="Help\muonsach.htm" />
-    <Content Include="Help\ngonngu.htm" />
-    <Content Include="Help\nhxb.htm" />
-    <Content Include="Help\phanloaisach.htm" />
-    <Content Include="Help\phanquyen.htm" />
-    <Content Include="Help\qltaikhoan.htm" />
-    <Content Include="Help\quanlydanhmuc.htm" />
-    <Content Include="Help\quanlydocgia.htm" />
-    <Content Include="Help\quanlyhethong.htm" />
-    <Content Include="Help\quanlykhosach.htm" />
-    <Content Include="Help\quanlymuontra.htm" />
-    <Content Include="Help\sua.htm" />
-    <Content Include="Help\tacgia.htm" />
-    <Content Include="Help\taomoi.htm" />
-    <Content Include="Help\Thongke.htm" />
-    <Content Include="Help\Timkiemsach.htm" />
-    <Content Include="Help\tkdocgia.htm" />
-    <Content Include="Help\tksachcoban.htm" />
-    <Content Include="Help\tksachnangcao.htm" />
-    <Content Include="Help\tracuusach.htm" />
-    <Content Include="Help\trasach.htm" />
-    <Content Include="Help\ttcanhan.htm" />
-    <Content Include="Help\ttdocgia.htm" />
-    <Content Include="Help\ttmuontheongay.htm" />
-    <Content Include="Help\ttmuontrongngay.htm" />
-    <Content Include="Help\ttsachhong.htm" />
-    <Content Include="Help\xoa.htm" />
     <Content Include="Images\01 %2814%29.ico" />
     <None Include="Images\01 %2827%29.ico" />
     <Content Include="Images\01 %2832%29.ico" />
@@ -575,11 +452,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Printings\" />
-    <Folder Include="SqlServerTypes\x64\" />
-    <Folder Include="SqlServerTypes\x86\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <COMReference Include="Crystal">
       <Guid>{00025600-0000-0000-C000-000000000046}</Guid>

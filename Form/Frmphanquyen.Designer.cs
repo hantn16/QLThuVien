@@ -37,6 +37,8 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
@@ -48,8 +50,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             this.treeView1.Location = new System.Drawing.Point(0, 5);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(166, 355);
+            this.treeView1.Size = new System.Drawing.Size(166, 352);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -85,12 +85,30 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox1.Location = new System.Drawing.Point(223, 90);
+            this.groupBox1.Location = new System.Drawing.Point(172, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(294, 219);
+            this.groupBox1.Size = new System.Drawing.Size(390, 216);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDiaChi.Enabled = false;
+            this.txtDiaChi.Location = new System.Drawing.Point(160, 64);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(155, 20);
+            this.txtDiaChi.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(48, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Địa chỉ";
             // 
             // listView1
             // 
@@ -111,9 +129,9 @@
             listViewItem3,
             listViewItem4});
             this.listView1.LargeImageList = this.imageList1;
-            this.listView1.Location = new System.Drawing.Point(118, 97);
+            this.listView1.Location = new System.Drawing.Point(160, 90);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(155, 94);
+            this.listView1.Size = new System.Drawing.Size(155, 116);
             this.listView1.SmallImageList = this.imageList1;
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -128,7 +146,7 @@
             // 
             this.txtTenDangNhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTenDangNhap.Enabled = false;
-            this.txtTenDangNhap.Location = new System.Drawing.Point(118, 21);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(160, 12);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(155, 20);
             this.txtTenDangNhap.TabIndex = 1;
@@ -137,7 +155,7 @@
             // 
             this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHoTen.Enabled = false;
-            this.txtHoTen.Location = new System.Drawing.Point(118, 45);
+            this.txtHoTen.Location = new System.Drawing.Point(160, 38);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(155, 20);
             this.txtHoTen.TabIndex = 1;
@@ -145,7 +163,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 99);
+            this.label3.Location = new System.Drawing.Point(48, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 0;
@@ -154,7 +172,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 25);
+            this.label2.Location = new System.Drawing.Point(48, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 0;
@@ -163,7 +181,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 52);
+            this.label1.Location = new System.Drawing.Point(48, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 0;
@@ -184,7 +202,7 @@
             // 
             this.groupBox2.Controls.Add(this.btnThoat);
             this.groupBox2.Controls.Add(this.btnSetQuyen);
-            this.groupBox2.Location = new System.Drawing.Point(223, 315);
+            this.groupBox2.Location = new System.Drawing.Point(223, 312);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(280, 45);
             this.groupBox2.TabIndex = 3;
@@ -211,35 +229,17 @@
             this.label5.Size = new System.Drawing.Size(392, 66);
             this.label5.TabIndex = 4;
             // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDiaChi.Enabled = false;
-            this.txtDiaChi.Location = new System.Drawing.Point(118, 70);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(155, 20);
-            this.txtDiaChi.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Địa chỉ";
-            // 
             // Frmphanquyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(573, 366);
+            this.ClientSize = new System.Drawing.Size(668, 363);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.treeView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frmphanquyen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

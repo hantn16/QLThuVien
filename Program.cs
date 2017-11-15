@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using quanly.frm;
-using quanlythuvien.Thong_ke_bao_cao;
 
 namespace quanly.frm
 {

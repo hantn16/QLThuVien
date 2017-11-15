@@ -291,9 +291,6 @@ namespace quanly.frm
         private void FrmCapNhatsach_FormClosed(object sender, FormClosedEventArgs e)
         {
             Frmmain.tt = false;
-            Frmmain.hf.set_text(Frmhelpfast.t);
-            Frmmain.hf.set_anh(1);
-            Frmmain.hf.timer5.Enabled = false;
         }
     }
 }

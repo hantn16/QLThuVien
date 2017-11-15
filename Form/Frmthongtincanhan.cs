@@ -39,7 +39,6 @@ namespace quanly.frm
                 if (btnThongTin.Text != "OK")
                 {
                     txtDiaChi.ReadOnly = txtHoTen.ReadOnly = txtTenDangNhap.ReadOnly = false;
-                    chkThuKho.Enabled = chkQuanLy.Enabled = chkMuonTra.Enabled = chkAdmin.Enabled = true;
                     btnThongTin.Text = "OK";
                 }
                 else

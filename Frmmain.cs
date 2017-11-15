@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using quanly.lopdulieu;
-using quanlythuvien.Thong_ke_bao_cao;
 using System.Data.SqlClient;
 using quanly.doituong;
 using quanlythuvien.Data;
@@ -20,13 +19,11 @@ namespace quanly.frm
         {
             InitializeComponent();
         }
-        public static Frmhelpfast hf = new Frmhelpfast();
         public static int rong = 0;
         public static NhanVien nv = new NhanVien();
         public void Frmmain_Load(object sender, EventArgs e)
         {
             rong = this.Size.Height;
-            hf.Show();
             lbnam.Text = "Ngày " + DateTime.Now.Day.ToString() + " Tháng " + DateTime.Now.Month.ToString() + " Năm " + DateTime.Now.Year.ToString();
             if (DangNhap.strQuyenHan.IndexOf("ADMIN") >= 0)
             {
@@ -93,8 +90,6 @@ namespace quanly.frm
             {
                 case "Hiệu chỉnh thông tin":
                     {
-                        hf.set_text("        Nhập thông tin tài liệu ẩu rồi giờ lại vào chỉnh thông tin");
-                        hf.set_anh(3);
                         FrmCapNhatsach cns = new FrmCapNhatsach();
                         cns.MdiParent = this;
                         cns.Show();
@@ -102,8 +97,6 @@ namespace quanly.frm
                     }
                 case "Huỷ tài liệu":
                     {
-                        hf.set_text("        Lại huỷ tài liệu trong thư viện rồi");
-                        hf.set_anh(3);
                         FrmCapNhatsach cns = new FrmCapNhatsach();
                         cns.MdiParent = this;
                         cns.Show();
@@ -111,8 +104,6 @@ namespace quanly.frm
                     }
                 case "Nhập tài liệu mới":
                     {
-                        hf.set_text("        Có tài liệu mới nhập về thư viện à");
-                        hf.set_anh(3);
                         FrmCapNhatsach cns = new FrmCapNhatsach();
                         cns.MdiParent = this;
                         cns.ht = 1;
@@ -121,8 +112,6 @@ namespace quanly.frm
                     }
                 case "Tác giả":
                     {
-                        hf.set_text("       cập nhật thông tin danh mục à!!");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         string query = " select IDTacGia as 'Mã tác giả',TenTacGia as 'Tên tác giả' from TacGia";
@@ -133,8 +122,6 @@ namespace quanly.frm
                     }
                 case "Nhà xuất bản":
                     {
-                        hf.set_text("       cập nhật thông tin danh mục à!!");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         string query = " select IDNhaXuatBan as 'Mã nhà xuất bản',TenNhaXuatBan as 'Tên nhà xuất bản' from NhaXuatBan";
@@ -144,8 +131,6 @@ namespace quanly.frm
                     }
                 case "Loại tài liệu":
                     {
-                        hf.set_text("       cập nhật thông tin danh mục à!!");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         string query = " select IDTheLoai as 'Mã thể loại',TenTheLoai as 'Tên Thể Loại' from TheLoai";
@@ -155,8 +140,6 @@ namespace quanly.frm
                     }
                 case "Thông tin tài liệu mượn trong ngày":
                     {
-                        hf.set_text("       Kiểm tra cuối ngày, để xem có độc giả nào chưa trả tài liệu hay không!!");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Frmthongtinsachtrongngay stn = new Frmthongtinsachtrongngay();
@@ -166,8 +149,6 @@ namespace quanly.frm
                     }
                 case "Ngôn ngữ":
                     {
-                        hf.set_text("       cập nhật thông tin danh mục à!!");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         string query = " select IDNgonNgu as 'Mã ngôn ngữ',TenNgonNgu as 'Tên ngôn ngữ' from NgonNgu";
@@ -177,8 +158,6 @@ namespace quanly.frm
                     }
                 case "Khoa":
                     {
-                        hf.set_text("       cập nhật thông tin danh mục à!!");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Formhienthi ht = new Formhienthi()
@@ -193,8 +172,6 @@ namespace quanly.frm
                     }
                 case "Trả tài liệu":
                     {
-                        hf.set_text("       Kiểm tra kỹ coi chừng có tài liệu hỏng thì phải click vô mục tài liệu hỏng!!");
-                        hf.set_anh(2);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         FrmTraSach ts = new FrmTraSach();
@@ -204,8 +181,6 @@ namespace quanly.frm
                     }
                 case "Thông tin tài liệu mượn theo ngày":
                     {
-                        hf.set_text("       Để kiểm tra tài liệu mượn trong ngày nào đó hoặc có thể kiểm tra tình hình mượn tài liệu trong khoản thời gian nào đó có chọn thể thức mượn tài liệu!!");
-                        hf.set_anh(2);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Frmthongtinsachtheongay tn = new Frmthongtinsachtheongay();
@@ -234,8 +209,6 @@ namespace quanly.frm
                     }
                 case "Tìm kiếm độc giả":
                     {
-                        hf.set_text("       Tìm xem hộ có tác giả nào tên tui không!!");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Frmtimkiemdg tkdg = new Frmtimkiemdg();
@@ -256,8 +229,6 @@ namespace quanly.frm
                     }
                 case "Đăng nhập":
                     {
-                        hf.set_text("        Chú ý nhập tên server và mật khấu server cho đúng. Nếu muốn lưu thông tin đăng nhập lại thì click lưu để sau đăng nhập cho khoẻ");
-                        hf.set_anh(2);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Frdangnhap dn1 = new Frdangnhap();
@@ -274,14 +245,12 @@ namespace quanly.frm
                                 MessageBox.Show("Bạn đã đăng nhập thành công vào hệ thống với quyền hạn là: " + DangNhap.strQuyenHan, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             }
-                            else { MessageBox.Show("BAN DA NHAP KHONG ĐUNG DU LIEU"); }
+                            else { MessageBox.Show("Sai tên đăng nhập/mật khẩu"); }
                         }
                         break;
                     }
                 case "Thay đổi thông tin cá nhân":
                     {
-                        //hf.set_text("        Thông tin cá nhân bị sai chỗ nào à");
-                        //hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Frmthongtincanhan cn = new Frmthongtincanhan();
@@ -291,8 +260,6 @@ namespace quanly.frm
                     }
                 case "Phân quyền":
                     {
-                        hf.set_text("        Phân quyền có thể cùng một tài khoản đảm nhận nhiều chức năng và quyền hạn admin là duy nhất 1 tài khoản không thể tạo thêm tài khoản 2");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Frmphanquyen pq = new Frmphanquyen();
@@ -302,8 +269,6 @@ namespace quanly.frm
                     }
                 case "Quản lý tài khoản":
                     {
-                        hf.set_text("        Nhớ kiểm tra tư chất người mượn hẵng tạo tài khoản nghe, kẻo gặp đứa ăn cắp tài liệu !");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         FrmTaoMoitk tm = new FrmTaoMoitk();
@@ -314,8 +279,6 @@ namespace quanly.frm
                 case "Tra cứu tài liệu":
                 case "Cơ bản":
                     {
-                        hf.set_text("        Không nắm rõ thông tin tìm kiếm phải không ? chọn mục này là phải rồi");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Frmtkcoban tkcb = new Frmtkcoban();
@@ -324,8 +287,6 @@ namespace quanly.frm
                     }
                 case "Nâng cao":
                     {
-                        hf.set_text("        Khi vô tìm kiếm được thông tin tài liệu cần tìm bạn có thể thực hiện chuyển tài liệu đó qua mục cập nhật thông tin thông qua nút xem chi tiết hoặc click d2 lần vô tài liệu cần xử lý");
-                        hf.set_anh(3);
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Frmtknangcao nc = new Frmtknangcao();
@@ -335,7 +296,6 @@ namespace quanly.frm
                     }
                 case "Mượn tài liệu":
                     {
-                        hf.set_text("       Chon mượn tài liệu nhớ cẩn thận kẻo mất tài liệu, kiểm tra kỹ thông tin của tài liệu, của độc giả rồi hãy cho mượn ");
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         Frmmuonsach ms = new Frmmuonsach();
@@ -468,11 +428,7 @@ namespace quanly.frm
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            if (Frmhelpfast.an == false)
-            {
-                Frmhelpfast.an = true;
-                hf.Show();
-            }
+
         }
 
         private void timer4_Tick(object sender, EventArgs e)

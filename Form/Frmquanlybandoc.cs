@@ -248,8 +248,6 @@ namespace quanly.frm
         private void Frmquanlybandoc_FormClosed(object sender, FormClosedEventArgs e)
         {
             Frmmain.tt = false;
-            Frmmain.hf.set_text(Frmhelpfast.t);
-            Frmmain.hf.set_anh(1);
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)

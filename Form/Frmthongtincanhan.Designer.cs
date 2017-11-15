@@ -134,7 +134,7 @@
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.ReadOnly = true;
             this.txtTenDangNhap.Size = new System.Drawing.Size(155, 20);
-            this.txtTenDangNhap.TabIndex = 2;
+            this.txtTenDangNhap.TabIndex = 0;
             this.txtTenDangNhap.Tag = "2";
             // 
             // txtDiaChi
@@ -144,7 +144,7 @@
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.ReadOnly = true;
             this.txtDiaChi.Size = new System.Drawing.Size(311, 20);
-            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.TabIndex = 2;
             this.txtDiaChi.Tag = "1";
             // 
             // txtHoTen
@@ -154,7 +154,7 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.ReadOnly = true;
             this.txtHoTen.Size = new System.Drawing.Size(155, 20);
-            this.txtHoTen.TabIndex = 0;
+            this.txtHoTen.TabIndex = 1;
             this.txtHoTen.Tag = "0";
             // 
             // lbIDNhanVien
@@ -224,7 +224,7 @@
             this.btnThoat.Location = new System.Drawing.Point(345, 14);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(65, 30);
-            this.btnThoat.TabIndex = 6;
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Tag = "5";
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -235,7 +235,7 @@
             this.btnMatKhau.Location = new System.Drawing.Point(230, 14);
             this.btnMatKhau.Name = "btnMatKhau";
             this.btnMatKhau.Size = new System.Drawing.Size(109, 30);
-            this.btnMatKhau.TabIndex = 5;
+            this.btnMatKhau.TabIndex = 4;
             this.btnMatKhau.Tag = "5";
             this.btnMatKhau.Text = "Thay đổi mật khẩu";
             this.btnMatKhau.UseVisualStyleBackColor = true;
@@ -246,7 +246,7 @@
             this.btnThongTin.Location = new System.Drawing.Point(94, 14);
             this.btnThongTin.Name = "btnThongTin";
             this.btnThongTin.Size = new System.Drawing.Size(130, 30);
-            this.btnThongTin.TabIndex = 4;
+            this.btnThongTin.TabIndex = 3;
             this.btnThongTin.Tag = "4";
             this.btnThongTin.Text = "Thay đổi thông tin";
             this.btnThongTin.UseVisualStyleBackColor = true;

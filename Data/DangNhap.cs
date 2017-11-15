@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using quanly.lopdulieu;
 using quanly.doituong;
 using quanlythuvien.Data;
+using System.Windows.Forms;
 
 namespace quanly.lopdulieu
 {
@@ -33,7 +34,11 @@ namespace quanly.lopdulieu
                     return true;
                 }
             }
-           catch { return false; }
+           catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
     }
 }
