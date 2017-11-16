@@ -180,6 +180,7 @@ namespace quanly.frm
                 {
                     //--thuc hien tao du lieu cho doi tuong sach
                     #region set giá trị
+
                     TaiLieu taiLieu = new TaiLieu();
                     taiLieu.MaTaiLieu = txtMaTL.Text;
                     taiLieu.NhanDe = txtNhanDe.Text;
@@ -199,6 +200,10 @@ namespace quanly.frm
                         MessageBox.Show("Thêm mới thành công");
                         Load_treeview();
                         trvListTaiLieu.Enabled = true;
+                        set_enable(false);
+                        btCapNhat.Enabled = true;
+                        btxoa.Enabled = true;
+                        btnThemMoi.Text = "Thêm mới";
                     }
                     #endregion
                 }
@@ -259,6 +264,7 @@ namespace quanly.frm
                 taiLieu.MaTaiLieu = txtMaTL.Text;
                 taiLieu.NhanDe = txtNhanDe.Text;
                 taiLieu.SoTrang = int.Parse(txtSoTrang.Text);
+                taiLieu.SoLuong = int.Parse(txtSoLuong.Text);
                 taiLieu.NamXuatBan = int.Parse(txtnamxuatban.Text);
                 taiLieu.LanXuatBan = int.Parse(txtlanxuatban.Text);
                 taiLieu.NgayNhap = DateTime.Parse(txtNgayNhap.Text);
@@ -273,6 +279,9 @@ namespace quanly.frm
                 {
                     MessageBox.Show("Cập nhật thành công");
                     Load_treeview();
+                    set_enable(false);
+                    btnThemMoi.Enabled = btxoa.Enabled = true;
+                    btCapNhat.Text = "Cập nhật";
                     trvListTaiLieu.Enabled = true;
                 }
 

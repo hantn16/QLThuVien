@@ -17,15 +17,46 @@ namespace quanly.frm
         }
         private void Frmtkcoban_Load(object sender, EventArgs e)
         {
-            Frmmain.tt = true;
+            try
+            {
+                Frmmain.tt = true;
+                Load_TimKiem("");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        private void Load_TimKiem(string text)
+        {
+            try
+            {
+                TimKiem tk = new TimKiem();
+                DataTable dt = tk.TKCoBan(text);
+                dgvListTaiLieu.DataSource = dt;
+                dgvListTaiLieu.Refresh();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            TimKiem tk = new TimKiem();
-            DataTable dt = tk.TKCoBan(txtTimKiem.Text);
-            dgvListTaiLieu.DataSource = dt;
-            dgvListTaiLieu.Refresh();
+            try
+            {
+                Load_TimKiem(txtTimKiem.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void txttimkiem_KeyDown(object sender, KeyEventArgs e)
@@ -40,10 +71,11 @@ namespace quanly.frm
                 FrmCapNhatsach frm = new FrmCapNhatsach();
                 frm.selectedID = Convert.ToInt32(dgvListTaiLieu.SelectedCells[0].OwningRow.Cells["ID"].Value);
                 frm.ShowDialog();
-                //FrmCapNhatsach.tb = ds.Tables[0].Rows[cm.Position][0].ToString();
-                //cn.Show();
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message, "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -58,8 +90,16 @@ namespace quanly.frm
 
         private void dgvListTaiLieu_DataSourceChanged(object sender, EventArgs e)
         {
-            DataTable dt = (DataTable)dgvListTaiLieu.DataSource;
-            lbdem.Text = dt.Rows.Count.ToString();
+            try
+            {
+                DataTable dt = (DataTable)dgvListTaiLieu.DataSource;
+                lbdem.Text = dt.Rows.Count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

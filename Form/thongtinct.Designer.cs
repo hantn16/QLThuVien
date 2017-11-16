@@ -90,7 +90,6 @@
             this.Controls.Add(this.linkLabel1);
             this.Name = "thongtinct";
             this.Text = "Thông tin chương trình";
-            this.Load += new System.EventHandler(this.thongtinct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

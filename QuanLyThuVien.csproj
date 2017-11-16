@@ -142,12 +142,6 @@
     <Compile Include="Form\Frmthongtinsachtheongay.Designer.cs">
       <DependentUpon>Frmthongtinsachtheongay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Frmtimkiemdg.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Frmtimkiemdg.Designer.cs">
-      <DependentUpon>Frmtimkiemdg.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\frmThongKeChiTiet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,10 +183,10 @@
     <Compile Include="Form\frmgiahansach.Designer.cs">
       <DependentUpon>frmgiahansach.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frmmain.cs">
+    <Compile Include="Form\Frmmain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frmmain.Designer.cs">
+    <Compile Include="Form\Frmmain.Designer.cs">
       <DependentUpon>Frmmain.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Frmmuonsach.cs">
@@ -287,7 +281,7 @@
       <SubType>Designer</SubType>
       <DependentUpon>thongtinct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frmmain.resx">
+    <EmbeddedResource Include="Form\Frmmain.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Frmmain.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,10 +320,6 @@
     <EmbeddedResource Include="Form\Frmtrasach.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Frmtrasach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Frmtimkiemdg.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Frmtimkiemdg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -383,7 +373,6 @@
     <Content Include="Images\01 %2832%29.ico" />
     <Content Include="Images\0909deguo15.jpg" />
     <None Include="Images\36_33_21[1].gif" />
-    <None Include="mau the\mau1.ma" />
     <None Include="Images\1.bmp" />
     <None Include="Images\2.bmp" />
     <None Include="Images\11.gif" />

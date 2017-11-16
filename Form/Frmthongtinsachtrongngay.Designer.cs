@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmthongtinsachtrongngay));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvMuonVeNha = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvChuaTra = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.dgvChuaTra = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvMuonVeNha = new System.Windows.Forms.DataGridView();
             this.dgvMuonTaiCho = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMuonVeNha)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuaTra)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMuonVeNha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuonTaiCho)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +57,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mượn về nhà";
             // 
+            // dgvMuonVeNha
+            // 
+            this.dgvMuonVeNha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMuonVeNha.Location = new System.Drawing.Point(6, 15);
+            this.dgvMuonVeNha.Name = "dgvMuonVeNha";
+            this.dgvMuonVeNha.Size = new System.Drawing.Size(445, 173);
+            this.dgvMuonVeNha.TabIndex = 1;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
@@ -68,6 +76,16 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mượn tại chỗ chưa trả sách";
+            // 
+            // dgvChuaTra
+            // 
+            this.dgvChuaTra.AllowUserToAddRows = false;
+            this.dgvChuaTra.AllowUserToDeleteRows = false;
+            this.dgvChuaTra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChuaTra.Location = new System.Drawing.Point(7, 19);
+            this.dgvChuaTra.Name = "dgvChuaTra";
+            this.dgvChuaTra.Size = new System.Drawing.Size(348, 374);
+            this.dgvChuaTra.TabIndex = 0;
             // 
             // button1
             // 
@@ -93,14 +111,6 @@
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
-            // dgvChuaTra
-            // 
-            this.dgvChuaTra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChuaTra.Location = new System.Drawing.Point(7, 19);
-            this.dgvChuaTra.Name = "dgvChuaTra";
-            this.dgvChuaTra.Size = new System.Drawing.Size(348, 374);
-            this.dgvChuaTra.TabIndex = 0;
-            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
@@ -112,14 +122,6 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mượn tại chỗ";
-            // 
-            // dgvMuonVeNha
-            // 
-            this.dgvMuonVeNha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMuonVeNha.Location = new System.Drawing.Point(6, 15);
-            this.dgvMuonVeNha.Name = "dgvMuonVeNha";
-            this.dgvMuonVeNha.Size = new System.Drawing.Size(445, 173);
-            this.dgvMuonVeNha.TabIndex = 1;
             // 
             // dgvMuonTaiCho
             // 
@@ -141,16 +143,17 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frmthongtinsachtrongngay";
             this.Text = "Tình hình mượn sách trong ngày";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frmthongtinsachtrongngay_FormClosed);
             this.Load += new System.EventHandler(this.Frmthongtinsachtrongngay_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMuonVeNha)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuaTra)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMuonVeNha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuonTaiCho)).EndInit();
             this.ResumeLayout(false);
 

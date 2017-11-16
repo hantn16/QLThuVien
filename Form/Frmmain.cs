@@ -162,9 +162,9 @@ namespace quanly.frm
                         timer2.Enabled = true;
                         Formhienthi ht = new Formhienthi()
                         {
-                            ChuoiKetNoi = " select MaKhoa as 'Mã khoa',TenKhoa as 'Tên Khoa' from Khoa",
+                            ChuoiKetNoi = " select IDKhoa as 'ID', MaKhoa as 'Mã khoa',TenKhoa as 'Tên Khoa' from Khoa",
                             BangKetNoi = "Khoa",
-                            TenCotMa = "Mã khoa",
+                            TenCotMa = "ID",
                             TenCotTen = "Tên Khoa"
                         };
                         ht.MdiParent = this;
@@ -205,15 +205,6 @@ namespace quanly.frm
                         FrmTraSach frm = new FrmTraSach();
                         frm.MdiParent = this;
                         frm.Show();
-                        break;
-                    }
-                case "Tìm kiếm độc giả":
-                    {
-                        ProgressBar1.Value = 0;
-                        timer2.Enabled = true;
-                        Frmtimkiemdg tkdg = new Frmtimkiemdg();
-                        tkdg.MdiParent = this;
-                        tkdg.Show();
                         break;
                     }
                 case "Thông tin tài khoản":

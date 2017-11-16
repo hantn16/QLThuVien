@@ -14,10 +14,5 @@ namespace quanly.frm
         {
             InitializeComponent();
         }
-
-        private void thongtinct_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

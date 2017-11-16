@@ -107,7 +107,6 @@ D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmthongtinsachtrongngay.
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmtkcoban.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmtknangcao.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.FrmTraSach.resources
-D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frmtimkiemdg.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanlythuvien.Properties.Resources.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
@@ -162,4 +161,3 @@ D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.TemplateWizar
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.Windows.Design.Interaction.xml
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.frmThongKeChiTiet.resources
-D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache

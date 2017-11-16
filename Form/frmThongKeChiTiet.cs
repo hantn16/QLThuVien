@@ -30,17 +30,34 @@ namespace quanly.frm
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Thủ tục update phiếu mượn quá hạn
+        /// </summary>
+        private void Update_QuaHan()
+        {
+            try
+            {
+                  string queryUpdate = "Update PhieuMuon Set TinhTrang = 2 where ThoiHanTra < GETDATE() And TinhTrang = 1";
+                DataProvider.ExecuteNonQuery(queryUpdate);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         private void Load_ThongTinTextbox()
         {
             try
             {
+                //Update tai lieu quá hạn
+                Update_QuaHan();
                 //Lấy thông tin số lượng
                 string query = "SELECT dbo.GetSLTaiLieu( @type )";
                 txtSLTatCa.Text = DataProvider.ExecuteScalar(query, new object[] { 0 }).ToString();
                 txtSLMuon.Text = DataProvider.ExecuteScalar(query, new object[] { 1 }).ToString();
                 txtSLCoSan.Text = DataProvider.ExecuteScalar(query, new object[] { 2 }).ToString();
                 txtSLHong.Text = DataProvider.ExecuteScalar(query, new object[] { 3 }).ToString();
+                txtSLQuaHan.Text = DataProvider.ExecuteScalar(query, new object[] { 4 }).ToString();
 
                 //Lấy thông tin số lượng mã
                 string query2 = "SELECT dbo.GetSLMaTaiLieu( @type )";
@@ -48,6 +65,7 @@ namespace quanly.frm
                 txtSoMaMuon.Text = DataProvider.ExecuteScalar(query2, new object[] { 1 }).ToString();
                 txtSoMaCoSan.Text = DataProvider.ExecuteScalar(query2, new object[] { 2 }).ToString();
                 txtSoMaHong.Text = DataProvider.ExecuteScalar(query2, new object[] { 3 }).ToString();
+                txtSoMaQuaHan.Text = DataProvider.ExecuteScalar(query2, new object[] { 4 }).ToString();
             }
             catch (Exception)
             {
@@ -64,6 +82,8 @@ namespace quanly.frm
         {
             try
             {
+                //Update tai lieu quá hạn
+                Update_QuaHan();
                 Load_ThongTinTextbox();
                 int selectedTabPage = tcThongKeTL.SelectedIndex;
                 Load_dgv(selectedTabPage);
@@ -84,6 +104,7 @@ namespace quanly.frm
                     case 1: Load_dgvMuon(); break;
                     case 2: Load_dgvCoSan(); break;
                     case 3: Load_dgvHong(); break;
+                    case 4: Load_dgvQuaHan(); break;
                     default: Load_dgvTatCa(); break;
                 }
             }
@@ -91,6 +112,28 @@ namespace quanly.frm
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Load_dgvQuaHan()
+        {
+            try
+            {
+                //Update tai lieu quá hạn
+                Update_QuaHan();
+                string query = @"Select p.IDTaiLieu as [ID],tl.MaTaiLieu as [Mã tài liệu],tl.NhanDe as [Nhan đề],
+                                dg.HoTen as [Họ tên], p.SoLuong as [Số lượng], p.NgayMuon as [Ngày mượn] from
+                                PhieuMuon p inner join TaiLieu tl on p.IDTaiLieu = tl.IDTaiLieu
+								inner join DocGia dg on p.IDDocGia = dg.IDDocGia
+								Where p.TinhTrang = 2";
+                DataTable dt = DataProvider.ExecuteQuery(query);
+                dgvQuaHan.DataSource = dt;
+                dgvQuaHan.Refresh();
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
@@ -103,6 +146,7 @@ namespace quanly.frm
                     case 1: Load_dgvMuon(); break;
                     case 2: Load_dgvCoSan(); break;
                     case 3: Load_dgvHong(); break;
+                    case 4: Load_dgvQuaHan(); break;
                     default: Load_dgvTatCa(); break;
                 }
             }
@@ -171,7 +215,7 @@ namespace quanly.frm
         {
             try
             {
-                string query = @"Select p.IDTaiLieu,tl.MaTaiLieu,tl.NhanDe,p.SumSL,Coalesce(n.SLDaTra,0) as [SL đã trả],
+                string query = @"Select p.IDTaiLieu as [ID],tl.MaTaiLieu as [Mã tài liệu],tl.NhanDe as [Nhan đề],p.SumSL as [Tổng số mượn],Coalesce(n.SLDaTra,0) as [SL đã trả],
                                 p.SumSL-Coalesce(n.SLDaTra,0) as [SL chưa trả] from
                                 (Select pm.IDTaiLieu,Sum(pm.SoLuong) as SumSL
                                 from PhieuMuon pm group by pm.IDTaiLieu) p left join

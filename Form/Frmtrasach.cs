@@ -14,7 +14,6 @@ using quanlythuvien.Data;
 
 namespace quanly.frm
 {
-    public delegate void GetDateTime(DateTime dateTime);
     public partial class FrmTraSach : Form
     {
         public DateTime NgayGiaHan = new DateTime();
@@ -33,6 +32,7 @@ namespace quanly.frm
             try
             {
                 PhieuMuon pm = PhieuMuon.GetPhieuMuonTheoID(Convert.ToInt32(grbPhieuMuon.Tag));
+                if (pm.TinhTrang == 0) throw new Exception("Phiếu mượn này đã trả sách rồi!!!");
                 pm.NgayTra = DateTime.Now;
                 pm.TinhTrang = 0;
                 if(PhieuMuon.CapNhat(pm)) MessageBox.Show("Trả sách thành công!!!");
@@ -68,7 +68,6 @@ namespace quanly.frm
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -97,7 +96,15 @@ namespace quanly.frm
 
         private void FrmTraSach_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Frmmain.tt = false;
+            try
+            {
+                Frmmain.tt = false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void btnKiemTra_Click(object sender, EventArgs e)
@@ -161,7 +168,8 @@ namespace quanly.frm
             try
             {
                 PhieuMuon pm = PhieuMuon.GetPhieuMuonTheoID(Convert.ToInt32(grbPhieuMuon.Tag));
-                if (pm.TinhTrang == 0) throw new Exception("Phiếu mượn này đã trả rồi hoặc chưa đén hạn!!!");
+
+                if (pm.TinhTrang == 0) throw new Exception("Phiếu mượn này đã trả rồi!!!");
                 frmgiahansach frm = new frmgiahansach();
                 DialogResult dialog = frm.ShowDialog();
                 if (dialog == DialogResult.OK)

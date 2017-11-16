@@ -5,14 +5,17 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace quanlythuvien.Data
 {
     public class DataProvider
     {
+        //public static string path = Application.StartupPath;
+        public static string path = @"D:\hoc tap\Projects\quanlythuvien\Database";
+        public static string serverName = @".\DATA1";
         public static string connectionString = "Data Source=.\\DATA1;Initial Catalog=QUANLYTHUVIEN_DATA;Integrated Security=True";
-        public static string cStr2 = @"Server=.\DATA1;AttachDbFilename=D:\hoc tap\Projects\quanlythuvien\Database\quanlythuvien_Data.mdf;Database=QUANLYTHUVIEN_DATA;
-Trusted_Connection=Yes";
+        public static string cStr2 = string.Format(@"Server={0};AttachDbFilename={1}\quanlythuvien_Data.mdf;Database=QUANLYTHUVIEN_DATA;Trusted_Connection=Yes",serverName,path);
         /// <summary>
         /// Hàm excute 1 query trả về một dataTable chứa các bản ghi thỏa mãn
         /// </summary>

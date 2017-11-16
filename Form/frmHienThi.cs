@@ -291,7 +291,7 @@ namespace quanly.frm
             {
                 if (MessageBox.Show("Bạn thực sự muốn xóa bản ghi này?", "Xác nhận", MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    string delQuery = string.Format("Delete from {0} where Ma{0} = N'{1}'", BangKetNoi, txtMa.Text);
+                    string delQuery = string.Format("Delete from {0} where ID{0} = {1}", BangKetNoi, txtMa.Text);
                     if (DataProvider.ExecuteNonQuery(delQuery)>0)
                     {
                         MessageBox.Show("Xóa thành công!!!");

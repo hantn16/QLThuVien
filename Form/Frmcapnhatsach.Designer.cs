@@ -79,7 +79,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.cbGiaXep);
             this.groupBox1.Controls.Add(this.cbNgonNgu);
             this.groupBox1.Controls.Add(this.cbTheThuc);
@@ -109,7 +109,7 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(174, 138);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(485, 237);
@@ -384,6 +384,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.btCapNhat);
             this.groupBox2.Controls.Add(this.btxoa);
@@ -461,7 +462,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::quanlythuvien.Properties.Resources.ttsach;
             this.pictureBox1.Location = new System.Drawing.Point(174, 12);
@@ -504,7 +505,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::quanlythuvien.Properties.Resources.nen11;
+            this.BackgroundImage = global::quanlythuvien.Properties.Resources.blue_backgroud;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(662, 442);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.trvListTaiLieu);

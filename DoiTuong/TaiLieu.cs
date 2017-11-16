@@ -139,10 +139,26 @@ namespace quanly.doituong
         //Chưa cập nhật xong
         public static bool ThemMoi(TaiLieu taiLieu)
         {
-            string query = string.Format("INSERT INTO TaiLieu (MaTaiLieu, NhanDe, SoTrang, SoLuong, NamXuatBan, LanXuatBan, SoLanMuon, IDTheLoai, IDNXB, IDNgonNgu, IDTacGia, IDGiaXep, NgayNhap, TheThuc) VALUES ('{0}',N'{1}',{2},{3},{4},{5},{6},N'{7}',{8},{9},{10},{11},Convert(datetime,'{12}'),N'{13}')",
-                taiLieu.MaTaiLieu, taiLieu.NhanDe, taiLieu.SoTrang, taiLieu.SoLuong, taiLieu.NamXuatBan, taiLieu.LanXuatBan, 0, taiLieu.IDTheLoai, taiLieu.IDNXB,
-                taiLieu.IDNgonNgu, taiLieu.IDTacGia, taiLieu.IDGiaXep, taiLieu.NgayNhap.ToShortDateString(), taiLieu.TheThuc);
-            if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
+            try
+            {
+                //Kiểm tra xem mã tài liệu nhập vào đã tồn tại hay chưa
+                string queryCheck = @"Select * from TaiLieu Where MaTaiLieu = @matailieu";
+                if (DataProvider.ExecuteQuery(queryCheck, new object[] { taiLieu.MaTaiLieu }).Rows.Count > 0) throw new Exception("Mã tài liệu đã tồn tại");
+
+                //Thực hiện câu truy vấn thêm tài liệu và cơ sở dữ liệu
+                string query = @"INSERT INTO TaiLieu (MaTaiLieu, NhanDe, SoTrang, SoLuong, NamXuatBan, LanXuatBan, SoLanMuon, IDTheLoai, IDNXB, IDNgonNgu, IDTacGia, IDGiaXep, NgayNhap, TheThuc) VALUES 
+                                            ( @MaTaiLieu , @NhanDe , @SoTrang , @SoLuong , @NamXB , @LanXB , @SoLanMuon , @IDTheLoai , @IDNXB , @IDNgonNgu , @IDTacGia , @IDGiaXep , @NgayNhap , @TheThuc )";
+                if (DataProvider.ExecuteNonQuery(query, new object[] {
+                    taiLieu.MaTaiLieu, taiLieu.NhanDe, taiLieu.SoTrang, taiLieu.SoLuong, taiLieu.NamXuatBan, taiLieu.LanXuatBan, 0, taiLieu.IDTheLoai, taiLieu.IDNXB,
+                    taiLieu.IDNgonNgu, taiLieu.IDTacGia, taiLieu.IDGiaXep, taiLieu.NgayNhap, taiLieu.TheThuc
+                }) == 1) return true;
+                else return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
         public static bool CapNhat(TaiLieu taiLieu)
         {
@@ -163,23 +179,47 @@ namespace quanly.doituong
                 Where IDTaiLieu = {13}
                 ",
                 taiLieu.MaTaiLieu, taiLieu.NhanDe, taiLieu.SoTrang, taiLieu.SoLuong, taiLieu.NamXuatBan, taiLieu.LanXuatBan, taiLieu.IDTheLoai, taiLieu.IDNXB,
-                taiLieu.IDNgonNgu, taiLieu.IDTacGia, taiLieu.IDGiaXep, taiLieu.NgayNhap.ToString("yyyy-MM-dd hh:mm:ss"), taiLieu.TheThuc,taiLieu.IDTaiLieu);
+                taiLieu.IDNgonNgu, taiLieu.IDTacGia, taiLieu.IDGiaXep, taiLieu.NgayNhap.ToString("yyyy-MM-dd hh:mm:ss"), taiLieu.TheThuc, taiLieu.IDTaiLieu);
             if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
         }
         public static bool XoaBo(long id)
         {
-            string query = "delete from TaiLieu where IDTaiLieu=" + id;
-            if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
+            try
+            {
+                string query = "delete from TaiLieu where IDTaiLieu=" + id;
+                if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
         public bool ChoMuon(string i)
         {
-            string query = "update sach set SoLuong= SoLuong - " + i + ",SoLanMuon = SoLanMuon + 1 where  MaTaiLieu='" + MaTaiLieu + "'";
-            if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
+            try
+            {
+                string query = "update sach set SoLuong= SoLuong - " + i + ",SoLanMuon = SoLanMuon + 1 where  MaTaiLieu='" + MaTaiLieu + "'";
+                if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
         public bool TraSach(string i)
         {
-            string query = "update sach set SoLuong= SoLuong + " + i + " where  MaTaiLieu='" + MaTaiLieu + "'";
-            if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
+            try
+            {
+                string query = "update sach set SoLuong= SoLuong + " + i + " where  MaTaiLieu='" + MaTaiLieu + "'";
+                if (DataProvider.ExecuteNonQuery(query) == 1) return true; else return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
         public static TaiLieu GetTaiLieuTheoMa(string maTaiLieu)
         {
@@ -245,7 +285,7 @@ namespace quanly.doituong
                 int slMuon = 0;
                 string query = string.Format(@"Select SUM(SoLuong) from dbo.PhieuMuon
                             Where IDTaiLieu = {0} and TinhTrang > 0", id);
-                slMuon = Convert.ToInt32(DataProvider.ExecuteScalar(query));
+                slMuon = DataProvider.ExecuteScalar(query)==DBNull.Value? 0 : Convert.ToInt32(DataProvider.ExecuteScalar(query));
                 return (tongSL - slMuon);
             }
             catch (Exception)

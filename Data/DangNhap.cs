@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace quanly.lopdulieu
 {
+    /// <summary>
+    /// Class chứa thông tin của nhân viên đang đăng nhập
+    /// </summary>
     public class DangNhap
     {
-        
+
         public static string strQuyenHan = "", strnguoidung="",strHoTen="",strDiaChi="",strMatKhau="";
         public static int idNhanVien = 0;
+
+        /// <summary>
+        /// Hàm kiểm tra user, password nhập vào có hợp lệ không?
+        /// </summary>
+        /// <param name="ten">Tên đăng nhập truyền vào</param>
+        /// <param name="MatKhau">Mật khẩu truyền vào</param>
+        /// <returns></returns>
         public bool kt_dangnhap(string ten, string MatKhau)
         {
             NhanVien nv = new NhanVien();

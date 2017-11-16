@@ -490,8 +490,6 @@
             this.txtMaDocGia.Name = "txtMaDocGia";
             this.txtMaDocGia.Size = new System.Drawing.Size(86, 20);
             this.txtMaDocGia.TabIndex = 2;
-            this.txtMaDocGia.TextChanged += new System.EventHandler(this.txtMaDocGia_TextChanged);
-            this.txtMaDocGia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmabandoc_KeyDown);
             // 
             // label17
             // 

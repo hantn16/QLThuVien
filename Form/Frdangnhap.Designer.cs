@@ -104,6 +104,8 @@
             // 
             this.chkSavePass.AutoSize = true;
             this.chkSavePass.BackColor = System.Drawing.Color.Transparent;
+            this.chkSavePass.Checked = true;
+            this.chkSavePass.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkSavePass.Location = new System.Drawing.Point(128, 123);
             this.chkSavePass.Name = "chkSavePass";
             this.chkSavePass.Size = new System.Drawing.Size(93, 17);

@@ -11,10 +11,17 @@ namespace quanly.lopdulieu
     public class TimKiem
     {
         public TimKiem() { }
+        /// <summary>
+        /// Hàm tìm kiếm thông tin tài liệu cơ bản
+        /// </summary>
+        /// <param name="strtk">Chuỗi cần tìm kiếm</param>
+        /// <returns></returns>
         public DataTable TKCoBan(string strtk)
         {
-            //string query = string.Format("EXEC dbo.TimKiemTaiLieuCoBan N'{0}'",strtk);
-            string query2 = string.Format(@"Select tl.IDTaiLieu as 'ID',tl.MaTaiLieu as 'Mã Tài Liệu',tl.NhanDe as 'Nhan Đề', tg.TenTacGia as 'Tên Tác Giả',nn.TenNgonNgu as 'Ngôn ngữ',tl.SoLuong as 'Sách còn', gx.MaGiaXep as 'Giá xếp',k.MaKho as 'Kho'
+            try
+            {
+                //string query = string.Format("EXEC dbo.TimKiemTaiLieuCoBan N'{0}'",strtk);
+                string query2 = string.Format(@"Select tl.IDTaiLieu as 'ID',tl.MaTaiLieu as 'Mã Tài Liệu',tl.NhanDe as 'Nhan Đề',th.TenTheLoai as 'Thể Loại' ,tg.TenTacGia as 'Tên Tác Giả',nn.TenNgonNgu as 'Ngôn ngữ',tl.SoLuong as 'Sách còn', gx.MaGiaXep as 'Giá xếp',k.MaKho as 'Kho'
 	                        from dbo.TaiLieu tl inner join dbo.TacGia tg on tl.IDTacGia = tg.IDTacGia
 						                        inner join dbo.NgonNgu nn on tl.IDNgonNgu = nn.IDNgonNgu
 						                        inner join dbo.NhaXuatBan nxb on tl.IDNXB = nxb.IDNhaXuatBan
@@ -25,10 +32,21 @@ namespace quanly.lopdulieu
 	                        OR tl.NhanDe like N'%{0}%'
 	                        OR tg.TenTacGia like N'%{0}%'
 	                        OR th.TenTheLoai like N'%{0}%'", strtk);
-            DataTable dt = DataProvider.ExecuteQuery(query2);
-            return dt;
-
+                DataTable dt = DataProvider.ExecuteQuery(query2);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
+        /// <summary>
+        /// Hàm tìm kiếm thông tin tài liệu nâng cao
+        /// </summary>
+        /// <param name="strtk">Chuỗi tìm kiếm</param>
+        /// <param name="keyType">key loại tìm kiếm</param>
+        /// <param name="keyValue">giá trị của key</param>
+        /// <returns></returns>
         public DataTable TKNangCao(string strtk,string keyType = "TatCa", int keyValue = 0)
         {
             try
@@ -55,8 +73,6 @@ namespace quanly.lopdulieu
             {
                 throw;
             }
-
-
         }
     }
 }

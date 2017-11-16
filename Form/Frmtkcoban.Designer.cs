@@ -67,7 +67,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtTimKiem);
             this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -94,7 +94,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.lbdem);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
@@ -136,7 +136,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.dgvListTaiLieu);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox3.Location = new System.Drawing.Point(12, 81);
@@ -148,11 +148,11 @@
             // 
             // btnXemChiTiet
             // 
-            this.btnXemChiTiet.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnXemChiTiet.BackColor = System.Drawing.Color.Transparent;
             this.btnXemChiTiet.ForeColor = System.Drawing.Color.Black;
-            this.btnXemChiTiet.Location = new System.Drawing.Point(12, 341);
+            this.btnXemChiTiet.Location = new System.Drawing.Point(401, 351);
             this.btnXemChiTiet.Name = "btnXemChiTiet";
-            this.btnXemChiTiet.Size = new System.Drawing.Size(86, 48);
+            this.btnXemChiTiet.Size = new System.Drawing.Size(86, 29);
             this.btnXemChiTiet.TabIndex = 2;
             this.btnXemChiTiet.Text = "Xem chi tiết";
             this.btnXemChiTiet.UseVisualStyleBackColor = false;
@@ -160,11 +160,11 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(498, 341);
+            this.btnExit.Location = new System.Drawing.Point(498, 351);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(86, 48);
+            this.btnExit.Size = new System.Drawing.Size(86, 29);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -174,15 +174,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::quanlythuvien.Properties.Resources.nen11;
+            this.BackgroundImage = global::quanlythuvien.Properties.Resources.blue_backgroud;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(595, 392);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnXemChiTiet);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frmtkcoban";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tìm kiếm cơ bản";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frmtkcoban_FormClosed);
             this.Load += new System.EventHandler(this.Frmtkcoban_Load);

@@ -14,7 +14,6 @@ namespace quanly.frm
 {
     public partial class frmgiahansach : Form
     {
-        private GetDateTime _getDateTime;
         public DateTime NgayGiaHan
         {
             get
@@ -26,11 +25,6 @@ namespace quanly.frm
         public frmgiahansach()
         {
             InitializeComponent();
-        }
-        public frmgiahansach(GetDateTime getDateTime)
-        {
-            InitializeComponent();
-            this._getDateTime = getDateTime;
         }
 
         private void frmgiahansach_Load(object sender, EventArgs e)

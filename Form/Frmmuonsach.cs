@@ -117,27 +117,35 @@ namespace quanly.frm
 
         private void btbandoc(object sender, EventArgs e)
         {
-            DocGia dg = DocGia.GetDSDocGia().Find(c => c.MaDocGia == txtMaDocGia.Text);
-
-            txtIDDocGia.Text = dg.IDDocGia.ToString();
-            txtHoTen.Text = dg.HoTen;
-            Lop lop = Lop.GetLopTheoID(dg.IDLop);
-            txtLop.Text = lop.TenLop;
-            txtDiaChi.Text = dg.DiaChi;
-            Khoa khoa = Khoa.GetDSKhoa().Find(c => c.IDKhoa == lop.IDKhoa);
-            txtKhoa.Text = khoa.TenKhoa;
-            txtHoTen.Tag = dg.Lock;
-
+            try
+            {
+                DocGia dg = DocGia.GetDSDocGia().Find(c => c.MaDocGia == txtMaDocGia.Text);
+                txtIDDocGia.Text = dg.IDDocGia.ToString();
+                txtHoTen.Text = dg.HoTen;
+                Lop lop = Lop.GetLopTheoID(dg.IDLop);
+                txtLop.Text = lop.TenLop;
+                txtDiaChi.Text = dg.DiaChi;
+                Khoa khoa = Khoa.GetDSKhoa().Find(c => c.IDKhoa == lop.IDKhoa);
+                txtKhoa.Text = khoa.TenKhoa;
+                txtHoTen.Tag = dg.Lock;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Hàm tự sinh mã phiếu mượn theo ngày
+        /// </summary>
+        /// <returns></returns>
         string SetMaPhieuMuon()
         {
-            string TienTo = "PM" + DateTime.Now.ToString("yyMMdd")+"-";
+            string TienTo = "PM" + DateTime.Now.ToString("yyMMdd") + "-";
             string query = string.Format("Select Max(Convert(int,RIGHT(MaPhieuMuon,3)))from PhieuMuon Where MaPhieuMuon like N'{0}%'", TienTo);
             Object obj = DataProvider.ExecuteScalar(query);
             if (obj == DBNull.Value)
@@ -147,7 +155,7 @@ namespace quanly.frm
             else
             {
                 return TienTo + (Convert.ToInt32(obj) + 1).ToString("000");
-            }           
+            }
         }
         private void btnChoMuon_Click(object sender, EventArgs e)
         {
@@ -202,39 +210,18 @@ namespace quanly.frm
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        if (cbHinhThucMuon.Text == "Mượn giáo trình")
-            txtSLMuon.Enabled = true;
-        else
         {
-            txtSLMuon.Text = "1";
-            txtSLMuon.Enabled = false;
+            if (cbHinhThucMuon.Text == "Mượn giáo trình")
+                txtSLMuon.Enabled = true;
+            else
+            {
+                txtSLMuon.Text = "1";
+                txtSLMuon.Enabled = false;
+            }
+        }
+        private void Frmmuonsach_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Frmmain.tt = false;
         }
     }
-
-    private void txtMaTaiLieu_KeyDown(object sender, KeyEventArgs e)
-    {
-        if (e.KeyData == Keys.Enter) btnCheckTL_Click(sender, e);
-    }
-
-    private void txtmabandoc_KeyDown(object sender, KeyEventArgs e)
-    {
-        if (e.KeyData == Keys.Enter) btbandoc(sender, e);
-    }
-
-    private void txtMaDocGia_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void txtNgonNgu_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void Frmmuonsach_FormClosed(object sender, FormClosedEventArgs e)
-    {
-        Frmmain.tt = false;
-    }
-}
 }

@@ -59,7 +59,6 @@
             this.thôngTinSáchHỏngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnquanlyDocGia = new System.Windows.Forms.ToolStripMenuItem();
             this.tạoTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.huỷTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnquanlymuontra = new System.Windows.Forms.ToolStripMenuItem();
             this.mượnSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trảSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -384,8 +383,7 @@
             // mnquanlyDocGia
             // 
             this.mnquanlyDocGia.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tạoTàiKhoảnToolStripMenuItem,
-            this.huỷTàiKhoảnToolStripMenuItem});
+            this.tạoTàiKhoảnToolStripMenuItem});
             this.mnquanlyDocGia.Enabled = false;
             this.mnquanlyDocGia.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.mnquanlyDocGia.Image = ((System.Drawing.Image)(resources.GetObject("mnquanlyDocGia.Image")));
@@ -402,15 +400,6 @@
             this.tạoTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.tạoTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             this.tạoTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.mndangnhap_Click);
-            // 
-            // huỷTàiKhoảnToolStripMenuItem
-            // 
-            this.huỷTàiKhoảnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("huỷTàiKhoảnToolStripMenuItem.Image")));
-            this.huỷTàiKhoảnToolStripMenuItem.Name = "huỷTàiKhoảnToolStripMenuItem";
-            this.huỷTàiKhoảnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.huỷTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.huỷTàiKhoảnToolStripMenuItem.Text = "Tìm kiếm độc giả";
-            this.huỷTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.mndangnhap_Click);
             // 
             // mnquanlymuontra
             // 
@@ -783,7 +772,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnquanlykho;
         private System.Windows.Forms.ToolStripMenuItem mnquanlyDocGia;
         private System.Windows.Forms.ToolStripMenuItem tạoTàiKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem huỷTàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhậpSáchMớiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhậpSáchMớiToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem huỷĐầuSáchToolStripMenuItem1;
