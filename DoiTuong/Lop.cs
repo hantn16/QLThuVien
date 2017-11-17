@@ -27,7 +27,7 @@ namespace quanlythuvien.DoiTuong
         {
             try
             {
-                if (DataProvider.ExecuteNonQuery(string.Format("Delete from Lop where IDLop = {}",id))>0)
+                if (DataProvider.ExecuteNonQuery(string.Format("Delete from Lop where IDLop = {0}",id))>0)
                 {
                     return true;
                 }
@@ -50,7 +50,7 @@ namespace quanlythuvien.DoiTuong
                 Lop updatedLop = Lop.GetLopTheoID(lop.IDLop);
                 if (updatedLop!=null)
                 {
-                    string query = string.Format("Update Lop Set TenLop = N'{0}', IDKhoa= {1}", lop.TenLop, lop.IDKhoa);
+                    string query = string.Format("Update Lop Set TenLop = N'{0}', IDKhoa= {1} Where IDLop = {2}", lop.TenLop, lop.IDKhoa,lop.IDLop);
                     if (DataProvider.ExecuteNonQuery(query)>0)
                     {
                         return true;
@@ -67,7 +67,7 @@ namespace quanlythuvien.DoiTuong
         {
             try
             {
-                if (DataProvider.ExecuteQuery(string.Format("Select * from Lop Where TenLop = N'{}'", lop.TenLop)).Rows.Count > 0)
+                if (DataProvider.ExecuteQuery(string.Format("Select * from Lop Where TenLop = N'{0}'", lop.TenLop)).Rows.Count > 0)
                 {
                     throw new Exception("Tên lớp đã tồn tại!!!");
                 }

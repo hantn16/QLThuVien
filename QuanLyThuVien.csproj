@@ -7,8 +7,8 @@
     <ProjectGuid>{5A1FF228-C56C-44C3-A908-496D90A02FBA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>quanlythuvien</RootNamespace>
-    <AssemblyName>quanlythuvien</AssemblyName>
+    <RootNamespace>QuanLyThuVien</RootNamespace>
+    <AssemblyName>QuanLyThuVien</AssemblyName>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
@@ -51,30 +51,13 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>quanly.frm.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tux-teacher-2_overlord59-tux.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=11.5.3300.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>bin\Debug\CrystalDecisions.Enterprise.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=11.5.3300.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>bin\Debug\CrystalDecisions.Enterprise.InfoStore.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
       <Private>True</Private>
@@ -101,10 +84,6 @@
       <HintPath>packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.11.0.1\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -124,6 +103,12 @@
     <Compile Include="DoiTuong\Lop.cs" />
     <Compile Include="DoiTuong\NhanVienHienTai.cs" />
     <Compile Include="DoiTuong\PhieuMuon.cs" />
+    <Compile Include="Form\frmQuanLyLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\frmQuanLyLop.Designer.cs">
+      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\frmHienThi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +230,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\frmQuanLyLop.resx">
+      <DependentUpon>frmQuanLyLop.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\frmHienThi.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmHienThi.cs</DependentUpon>
@@ -323,20 +312,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -354,34 +343,16 @@
     <Content Include="bin\Debug\quanlythuvien.exe" />
     <Content Include="bin\Debug\quanlythuvien.pdb" />
     <Content Include="bin\Debug\quanlythuvien.vshost.exe" />
-    <Content Include="packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\msvcr100.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\SqlServerSpatial110.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\msvcr100.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\SqlServerSpatial110.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Resources\blue-backgroud.jpg" />
+    <Content Include="tux-teacher-2_overlord59-tux.ico" />
+    <None Include="Images\blue-backgroud.jpg" />
     <None Include="Images\01 %2881%29.ico" />
     <Content Include="Images\01 %2814%29.ico" />
     <None Include="Images\01 %2827%29.ico" />
     <Content Include="Images\01 %2832%29.ico" />
     <Content Include="Images\0909deguo15.jpg" />
-    <None Include="Images\36_33_21[1].gif" />
     <None Include="Images\1.bmp" />
     <None Include="Images\2.bmp" />
-    <None Include="Images\11.gif" />
-    <None Include="Images\12.gif" />
-    <None Include="Images\13.gif" />
-    <Content Include="Images\36_1_37.gif" />
-    <None Include="Images\5214496.gif" />
     <Content Include="Images\AlienAqua desktop.ico" />
-    <Content Include="Images\BANTAY.GIF" />
     <None Include="Images\folder_txt_2.png" />
     <None Include="Images\folder_video_2.png" />
     <None Include="Images\help.bmp" />
@@ -391,20 +362,14 @@
     <None Include="Images\email.ico" />
     <None Include="Images\My Documents.ico" />
     <None Include="Images\nen.jpg" />
-    <None Include="Images\bigemo_harabe_net-39.gif" />
     <Content Include="Images\BOOKS04.ICO" />
-    <None Include="Images\chitietdg.gif" />
     <Content Include="Images\Copy of docgia.ICO" />
     <Content Include="Images\folder_open3.ico" />
     <Content Include="Images\folder_yellow_2.png" />
     <None Include="Images\nen1.jpg" />
     <None Include="Images\nen1 copy.jpg" />
-    <None Include="Images\helpfast.gif" />
-    <None Include="Images\messhelp.gif" />
     <None Include="Images\inBox.ico" />
-    <Content Include="Images\nxqkc3.gif" />
     <Content Include="Images\Options.png" />
-    <None Include="Images\ss.GIF" />
     <None Include="Images\outBox.ico" />
     <Content Include="Images\SECUR01A.ICO" />
     <Content Include="Images\SECUR02A.ICO" />
@@ -441,17 +406,8 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <COMReference Include="Crystal">
-      <Guid>{00025600-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>4</VersionMajor>
-      <VersionMinor>6</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
+    <Folder Include="packages\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

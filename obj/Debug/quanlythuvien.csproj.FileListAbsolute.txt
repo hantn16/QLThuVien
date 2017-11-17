@@ -87,9 +87,6 @@ D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.VisualStudio.T
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Interaction.xml
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
 D:\hoc tap\Projects\quanlythuvien - hoanchinh\obj\Debug\quanlythuvien.csprojResolveAssemblyReference.cache
-D:\hoc tap\Projects\quanlythuvien\obj\Debug\Interop.Crystal.dll
-D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csproj.ResolveComReference.cache
-D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Formhienthi.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.Frdangnhap.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.FrmCapNhatsach.resources
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.FrmdoiMatKhau.resources
@@ -112,17 +109,9 @@ D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csproj.GenerateResourc
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanlythuvien.exe
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanlythuvien.pdb
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\msvcr100.dll
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x64\SqlServerSpatial110.dll
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\msvcr100.dll
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\packages\Microsoft.SqlServer.Types.11.0.1\nativeBinaries\x86\SqlServerSpatial110.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\quanlythuvien.exe.config
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\quanlythuvien.exe
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\quanlythuvien.pdb
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\CrystalDecisions.ReportSource.dll
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\CrystalDecisions.Shared.dll
-D:\hoc tap\Projects\quanlythuvien\bin\Debug\CrystalDecisions.Windows.Forms.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\EnvDTE.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.ReportViewer.DataVisualization.DLL
@@ -161,3 +150,7 @@ D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.VisualStudio.TemplateWizar
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.Windows.Design.Interaction.xml
 D:\hoc tap\Projects\quanlythuvien\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
 D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.frmThongKeChiTiet.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csproj.quanlythuvien.exe.config
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.frmQuanLyLop.resources
+D:\hoc tap\Projects\quanlythuvien\obj\Debug\quanly.frm.frmHienThi.resources

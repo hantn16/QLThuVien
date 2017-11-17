@@ -63,7 +63,7 @@
             // 
             // label3
             // 
-            this.label3.Image = global::quanlythuvien.Properties.Resources.nen;
+            this.label3.Image = global::QuanLyThuVien.Properties.Resources.nen;
             this.label3.Location = new System.Drawing.Point(-1, -3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(297, 130);

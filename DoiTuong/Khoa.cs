@@ -13,7 +13,10 @@ namespace quanlythuvien.DoiTuong
         public int IDKhoa { get; set; }
         public string MaKhoa { get; set; }
         public string TenKhoa { get; set; }
-
+        /// <summary>
+        /// Hàm get danh sách khoa
+        /// </summary>
+        /// <returns></returns>
         public static List<Khoa> GetDSKhoa()
         {
             try
@@ -38,6 +41,23 @@ namespace quanlythuvien.DoiTuong
             catch (Exception)
             {
 
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Hàm lấy ra Khoa theo id truyền vào
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static Khoa GetKhoaTheoID(int id)
+        {
+            try
+            {
+                return Khoa.GetDSKhoa().Find(c => c.IDKhoa == id);
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

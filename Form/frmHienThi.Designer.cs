@@ -1,6 +1,6 @@
 ﻿namespace quanly.frm
 {
-    partial class Formhienthi
+    partial class frmHienThi
     {
         /// <summary>
         /// Required designer variable.
@@ -259,7 +259,7 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // Formhienthi
+            // frmHienThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,7 +268,7 @@
             this.ClientSize = new System.Drawing.Size(755, 353);
             this.Controls.Add(this.panel21);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Formhienthi";
+            this.Name = "frmHienThi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hiển thị thông tin danh mục";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Formhienthi_FormClosed);

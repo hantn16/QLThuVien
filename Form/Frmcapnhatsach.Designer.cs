@@ -66,14 +66,12 @@
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.trvListTaiLieu = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctmnEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tạoMớiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xoáBỏToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ctmnEdit.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,7 +108,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(174, 138);
+            this.groupBox1.Location = new System.Drawing.Point(174, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(485, 237);
             this.groupBox1.TabIndex = 0;
@@ -389,7 +387,7 @@
             this.groupBox2.Controls.Add(this.btCapNhat);
             this.groupBox2.Controls.Add(this.btxoa);
             this.groupBox2.Controls.Add(this.btnThemMoi);
-            this.groupBox2.Location = new System.Drawing.Point(174, 381);
+            this.groupBox2.Location = new System.Drawing.Point(174, 255);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(485, 55);
             this.groupBox2.TabIndex = 1;
@@ -450,7 +448,7 @@
             this.trvListTaiLieu.Location = new System.Drawing.Point(3, 12);
             this.trvListTaiLieu.Name = "trvListTaiLieu";
             this.trvListTaiLieu.SelectedImageIndex = 0;
-            this.trvListTaiLieu.Size = new System.Drawing.Size(165, 424);
+            this.trvListTaiLieu.Size = new System.Drawing.Size(165, 298);
             this.trvListTaiLieu.TabIndex = 2;
             this.trvListTaiLieu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvListTaiLieu_AfterSelect);
             // 
@@ -459,17 +457,6 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "Options.png");
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::quanlythuvien.Properties.Resources.ttsach;
-            this.pictureBox1.Location = new System.Drawing.Point(174, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(485, 106);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // ctmnEdit
             // 
@@ -505,10 +492,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::quanlythuvien.Properties.Resources.blue_backgroud;
+            this.BackgroundImage = global::QuanLyThuVien.Properties.Resources.blue_backgroud;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(662, 442);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(662, 319);
             this.Controls.Add(this.trvListTaiLieu);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -522,7 +508,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ctmnEdit.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -564,7 +549,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cbTheThuc;
         private System.Windows.Forms.Label lb;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ContextMenuStrip ctmnEdit;
         private System.Windows.Forms.ToolStripMenuItem tạoMớiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xoáBỏToolStripMenuItem;

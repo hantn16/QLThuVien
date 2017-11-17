@@ -11,7 +11,7 @@ using quanlythuvien.Data;
 
 namespace quanly.frm
 {
-    public partial class Formhienthi : Form
+    public partial class frmHienThi : Form
     {
         private DataTable dataTable = new DataTable();
         private CurrencyManager bmb = null;
@@ -29,7 +29,7 @@ namespace quanly.frm
         public FormStatusOption FormStatus { get; set; }
         public BindingSource bindingSource = new BindingSource();
 
-        public Formhienthi()
+        public frmHienThi()
         {
             InitializeComponent();
             this.FormStatus = FormStatusOption.VuaTao;

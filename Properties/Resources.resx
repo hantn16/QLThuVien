@@ -121,12 +121,6 @@
   <data name="inBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\inBox.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bigemo_harabe_net-39" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\bigemo_harabe_net-39.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\12.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="tux-teacher-2_overlord59-tux" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\tux-teacher-2_overlord59-tux.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,23 +130,14 @@
   <data name="outBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\outBox.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="13" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\13.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="nen11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\nen1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ss" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\ss.GIF;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="01 (27)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\01 (27).ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\help.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\11.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Star3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Star3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,9 +160,6 @@
   <data name="nen1 copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\nen1 copy.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="36_33_21[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\36_33_21[1].gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Documents &amp; Settings Folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Documents &amp; Settings Folder.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -186,9 +168,6 @@
   </data>
   <data name="email" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\email.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="messhelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\messhelp.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder_yellow_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\folder_yellow_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,35 +178,17 @@
   <data name="My Pictures4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\My Pictures4.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ttsach" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\ttsach.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="01 (81)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\01 (81).ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="helpfast" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\helpfast.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="nen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\nen.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chitietdg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\chitietdg.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TraSach" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\TraSach.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="untitled1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\untitled.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="01 (27)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\01 (27).ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BANTAY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\BANTAY.GIF;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="5214496" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\5214496.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thoat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\thoat.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -239,6 +200,6 @@
     <value>..\Images\My Pictures.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blue-backgroud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\blue-backgroud.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Images\blue-backgroud.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -9,7 +9,6 @@ using quanly.lopdulieu;
 using System.Data.SqlClient;
 using quanly.doituong;
 using quanlythuvien.Data;
-using CrystalDecisions.Windows.Forms;
 
 namespace quanly.frm
 {
@@ -19,13 +18,11 @@ namespace quanly.frm
         {
             InitializeComponent();
         }
-        public static int rong = 0;
         public static NhanVien nv = new NhanVien();
         public void Frmmain_Load(object sender, EventArgs e)
         {
-            rong = this.Size.Height;
             lbnam.Text = "Ngày " + DateTime.Now.Day.ToString() + " Tháng " + DateTime.Now.Month.ToString() + " Năm " + DateTime.Now.Year.ToString();
-            if (DangNhap.strQuyenHan.IndexOf("ADMIN") >= 0)
+            if (DangNhap.strQuyenHan.Contains("ADMIN"))
             {
                 mnquanlykho.Enabled = true;
                 mnquanlymuontra.Enabled = true;
@@ -115,7 +112,7 @@ namespace quanly.frm
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         string query = " select IDTacGia as 'Mã tác giả',TenTacGia as 'Tên tác giả' from TacGia";
-                        Formhienthi ht = new Formhienthi() { ChuoiKetNoi = query, BangKetNoi = "TacGia", TenCotMa = "Mã tác giả", TenCotTen = "Tên tác giả" };
+                        frmHienThi ht = new frmHienThi() { ChuoiKetNoi = query, BangKetNoi = "TacGia", TenCotMa = "Mã tác giả", TenCotTen = "Tên tác giả" };
                         ht.MdiParent = this;
                         ht.Show();
                         break;
@@ -125,7 +122,7 @@ namespace quanly.frm
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         string query = " select IDNhaXuatBan as 'Mã nhà xuất bản',TenNhaXuatBan as 'Tên nhà xuất bản' from NhaXuatBan";
-                        Formhienthi ht = new Formhienthi() { ChuoiKetNoi = query, BangKetNoi = "NhaXuatBan", TenCotMa = "Mã nhà xuất bản", TenCotTen = "Tên nhà xuất bản" };
+                        frmHienThi ht = new frmHienThi() { ChuoiKetNoi = query, BangKetNoi = "NhaXuatBan", TenCotMa = "Mã nhà xuất bản", TenCotTen = "Tên nhà xuất bản" };
                         ht.MdiParent = this;
                         ht.Show(); break;
                     }
@@ -134,7 +131,7 @@ namespace quanly.frm
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         string query = " select IDTheLoai as 'Mã thể loại',TenTheLoai as 'Tên Thể Loại' from TheLoai";
-                        Formhienthi ht = new Formhienthi() { ChuoiKetNoi = query, BangKetNoi = "TheLoai", TenCotMa = "Mã thể loại", TenCotTen = "Tên Thể Loại" };
+                        frmHienThi ht = new frmHienThi() { ChuoiKetNoi = query, BangKetNoi = "TheLoai", TenCotMa = "Mã thể loại", TenCotTen = "Tên Thể Loại" };
                         ht.MdiParent = this;
                         ht.Show(); break;
                     }
@@ -152,7 +149,7 @@ namespace quanly.frm
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
                         string query = " select IDNgonNgu as 'Mã ngôn ngữ',TenNgonNgu as 'Tên ngôn ngữ' from NgonNgu";
-                        Formhienthi ht = new Formhienthi() { ChuoiKetNoi = query, BangKetNoi = "NgonNgu", TenCotMa = "Mã ngôn ngữ", TenCotTen = "Tên ngôn ngữ" };
+                        frmHienThi ht = new frmHienThi() { ChuoiKetNoi = query, BangKetNoi = "NgonNgu", TenCotMa = "Mã ngôn ngữ", TenCotTen = "Tên ngôn ngữ" };
                         ht.MdiParent = this;
                         ht.Show(); break;
                     }
@@ -160,7 +157,7 @@ namespace quanly.frm
                     {
                         ProgressBar1.Value = 0;
                         timer2.Enabled = true;
-                        Formhienthi ht = new Formhienthi()
+                        frmHienThi ht = new frmHienThi()
                         {
                             ChuoiKetNoi = " select IDKhoa as 'ID', MaKhoa as 'Mã khoa',TenKhoa as 'Tên Khoa' from Khoa",
                             BangKetNoi = "Khoa",
@@ -169,6 +166,15 @@ namespace quanly.frm
                         };
                         ht.MdiParent = this;
                         ht.Show(); break;
+                    }
+                case "Lớp":
+                    {
+                        ProgressBar1.Value = 0;
+                        timer2.Enabled = true;
+                        frmQuanLyLop qll = new frmQuanLyLop();
+                        qll.MdiParent = this;
+                        qll.Show();
+                        break;
                     }
                 case "Trả tài liệu":
                     {
@@ -433,11 +439,6 @@ namespace quanly.frm
         {
 
         }
-
-
-
-
-
 
     }
 }

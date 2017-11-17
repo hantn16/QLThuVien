@@ -47,10 +47,10 @@ namespace quanly.DoiTuong
                 }
                 else
                 {
-                    string query = string.Format(@"Insert into DocGia (MaDocGia,HoTen,NgaySinh,IDLop,DiaChi,DienThoai,Email,NgayLapThe,Lock) Values
-                                    (N'{0}',N'{1}',Convert(datetime,N'{2}'),{3},N'{4}',N'{5}',N'{6}',Convert(datetime,N'{7}'),{8})",
-                                    dg.MaDocGia, dg.HoTen, dg.NgaySinh.ToShortDateString(), dg.IDLop, dg.DiaChi, dg.DienThoai, dg.Email, dg.NgayLapThe.ToShortDateString(), Convert.ToInt32(dg.Lock));
-                    if (DataProvider.ExecuteNonQuery(query) == 1) return true;
+                    string query = @"Insert into DocGia (MaDocGia,HoTen,NgaySinh,IDLop,DiaChi,DienThoai,Email,NgayLapThe,Lock) 
+                                    Values ( @madocgia , @hoten , @ngaySinh , @idLop , @diachi , @dienthoai , @email , @ngaylapthe , @lock )";
+                    int result = DataProvider.ExecuteNonQuery(query, new object[] { dg.MaDocGia, dg.HoTen, dg.NgaySinh, dg.IDLop, dg.DiaChi, dg.DienThoai, dg.Email, dg.NgayLapThe, dg.Lock });
+                    if (result == 1) return true;
                 }
                 return false;
             }
@@ -69,18 +69,17 @@ namespace quanly.DoiTuong
                 DocGia docGia = DocGia.GetDocGiaTheoID(dg.IDDocGia);
                 if (docGia != null)
                 {
-                    string query = string.Format(@"Update DocGia Set MaDocGia = N'{0}',
-                        HoTen = N'{1}',
-                        NgaySinh = ConVert(datetime,N'{2}'),
-                        IDLop = {3},
-                        DiaChi = N'{4}',
-                        DienThoai = N'{5}',
-                        Email = N'{6}',
-                        NgayLapThe = Convert(datetime,N'{7}'),
-                        Lock = {8} Where IDDocGia = {9}",
-                        dg.MaDocGia, dg.HoTen, dg.NgaySinh.ToShortDateString(),
-                        dg.IDLop, dg.DiaChi, dg.DienThoai, dg.Email, dg.NgayLapThe.ToShortDateString(),Convert.ToInt32(dg.Lock), dg.IDDocGia);
-                    if (DataProvider.ExecuteNonQuery(query) == 1) return true;
+                    string query = @"Update DocGia Set MaDocGia = @madocgia ,
+                        HoTen = @hoten ,
+                        NgaySinh = @ngaysinh ,
+                        IDLop = @idlop ,
+                        DiaChi = @diachi ,
+                        DienThoai = @dienthoai ,
+                        Email = @email ,
+                        NgayLapThe = @ngaylapthe ,
+                        Lock = @lock Where IDDocGia = @idDocGia ";
+                    int result = DataProvider.ExecuteNonQuery(query, new object[] { dg.MaDocGia, dg.HoTen, dg.NgaySinh, dg.IDLop, dg.DiaChi, dg.DienThoai, dg.Email, dg.NgayLapThe, dg.Lock, dg.IDDocGia });
+                    if (result == 1) return true;
                 }
                 return false;
             }
@@ -89,8 +88,6 @@ namespace quanly.DoiTuong
                 MessageBox.Show(ex.Message);
                 return false;
             }
-
-
         }
         public static bool XoaBo(int id)
         {

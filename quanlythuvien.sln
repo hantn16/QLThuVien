@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyThuVien", "QuanLyThuVien.csproj", "{5A1FF228-C56C-44C3-A908-496D90A02FBA}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QLTV.SetUp", "..\QLTV.SetUp\QLTV.SetUp.vdproj", "{D723E4E6-EA53-4B70-A980-60446C7C2737}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QLTV.SetUp", "..\QLTV.SetUp\QLTV.SetUp.vdproj", "{03081F47-8FAF-4133-84AE-D1C36F1B71B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{5A1FF228-C56C-44C3-A908-496D90A02FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A1FF228-C56C-44C3-A908-496D90A02FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A1FF228-C56C-44C3-A908-496D90A02FBA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D723E4E6-EA53-4B70-A980-60446C7C2737}.Debug|Any CPU.ActiveCfg = Debug
-		{D723E4E6-EA53-4B70-A980-60446C7C2737}.Release|Any CPU.ActiveCfg = Release
+		{03081F47-8FAF-4133-84AE-D1C36F1B71B5}.Debug|Any CPU.ActiveCfg = Debug
+		{03081F47-8FAF-4133-84AE-D1C36F1B71B5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

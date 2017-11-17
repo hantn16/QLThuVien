@@ -223,7 +223,7 @@
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Image = global::quanlythuvien.Properties.Resources._2;
+            this.label5.Image = global::QuanLyThuVien.Properties.Resources._2;
             this.label5.Location = new System.Drawing.Point(170, 6);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(392, 66);

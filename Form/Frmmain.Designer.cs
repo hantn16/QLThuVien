@@ -98,6 +98,7 @@
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.ctkhoidongct = new System.Windows.Forms.ToolStripMenuItem();
             this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.lớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
@@ -224,12 +225,14 @@
             this.nhàXuấtBảnToolStripMenuItem,
             this.loạiSáchToolStripMenuItem,
             this.khoaToolStripMenuItem,
-            this.ngônNgữToolStripMenuItem});
+            this.ngônNgữToolStripMenuItem,
+            this.lớpToolStripMenuItem});
             this.mnquanlydanhmuc.Enabled = false;
             this.mnquanlydanhmuc.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.mnquanlydanhmuc.Image = ((System.Drawing.Image)(resources.GetObject("mnquanlydanhmuc.Image")));
             this.mnquanlydanhmuc.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.mnquanlydanhmuc.Name = "mnquanlydanhmuc";
+            this.mnquanlydanhmuc.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Q)));
             this.mnquanlydanhmuc.Size = new System.Drawing.Size(149, 36);
             this.mnquanlydanhmuc.Text = "Quản lý danh mục";
             // 
@@ -721,6 +724,16 @@
             this.timer4.Enabled = true;
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
+            // lớpToolStripMenuItem
+            // 
+            this.lớpToolStripMenuItem.Image = global::QuanLyThuVien.Properties.Resources.Options;
+            this.lớpToolStripMenuItem.Name = "lớpToolStripMenuItem";
+            this.lớpToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.lớpToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.lớpToolStripMenuItem.Text = "Lớp";
+            this.lớpToolStripMenuItem.Click += new System.EventHandler(this.mndangnhap_Click);
+            // 
             // Frmmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -829,7 +842,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem ctkhoidongct;
         private System.Windows.Forms.Timer timer4;
-
-
+        private System.Windows.Forms.ToolStripMenuItem lớpToolStripMenuItem;
     }
 }
